@@ -1,0 +1,189 @@
+/* Forms
+-------------------------------------------------------------- */
+
+/* Labels & Inputs
+------------------------------ */
+
+form label {
+    display: block;
+    line-height: 30px;
+    text-align: left;
+}
+form label span {
+    color: #888;
+    display: block;
+    font-size: 11px;
+    line-height: 15px;
+}
+form .short label {
+    display: inline;
+    float: none;
+}
+form select {
+    width: 100%;
+}
+form select.short {
+    width: auto;
+}
+form input.text  {
+    border: solid 1px #888;
+    font-size: 14px;
+    height: 20px;
+    line-height: 14px;
+    padding:6px 5px 4px;
+    width: 94%;
+    /* CSS 3 Inner Shadow */
+    box-shadow: inset 0 0 3px #ccc;
+    -moz-box-shadow: inset 0 0 3px #ccc;
+    -webkit-box-shadow: inset 0 0 3px #ccc;
+}
+form .short input.text {
+    width: 20%;
+}
+
+form .checkbox input {}
+form .checkbox label {
+    display: inline;
+}
+form .radio input {}
+
+form .checkbox-button {
+    background: transparent url(../../images/form-checkbox.png) 0 0 no-repeat;
+    border: none;
+    height: 20px;
+    width: 20px;
+}
+form .checkbox-button:hover {
+    background: transparent url(../../images/form-checkbox.png) 0 -100px no-repeat;
+}
+form .checkbox-button-checked {
+    background: transparent url(../../images/form-checkbox.png) 0 -200px no-repeat;
+    border: none;
+    height: 20px;
+    width: 20px;
+}
+
+form .checkbox-button,
+form .checkbox-button-checked {
+    cursor: pointer;
+}
+
+.container form fieldset {
+    clear: both;
+    margin-left: -10px;
+    padding: 10px 0;
+}
+
+.container fieldset label {
+    float: left;
+    margin-right: 20px;
+    text-indent: 10px;
+}
+.container fieldset p { float: left; }
+.container fieldset label span {
+    text-indent: 0;
+    padding-left: 10px;
+}
+
+
+.container form table {
+    margin-bottom: 10px;
+}
+
+.container form table td {
+    border-bottom: 10px solid #fff;
+    padding: 5px 10px;
+}
+
+.container form table th.first {
+    padding: 0 20px 0 0;
+    text-align: left;
+}
+
+.container form table th {
+    color: #888;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.container form table tbody td {
+    background-color: #eee;
+}
+
+.container form table td.checkbox {
+    text-align: center;
+}
+
+.container form table .checkbox label {
+    position: absolute; left:-9999px;  /* The checkboxes get visual context from table headers - hide the actual form labels */
+}
+
+.container form table .checkbox input {
+    margin: 0 auto;
+}
+
+
+/* Form classes
+------------------------------ */
+
+
+/* Used to wrap forms that have buttons that look like links */
+.inline-form {
+    display:inline;
+}
+
+/* Submit buttons that look like links */
+.submit-link {
+    background-color:transparent;
+    border: 0;
+    cursor: pointer;
+    font-size: 1em;
+    text-decoration:none;
+    text-align: left;
+}
+.submit-link:hover {
+    text-decoration: underline;
+}
+
+form .box label {
+    margin-left: 10px;
+    padding-bottom: 10px;
+}
+
+form .box small {
+    color: #888;
+    display: block;
+    line-height: 14px;
+}
+
+form .error {
+    background: transparent url(../../images/AstroIconSprite.png) no-repeat -300px -790px;
+    color: #F38025;
+    font-size: 11px;
+    line-height: 22px;
+    padding: 12px 10px 10px 24px;
+}
+
+form .helper, form .persistent-helper {
+    font-size: 14px;
+    line-height: 15px;
+    padding-top: 8px;
+}
+form .persistent-helper {
+    color: #888;
+}
+form fieldset .helper {
+    visibility: hidden;
+}
+form fieldset.highlight .helper {
+    visibility: visible;
+}
+
+form .right input {
+    float: right;
+}
+
+/* TODO: Should this be deleted? */
+form .small {
+    line-height: 20px;
+}

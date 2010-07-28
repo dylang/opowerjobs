@@ -1,0 +1,112 @@
+/*
+    ui.css
+    ---------------------------------------------------------
+    This file holds the "stylized" extra elements of Astro,
+    i.e. dropdowns, form buttons, etc.
+    ---------------------------------------------------------
+    Table of contents:
+        -- Dialog
+        -- Tooltips
+    ---------------------------------------------------------
+*/
+
+
+/* Dialog
+ -------------------------------------------------------------
+*/
+
+.ui-widget-content a,
+.ui-widget-content a:hover,
+.ui-widget-content a:active {
+    color: #0099cc; /* replace with ei.styles.siteWide.link */
+}
+
+.ui-dialog .ui-widget-header {
+    background: none;
+    border: none;
+}
+.ui-dialog .ui-dialog-content {
+    padding: 0 20px 20px 20px;
+}
+
+.ui-dialog.ui-widget-content {
+    border: 4px solid #888;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+    top: 5px;
+    right: 10px;
+    padding: 10px;
+    margin: 0;
+    border: none;
+    width: auto;
+}
+.ui-dialog .ui-dialog-titlebar-close:hover,
+.ui-dialog .ui-dialog-titlebar-close:active {
+    padding: 10px;
+    background: none;
+}
+
+.ui-dialog .ui-dialog-titlebar-close SPAN {
+    text-indent: 0;
+    text-align: right;
+}
+
+.ui-dialog .ui-icon-closethick {
+    text-indent: inherit;
+    background: transparent url(../../images/ui-close.png) center right no-repeat;
+    font-weight: normal;
+    font-size: 11px;
+    width: auto;
+    padding-right: 15px;
+    display: inline;
+    line-height: 15px;
+    margin: 0;
+}
+
+.ui-widget-overlay {
+    background: #222;
+    opacity: .8;
+    filter: Alpha(Opacity=80);
+    position: absolute;top: 0;
+    left: 0;
+}
+
+.ui-dialog .dialog-button {
+    margin-top: 10px;
+}
+
+/* Tooltips
+ -------------------------------------------------------------*/
+ .tooltip-container {
+    z-index: 50;
+ }
+.tooltip {
+    background-color: #fff;
+    border: 1px solid #000;
+    font-weight: normal;
+    padding: 10px;
+    position: absolute;
+    width: 220px;
+    z-index: 3;
+}
+.balloon-tip {
+    height: 100px;
+    background: transparent url(../../images/Tip-Tooltip.png) 0 0 no-repeat;
+    left:-250px;
+    padding: 15px 35px 15px 15px;
+    position: absolute;
+    top: -45px;
+    width: 240px;
+    z-index: 3;
+}
+.balloon-tip-right {
+    height: 100px;
+    background: transparent url(../../images/Tip-Tooltip.png) -300px 0 no-repeat;
+    padding: 15px 15px 15px 35px;
+    position: absolute;
+    right:-250px;
+    top: -45px;
+    width: 240px;
+    z-index: 3;
+}

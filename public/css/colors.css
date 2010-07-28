@@ -1,0 +1,31 @@
+/*
+PAINT ME A RAINBOW OF COLOUR
+*/
+
+/* Background Colors */
+
+.bgLightGray {
+    background-color: #eee;
+}
+
+.bgMediumGray {
+    background-color: #ccc;
+}
+
+.bgDarkGray {
+    background-color: #888;
+}
+
+/* Text Colors */
+
+.lightGray {
+    color: #eee;
+}
+
+.mediumGray {
+    color: #ccc;
+}
+
+.darkGray {
+    color: #888;
+}

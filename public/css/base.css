@@ -1,0 +1,441 @@
+/*
+    base.css
+    ---------------------------------------------------------
+    Table of contents:
+        - HTML
+        - Global Classes
+            -- General
+        - Global Colors
+        - Global Sections
+            -- Banner
+            -- Content
+
+    ---------------------------------------------------------
+*/
+
+
+/* HTML
+-------------------------------------------------------------- */
+
+body {
+    background-color: #ffffff; /* replace with ei.styles.siteWide.body.backgroundColor */
+    color: #222;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 10px 0; /* replace with ei.styles.siteWide.body.margin */
+}
+
+h1 {
+    font-family: ProximaNovaBold, Arial, sans-serif;
+}
+
+h1 {
+    font-size: 36px;
+    line-height: 50px;
+}
+
+h2 {
+    font-size: 24px;
+    line-height: 30px;
+}
+
+h3, h4 {
+    font-size: 16px;
+    line-height: 20px;
+}
+
+h5 {
+    font-size: 16px;
+    font-weight:normal;
+}
+
+h6 {
+    font-size: 24px;
+    font-weight: normal;
+    line-height:30px;
+}
+
+.small h3, .small h4 {
+    font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    outline: hidden;
+}
+
+strong, .strong {
+    font-weight: normal;
+    font-family: ProximaNovaBold, Arial, sans-serif;
+}
+
+small, .small {
+    font-size: 12px;
+    line-height: 12px;
+}
+.page-title {
+    font-size: 20px;
+    line-height: 25px;
+    color: #888;
+}
+
+
+/* Global Classes
+-------------------------------------------------------------- */
+
+/* General
+------------------------------ */
+.full-page {
+    min-height: 400px;
+}
+
+.alert-icon {
+    background: url(../../images/form-icons.png) 0 0 no-repeat;
+    float: left;
+    height: 30px;
+    margin: -2px 10px 0 0;
+    width: 30px;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.bg-gradient-eee-ccc {
+    background: url(../../images/bgGradient-eee-ccc.png) 0 0 no-repeat;
+}
+
+.bg-gradient-fff-eee {
+    background: url(../../images/bgGradient-fff-eee.png) 0 0 no-repeat;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.center {
+    text-align: center;
+}
+
+.clear {
+    clear: both;
+}
+
+.box {
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.box.error {
+    padding-top: 20px;
+}
+
+.callout-container {
+    background: transparent url(../../images/Triangle-left.png) 0 center no-repeat;
+    padding-left: 10px;
+}
+.callout {
+    border: 4px solid #ccc;
+    min-height: 202px;
+    margin-top: 20px;
+    padding: 16px;
+}
+.callout h3 {
+    margin-bottom: 5px;
+}
+.callout li,
+.callout p {
+    line-height: 15px;
+    margin-bottom: 5px;
+}
+
+.display-none {
+    display: none;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+}
+
+.hide {
+    left: -9999px;
+    position: absolute;
+}
+
+.dyna-hide { position:absolute; left:-99999px; width: 1px; height:1px; overflow: hidden; }
+
+.loading {
+    background: url(../../images/Loading.gif) center center no-repeat;
+    width: 32px;
+    height: 32px;
+}
+
+.no-space {
+    /* For over-riding unwanted margins in some global classes */
+    margin: 0 !important;
+}
+
+.padding {
+    padding: 20px;
+}
+
+
+
+
+.box,
+.rounded,
+form input.text,
+form fieldset,
+.button,
+.dyna-hide TABLE,
+TABLE.dyna-hide  {
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.rounded-tl { -moz-border-radius-topleft: 4px; -webkit-border-top-left-radius: 4px; border-top-left-radius: 4px; }
+.rounded-tr { -moz-border-radius-topright: 4px; -webkit-border-top-right-radius: 4px; border-top-right-radius: 4px; }
+.rounded-bl { -moz-border-radius-bottomleft: 4px; -webkit-border-bottom-left-radius: 4px; border-bottom-left-radius: 4px; }
+.rounded-br { -moz-border-radius-bottomright: 4px; -webkit-border-bottom-right-radius: 4px; border-bottom-right-radius: 4px; }
+
+.separator {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+.separator-2 {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+.separator-top {
+    border-top: 1px solid #ccc;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+.space-top {
+    margin-top: 20px;
+}
+
+.space-bottom {
+    margin-bottom: 20px;
+}
+
+.space-top-small {
+    margin-top: 10px;
+}
+
+.space-bottom-small {
+    margin-bottom: 10px;
+}
+
+.shadow {
+    -moz-box-shadow: 0px 2px 1px #ccc;
+    -webkit-box-shadow: 0px 2px 1px #ccc;
+    box-shadow: 0px 2px 1px #ccc;
+}
+
+/* Global Colors
+-------------------------------------------------------------- */
+
+/*- TODO - what are these even for? */
+.bg-white {
+    background-color: #ffffff;
+}
+.color-white {
+    color: #ffffff;
+}
+
+.highlight {
+    background-color: #E3F0F7;
+}
+
+.alert {
+    background-color: #FFFFDD;
+}
+
+/* Client Filler Colors */
+/* Brand: Background */
+.bg-brand,
+#header #nav-main ul li.active a { background: #33bbcc; /* replace with ei.styles.siteWide.main */ }
+
+/* Brand: Color*/
+a { color: #3bc; /* replace with ei.styles.siteWide.link */ }
+
+.color-brand,
+.submit-link,
+#footer a:hover,
+#nav-secondary ul li a.active { color: #3bc; /* replace with ei.styles.siteWide.link */}
+
+/* Error/Alert Orange */
+.error { color: #ee5500; /* replace with ei.styles.error */ }
+
+
+/* Global Sections
+
+   Reserved for only primary boxes that require specific groups
+   of styles
+-------------------------------------------------------------- */
+
+/* Banner (i.e. Page Titles)
+------------------------------ */
+
+.banner {
+    height: 50px;
+}
+.banner h2 {
+    color: #ffffff;
+    line-height: 50px;
+    margin-left: 20px;
+}
+
+/* Content
+------------------------------ */
+
+#content {
+    background: #eeeeee; /* replace with ei.styles.siteWide.content.background */
+    padding: 20px;
+    outline: none;
+}
+
+.font-scheme-1 {
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.font-scheme-2 {
+    font-size: 14px;
+}
+
+.font-scheme-3 {
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.font-scheme-4 {
+    font-size: 12px;
+    line-height: 30px;
+}
+
+.page-content {
+    font-size: 14px;
+}
+
+.page-content p, .page-content h2, .page-content h3, .page-content h4, .page-content h5, .page-content h6,
+.page-content ul, .page-content ol, .page-content dd {
+    margin-bottom: 10px;
+}
+.page-content ul,
+ul.bullet {
+    padding-left: 1em;
+    text-indent: -1em;
+}
+.page-content ul li,
+ul.bullet li {
+    margin-bottom: 5px;
+}
+.page-content ul li:before,
+ul.bullet li:before {
+    content: "\2022 \0020";
+}
+
+.sidebar {
+    padding-top: 20px;
+}
+
+/* Font override
+ -------------------------*/
+input,
+.ui-widget,
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea,
+.ui-widget button
+button,
+.button {
+    font-family: ProximaNovaRegular, Arial, sans-serif;
+    font-size: 14px;
+}
+
+
+/* Lists
+ -------------------------*/
+ul.list li:before {
+    content: "\2022 \0020";
+}
+
+
+/* Grid Overlay
+------------------------------ */
+#grid-overlay {
+    filter: alpha(opacity=70);
+    height: 100%;
+    left: 50%;
+    margin-left: -470px;
+    opacity:0.7;
+    position: absolute;
+    width: 940px;
+}
+
+
+/* Definition List
+----------------------------- */
+DL.inline {
+    display: inline;
+}
+DL.inline DT {
+    display: inline;
+    font-family: ProximaNovaBold, Arial, sans-serif;
+}
+
+DL.inline DD {
+    display: inline;
+}
+
+
+/*
+    This makes normally hidden tables that become visible when javascript is disabled readable.
+*/
+.dyna-hide TABLE,
+TABLE.dyna-hide{
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 4px solid #CCC;
+    padding: 2px;
+    margin-bottom: 10px;
+}
+.dyna-hide TH,
+.dyna-hide TD {
+    padding: 0 10px;
+    font-size: 11px;
+}
+
+.dyna-hide TH {
+    font-family: ProximaNovaBold, Arial, sans-serif;
+    background-color: #eee;
+    border-bottom: 1px solid #888;
+}
+
+.dyna-hide TD {
+    border-bottom: 1px solid #ccc;
+}
+
+.dyna-hide TR:last-child TD {
+    border: none;
+}

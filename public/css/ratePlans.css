@@ -1,0 +1,45 @@
+/*
+ * @author dylan.greene
+ */
+
+
+/* IBR plan colors. Of course Tier 2 and 4 are the same...followed by Tier 3. */
+.IBR-TIER1 {background-color:#99cc33; /* replace with ei.styles.ratePlan.low */ }
+.IBR-TIER2,
+.IBR-TIER4 {background-color:#ffbb11; /* replace with ei.styles.ratePlan.high */ }
+.IBR-TIER3 {background-color:#ee5500; /* replace with ei.styles.ratePlan.veryHigh */ }
+
+/* CPP plan colors */
+.CPP-low {background-color:#99cc33; /* replace with ei.styles.ratePlan.low */}
+.CPP-medium {background-color:#ccc; /* replace with ei.styles.ratePlan.gray */}
+.CPP-high {background-color: #ffbb11;/* replace with ei.styles.ratePlan.high */}
+.CPP-veryHigh, .CPP-criticalPeak {background-color: #ee5500;/* replace with ei.styles.ratePlan.veryHigh */}
+.CPP-free {background-color:#88ddee; /* replace with ei.styles.ratePlan.free */}
+
+/* PTR plan colors */
+.PTR-low {background-color:#99cc33; /* replace with ei.styles.ratePlan.low */}
+.PTR-medium {background-color:#ccc; /* replace with ei.styles.ratePlan.gray */}
+.PTR-high {background-color:#ee5500; /* replace with ei.styles.ratePlan.veryHigh */}
+.PTR-veryHigh {background-color:#ee5500;/* replace with ei.styles.ratePlan.veryHigh */}
+.PTR-rebate {background-color:#33bbcc; /* replace with ei.styles.ratePlan.rebate */ }
+.PTR-rebate-text {color:#33bbcc; /* replace with ei.styles.ratePlan.rebate */ }
+.PTR-free {background-color:#88ddee; /* replace with ei.styles.ratePlan.free */}
+
+/* DA-RTP plan colors */
+.DAR-low {background-color:#99cc33; /* replace with ei.styles.ratePlan.low */}
+.DAR-medium {background-color:#ccc; /* replace with ei.styles.ratePlan.gray */}
+.DAR-high {background-color:#ee5500; /* replace with ei.styles.ratePlan.high */}
+.DAR-veryHigh {background-color:#ee5500;/* replace with ei.styles.ratePlan.veryHigh */}
+.DAR-free {background-color:#88ddee; /* replace with ei.styles.ratePlan.free */}
+
+/* TOU plan colors */
+.TOU-low {background-color:#99cc33; /* replace with ei.styles.ratePlan.low */}
+.TOU-high {background-color:#ffbb11;/* replace with ei.styles.ratePlan.high */}
+
+/* FUll color pallette */
+.FLR-low {background-color:#99cc33; /* replace with ei.styles.ratePlan.low */}
+.FLR-mid {background-color:#ffee44; /* replace with ei.styles.ratePlan.medium */}
+.FLR-ratePlan-high {background-color:#ffbb11;/* replace with ei.styles.ratePlan.high */}
+.FLR-veryHigh {background-color:#ee5500;/* replace with ei.styles.ratePlan.veryHigh */}
+.FLR-rebate {background-color:#33bbcc;/* replace with ei.styles.ratePlan.rebate */}
+.FLR-free {background-color:#88ddee; /* replace with ei.styles.ratePlan.free */}
