@@ -1,10 +1,13 @@
 body {
-    background: #e0e0e0 url(images/bg-diagonal.png);
+    background: #ccc;
 }
 
 .container {
     -moz-border-radius: 4px;
     margin-bottom: 10px;
+
+    -webkit-border-radius: 4px;
+
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
@@ -284,6 +287,30 @@ h2.banner_title {
     background-image: url(pages/opportunities.png);
 }
 
+.page_image.benefits {
+    background-image: url(pages/op/benefits.png);
+}
+
+.page_image.diversity {
+    background-image: url(pages/op/diversity.JPG);
+}
+
+.page_image.college {
+    background-image: url(pages/op/intern.JPG);
+}
+
+.page_image.interview {
+    background-image: url(pages/op/coders.JPG);
+}
+
+.page_image.apply {
+    background-image: url(pages/op/adelia.JPG);
+}
+
+.page_image.dc {
+    background-image: url(pages/op/dudes.JPG);
+}
+
 .devonly {
     font-size: 20px;
     line-height: normal;
@@ -300,4 +327,8 @@ h2.banner_title {
     color: black;
     padding: 8px 40px;
     display: inline-block;
+}
+
+.youtubelink {
+    font-size: 20px;
 }
