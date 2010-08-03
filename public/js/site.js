@@ -44,7 +44,6 @@ $(document).ready(function(){
                 });
             },
             select: function(event, ui) {
-                console.log('done');
                 document.location = ui.item.url;
             }
         })
@@ -64,9 +63,38 @@ $(document).ready(function(){
             }
 
             return $( "<li></li>" )
-                .data( "item.autocomplete", item )
-                .append( "<a>" + item.title + "<br>" + item.location + "</a>" )
+                .data( 'item.autocomplete', item )
+                .append( '<a>' + item.title + '<br><span class="sub">' + item.location + '</span></a>' )
                 .appendTo( ul );
             };
     }
+
+  if (!('placeholder' in document.createElement('input'))) {
+    $this = $q;
+    var placeholder = $this.attr('placeholder');
+
+    var insert_placeholder = function() {
+        if ($this.val() === '') {
+        $this.val(placeholder);
+        $this.addClass('placeholder');
+        }
+    };
+
+    var remove_placeholder = function() {
+        if ($this.val() === placeholder) {
+        $this.val('');
+        $this.removeClass('placeholder');
+        }
+    };
+
+    $this.bind('focus', remove_placeholder);
+    $this.bind('blur', insert_placeholder);
+    // https://developer.mozilla.org/En/Core_JavaScript_1.5_Reference/Objects/Function/Apply
+    insert_placeholder.apply(this);
+
+    // prevent submission with default placeholder
+    $this.parents('form').bind('submit', function() {
+        remove_placeholder();
+    });
+  }
 });

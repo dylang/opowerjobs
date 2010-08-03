@@ -342,3 +342,18 @@ h2.banner_title {
     font-size: 12px;
     line-height: 1.1em;
 }
+
+#q {
+    width: 400px;
+    margin-bottom: 30px;
+}
+
+.ui-menu-item a .sub {
+    color: #777;
+}
+
+.ui-menu-item a:hover .sub {
+    color: white;
+}
+
+.placeholder { color: #777; }
