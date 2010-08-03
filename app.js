@@ -26,6 +26,8 @@ jobengine.init(pages.page_array, function(jobs) {
     app.get('/jobs/search/:query', function(req, res) { jobengine.search(req, res) });
 
     app.get('/jobs/:location/:category/:long_id/:id', function(req, res) { jobengine.job_location_department_long_name_id(req, res) });
+    app.get('/jobs/apply/:location/:category/:long_id/:id', function(req, res) { jobengine.apply(req, res) });
+
     app.get('/jobs/:location/:department', function(req, res) { jobengine.job_location_department(req, res) });
     app.get('/jobs/:location', function(req, res) { jobengine.job_location(req, res) });
 

@@ -357,3 +357,12 @@ h2.banner_title {
 }
 
 .placeholder { color: #777; }
+
+.overiframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: white;
+}
