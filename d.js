@@ -29,7 +29,7 @@ if(test) {
 playlist(intro, function(err, list) {
   if(err) throw err;
   if(!list.length) throw new Error("No files in the playlist.");
-  say('"Party time!" Press [enter] anytime to restart');
+  say('\n\n"Party time!" Press [enter] anytime to restart\n');
   var playing = play(intro);
 
   // Watch changes on any files of the playlist
@@ -165,7 +165,7 @@ function startTest(test) {
 }
 
 say = function(message) {
-  sys.puts('DJs: '+message);
+  sys.puts('\x1B[1;36m' + 'DJs: ' + message + '\x1B[0m');
 }
 
 exports.playlist = playlist;
