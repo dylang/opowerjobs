@@ -1,0 +1,8 @@
+{ "name": "opowerjobs",
+  "version": "0.1",
+  "description": "OPOWER job site",
+  "author": "Dylan Greene <dylang@gmail.com>",
+  "bin": {  },
+  "scripts": { },
+  "dependents": {  }
+}

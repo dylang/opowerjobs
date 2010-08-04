@@ -9,7 +9,7 @@ var sys = require('sys'),
   intro = args.intro,
   dir = args.dir,
   test = args.test;
-  
+
 // Run the tests in parallel
 if(test) {
   if(test === true) {
@@ -25,15 +25,16 @@ if(test) {
     startTest(test);
   }
 }
-  
+
 playlist(intro, function(err, list) {
   if(err) throw err;
   if(!list.length) throw new Error("No files in the playlist.");
   say('"Party time!" Press [enter] anytime to restart');
   var playing = play(intro);
-  
+
   // Watch changes on any files of the playlist
   list.forEach(function(file) {
+      say('Watching ' + file);
       fs.watchFile(file, {interval : 500}, function(curr, prev) {
       if (curr.mtime.valueOf() != prev.mtime.valueOf() || curr.ctime.valueOf() != prev.ctime.valueOf()) {
         say("playlist updated: " + file);
@@ -42,7 +43,7 @@ playlist(intro, function(err, list) {
       }
     });
   });
-  
+
   // Listen for commands
   stdin.setEncoding('utf8');
   stdin.addListener('data', function (chunk) {
@@ -55,7 +56,7 @@ playlist(intro, function(err, list) {
         break;
     }
   });
-  
+
   function play(intro) {
     var playing = spawn('node', [intro]);
     playing.stdout.addListener('data', function(data) {
@@ -95,7 +96,7 @@ function playlist(file, callback) {
       deps[path.join(match[1] == '/'? '' : directory , (match[1] != "./"? match[1] : '') + match[2] + '.js')] = true;
     }
     deps = Object.keys(deps);
-    
+
     i = depsNb = deps.length;
     // Make sure that the dependency exists and recursively search its dependencies;
     do {
@@ -116,20 +117,20 @@ function playlist(file, callback) {
 
 function parse(argv) {
   var intro, dIndex, dir, tIndex, test;
-  
+
   dIndex = argv.indexOf('-d');
   if(dIndex == -1) { dIndex = argv.indexOf('--dir'); }
   if(dIndex != -1) { dir = argv[dIndex +1]; }
-  
+
   tIndex = argv.indexOf('-t');
   if(tIndex == -1) { tIndex = argv.indexOf('--test'); }
   if(tIndex != -1) { test = tIndex +1 == dIndex? true : argv[tIndex +1] || true; }
-  
-  intro = (dIndex == 2 || tIndex == 2)? false : argv[2]; 
-  
+
+  intro = (dIndex == 2 || tIndex == 2)? false : argv[2];
+
   // Add potentially missing extension
   intro = intro? intro + (intro.match(/\.js$/)? '' : '.js') : 'app.js';
-  
+
   return {
     intro: intro,
     dir: dir,
@@ -150,7 +151,7 @@ function startTest(test) {
             _print("--------------- stdout --------------", stdout);
             _print("--------------- stderr --------------", stderr);
           sys.puts("============= Tests End =============");
-          
+
           function _print(header, data) {
             if(data) {
               sys.puts(header);
