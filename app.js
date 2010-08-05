@@ -1,6 +1,6 @@
 
-var connect = require('connect'),
-    express = require('express'),
+var connect = require('./deps/connect'),
+    express = require('./deps/express'),
     log = require('./lib/util/log').from(__filename),
     content = require('./lib/content'),
     jobs = require('./lib/jobs/jobs'),
