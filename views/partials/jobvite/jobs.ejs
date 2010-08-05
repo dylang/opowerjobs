@@ -1,0 +1,11 @@
+<li>
+    <div class="strong"><%= jobs[0].category %></div>
+    <ul>
+        <% jobs.forEach(function(job) { %>
+        <li>
+
+            <a href="<%= job['url'] %>"><%= job.title %></a>
+        </li>
+        <% }); %>
+    </ul>
+</li>

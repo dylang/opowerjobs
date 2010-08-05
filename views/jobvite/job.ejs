@@ -1,0 +1,29 @@
+<div class="content">
+    
+
+    <div class="span-18">
+        <div class="strong"><%= job.title %></div>
+
+        <div class=""><%= job.location %></div>
+
+        <p>
+            <%- job.description %>
+        </p>
+    </div>
+
+    <div class="span-3 last">
+        <a href="/jobs">All Openings</a>
+        
+        <% ['location', 'date'].forEach(function(i) { %>
+        <div class="strong" style="padding-top: 10px;"><%= i %></div>
+            <%- job[i] %>
+        <% }); %>
+
+        <div class="strong" style="padding-top: 10px;">Interested?</div>
+            <a href="<%= job.url.apply %>">Apply Online</a>
+
+    </div>
+
+
+</div>
+

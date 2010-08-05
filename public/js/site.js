@@ -4,6 +4,9 @@
 $(document).ready(function(){
     $(".scrollable").scrollable({circular: true});
 
+    $("ul.tabs").tabs("div.panes > div", {effect: 'fade'});
+
+
     $('.logo').bind('click', function(){
         document.location = '/';
     });

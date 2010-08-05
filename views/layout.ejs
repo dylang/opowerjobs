@@ -18,7 +18,7 @@
             <div class="header rounded">
                 <div class="nav">
                     <img class="logo" src="/public/css/images/logo.png" alt="opower" />
-                    <%- partial("nav", { collection: pages, as: "page", locals: { active: active }} ) %>
+                    <%- partial("nav", { collection: pages, as: "page", locals: { active: locals.active }} ) %>
                 </div>
 
                 <div class="taglines">
@@ -44,6 +44,7 @@
     <script type="text/javascript" src="/public/js/jquery-1.4.2.js"></script>
     <script type="text/javascript" src="/public/js/jquery-ui-1.8.2.custom.min.js"></script>
     <script type="text/javascript" src="/public/js/scrollable.js"></script>
+    <script type="text/javascript" src="/public/js/tabs.js"></script>
     <script type="text/javascript" src="/public/js/site.js"></script>
 </body>
 </html>

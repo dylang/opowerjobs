@@ -1,0 +1,32 @@
+<div class="content">
+
+    <div class="span-24">
+    <form class="search" action="/jobs/search" method="post">
+        <label for="q"></label><input id="q" value="<%= locals.query ? locals.query : '' %>" placeholder="Find your next job..." />
+        <input type="submit" class="hide" />
+    </form>
+    </div>
+
+    <div class="span-11">
+        <% if (jobs.locations['san-francisco']) { %>
+        <div class="strong">San Francisco</div>
+        <ul>
+            <%- partial(locals.departments ? 'jobvite/department' : 'jobvite/jobs', { collection: jobs.locations['san-francisco'], as: "jobs", locals: { location: 'san-francisco' }} ) %>
+        </ul>
+        <% } else { %>
+            &nbsp;
+        <% }  %>
+
+
+    </div>
+
+    <div class="span-11">
+        <% if (jobs.locations['dc-northern-virgina']) { %>
+        <div class="strong">Northern Virgina</div>
+        <ul>
+            <%- partial(locals.departments ? 'jobvite/department' : 'jobvite/jobs', { collection: jobs.locations['dc-northern-virgina'], as: "jobs", locals: { location: 'dc-northern-virgina' }} ) %>
+        </ul>
+        <% } %>
+    </div>
+</div>
+

@@ -32,6 +32,7 @@ A:hover {
     display: inline-block;
 }
 
+A:focus,
 A:active {
     outline: none;
 }
