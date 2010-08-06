@@ -1,9 +1,10 @@
+require.paths.unshift("./deps");
 
-var connect = require('./deps/connect'),
-    express = require('./deps/express'),
+var connect = require('connect'),
+    express = require('express'),
     log = require('./lib/util/log').from(__filename),
     content = require('./lib/content'),
-    jobs = require('./lib/jobs/jobs'),
+    jobs = require('./lib/jobs'),
     viewsDir = __dirname + '/views',
 
     app = express.createServer(/*connect.logger()*/);
@@ -19,9 +20,9 @@ app.use('/', content.createServer( {views: viewsDir }) );
 app.use('/jobs', jobs.createServer( { views: viewsDir, jobvite_company_id: 'qgY9Vfw2' }) );
 app.use('/public', connect.staticProvider(__dirname + '/public'));
 
-app.get('/:a?/:b?/:c?', function(req, res, next) { log('404'); log(req.url); res.send('not found'); });
+app.get('/:a?/:b?/:c?', function(req, res, next) { log('404'); log(req.url); res.send('404: ' + req.url + ' not found'); });
 
-app.listen(3000);
+app.listen(parseInt(process.env.PORT || 3000), null);
 log('Starting OPOWER JOBS...');
 
 

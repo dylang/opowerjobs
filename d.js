@@ -80,7 +80,7 @@ function playlist(file, callback) {
   if(file && !file.match(/\.js$/)) { file+= '.js'; }
   fs.readFile(file, function(err, data) {
     if(err) {
-      if(file) say('"Can\'t get my hands on '+ intro +'"');
+      if(file) say('"Can\'t get my hands on '+ file +'"');
       return callback.apply(global, [null, []]);
     }
 
