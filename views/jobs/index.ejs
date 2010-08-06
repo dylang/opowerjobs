@@ -1,11 +1,5 @@
 <div class="content">
 
-    <div class="span-24">
-    <form class="search" action="/jobs/search" method="post">
-        <label for="q"></label><input id="q" value="<%= locals.query ? locals.query : '' %>" placeholder="Find your next job..." />
-        <input type="submit" class="hide" />
-    </form>
-    </div>
 
     <div class="span-11">
         <% if (jobs.locations['san-francisco']) { %>

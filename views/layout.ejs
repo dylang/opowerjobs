@@ -20,16 +20,19 @@
                     <img class="logo" src="/public/css/images/logo.png" alt="opower" />
                     <%- partial("nav", { collection: pages, as: "page", locals: { active: locals.active }} ) %>
                 </div>
-
+                <% if (active.search('jobs') === -1) { %>
                 <div class="taglines">
                     <div class="tag1">Our company was founded on a simple premise:</div>
                     <div class="tag2">it's time to engage the 300 million Americans who are in the dark about their energy use.</div>
                 </div>
-
+                <% } %>
             </div>
         </div>
         <div class="span-24">
             <div class="body rounded">
+            <% if (active.search('jobs') !== -1) { %>
+                <%- partial('jobs/nav', { locals: locals } ) %>
+            <% } %>
 
             <%- body %>
             </div>
