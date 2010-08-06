@@ -367,3 +367,23 @@ h2.banner_title {
     height: 40px;
     background-color: white;
 }
+
+.tabs LI A {
+    width: 100%;
+    display: inline-block;
+    padding-left: 4px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+
+}
+.tabs LI A:hover {
+    text-decoration: none;
+    background: #5EB7DF;
+    color: white;
+    -moz-border-radius: 10px;
+}
+
+.tabs LI A.current {
+    background: #0099DD;
+    color: white;
+}
