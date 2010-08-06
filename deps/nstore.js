@@ -68,7 +68,7 @@ function nStore(filename, filterFn, isTemp) {
       lastCompact = Date.now();
 
   // Open a single handle for reading and writing
-  fd = fs.openSync(filename, 'a+'); //"a+"
+  fd = fs.openSync(filename, 'r'); //"a+"
 
   // Generates a random unique 16 char base 36 string
   // (about 2^83 possible keys)
