@@ -1,3 +1,4 @@
 #!/bin/bash
+cd ~/projects/ojobs
 git svn rebase
 git push heroku master

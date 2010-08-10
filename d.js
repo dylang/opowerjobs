@@ -58,9 +58,9 @@ playlist(intro, function(err, list) {
   });
 
   function play(intro) {
-    var playing = spawn('node', [intro]);
+    var playing = spawn(process.execPath, [intro]); 
     playing.stdout.addListener('data', function(data) {
-      sys.print(data);
+        sys.print(data);
     });
     playing.stderr.addListener('data', function(data) {
       sys.print(data);
