@@ -396,3 +396,31 @@ h2.banner_title {
 .sub_nav A {
     text-align: center;
 }
+
+
+.job .banner {
+    background-color: #0099DD;
+    color: white;
+    padding-bottom: 20px;
+    height: auto;
+}
+
+.job .banner .title {
+    font-size: 46px;
+    line-height: 1em;
+}
+
+.job .banner .location {
+    padding-left: 5px;
+}
+
+.job .banner {
+    margin-left: -20px;
+    width: 1020px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}

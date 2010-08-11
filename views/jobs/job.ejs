@@ -1,28 +1,42 @@
-<div class="content">
 
-    <div class="span-18">
-        <div class="strong"><%= job.title %></div>
+<div class="job">
 
-        <div class=""><%= job.location %></div>
-
-        <p>
-            <%- job.description %>
-        </p>
+    <div class="banner">
+        <div class="content">
+            <div class="title"><%= job.title %></div>
+            <div class="location"><%= job.location %></div>
+        </div>
     </div>
 
-    <div class="span-3 last">
-        <a href="/jobs">All Openings</a>
-        
-        <% ['location', 'date'].forEach(function(i) { %>
-        <div class="strong" style="padding-top: 10px;"><%= i %></div>
-            <%- job[i] %>
-        <% }); %>
 
-        <div class="strong" style="padding-top: 10px;">Interested?</div>
-            <a href="<%= job.url.apply %>">Apply Online</a>
+    <div class="content">
+
+        <div class="span-18">
+
+
+            <p>
+                <%- job.description %>
+            </p>
+
+
+            <div style="font-size: smaller; margin-top: 40px; line-height: 1.1em;">
+                <strong>About the Company (we should just link to the rest of this site)</strong>
+                <p>Founded in June 2007, OPOWER creates innovative software products that promote energy efficiency by empowering residential consumers to make better decisions on their energy usage. Through a combination of home energy reports, carbon calculators, web applications, data analytics, and customer service tools, OPOWER is reshaping the outlook on home energy demand and achieving unprecedented energy savings across hundreds of thousands of households. &nbsp;The company is well funded and making big headlines as they stay on track to reach two million households by the end of 2010 and save enough energy to power a city of 150,000 residents!</p>
+
+                <strong>Can we make these graphical badges?</strong>
+                <p>VISAS/TRANSFER SPONSORSHIP AVAILABLE WHEN APPLICABLE.</p>
+                <p>NO PHONE CALLS, PLEASE. THE FASTEST WAY TO GET A RESPONSE IS BY APPLYING ONLINE. (IF YOU CALL THEN WE ARE JUST GOING TO SEND YOU TO THIS SITE).</p>
+                <p>NO EXTERNAL RECRUITERS.</p>
+            </div>
+
+
+        </div>
+
+        <div class="span-3 last">
+                <a href="<%= job.url.apply %>">Apply for this position now</a>
+          </div>
+
 
     </div>
-
 
 </div>
-
