@@ -272,9 +272,6 @@ h2.banner_title {
     padding-bottom: 10px;
 }
 
-.content li {
-    line-height: 200%;
-}
 
 .page_image.culture {
     background-image: url(pages/culture.png);
