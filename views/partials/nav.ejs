@@ -1,3 +1,3 @@
-<% if (page.url.search("/") == -1 && page.url != '') { %>
+<% if (page.url.search("/") == -1 && !page.noMenu) { %>
 <a href="/<%= page.url %>" class="rounded-bl rounded-br <%= locals.active == page.url ? "active" : "" %>"><%= page.label %></a>
 <% } %>
