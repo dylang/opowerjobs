@@ -6,7 +6,7 @@
     <ul>
         <% jobs.forEach(function(job) { %>
         <li>
-            <a href="<%= job['url'] %>"><%= job.title %></a>
+            <a href="<%= job.url.long_url %>"><%= job.title %></a>
         </li>
         <% }); %>
     </ul>
