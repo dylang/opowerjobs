@@ -4,37 +4,40 @@
 
     <div class="clear"></div>
 
-
-    <div class="span-11 first">
-        <form class="search" action="/search" method="post">
-            <label for="q"></label><input id="q" value="<%= locals.query ? locals.query : '' %>" placeholder="Find your next job..." />
-            <input type="submit" class="hide" />
-        </form>
-    </div>
-
-    <div class="span-5">
-        <div class="sub_nav">
-            <a class="<%= locals.page && page.url.search('how-to-apply') !== -1 ? 'current' : '' %>" href="/how-to-apply">How to Apply</a>
+    <div class="span-25 first last">
+        <div class="span-11 first">
+            <form class="search" action="/search" method="post">
+                <label for="q"></label><input id="q" value="<%= locals.query ? locals.query : '' %>" placeholder="Find your next job..." />
+                <input type="submit" class="hide" />
+            </form>
         </div>
-    </div>
 
-    <div class="span-5 last">
-        <div class="sub_nav">
-            <a class="<%= locals.page && page.url.search('interview-process') !== -1 ? 'current' : '' %>" href="/interview-process">Interview Process</a>
+        <div class="span-5">
+            <div class="sub_nav">
+                <a class="<%= locals.page && page.url.search('how-to-apply') !== -1 ? 'current' : '' %>" href="/how-to-apply">How to Apply</a>
+            </div>
         </div>
+
+        <div class="span-5 append-2 last">
+            <div class="sub_nav">
+                <a class="<%= locals.page && page.url.search('interview-process') !== -1 ? 'current' : '' %>" href="/interview-process">Interview Process</a>
+            </div>
+        </div>
+        <div class="clear"></div>
+
     </div>
 
-    <div class="clear"></div>
+    <% if (locals.job)  { %>
 
-    <div class="span-24 last first">
+    <div class="span-25 last first">
 
         <div class="job_nav">
             <a href="/">All jobs</a>
-            <% if (locals.location && all_locations[locals.location]) { %>
-                - <a href="/<%= location %>"><%= all_locations[location] %></a>
+            <% if (all_locations[job.url.location]) { %>
+                - <a href="/<%= job.url.location %>"><%= all_locations[job.url.location] %></a>
             <% } %>
-            <% if (locals.department && all_departments[locals.department]) { %>
-                - <a href="/departments/<%= department %>"><%= all_departments[department] %></a>
+            <% if (all_departments[job.url.department]) { %>
+                - <a href="/departments/<%= job.url.department %>"><%= all_departments[job.url.department] %></a>
             <% } %>
             <% if (locals.job) { %>
                 - <%= job.title %>
@@ -45,5 +48,35 @@
         </div>
 
     </div>
+    <% } %>
+
+    <% if (locals.location)  { %>
+
+    <div class="span-25 last first">
+
+        <div class="job_nav">
+            <a href="/">All jobs</a>
+            <% if (all_locations[locals.location]) { %>
+                - <a href="/<%= location %>"><%= all_locations[location] %></a>
+            <% } %>
+            <% if (all_departments[locals.department]) { %>
+                - <a href="/departments/<%= locals.department %>"><%= all_departments[locals.department] %></a>
+            <% } %>
+        </div>
+
+    </div>
+    <% } %>
+    <% if (locals.query)  { %>
+
+    <div class="span-25 last first">
+
+        <div class="job_nav">
+             Search for "<%= query %>"
+        </div>
+
+    </div>
+    <% } %>
+
+
 </div>
 <div class="clear"></div>
