@@ -14,6 +14,8 @@ body {
     background: white;
 }
 
+
+
 .header {
 }
 
@@ -64,7 +66,7 @@ A:active {
 }
 
 .body p {
-    padding: 0 90px 10px 0;
+    padding: 0 0 10px 0;
 }
 
 .body .content {
@@ -420,6 +422,25 @@ h2.banner_title {
     -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
 
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.job .similar {
+    padding: 10px;
+    background-color: #0099DD;
+    color: white;
+    margin-top: 20px;
+}
+.job .similar A {
+    color: yellow;
+    text-decoration: underline;
+}
+
+
+
+.shadowed {
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
