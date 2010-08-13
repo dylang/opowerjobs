@@ -4,9 +4,6 @@
     <title>OPOWER Jobs</title>
     <link href="/css/jqueryui/flick/jquery-ui-1.8.2.custom.css" rel="stylesheet"  type="text/css"/>
     <link href="/css/reset.css" rel="stylesheet"  type="text/css"/>
-    <link href="/css/reset.css" rel="stylesheet"  type="text/css"/>
-    
-    <link href="/css/reset.css" rel="stylesheet"  type="text/css"/>
     <link href="/css/grid.css"  rel="stylesheet"  type="text/css"/>
     <link href="/css/fonts.css" rel="stylesheet"  type="text/css"/>
     <link href="/css/base.css"  rel="stylesheet"  type="text/css"/>
@@ -14,12 +11,19 @@
 </head>
 <body>
     <div class="container">
-        <div class="span-24">
-            <div class="header rounded">
+        <div class="span-25">
+            <div class="header">
                 <div class="nav">
                     <img class="logo" src="/css/images/logo.png" alt="opower" />
                     <%- partial("nav", { collection: pages, as: "page", locals: { active: locals.active }} ) %>
                 </div>
+            </div>
+            <div class="body">
+            <% if (true || active.search('jobs') !== -1) { %>
+                <%- partial('jobs/nav', { locals: locals } ) %>
+            <% } %>
+            </div>
+            <div class="header">
                 <% if (active.search('jobs') === -1) { %>
                 <div class="taglines">
                     <div class="tag1">Our company was founded on a simple premise:</div>
@@ -28,16 +32,13 @@
                 <% } %>
             </div>
         </div>
-        <div class="span-26">
-            <div class="body rounded">
-            <% if (active.search('jobs') !== -1) { %>
-                <%- partial('jobs/nav', { locals: locals } ) %>
-            <% } %>
+        <div class="span-25">
 
-            <%- body %>
+            <div class="body">
+                <%- body %>
             </div>
         </div>
-        <div class="span-24">
+        <div class="span-25">
             <div class="footer rounded">
             
             </div>
@@ -49,6 +50,7 @@
     <script type="text/javascript" src="/js/scrollable.js"></script>
     <script type="text/javascript" src="/js/tabs.js"></script>
     <script type="text/javascript" src="/js/site.js"></script>
+    <script type="text/javascript" src="/js/toggleGrid.js"></script>
 
     <script type="text/javascript">
 

@@ -22,7 +22,7 @@ $(document).ready(function(){
         $('.search').bind('submit', function() {
 
             var search_for = fix_query($q.val());
-            document.location = '/jobs/search/' + search_for;
+            document.location = '/search/' + search_for;
 
             return false;
         });
@@ -40,7 +40,7 @@ $(document).ready(function(){
                 var query = fix_query(request.term);
 
                 $.ajax({
-                    url: '/jobs/search/' + query + '/json',
+                    url: '/search/' + query + '/json',
                     dataType: "json",
                     data: request,
                     success: function( data ) {
