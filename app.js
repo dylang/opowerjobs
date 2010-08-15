@@ -11,51 +11,53 @@ var connect = require('connect'),
         jobs = require('./lib/jobs'),
         viewsDir = __dirname + '/views',
 
-        app = express.createServer();
+        app = express.createServer(),
 
 
-var assets = assetManager({
-    css: {
-        route: /css\/compressed\.css/,
-        path: './public/css/',
-        dataType: 'css',
-        debug: false,
-        files: [
-            'jqueryui/flick/jquery-ui-1.8.2.custom.css',
-            'reset.css',
-            'grid.css',
-            'fonts.css',
-            'base.css',
-            'jobs.css'
-        ],
-        preManipulate: {
-            '^': [
-                //assetHandler.yuiCssOptimize,
-                assetHandler.fixVendorPrefixes,
-                assetHandler.fixGradients,
-                assetHandler.replaceImageRefToBase64(__dirname + '/public')
-            ]
-        },
-        postManipulate: {
-            '^': [
-            ]
-        }
-    },
-    js: {
-        route: /js\/compressed\.js/,
-        path: './public/js/',
-        dataType: 'javascript',
-        debug: false,
-        files: [
-            'jquery-1.4.2.js',
-            'jquery-ui-1.8.2.custom.min.js',
-            'scrollable.js',
-            'tabs.js',
-            'site.js',
-            'toggleGrid.js'
-        ]
-    }
-});
+        assets = assetManager({
+            css: {
+                route: /css\/compressed\.css/,
+                path: './public/css/',
+                dataType: 'css',
+                debug: false,
+                files: [
+                    'jqueryui/flick/jquery-ui-1.8.2.custom.css',
+                    'reset.css',
+                    'grid.css',
+                    //'fonts.css',
+                    'base.css',
+                    'jobs.css'
+                ],
+                preManipulate: {
+                    '^': [
+                        assetHandler.fixVendorPrefixes,
+                        assetHandler.fixGradients//,
+                        //assetHandler.replaceImageRefToBase64(__dirname + '/public')
+                    ]
+                },
+                postManipulate: {
+                    '^': [
+                        assetHandler.yuiCssOptimize
+
+                    ]
+                }
+            },
+            js: {
+                route: /js\/compressed\.js/,
+                path: './public/js/',
+                dataType: 'javascript',
+                debug: false,
+                files: [
+                    'jquery-1.4.2.js',
+                    'jquery-ui-1.8.2.custom.min.js',
+                    'scrollable.js',
+                    'tabs.js',
+                    'site.js',
+                    'toggleGrid.js'
+                ]
+            }
+        });
+
 app.configure(function(){
     app.set('views', viewsDir);
     //app.set('reload views', 1000);

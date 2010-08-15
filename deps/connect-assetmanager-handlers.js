@@ -5,31 +5,40 @@ module.exports = new handlers();
 
 function handlers()
 {
-	// Pre hook only as of now
+	function yuiOptimize(options, callback) {
+		var tmpName = '/tmp/node-optimize-'+Date.now()+Math.floor(Math.random()*1000000000000)+Math.floor(Math.random()*1000000000000)+'.'+options.type;
+
+		fs.writeFile(tmpName, options.file, function (err) {
+			if (err) {
+				throw err;
+			} else {
+				exec('java -jar ../deps/yuicompressor-2.4.2.jar --type '+options.type+' '+tmpName, { cwd: __dirname }, function (err, stdout, stderr) {
+					if (err) {
+						console.log(err);
+					} else {
+						callback(stdout);
+
+						fs.unlink(tmpName, function (err) {
+							if (err) {
+								console.log(err);
+							}
+						});
+					}
+				});
+			}
+		});
+	}
 	this.yuiJsOptimize = function (file, path, index, isLast, callback) {
-		exec('java -jar deps/yuicompressor-2.4.2.jar --type js '+path, function (err, stdout, stderr) {
-			if (err) {
-				console.log(err);
-			} else {
-				callback(stdout);
-			}
-		});
+		yuiOptimize({
+			'file': file
+			, 'type': 'js'
+		}, callback);
 	};
-	// Pre hook only as of now
 	this.yuiCssOptimize = function (file, path, index, isLast, callback) {
-        console.log('before...');
-		exec('java -jar deps/yuicompressor-2.4.2.jar --type css '+path, function (err, stdout, stderr) {
-            console.log('after...');
-
-
-			if (err) {
-				console.log(err);
-			} else {
-                console.log('no err...');
-
-				callback(stdout);
-			}
-		});
+		yuiOptimize({
+			'file': file
+			, 'type': 'css'
+		}, callback);
 	};
 	this.fixVendorPrefixes = function (file, path, index, isLast, callback) {
 		callback(file.replace(/-vendor-([^:]+): *([^;]+);/g, ' \
@@ -44,8 +53,7 @@ function handlers()
 		callback(file.replace(/gradient: *([^_]+)_([^;]+);/g, function(str, c1, c2) {
 			var msieC = [];
 			[c1, c2].forEach(function (color) {
-				if (color.match(/rgba/))
-				{
+				if (color.match(/rgba/)) {
 					var opacity = Math.floor(parseFloat(color.match(/([0-9]\.?([0-9]+)?)\) *$/)[1]) * 255).toString(16);
 					msieC.push('#'+opacity+color.match(/\((.*?)\,(.*?)\,(.*?),/).splice(1).map(function(val) {
 						if (val.length === 1) {
@@ -99,11 +107,9 @@ function handlers()
 							console.log('Failed: '+root+filePath);
 						} else {
 							var fileData = data;
-							fs.stat(root+filePath, function(err, data)
-							{
+							fs.stat(root+filePath, function(err, data) {
 								// Keep files under 32KB since IE doesn't like it bigger then that.
-								if (data.size < 32768)
-								{
+								if (data.size < 32768) {
 									content = content.replace(
 										new RegExp(filePath),
 										'data:image/png;base64,'+base64_encode(fileData)
