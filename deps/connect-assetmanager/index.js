@@ -1,1 +1,1 @@
-module.exports = require('./lib/assetmanager.js');
+module.exports = require('./lib/assetmanager');
