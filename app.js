@@ -24,7 +24,7 @@ var connect = require('connect'),
                     'jqueryui/flick/jquery-ui-1.8.2.custom.css',
                     'reset.css',
                     'grid.css',
-                    //'fonts.css',
+                    'fonts.css',
                     'base.css',
                     'jobs.css'
                 ],
@@ -37,7 +37,7 @@ var connect = require('connect'),
                 },
                 postManipulate: {
                     '^': [
-                        assetHandler.yuiCssOptimize
+                        //assetHandler.yuiCssOptimize
 
                     ]
                 }
