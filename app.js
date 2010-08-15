@@ -30,8 +30,8 @@ var connect = require('connect'),
                 ],
                 preManipulate: {
                     '^': [
-                        assetHandler.fixVendorPrefixes,
-                        assetHandler.fixGradients//,
+                        //assetHandler.fixVendorPrefixes,
+                        //assetHandler.fixGradients//,
                         //assetHandler.replaceImageRefToBase64(__dirname + '/public')
                     ]
                 },
