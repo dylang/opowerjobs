@@ -1,0 +1,130 @@
+
+.scrollable {
+    margin-left: -1px;
+}
+
+.scrollable .item {
+    position: relative;
+    height: 294px;
+    width: 980px;
+}
+
+.scrollable h2 {
+    display: none;
+}
+
+.scrollable h3 {
+    display: none;
+    font-weight: bold;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 40px;
+    color: rgba(238, 232, 170, 0.8);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+
+}
+
+/*
+	root element for the scrollable.
+	when scrolling occurs this element stays still.
+*/
+.scrollable {
+
+	/* required settings */
+	position:relative;
+	overflow:hidden;
+	width: 980px;
+	height:294px;
+
+	/* custom decorations */
+	border:1px solid #ccc;
+	background: black;
+}
+
+/*
+	root element for scrollable items. Must be absolutely positioned
+	and it should have a extremely large width to accomodate scrollable items.
+	it's enough that you set the width and height for the root element and
+	not for this element.
+*/
+.scrollable .items {
+	/* this cannot be too large */
+	width:20000em;
+	position:absolute;
+	clear:both;
+}
+
+.items div {
+	float:left;
+	width:680px;
+}
+
+/* single scrollable item */
+.scrollable img {
+	float:left;
+	margin:20px 5px 20px 21px;
+	background-color:#fff;
+	padding:2px;
+	border:1px solid #ccc;
+	width:100px;
+	height:75px;
+
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+}
+
+/* active item */
+.scrollable .active {
+	border:2px solid #000;
+	position:relative;
+	cursor:default;
+}
+
+
+
+
+.browse {
+    position: absolute;
+    width: 440px;
+    height: 294px;
+    top: 0;
+    cursor: pointer;
+}
+
+.browse.left {
+    left: 0;
+}
+.browse.right {
+    right: 0;
+}
+
+
+
+.item.mac {
+    background: black url(pages/computer.png);
+}
+
+.item.scooter {
+    background: black url(pages/scooter.png);
+}
+
+.banner {
+    position: relative;
+    width: 980px;
+	height:294px;
+    margin: 10px 0;
+}
+
+h2.banner_title {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    font-weight: bold;
+    font-size: 60px;
+    line-height: normal;
+    color: rgba(238, 232,170, 0.7);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    width: 980px;
+}

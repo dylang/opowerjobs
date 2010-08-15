@@ -1,45 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>OPOWER Jobs</title>
+    <title>OPOWER Jobs <%= locals.title ? ' - ' + locals.title : '' %></title>
     <link href="/css/compressed.css" rel="stylesheet"  type="text/css"/>
 </head>
 <body>
     <div class="container">
-        <div class="span-25">
-            <div class="header">
-                <div class="nav">
-                    <img class="logo" src="/css/images/logo.png" alt="opower" />
-                    <%- partial("nav", { collection: pages, as: "page", locals: { active: locals.active }} ) %>
-                </div>
-            </div>
+        <div class="span-6 first">
+            <img class="logo" src="/css/images/logo.png" alt="opower" />
+            <ul class="nav">
+                <%- partial("nav", { collection: pages, as: "page", locals: { active: locals.active }} ) %>
+            </ul>
+        </div>
+
+        <div class="span-19 last">
             <div class="body">
+
+<!--
+
             <% if (true || active.search('jobs') !== -1) { %>
                 <%- partial('jobs/nav', { locals: locals } ) %>
             <% } %>
-            </div>
-            <div class="header">
                 <% if (active.search('jobs') === -1) { %>
                 <div class="taglines">
                     <div class="tag1">Our company was founded on a simple premise:</div>
                     <div class="tag2">it's time to engage the 300 million Americans who are in the dark about their energy use.</div>
                 </div>
                 <% } %>
-            </div>
-        </div>
-        <div class="span-25">
 
-            <div class="body">
+                -->
                 <%- body %>
+                <div class="clear"></div>
+                
             </div>
         </div>
-        <div class="span-25">
-            <div class="footer rounded">
-            
-            </div>
-        </div>
+
     </div>
 
+   
     <script type="text/javascript" src="/js/compressed.js"></script>
     <script type="text/javascript">
 

@@ -26,7 +26,11 @@ var connect = require('connect'),
                     'grid.css',
                     'fonts.css',
                     'base.css',
-                    'jobs.css'
+                    'defaults.css',
+                    'jobs.css',
+                    'navigation.css',
+                    'images.css',
+                    'job.css'
                 ],
                 preManipulate: {
                     '^': [

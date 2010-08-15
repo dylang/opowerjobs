@@ -1,0 +1,39 @@
+BODY {
+    background: #0099DD url(images/bg-header-nav-active.png) top repeat-x ; 
+    line-height: 1.3em;
+}
+
+A, .link {
+    color: #0099DD;
+}
+
+A:hover {
+    color: #5EB7DF;
+}
+
+A:focus,
+A:active {
+    outline: none;
+}
+
+
+H1 {
+    display: none;
+    color: #777;
+    padding: 20px 0 0 47px;
+}
+
+P {
+    padding: 0 0 10px 0;
+}
+
+H2 {
+    font-size: 12px;
+}
+
+
+.shadowed {
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}

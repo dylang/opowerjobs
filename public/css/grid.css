@@ -186,7 +186,7 @@ div.colborder {
 .pull-half,.pull-1, .pull-2, .pull-3, .pull-4, .pull-5, .pull-6, .pull-7, .pull-8, .pull-9, .pull-10, .pull-11, .pull-12,
 .pull-13, .pull-14, .pull-15, .pull-16, .pull-17, .pull-18, .pull-19, .pull-20, .pull-21, .pull-22, .pull-23, .pull-24 {float:left;}
 
-.push-quarter { 0 -10px 1.5em 10px; }
+.push-quarter { margin: 0 -10px 1.5em 10px; }
 .push-half { margin: 0 -20px 1.5em 20px;}
 .push-1 { margin: 0 -40px 1.5em 40px;}
 .push-2 { margin: 0 -80px 1.5em 80px;}

@@ -1,0 +1,226 @@
+/*
+    navigation.css
+    ---------------------------------------------------------
+    Table of contents:
+        -- Common navigation styles
+        -- Utility Navigation
+        -- Header
+        -- Secondary Navigation (ie Data page)
+        -- Footer
+
+    ---------------------------------------------------------
+*/
+
+
+/* Common navigation styles
+   Meta Nav is shared by both header and footer
+------------------------------ */
+
+ul.nav-meta li,
+ul.nav-meta li {
+    float: left;
+    padding-left: 10px;
+}
+
+ul.nav-meta li:before {
+    content:"\00b7";
+    margin-right: 10px;
+}
+
+ul.nav-meta li.first {
+    border-left: none;
+    padding-left: 0px;
+}
+
+ul.nav-meta li.first:before {
+    content: ' ';
+    margin-right: 0px;
+}
+
+/* Utility Navigation
+------------------------------ */
+#utilityNavContainer {
+    height: 30px;
+}
+
+#utilityNavContainer A {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    padding: 0 20px 2px 10px;
+    line-height: 16px;
+    height: 16px;
+}
+
+#utilityNavContainer SPAN {
+    margin: 0;
+    font-size: 11px;
+}
+
+#utilityNavContainer .icon {
+    position: absolute;
+    display: block;
+    top: 4px;
+    right: 5px;
+}
+
+
+/* Header
+------------------------------ */
+
+#header {
+    background: transparent; /* replace with ei.styles.siteWide.header.background */
+}
+
+#header-logo {
+    float: left;
+    height: 80px; /* replace with ei.styles.siteWide.logoHeight */
+    margin: 0 0 10px; /* replace with ei.styles.siteWide.logoMargin */
+    width: 240px; /* replace with ei.styles.siteWide.logoWidth */
+}
+
+#header-logo h1 {
+    background: transparent url(../../client/images/header_clientLogo.png) 0 0 repeat-x;
+    font-size: 16px;
+    height: 80px; /* replace with ei.styles.siteWide.logoHeight */
+    text-align: center;
+    width: inherit; /* replace with ei.styles.siteWide.logoWidth */
+}
+
+#header-logo h1 a {
+    display: block;
+    height: 80px; /* replace with ei.styles.siteWide.logoHeight */
+    width: inherit; /* replace with ei.styles.siteWide.logoWidth */
+}
+
+#header li {
+    float: left;
+}
+
+#header #header-meta {
+    float: right;
+    height: 60px;
+    margin: 0; /* replace with ei.styles.siteWide.headerMeta.margin */
+    width: 320px;
+}
+
+#header #header-meta ul {
+    float: right;
+}
+
+#header #nav-main {
+/* TODO: Figure out how to properly render the border below
+border-bottom: 2px solid #666;*/
+}
+
+#header #nav-main ul {
+    background: transparent url(../../images/layout/background-grayGradient.png) 0 0 repeat-x; /* replace with ei.styles.siteWide.navMain.background */
+    height: 30px;
+}
+
+#header #nav-main ul li {
+   position: relative;
+}
+
+#header #nav-main ul li a {
+    border-left: 1px solid #E4E5E6; /* replace with ei.styles.siteWide.navMain.borderLeft */
+    border-right: 1px solid #B9BBBD; /* replace with ei.styles.siteWide.navMain.borderRight */
+    color: #333; /* replace with ei.styles.siteWide.navMain.color */
+    display: block;
+    font-size: 16px;
+    line-height: 30px;
+    outline: none;
+    text-decoration: none;
+    padding: 0 15px;
+}
+
+#header #nav-main ul li a:hover {
+    background-color: #eee; /* replace with ei.styles.siteWide.navMain.hover.backgroundColor */
+}
+
+#header #nav-main ul li a:active {
+    background-color: #888; /* replace with ei.styles.siteWide.navMain.active.backgroundColor */
+    color: #fff; /* replace with ei.styles.siteWide.navMain.active.color */
+}
+
+#header #nav-main ul li a.first {
+    border-left: none;
+}
+
+#header #nav-main ul li.active a {
+    color: #fff;
+}
+#header #nav-main ul li.active a:hover {
+    color: #222;
+}
+
+
+/* Secondary Navigation
+------------------------------ */
+#nav-secondary {
+    padding-top: 10px;
+}
+
+#nav-secondary ul {
+    margin-left: 20px;
+}
+
+#nav-secondary ul li {
+    position: relative;
+}
+
+#nav-secondary ul li a {
+    /* TODO: This background opacity is nonsense to IE. Might think about alternatives. */
+    background-color: rgba(0,0,0,.20);
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    line-height: 40px;
+    margin-right: 10px;
+    padding: 0 15px;
+    outline: none;
+    text-decoration: none;
+}
+
+#nav-secondary ul li a:hover {
+    background: #ccc url(../../images/layout/background-grayGradient.png) 0 0 repeat-x;
+    color: #222;
+}
+
+#nav-secondary ul li.active a {
+    background: #eee;
+    color: #222;
+}
+
+#nav-secondary ul li.active a:hover {
+    background: #eee;
+}
+
+
+/* Footer
+------------------------------ */
+
+#footer {
+    height: 50px;
+}
+
+#footer ul {
+    float: left;
+    padding-top: 20px;
+}
+
+#footer a {
+    color: #222; /* replace with ei.styles.siteWide.footer.link.color */
+    font-weight: inherit; /* replace with ei.styles.siteWide.footer.link.fontWeight */
+    text-decoration: inherit; /* replace with ei.styles.siteWide.footer.link.textDecoration */
+}
+
+#footer a:hover {
+    color: inherit; /* replace with ei.styles.siteWide.footer.hover.color */
+    text-decoration: inherit; /* replace with ei.styles.siteWide.footer.hover.textDecoration */
+}
+
+#footer #copyright {
+    float: right;
+    padding-top: 20px;
+}

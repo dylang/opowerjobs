@@ -293,49 +293,9 @@ a { color: #3bc; /* replace with ei.styles.siteWide.link */ }
    of styles
 -------------------------------------------------------------- */
 
-/* Banner (i.e. Page Titles)
------------------------------- */
-
-.banner {
-    height: 50px;
-}
-.banner h2 {
-    color: #ffffff;
-    line-height: 50px;
-    margin-left: 20px;
-}
-
 /* Content
 ------------------------------ */
 
-#content {
-    background: #eeeeee; /* replace with ei.styles.siteWide.content.background */
-    padding: 20px;
-    outline: none;
-}
-
-.font-scheme-1 {
-    font-size: 12px;
-    line-height: 15px;
-}
-
-.font-scheme-2 {
-    font-size: 14px;
-}
-
-.font-scheme-3 {
-    font-size: 12px;
-    line-height: 20px;
-}
-
-.font-scheme-4 {
-    font-size: 12px;
-    line-height: 30px;
-}
-
-.page-content {
-    font-size: 14px;
-}
 
 .page-content p, .page-content h2, .page-content h3, .page-content h4, .page-content h5, .page-content h6,
 .page-content ul, .page-content ol, .page-content dd {

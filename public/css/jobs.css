@@ -1,9 +1,10 @@
-body {
-    background: #ccc;
-    line-height: 1.3em;
+.logo {
+    cursor: pointer;
 }
 
-.container {
+
+
+.body {
     -moz-border-radius: 4px;
     margin-bottom: 10px;
 
@@ -13,240 +14,8 @@ body {
     -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     background: white;
-}
-
-
-
-.header {
-}
-
-A, .link {
-    color: #0099DD;
-}
-
-A:hover {
-    color: #5EB7DF;
-}
-
-.header A {
-    padding: 20px 10px 0 10px;
-    font-size: 18px;
-    height: 50px;
-    display: inline-block;
-}
-
-A:focus,
-A:active {
-    outline: none;
-}
-
-
-.header A.active {
-    background: white url(images/bg-header-nav-active.png);
-    color: white;
-}
-
-.header A:hover {
-    text-decoration: none;
-}
-
-.nav {
-    text-align: right;
-    padding-right: 20px;
-    position: relative;
-}
-
-.body {
-    padding-top: 0px;
-}
-
-.body h1 {
-    display: none;
-    color: #777;
-    padding: 20px 0 0 47px;
-}
-
-.body p {
-    padding: 0 0 10px 0;
-}
-
-.body .content {
-    padding-left: 47px;
     padding-top: 20px;
-}
 
-.content h2 {
-    font-size: 12px;
-}
-
-.footer {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.logo {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    cursor: pointer;
-}
-
-.taglines {
-    color: #777;
-    line-height: normal;
-    padding: 0px 0 20px 47px;
-}
-
-.tag1 {
-    font-size: 30px;
-}
-
-.tag2 {
-    font-size: 20px;
-}
-
-.scrollable {
-    margin-left: -1px;
-}
-
-.scrollable .item {
-    position: relative;
-    height: 294px;
-    width: 980px;
-}
-
-.item.mac {
-    background: black url(pages/computer.png);
-}
-
-.item.scooter {
-    background: black url(pages/scooter.png);
-}
-
-.item.whiteboards {
-    background: black url(images/whiteboards.jpg);
-}
-
-.item.chart {
-    background: black url(images/chart.jpg);
-}
-
-.item.monitors {
-    background: black url(images/monitors.jpg);
-}
-
-.item.vim {
-    background: black url(images/vim.jpg);
-}
-
-.banner {
-    position: relative;
-    width: 980px;
-	height:294px;
-    margin: 10px 0;
-}
-
-.scrollable h2 {
-    display: none;
-}
-h2.banner_title {
-    display: none;
-    position: absolute;
-    top: 10px;
-    left: 0;
-    font-weight: bold;
-    font-size: 60px;
-    line-height: normal;
-    color: rgba(238, 232,170, 0.7);
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
-    width: 980px;
-}
-
-.scrollable h3 {
-    display: none;
-    font-weight: bold;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    font-size: 40px;
-    color: rgba(238, 232, 170, 0.8);
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
-
-}
-
-.italic {
-    font-style: italic;
-}
-
-/*
-	root element for the scrollable.
-	when scrolling occurs this element stays still.
-*/
-.scrollable {
-
-	/* required settings */
-	position:relative;
-	overflow:hidden;
-	width: 980px;
-	height:294px;
-
-	/* custom decorations */
-	border:1px solid #ccc;
-	background: black;
-}
-
-/*
-	root element for scrollable items. Must be absolutely positioned
-	and it should have a extremely large width to accomodate scrollable items.
-	it's enough that you set the width and height for the root element and
-	not for this element.
-*/
-.scrollable .items {
-	/* this cannot be too large */
-	width:20000em;
-	position:absolute;
-	clear:both;
-}
-
-.items div {
-	float:left;
-	width:680px;
-}
-
-/* single scrollable item */
-.scrollable img {
-	float:left;
-	margin:20px 5px 20px 21px;
-	background-color:#fff;
-	padding:2px;
-	border:1px solid #ccc;
-	width:100px;
-	height:75px;
-
-	-moz-border-radius:4px;
-	-webkit-border-radius:4px;
-}
-
-/* active item */
-.scrollable .active {
-	border:2px solid #000;
-	position:relative;
-	cursor:default;
-}
-
-.browse {
-    position: absolute;
-    width: 440px;
-    height: 294px;
-    top: 0;
-    cursor: pointer;
-}
-
-.browse.left {
-    left: 0;
-}
-.browse.right {
-    right: 0;
 }
 
 
@@ -254,12 +23,6 @@ h2.banner_title {
     padding: 0 0 20px 20px;
 }
 
-.page_image {
-    width: 980px;
-    height: 360px;
-    background-color: #777;
-    display: inline-block;
-}
 
 .content div.strong {
     font-size: 12px;
@@ -276,41 +39,6 @@ h2.banner_title {
 }
 
 
-.page_image.culture {
-    background-image: url(pages/culture.png);
-}
-
-.page_image.story {
-    background-image: url(pages/story.png);
-}
-
-.page_image.opportunities {
-    background-image: url(pages/opportunities.png);
-}
-
-.page_image.benefits {
-    background-image: url(pages/op/benefits.png);
-}
-
-.page_image.diversity {
-    background-image: url(pages/op/diversity.JPG);
-}
-
-.page_image.college {
-    background-image: url(pages/op/intern.JPG);
-}
-
-.page_image.interview {
-    background-image: url(pages/op/coders.JPG);
-}
-
-.page_image.apply {
-    background-image: url(pages/op/adelia.JPG);
-}
-
-.page_image.dc {
-    background-image: url(pages/op/dudes.JPG);
-}
 
 .devonly {
     font-size: 20px;
@@ -330,9 +58,6 @@ h2.banner_title {
     display: inline-block;
 }
 
-.youtubelink {
-    font-size: 20px;
-}
 
 .ui-menu li {
     font-size: 12px;
@@ -393,56 +118,10 @@ h2.banner_title {
 
 .job_nav {
     padding-bottom: 30px;
-    
+
 }
 
 .sub_nav A {
     text-align: center;
 }
 
-
-.job .banner {
-    background-color: #0099DD;
-    color: white;
-    padding-bottom: 20px;
-    height: auto;
-}
-
-.job .banner .title {
-    font-size: 46px;
-    line-height: 1em;
-}
-
-.job .banner .location {
-    padding-left: 5px;
-}
-
-.job .banner {
-    margin-left: -20px;
-    width: 1020px;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-
-    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-}
-
-.job .similar {
-    padding: 10px;
-    background-color: #0099DD;
-    color: white;
-    margin-top: 20px;
-}
-.job .similar A {
-    color: yellow;
-    text-decoration: underline;
-}
-
-
-
-.shadowed {
-    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-}

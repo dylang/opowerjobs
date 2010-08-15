@@ -1,0 +1,38 @@
+.job .gridpopper-banner {
+    background-color: #0099DD;
+    color: white;
+    padding-bottom: 20px;
+    height: auto;
+
+    margin-left: -20px;
+    width: 780px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.job .banner .title {
+    font-size: 46px;
+    line-height: 0.8em;
+    text-rendering: optimizeLegibility;
+}
+
+.job .banner .location {
+}
+
+.job .similar {
+    padding: 10px;
+    background-color: #0099DD;
+    color: white;
+    margin-top: 20px;
+}
+.job .similar A {
+    color: yellow;
+    text-decoration: underline;
+}
+

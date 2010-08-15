@@ -1,17 +1,18 @@
 
 <div class="job">
 
-    <div class="banner">
-        <div class="content">
-            <div class="title"><%= job.title %></div>
-            <div class="location"><%= job.location %></div>
-        </div>
-    </div>
-    <div class="clear"></div>
 
     <div class="content">
 
-        <div class="span-14 first">
+        <div class="span-18 push-half first last">
+            <div class="banner">
+                <div class="title strong"><%= job.title %></div>
+                <div class="location strong"><%= job.location %></div>
+            </div>
+        </div>
+
+
+        <div class="span-11 push-half first">
 
 
             <p>
@@ -32,7 +33,7 @@
 
         </div>
 
-        <div class="span-9 last">
+        <div class="span-7 last">
                 <a href="<%= job.url.apply %>">Apply for this position now</a>
 
             <% if (job.similar.length) { %>

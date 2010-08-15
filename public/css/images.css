@@ -1,0 +1,41 @@
+.page_image {
+    width: 740px;
+    height: 260px;
+    background-color: #777;
+    display: inline-block;
+}
+.page_image.culture {
+    background-image: url(pages/culture.png);
+}
+
+.page_image.story {
+    background-image: url(pages/story.png);
+}
+
+.page_image.opportunities {
+    background-image: url(pages/opportunities.png);
+}
+
+.page_image.benefits {
+    background-image: url(pages/op/benefits.png);
+}
+
+.page_image.diversity {
+    background-image: url(pages/op/diversity.JPG);
+}
+
+.page_image.college {
+    background-image: url(pages/op/intern.JPG);
+}
+
+.page_image.interview {
+    background-image: url(pages/op/coders.JPG);
+}
+
+.page_image.apply {
+    background-image: url(pages/op/adelia.JPG);
+}
+
+.page_image.dc {
+    background-image: url(pages/op/dudes.JPG);
+}
