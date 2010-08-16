@@ -30,6 +30,7 @@ var connect = require('connect'),
                     'jobs.css',
                     'navigation.css',
                     'images.css',
+                    'flag.css',
                     'job.css'
                 ],
                 preManipulate: {

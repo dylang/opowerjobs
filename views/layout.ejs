@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>OPOWER Jobs <%= locals.title ? ' - ' + locals.title : '' %></title>
+    <title>OPOWER Jobs <%= locals.title ? ' - ' + locals.title : '' %><%= locals.job ? ' - ' + locals.job.title : '' %><%= locals.location && locals.all_locations[locals.location]  ? ' - ' + locals.all_locations[locals.location] : '' %><%= locals.department && locals.all_departments[locals.department]  ? ' - ' +  locals.all_departments[locals.department] : '' %></title>
     <link href="/css/compressed.css" rel="stylesheet"  type="text/css"/>
 </head>
 <body>
@@ -11,26 +11,17 @@
             <ul class="nav">
                 <%- partial("nav", { collection: pages, as: "page", locals: { active: locals.active }} ) %>
             </ul>
+
+            <% if (true || active.search('jobs') !== -1) { %>
+                <%- partial('jobs/search', { locals: locals } ) %>
+            <% } %>
+            
         </div>
 
         <div class="span-19 last">
             <div class="body">
-
-
-            <% if (true || active.search('jobs') !== -1) { %>
-                <%- partial('jobs/nav', { locals: locals } ) %>
-            <% } %>
-<!--
-                <% if (active.search('jobs') === -1) { %>
-                <div class="taglines">
-                    <div class="tag1">Our company was founded on a simple premise:</div>
-                    <div class="tag2">it's time to engage the 300 million Americans who are in the dark about their energy use.</div>
-                </div>
-                <% } %>
--->
                 <%- body %>
                 <div class="clear"></div>
-                
             </div>
         </div>
 

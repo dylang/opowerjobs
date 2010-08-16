@@ -25,6 +25,7 @@
 
 .content {
     padding: 20px;
+    position: relative;
 }
 
 .content div.strong {

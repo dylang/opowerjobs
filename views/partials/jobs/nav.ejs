@@ -1,26 +1,3 @@
-    <div class="content">
-    <div class="span-18 first last">
-        <div class="span-9 first">
-            <form class="search" action="/search" method="post">
-                <label for="q"></label><input id="q" value="<%= locals.query ? locals.query : '' %>" placeholder="Find your next job..." />
-                <input type="submit" class="hide" />
-            </form>
-        </div>
-        <!--
-        <div class="span-3">
-            <div class="sub_nav">
-                <a class="<%= locals.page && page.url.search('how-to-apply') !== -1 ? 'current' : '' %>" href="/how-to-apply">How to Apply</a>
-            </div>
-        </div>
-
-        <div class="span-3 last">
-            <div class="sub_nav">
-                <a class="<%= locals.page && page.url.search('interview-process') !== -1 ? 'current' : '' %>" href="/interview-process">Interview Process</a>
-            </div>
-        </div>
-        -->
-    </div>
-
     <% if (locals.job)  { %>
         <div class="span-18 last first">
             <div class="job_nav">

@@ -1,14 +1,60 @@
+.flag {
+  position: absolute;
 
-.taglines {
-    color: #777;
-    line-height: normal;
-    padding: 0px 0 20px 47px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #3D1F12;
+  font-size: 1.4em;
+  border: solid 1px #fff;
+  top: 14px;
+  left: -3px;
+  width: 380px;
+  margin: 0;
+
+  text-shadow: rgba(255,255,255,0.5) 0 1px 0;
+
+  -webkit-box-shadow: rgba(0,0,0,0.3) 1px 1px 3px;
+  -moz-box-shadow: rgba(0,0,0,0.3) 1px 1px 3px;
+  box-shadow: rgba(0,0,0,0.3) 1px 1px 3px;
+
+  -webkit-transform: skew(-10deg,0deg);
+  -moz-transform: skew(-10deg,0deg);
+  transform: skew(-10deg,0deg);
+  padding:0;
 }
 
-.tag1 {
-    font-size: 30px;
+.flag,
+.flag em {
+  background-image: -moz-linear-gradient(left, #FFDA4A, #FFC32C); /* FF3.6 */
+  background-image: -webkit-gradient(linear,left top,right top,color-stop(0, #FFDA4A),color-stop(1, #FFC32C)); /* Saf4+, Chrome */
+            filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#FFDA4A', EndColorStr='#FFC32C'); /* IE6,IE7 */
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#FFDA4A', EndColorStr='#FFC32C')"; /* IE8 */
 }
 
-.tag2 {
-    font-size: 20px;
+.flag em {
+  text-indent: 47px;
+  padding: 4px 0 4px 0;
+  margin: -1px 5px -1px -6px;
+  border: solid 1px #fff;
+  border-right: 0;
+  display: block;
+  -webkit-transform: skew(10deg,0deg);
+  -moz-transform: skew(10deg,0deg);
+  transform: skew(10deg,0deg);
+  font-style: normal;
+}
+
+.flag:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: solid 3px #fff;
+  border-color: transparent #FFC32C #FFC32C transparent;
+  position: absolute;
+  top: -7px;
+  left: -7px;
+
+  -webkit-transform: skew(10deg,0deg) translate(-1px,0);
+  transform: skew(10deg,0deg);
 }
