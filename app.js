@@ -2,84 +2,40 @@ require.paths.unshift("./deps");
 
 require('proto');
 
-var connect = require('connect'),
-        express = require('express'),
-        assetManager = require('connect-assetmanager'),
-        assetHandler = require('connect-assetmanager-handlers'),
-        log = require('./lib/util/log').from(__filename),
-        content = require('./lib/content'),
-        jobs = require('./lib/jobs'),
-        viewsDir = __dirname + '/views',
+var log = require('./lib/util/log').from(__filename),
+    connect = require('connect'),
+    express = require('express'),
+    assetManager = require('connect-assetmanager'),
+    assetHandler = require('connect-assetmanager-handlers'),
+    assets = require('./lib/assets'),
 
-        app = express.createServer(),
+    content = require('./lib/content'),
+    jobs = require('./lib/jobs'),
 
-
-        assets = assetManager({
-            css: {
-                route: /css\/compressed\.css/,
-                path: './public/css/',
-                dataType: 'css',
-                debug: false,
-                files: [
-                    'jqueryui/flick/jquery-ui-1.8.2.custom.css',
-                    'reset.css',
-                    'grid.css',
-                    'fonts.css',
-                    'base.css',
-                    'defaults.css',
-                    'theme.css',
-                    'jobs.css',
-                    'navigation.css',
-                    'images.css',
-                    'flag.css',
-                    'job.css'
-                ],
-                preManipulate: {
-                    '^': [
-                        //assetHandler.fixVendorPrefixes,
-                        //assetHandler.fixGradients//,
-                        //assetHandler.replaceImageRefToBase64(__dirname + '/public')
-                    ]
-                },
-                postManipulate: {
-                    '^': [
-                        //assetHandler.yuiCssOptimize
-
-                    ]
-                }
-            },
-            js: {
-                route: /js\/compressed\.js/,
-                path: './public/js/',
-                dataType: 'javascript',
-                debug: false,
-                files: [
-                    'jquery-1.4.2.js',
-                    'jquery-ui-1.8.2.custom.min.js',
-                    'scrollable.js',
-                    'tabs.js',
-                    'site.js',
-                    'toggleGrid.js'
-                ]
-            }
-        });
+    viewsDir = __dirname + '/views',
+    app = express.createServer();
+      
 
 app.configure(function(){
     app.set('views', viewsDir);
-    //app.set('reload views', 1000);
-    //app.set('reload layout', 1000);
-    //app.use(connect.conditionalGet());
-    //app.use(connect.gzip());
-    //app.use(connect.logger());
-    app.use(assets);
+    app.use(assetManager(assets.config));
     app.use(connect.staticProvider(__dirname + '/public'));
 });
 
+app.configure('development', function(){
+    app.use(connect.errorHandler({ dumpExceptions: true, showStack: true }));
+});
 
-//app.use('/', assetsManagerMiddleware);
-//app.use('/', connect.staticProvider(__dirname + '/public'));
-app.use(content.createServer( {views: viewsDir }) );
-app.use(jobs.createServer( { views: viewsDir, jobvite_company_id: 'qgY9Vfw2' }) );
+app.configure('production', function(){
+    //app.use(connect.logger());
+    app.use(connect.conditionalGet());
+    app.use(connect.gzip());
+    app.use(connect.errorHandler());
+    assets.compress();
+});
+
+app.use(content.createServer( {views: viewsDir, assets: assets }) );
+app.use(jobs.createServer( { views: viewsDir, jobvite_company_id: 'qgY9Vfw2', assets: assets }) );
 app.get('/:a?/:b?/:c?', function(req, res, next) { log('404'); log(req.url); res.send('404: ' + req.url + ' not found'); next(); });
 
 app.listen(parseInt(process.env.PORT || 3000), null);

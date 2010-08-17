@@ -2,7 +2,8 @@
 <html>
 <head>
     <title>OPOWER Jobs <%= locals.title ? ' - ' + locals.title : '' %><%= locals.job ? ' - ' + locals.job.title : '' %><%= locals.location && locals.all_locations[locals.location]  ? ' - ' + locals.all_locations[locals.location] : '' %><%= locals.department && locals.all_departments[locals.department]  ? ' - ' +  locals.all_departments[locals.department] : '' %></title>
-    <link href="/css/compressed.css" rel="stylesheet"  type="text/css"/>
+
+    <%- assets.styles() %>
 </head>
 <body>
     <div class="clouds"></div>
@@ -32,7 +33,7 @@
     <div class="powerlines"></div>
 
    
-    <script type="text/javascript" src="/js/compressed.js"></script>
+     <%- assets.scripts() %>
     <script type="text/javascript">
 
       var _gaq = _gaq || [];
