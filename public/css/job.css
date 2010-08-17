@@ -17,12 +17,25 @@
 
 
 .job .banner .title {
-    font-size: 46px;
+    font-size: 35px;
     line-height: 0.8em;
     text-rendering: optimizeLegibility;
 }
 
 .job .banner .location {
+    padding-top: 10px;
+    color: #ccc;
+    font-size: 18px;
+}
+
+.job .description {
+    padding-top: 20px;
+}
+
+.job .description STRONG {
+    padding-top: 30px;
+    font-size: 20px;
+    display: block;
 }
 
 .job .similar {
@@ -33,6 +46,5 @@
 }
 .job .similar A {
     color: yellow;
-    text-decoration: underline;
 }
 

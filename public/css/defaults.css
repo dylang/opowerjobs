@@ -36,3 +36,14 @@ H2 {
     -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
+
+UL {
+    border-top: solid 1px #d8d8d8;
+}
+LI {
+    margin: 0;
+    padding: 5px 0 5px 18px;
+    background: url(theme/bullet-star.gif) left 6px no-repeat;
+    line-height: 120%;
+    border-bottom: solid 1px #d8d8d8;
+}

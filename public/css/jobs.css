@@ -1,22 +1,6 @@
-.logo {
-    cursor: pointer;
-}
 
 
 
-.body {
-    -moz-border-radius: 4px;
-    margin-bottom: 10px;
-
-    -webkit-border-radius: 4px;
-
-    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    background: white;
-    padding-top: 20px;
-
-}
 
 
 .section {
@@ -24,13 +8,8 @@
 }
 
 .content {
-    padding: 20px;
+    padding: 0 20px;
     position: relative;
-}
-
-.content div.strong {
-    font-size: 12px;
-    text-transform: uppercase;
 }
 
 .quote {

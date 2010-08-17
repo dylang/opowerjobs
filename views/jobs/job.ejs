@@ -15,26 +15,25 @@
         <div class="span-11 first">
 
 
-            <p>
+            <div class="description">
                 <%- job.description %>
-            </p>
+                
+                <div style="margin-top: 40px; line-height: 1.1em;">
+                    <strong>About the Company (this is for all jobs)</strong>
+                    <p>Founded in June 2007, OPOWER creates innovative software products that promote energy efficiency by empowering residential consumers to make better decisions on their energy usage. Through a combination of home energy reports, carbon calculators, web applications, data analytics, and customer service tools, OPOWER is reshaping the outlook on home energy demand and achieving unprecedented energy savings across hundreds of thousands of households. &nbsp;The company is well funded and making big headlines as they stay on track to reach two million households by the end of 2010 and save enough energy to power a city of 150,000 residents!</p>
 
+                    <strong>These disclaimers are in all descriptions.</strong>
+                    <p>VISAS/TRANSFER SPONSORSHIP AVAILABLE WHEN APPLICABLE.</p>
+                    <p>NO PHONE CALLS, PLEASE. THE FASTEST WAY TO GET A RESPONSE IS BY APPLYING ONLINE. (IF YOU CALL THEN WE ARE JUST GOING TO SEND YOU TO THIS SITE).</p>
+                    <p>NO EXTERNAL RECRUITERS.</p>
+                </div>
 
-            <div style="font-size: smaller; margin-top: 40px; line-height: 1.1em;">
-                <strong>About the Company (we should just link to the rest of this site)</strong>
-                <p>Founded in June 2007, OPOWER creates innovative software products that promote energy efficiency by empowering residential consumers to make better decisions on their energy usage. Through a combination of home energy reports, carbon calculators, web applications, data analytics, and customer service tools, OPOWER is reshaping the outlook on home energy demand and achieving unprecedented energy savings across hundreds of thousands of households. &nbsp;The company is well funded and making big headlines as they stay on track to reach two million households by the end of 2010 and save enough energy to power a city of 150,000 residents!</p>
-
-                <strong>Can we make these graphical badges?</strong>
-                <p>VISAS/TRANSFER SPONSORSHIP AVAILABLE WHEN APPLICABLE.</p>
-                <p>NO PHONE CALLS, PLEASE. THE FASTEST WAY TO GET A RESPONSE IS BY APPLYING ONLINE. (IF YOU CALL THEN WE ARE JUST GOING TO SEND YOU TO THIS SITE).</p>
-                <p>NO EXTERNAL RECRUITERS.</p>
             </div>
-
 
         </div>
 
         <div class="span-7 last">
-                <a href="<%= job.url.apply %>">Apply for this position now</a>
+                <a class="apply-now" href="<%= job.url.apply %>">Apply for <%= job.title %></a>
 
             <% if (job.similar.length) { %>
             <div class="rounded shadowed similar">
