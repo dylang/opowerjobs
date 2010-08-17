@@ -1,5 +1,10 @@
 BODY {
     background: #ADDEF7 url(theme/background-pageGradient.png) top repeat-x;
+    margin: 20px 0;
+}
+
+.logo {
+    margin-top: 10px;
 }
 
 .clouds {
@@ -9,16 +14,27 @@ BODY {
     left: 0;
     width: 881px;
     height: 583px;
-    display: inline-block;
     z-index: -1;
 }
 
 .powerlines {
     background: transparent url(theme/background-powerlines.png) top repeat-x;
     position: fixed;
+    bottom: 70px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: -1;
+}
+
+.grass {
+    background: -moz-linear-gradient(rgb(49, 196, 50) 30%, rgb(42, 122, 46) 99%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, rgb(49, 196, 50)), color-stop(99%, rgb(42, 122, 46)));
+
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 170px;
+    height: 80px;
     z-index: -1;
 }
