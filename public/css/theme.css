@@ -8,7 +8,7 @@ BODY {
 }
 
 .logo {
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 
@@ -19,7 +19,7 @@ BODY {
     -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
     background: #ffffff;
-    padding-top: 20px;
+    padding: 20px 0 20px;
 }
 
 
