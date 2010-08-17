@@ -1,0 +1,24 @@
+BODY {
+    background: #ADDEF7 url(theme/background-pageGradient.png) top repeat-x;
+}
+
+.clouds {
+    background: transparent url(theme/background-clouds.png) top left no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 881px;
+    height: 583px;
+    display: inline-block;
+    z-index: -1;
+}
+
+.powerlines {
+    background: transparent url(theme/background-powerlines.png) top repeat-x;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 170px;
+    z-index: -1;
+}
