@@ -1,7 +1,10 @@
 BODY {
     background: #ADDEF7 url(theme/background-pageGradient.png) top repeat-x;
-    margin: 0;
     position: relative;
+    padding-top: 10px;
+}
+
+.body {
 }
 
 .logo {
@@ -24,7 +27,7 @@ BODY {
 .clouds {
     background: transparent url(theme/background-clouds.png) top left no-repeat;
     position: absolute;
-    top: 0;
+    top: -10px;
     left: 0;
     width: 881px;
     height: 583px;
