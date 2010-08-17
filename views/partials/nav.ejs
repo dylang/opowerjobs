@@ -1,5 +1,0 @@
-<% if (page.url.search("/") == -1 && !page.noMenu) { %>
-<li>
-    <a href="/<%= page.url %>" class="rounded-bl rounded-br <%= (locals.active == page.url) || (locals.active == 'jobs' && page.url == '') ? "active" : "" %>"><%= page.label %></a>
-</li>
-<% } %>

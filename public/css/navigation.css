@@ -1,20 +1,62 @@
+.navigation {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 .nav {
-    margin-top: 10px;
 }
 
-.nav a {
+.nav  {
+    margin-bottom: 20px;
+}
+
+.nav > A {
+    border: 1px solid white;
+    background: RGBA(0,0,0, 0.2);
+
     padding: 10px 0 0 0;
     font-size: 18px;
-    height: 30px;
     display: block;
     color: white;
+
+  text-shadow: rgba(255,255,255,0.5) 0 1px 0;
+
+  -webkit-box-shadow: rgba(0,0,0,0.3) 1px 1px 3px;
+  -moz-box-shadow: rgba(0,0,0,0.3) 1px 1px 3px;
+  box-shadow: rgba(0,0,0,0.3) 1px 1px 3px;
+
+  -webkit-transform: skew(-10deg,0deg);
+  -moz-transform: skew(-10deg,0deg);
+  transform: skew(-10deg,0deg);
 }
 
-.nav a.active {
+
+
+.nav > A.active {
+    background: purple;
     color: white;
 }
 
-.nav a:hover {
+.nav > A:hover {
     text-decoration: none;
 }
 
+.subnavigation {
+    margin-left: 20px;
+    font-size: 13px;
+}
+
+.subnav > A {
+    color: white;
+    display: block;
+    text-shadow: rgba(0,0,0,0.5) 0 1px 0;
+    text-decoration: none;
+    padding-left: 10px;
+}
+
+.subnav > A:hover {
+    background-color: RGBA(1,2,3, 0.4);
+}
+
+.subnav > A.active {
+    background-color: purple;
+}

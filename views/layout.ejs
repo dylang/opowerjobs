@@ -11,8 +11,8 @@
     <div class="container">
         <div class="span-6 first">
             <img class="logo" src="/css/theme/OPOWER-logo.png" alt="OPOWER" />
-            <ul class="nav">
-                <%- partial("nav", { collection: pages, as: "page", locals: { active: locals.active }} ) %>
+            <ul class="navigation">
+                <%- partial("navigation/nav", { collection: pages, as: "page", locals: { active: locals.active, current_page: locals.page }} ) %>
             </ul>
 
             <% if (true || active.search('jobs') !== -1) { %>
