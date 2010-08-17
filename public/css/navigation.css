@@ -10,53 +10,34 @@
 }
 
 .nav > A {
-    border: 1px solid white;
-    background: RGBA(0,0,0, 0.2);
-
-    padding: 10px 0 0 0;
-    font-size: 18px;
+    color: #ffffff;
     display: block;
-    color: white;
-
-  text-shadow: rgba(255,255,255,0.5) 0 1px 0;
-
-  -webkit-box-shadow: rgba(0,0,0,0.3) 1px 1px 3px;
-  -moz-box-shadow: rgba(0,0,0,0.3) 1px 1px 3px;
-  box-shadow: rgba(0,0,0,0.3) 1px 1px 3px;
-
-  -webkit-transform: skew(-10deg,0deg);
-  -moz-transform: skew(-10deg,0deg);
-  transform: skew(-10deg,0deg);
+    font-size: 18px;
+    padding: 10px 0 0 0;
+    text-transform: uppercase;
 }
-
-
 
 .nav > A.active {
-    background: purple;
-    color: white;
 }
 
-.nav > A:hover {
+.nav > A:hover, .subnav > A:hover {
+    color: #1b8cb0;
     text-decoration: none;
 }
 
+
 .subnavigation {
-    margin-left: 20px;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .subnav > A {
-    color: white;
+    color: #ffffff;
     display: block;
-    text-shadow: rgba(0,0,0,0.5) 0 1px 0;
     text-decoration: none;
-    padding-left: 10px;
-}
-
-.subnav > A:hover {
-    background-color: RGBA(1,2,3, 0.4);
+    padding-left: 20px;
 }
 
 .subnav > A.active {
-    background-color: purple;
+    background: rgba(0,0,0,0.2);
+    color: #ffffff !important;
 }
