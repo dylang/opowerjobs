@@ -41,30 +41,6 @@
     display: inline-block;
 }
 
-
-.ui-menu li {
-    font-size: 12px;
-    line-height: 1.1em;
-}
-
-.ui-menu .ui-menu-item a {
-    font-size: 12px;
-    line-height: 1.1em;
-}
-
-#q {
-    width: 100%;
-    margin-bottom: 30px;
-}
-
-.ui-menu-item a .sub {
-    color: #777;
-}
-
-.ui-menu-item a:hover .sub {
-    color: white;
-}
-
 .placeholder { color: #777; }
 
 .overiframe {

@@ -44,7 +44,43 @@ H2 {
 .page LI {
     margin: 0;
     padding: 5px 0 5px 18px;
-    background: url(theme/bullet-star.gif) left 6px no-repeat;
     line-height: 120%;
-    border-bottom: solid 1px #d8d8d8;
+    border-bottom: solid 1px #ccc;
+}
+
+/* Search box */
+
+.search {
+    padding-top: 20px;
+}
+
+.search input {
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border: none;
+    padding: 5px;
+    width: 210px;
+}
+
+.ui-menu {
+    width: 300px;
+}
+
+.ui-menu li {
+    font-size: 12px;
+    line-height: 1.1em;
+}
+
+.ui-menu .ui-menu-item a {
+    font-size: 12px;
+    line-height: 1.1em;
+}
+
+
+.ui-menu-item a .sub {
+    color: #777;
+}
+
+.ui-menu-item a:hover .sub {
+    color: white;
 }
