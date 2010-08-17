@@ -4,46 +4,50 @@
 
     <div class="content">
 
-        <div class="span-18 first last">
+        <div class="span-17 first last">
             <div class="banner">
                 <div class="title strong"><%= job.title %></div>
-                <div class="location strong"><%= job.location %></div>
+                <div class="location"><%= job.location %></div>
             </div>
         </div>
 
 
-        <div class="span-11 first">
-
+        <div class="span-17 first last">
 
             <div class="description">
                 <%- job.description %>
-                
-                <div style="margin-top: 40px; line-height: 1.1em;">
-                    <strong>About the Company (this is for all jobs)</strong>
-                    <p>Founded in June 2007, OPOWER creates innovative software products that promote energy efficiency by empowering residential consumers to make better decisions on their energy usage. Through a combination of home energy reports, carbon calculators, web applications, data analytics, and customer service tools, OPOWER is reshaping the outlook on home energy demand and achieving unprecedented energy savings across hundreds of thousands of households. &nbsp;The company is well funded and making big headlines as they stay on track to reach two million households by the end of 2010 and save enough energy to power a city of 150,000 residents!</p>
 
-                    <strong>These disclaimers are in all descriptions.</strong>
-                    <p>VISAS/TRANSFER SPONSORSHIP AVAILABLE WHEN APPLICABLE.</p>
-                    <p>NO PHONE CALLS, PLEASE. THE FASTEST WAY TO GET A RESPONSE IS BY APPLYING ONLINE. (IF YOU CALL THEN WE ARE JUST GOING TO SEND YOU TO THIS SITE).</p>
-                    <p>NO EXTERNAL RECRUITERS.</p>
+                <div class="flag">
+                    <a class="apply-now" href="<%= job.url.apply %>">Apply for <%= job.title %></a>
+                </div>
+                
+                <div class="company">
+                    <strong>About the Company</strong>
+                    <p>Founded in June 2007, OPOWER creates innovative software products that promote energy efficiency by empowering residential consumers to make better decisions on their energy usage. Through a combination of home energy reports, carbon calculators, web applications, data analytics, and customer service tools, OPOWER is reshaping the outlook on home energy demand and achieving unprecedented energy savings across hundreds of thousands of households. &nbsp;The company is well funded and making big headlines as they stay on track to reach two million households by the end of 2010 and save enough energy to power a city of 150,000 residents!</p>    
                 </div>
 
             </div>
 
         </div>
 
-        <div class="span-7 last">
-                <a class="apply-now" href="<%= job.url.apply %>">Apply for <%= job.title %></a>
+        <div class="span-17 first last">
 
             <% if (job.similar.length) { %>
-            <div class="rounded shadowed similar">
-            <h3 style="margin-bottom:5px;"><span class="strong">Related Openings</span> in <%= job.location %></h3>
-                <ul>
+            <div class="rounded similar">
+            <h3>Related Openings in <%= job.location %></h3>
+                <ul class="no-bullet">
                     <%- partial('jobs/job', { collection: job.similar, as: "job", locals: { } } ) %>
                 </ul>
-            <a href="/job/<%=job.url.location%>" style="font-size:smaller; margin-top:4px;">All openings in <%= job.location %>.</a>
+                <a href="/job/<%=job.url.location%>" style="font-size:smaller; margin-top:4px;">All openings in <%= job.location %>.</a>
             </div>
             <% } %>
+            
+            <div class="disclaimer">
+                <p>VISAS/TRANSFER SPONSORSHIP AVAILABLE WHEN APPLICABLE.</p>
+                <p>NO PHONE CALLS, PLEASE. THE FASTEST WAY TO GET A RESPONSE IS BY APPLYING ONLINE. (IF YOU CALL THEN WE ARE JUST GOING TO SEND YOU TO THIS SITE).</p>
+                <p>NO EXTERNAL RECRUITERS.</p>
+            </div>
+            
         </div>
 
 

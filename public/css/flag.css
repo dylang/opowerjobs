@@ -1,4 +1,15 @@
+
+
 .flag {
+    background: transparent url(theme/background-flag.png) 0 0 no-repeat;
+    display: block;
+    height: 80px;
+    margin-left: -30px;
+    width: 720px;
+}
+
+
+/*.flag {
   position: absolute;
 
   font-weight: bold;
@@ -25,10 +36,6 @@
 
 .flag,
 .flag em {
-  background-image: -moz-linear-gradient(left, #FFDA4A, #FFC32C); /* FF3.6 */
-  background-image: -webkit-gradient(linear,left top,right top,color-stop(0, #FFDA4A),color-stop(1, #FFC32C)); /* Saf4+, Chrome */
-            filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#FFDA4A', EndColorStr='#FFC32C'); /* IE6,IE7 */
-        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#FFDA4A', EndColorStr='#FFC32C')"; /* IE8 */
 }
 
 .flag em {
@@ -57,4 +64,4 @@
 
   -webkit-transform: skew(10deg,0deg) translate(-1px,0);
   transform: skew(10deg,0deg);
-}
+}*/
