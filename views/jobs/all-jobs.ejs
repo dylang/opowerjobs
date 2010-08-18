@@ -5,7 +5,7 @@
     Currently also used for search results.
 
     This file must be the list of all jobs.
-    If we want to change the home page to something else tell Dylan and he'll make a new ejs.
+    If we want to change the home page to something else tell Dylan and he will make a new ejs.
 */ %>
 
 <div class="content">
@@ -17,8 +17,6 @@
                 <h3>Northern Virgina</h3>
             </div>
             <div class="span-15 last job-section">
-                <%- partial('jobs/icons/dc-northern-virgina') %>
-
                 <%- partial(locals.departments ? 'jobs/department' : 'jobs/jobs', { collection: jobs.locations['dc-northern-virgina'], as: "jobs", locals: { location: 'dc-northern-virgina' }} ) %>
             </div>
             <% } %>
@@ -28,8 +26,6 @@
                 <h3>San Francisco</h3>
             </div>
             <div class="span-15 last job-section">
-                <%- partial('jobs/icons/san-francisco') %>
-                
                 <%- partial(locals.departments ? 'jobs/department' : 'jobs/jobs', { collection: jobs.locations['san-francisco'], as: "jobs", locals: { location: 'san-francisco' }} ) %>
             </div>
             <% }  %>

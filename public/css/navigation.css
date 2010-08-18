@@ -1,43 +1,50 @@
 .navigation {
+    font-size: 16px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.nav {
+
+.navigation a:hover {
+    text-decoration: none;
 }
 
-.nav  {
-    margin-bottom: 20px;
-}
-
-.nav > A {
-    color: #ffffff;
-    display: block;
-    font-size: 18px;
-    padding: 10px 0 0 0;
+.nav-main {
+    margin: 20px 0 10px;
     text-transform: uppercase;
 }
 
-.nav > A.active {
-}
-
-.nav > A:hover, .subnav > A:hover {
-    color: #1b8cb0;
-    text-decoration: none;
-}
-
-
-.subnavigation {
-    font-size: 14px;
-}
-
-.subnav > A {
+.nav-main a {
+    background: rgba(27,140,176,0.3);
+    border-bottom: 1px solid #3299bb;
     color: #ffffff;
     display: block;
-    text-decoration: none;
-    padding-left: 20px;
+    margin-bottom: 1px;
+    padding: 5px 10px;
 }
 
-.subnav > A.active {
+.nav-main a:hover {
+    background: rgba(27,140,176,0.8);
+}
+
+.nav-main a:active {
+    background: rgba(27,140,176,1);
+    color: #79bdd2;
+}
+
+.nav-sub a {
+    color: rgba(0,0,0,0.5);
+    display: block;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 5px 10px;
+    text-transform: uppercase;
+}
+
+.nav-sub a:hover {
+    color: #1b8cb0;
+}
+
+.nav-sub a.active {
     background: rgba(0,0,0,0.2);
     color: #ffffff !important;
 }
