@@ -1,6 +1,5 @@
-//require.paths.unshift("./deps");
 require.paths.unshift('./support');
-require.paths.unshift('./support/connect/lib/connect');
+require.paths.unshift('./support/connect/lib');
 
 require('proto');
 
