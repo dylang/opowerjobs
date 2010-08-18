@@ -1,1 +1,1 @@
-module.exports = require('./connect-assetmanger/lib/assetmanager');
+module.exports = require('./connect-assetmanager/lib/assetmanager');
