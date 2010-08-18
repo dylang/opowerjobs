@@ -4,20 +4,22 @@
         <% if (jobs.locations) { %>
             <% if (jobs.locations['dc-northern-virgina']) { %>
             <div class="span-4 first">
-                <%- partial('jobs/icons/dc-northern-virgina') %>
                 <h3>Northern Virgina</h3>
             </div>
             <div class="span-15 last job-section">
+                <%- partial('jobs/icons/dc-northern-virgina') %>
+
                 <%- partial(locals.departments ? 'jobs/department' : 'jobs/jobs', { collection: jobs.locations['dc-northern-virgina'], as: "jobs", locals: { location: 'dc-northern-virgina' }} ) %>
             </div>
             <% } %>
 
             <% if (jobs.locations['san-francisco']) { %>
             <div class="span-4 first">
-                <%- partial('jobs/icons/san-francisco') %>
                 <h3>San Francisco</h3>
             </div>
             <div class="span-15 last job-section">
+                <%- partial('jobs/icons/san-francisco') %>
+                
                 <%- partial(locals.departments ? 'jobs/department' : 'jobs/jobs', { collection: jobs.locations['san-francisco'], as: "jobs", locals: { location: 'san-francisco' }} ) %>
             </div>
             <% }  %>
