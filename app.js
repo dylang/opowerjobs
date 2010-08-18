@@ -1,4 +1,5 @@
-require.paths.unshift("./deps");
+//require.paths.unshift("./deps");
+require.paths.unshift('./support');
 
 require('proto');
 
@@ -21,6 +22,8 @@ var log = require('./lib/util/log').from(__filename),
 
 function common() {
     Server.set('views', viewsDir);
+    Server.use(Connect.gzip());
+    
     Server.use(assetManager(assets.config));
     Server.use(Connect.staticProvider(__dirname + '/public'));
     Server.helpers({assets: assets, currentPageID: false, pages: []});
@@ -32,24 +35,24 @@ function production(){
     log('starting in production mode');
     //app.use(Connect.logger());
     Server.use(Connect.conditionalGet());
-    Server.use(Connect.gzip());
     Server.use(Connect.errorHandler());
     assets.compress();
 }
 
 function development() {
     log('starting in development mode');
-    Server.use(Connect.gzip());
     Server.use(Connect.errorHandler({ dumpExceptions: true, showStack: true }));
 }
 
 Server.configure(common);
 
 Server.error(function(err, req, res, next){
-        res.render('error.ejs', { locals: { error: err, debug: jsonToHTML } });
+        res.render('generic.ejs', { locals: { title: 'Error', message: jsonToHTML(err) } });
+        log('ERROR');
+        log(err);
 });
 
-Server.configure('development', production);
+Server.configure('development', development);
 
 //hack for testing poduction settings
 if (port != 3000) {
@@ -64,15 +67,10 @@ Server.use(Jobs.createServer( { views: viewsDir, jobvite_company_id: 'qgY9Vfw2',
 // Required for 404's to return something
 Server.get('/*', function(req, res){
     log('404: ' + req.url);
-    res.render('error.ejs', { locals: { error: "404 man, 404.", debug: function(x){ return x;} } });
-    throw new NotFound;
+    res.send('wtf...');
+    res.end();
+    //res.render('generic.ejs', { locals: { message: "404 man, 404." } });
 });
-
-function NotFound(msg){
-    this.name = 'NotFound';
-    Error.call(this, msg);
-    Error.captureStackTrace(this, arguments.callee);
-}
 
 
 // For spark, an app launcher
