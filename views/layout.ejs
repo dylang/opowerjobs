@@ -5,7 +5,7 @@
 
     <%- assets.styles() %>
 </head>
-<body class="page-<%- locals.page ? page.id : '' %>">
+<body class="page-<%- currentPageID %>">
     <div class="clouds"></div>
 
     <div class="container">
@@ -13,7 +13,7 @@
             <div class="sidebar">
                 <img class="logo" src="/css/theme/OPOWER-logo.png" alt="OPOWER" />
                 <ul class="navigation">
-                    <%- partial("navigation/nav", { collection: pages, as: "page", locals: { active: locals.active, current_page: locals.page || locals.current_page }} ) %>
+                    <%- partial("navigation/nav", { collection: pages, as: "page", locals: { currentPageID: currentPageID }} ) %>
                 </ul>
 
                 <% if (!locals.page || (locals.page && page.url != 'search')) { %>
