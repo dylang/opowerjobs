@@ -4,11 +4,7 @@
 
 <div class="span-10 last">
     <ul>
-        <% jobs.forEach(function(job) { %>
-        <li>
-            <a href="<%= job.url.long_url %>"><%= job.title %></a>
-        </li>
-        <% }); %>
+       <%- partial('jobs/job', { collection: jobs, as: "job", locals: { }} ) %>
     </ul>
 </div>
 

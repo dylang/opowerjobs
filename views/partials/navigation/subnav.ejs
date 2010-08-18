@@ -1,3 +1,3 @@
 <li class="subnav">
-    <a href="/<%= page.url %>" class="<%= (locals.current_page && locals.current_page.url == page.url) || (locals.active == 'jobs' && page.url == '') ? "active" : "" %>"><%= page.label %></a>
+    <a href="/<%= page.url %>" class="rounded <%= (locals.current_page && locals.current_page.url == page.url || locals.current_page == page.url) || (!locals.current_page && locals.active == 'jobs' && page.url == '') ? "active" : "" %>"><%= page.label %></a>
 </li>

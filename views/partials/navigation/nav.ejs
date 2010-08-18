@@ -1,6 +1,6 @@
 <% if (!page.noMenu) { %>
-<li class="nav rounded">
-    <a href="/<%= page.url %>" class="rounded-bl rounded-br <%= (locals.active == page.url) || (locals.active == 'jobs' && page.url == '') ? "active" : "" %>"><%= page.label %></a>
+<li class="nav">
+    <a href="/<%= page.url %>" class="<%= (locals.active == page.url) || (locals.active == 'jobs' && page.url == '') ? "active" : "" %>"><%= page.label %></a>
     <% if (page.children) { %>
     <ul class="subnavigation">
         <%- partial("navigation/subnav", { collection: page.children, as: "page", locals: { active: locals.active, current_page: locals.current_page }} ) %>

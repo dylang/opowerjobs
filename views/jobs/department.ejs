@@ -1,0 +1,26 @@
+<div class="content">
+    <div class="span-7 first">
+        <h2><%= all_departments[department] %></h2>
+        <a href="/departments">Have you seen our other departments?</a>
+    </div>
+
+    <div class="span-10 last">
+        <% if (jobs.locations['dc-northern-virgina']) { %>
+            <a href="/dc-northern-virgina"><%- partial('jobs/icons/dc-northern-virgina') %></a>
+            <ul>
+                <%- partial('jobs/job', { collection: jobs.locations['dc-northern-virgina'][department], as: "job", locals: { }} ) %>
+            </ul>
+        <% } %>
+
+        <div class="clear" style="padding-top:40px;"></div>
+
+        <% if (jobs.locations['san-francisco']) { %>
+            <a href="/san-francisco"><%- partial('jobs/icons/san-francisco') %></a>
+            <ul>
+                <%- partial('jobs/job', { collection: jobs.locations['san-francisco'][department], as: "job", locals: {  }} ) %>
+            </ul>
+        <% }  %>
+    </div>
+
+</div>
+

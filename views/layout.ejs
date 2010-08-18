@@ -10,15 +10,16 @@
 
     <div class="container">
         <div class="span-6 first">
-            <img class="logo" src="/css/theme/OPOWER-logo.png" alt="OPOWER" />
-            <ul class="navigation">
-                <%- partial("navigation/nav", { collection: pages, as: "page", locals: { active: locals.active, current_page: locals.page }} ) %>
-            </ul>
+            <div class="sidebar">
+                <img class="logo" src="/css/theme/OPOWER-logo.png" alt="OPOWER" />
+                <ul class="navigation">
+                    <%- partial("navigation/nav", { collection: pages, as: "page", locals: { active: locals.active, current_page: locals.page || locals.current_page }} ) %>
+                </ul>
 
-            <% if (true || active.search('jobs') !== -1) { %>
-                <%- partial('jobs/search', { locals: locals } ) %>
-            <% } %>
-
+                <% if (!locals.page || (locals.page && page.url != 'search')) { %>
+                    <%- partial('jobs/search', { locals: locals } ) %>
+                <% } %>
+            </div>
         </div>
 
         <div class="span-19 last">
