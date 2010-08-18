@@ -1,0 +1,39 @@
+
+/* Search box */
+
+.sidebar .search {
+    padding-top: 20px;
+}
+
+.search input {
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    background: #fff url(theme/icon-magnifying.png) center right no-repeat;
+    border: none;
+    outline: none;
+    padding: 5px 10px;
+    width: 200px;
+}
+
+.ui-menu {
+    width: 300px;
+}
+
+.ui-menu li {
+    font-size: 12px;
+    line-height: 2.1em;
+}
+
+.ui-menu .ui-menu-item a {
+    font-size: 12px;
+    line-height: 1.1em;
+}
+
+
+.ui-menu-item a .sub {
+    color: #777;
+}
+
+.ui-menu-item a:hover .sub {
+    color: #ffffff !important;
+}
