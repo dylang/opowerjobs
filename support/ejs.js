@@ -1,0 +1,1 @@
+module.exports = require('./ejs/lib/ejs.js');

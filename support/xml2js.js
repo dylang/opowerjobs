@@ -1,0 +1,1 @@
+module.exports = require('./node-xml2js/lib/index.js');
