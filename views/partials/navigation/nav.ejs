@@ -1,3 +1,8 @@
+<% /*
+    Navigation parent items.
+    The logic for current/active page needs to be re-written.
+*/ %>
+
 <% if (!page.noMenu) { %>
 <li class="nav">
     <a href="/<%= page.url %>" class="<%= (locals.active == page.url) || (locals.active == 'jobs' && page.url == '') ? "active" : "" %>"><%= page.label %></a>

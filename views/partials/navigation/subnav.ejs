@@ -1,3 +1,8 @@
+<% /*
+    Navigation sub-items which are actually selectable.
+    The logic for current/active page needs to be re-written.
+*/ %>
+        
 <li class="subnav">
     <a href="/<%= page.url %>" class="rounded <%= (locals.current_page && locals.current_page.url == page.url || locals.current_page == page.url) || (!locals.current_page && locals.active == 'jobs' && page.url == '') ? "active" : "" %>"><%= page.label %></a>
 </li>
