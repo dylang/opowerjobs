@@ -59,7 +59,7 @@ if (typeof proto.extend !== 'function') {
 }
 
 // Implement new for easy self-initializing objects
-if (typeof proto.new !== 'function') {
+if (typeof proto['new'] !== 'function') {
   Object.defineProperty(proto, "new", {value: function () {
     var obj = Object.create(this);
     if (obj.initialize) obj.initialize.apply(obj, arguments);
