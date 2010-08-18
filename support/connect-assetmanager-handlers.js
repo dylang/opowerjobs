@@ -1,1 +1,1 @@
-module.exports = require('./connect-assetmanager/lib/handlers.js');
+module.exports = require('./connect-assetmanager/lib/handlers');

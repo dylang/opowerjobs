@@ -1,1 +1,1 @@
-module.exports = require('./ejs/lib/ejs.js');
+module.exports = require('./ejs/lib/ejs');

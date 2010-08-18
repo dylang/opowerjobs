@@ -1,1 +1,1 @@
-module.exports = require('./connect/lib/connect/index.js');
+module.exports = require('./connect/lib/connect/index');

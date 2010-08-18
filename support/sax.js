@@ -1,1 +1,1 @@
-module.exports = require('./sax-js/lib/sax.js');
+module.exports = require('./sax-js/lib/sax');
