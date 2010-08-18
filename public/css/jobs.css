@@ -14,7 +14,7 @@
 .content {
     padding: 0 20px;
     position: relative;
-    width: 660px;
+    width: 680px;
 }
 
 .quote {
@@ -40,11 +40,6 @@
     margin-bottom: 30px;
 }
 
-.button {
-    color: black;
-    padding: 8px 40px;
-    display: inline-block;
-}
 
 .placeholder { color: #777; }
 

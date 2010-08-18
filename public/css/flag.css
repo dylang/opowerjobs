@@ -3,9 +3,10 @@
 .flag {
     background: transparent url(theme/background-flag.png) 0 0 no-repeat;
     display: block;
-    height: 80px;
+    height: 60px;
     margin-left: -30px;
-    width: 720px;
+    padding: 17px 30px 0;
+    width: 660px;
 }
 
 

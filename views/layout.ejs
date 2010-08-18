@@ -11,7 +11,10 @@
     <div class="container">
         <div class="span-6 first">
             <div class="sidebar">
-                <img class="logo" src="/css/theme/OPOWER-logo.png" alt="OPOWER" />
+                
+                <a href="/" title="Careers at OPOWER">
+                    <img class="logo" src="/css/theme/OPOWER-logo.png" alt="OPOWER" />
+                </a>
 
                 <div class="navigation">
                     
@@ -23,22 +26,24 @@
                         <li ><a href="#">Developers</a></li>    
                         <li><a href="#" title="Link one" class="rounded-bl rounded-br">How to Apply</a></li>
                     </ul>
-
                     
-                </div>
-
-                <div class="navigation">
-                    <%- partial("navigation/nav", { collection: pages, as: "page", locals: { currentPageID: currentPageID }} ) %>
                 </div>
 
                 <% if (!locals.page || (locals.page && page.url != 'search')) { %>
                     <%- partial('jobs/search', { locals: locals } ) %>
                 <% } %>
+
+<br /><br />                
+
+                <div class="navigation">
+                    <%- partial("navigation/nav", { collection: pages, as: "page", locals: { currentPageID: currentPageID }} ) %>
+                </div>
+
                 
             </div>
         </div>
 
-        <div class="span-19 last">
+        <div class="span-18 last">
             <div class="page">
                 <%- body %>
                 <div class="clear"></div>

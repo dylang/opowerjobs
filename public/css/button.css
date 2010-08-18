@@ -1,0 +1,51 @@
+a.button, a:hover.button {
+    text-decoration: none;
+}
+
+.button, .orange-button {
+    -webkit-box-shadow: rgba(0, 0, 0, 0.246094) 0px 1px 3px;
+    background: #bbb url(theme/overlay-button.png) repeat-x top left;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    
+    color: #555;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 20px;
+    overflow: visible;
+    padding: 6px 30px 5px;
+    position: relative;
+    text-shadow: rgba(255, 255, 255, 0.5) 1px 1px 0px;
+    text-transform: uppercase;
+    width: auto;    
+}
+
+a:hover.button {
+    color: #333;
+    background-color: #999;
+}
+a:active.button {    
+    -webkit-box-shadow: none;
+    background-color: #666;
+    color: rgba(0,0,0,0.4);
+    text-shadow: none;
+}
+
+
+/* Colors ---------- */
+.orange-button {
+    background-color: #ff8400;
+    color: #ffffff;
+    text-shadow: rgba(0, 0, 0, 0.2) 1px 1px 0px;
+}
+a:hover.orange-button {
+    background-color: #ff6600;
+    color: #ffffff;
+}
+a:active.orange-button {
+    background-color: #ff3c00;
+}

@@ -6,11 +6,6 @@ $(document).ready(function(){
 
     $("ul.tabs").tabs("div.panes > div", {effect: 'fade'});
 
-
-    $('.logo').bind('click', function(){
-        document.location = '/';
-    });
-
     function fix_query(query) {
         return (query || '').replace(/[^a-zA-Z]/g, ' ').trim().replace(/\s+/g, '-')
     }
