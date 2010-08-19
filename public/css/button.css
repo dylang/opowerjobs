@@ -17,15 +17,15 @@ a.button, a:hover.button {
     font-weight: bold;
     line-height: 20px;
     overflow: visible;
-    padding: 6px 30px 5px;
+    padding: 7px 30px 6px;
     position: relative;
-    text-shadow: rgba(255, 255, 255, 0.5) 1px 1px 0px;
+    text-shadow: rgba(255, 255, 255, 1) 1px 1px 0px;
     text-transform: uppercase;
     width: auto;    
 }
 
 a:hover.button {
-    color: #333;
+    color: #555;
     background-color: #999;
 }
 a:active.button {    

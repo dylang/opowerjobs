@@ -30,7 +30,24 @@ P {
 H2 {
     font-size: 14px;
     font-weight: bold;
-    margin: 10px 0 5px;
+    margin: 0 0 5px;
+}
+
+.content h2 {
+    font-size: 35px;
+    line-height: 0.8em;
+    text-rendering: optimizeLegibility;
+}
+
+.content h3 {
+    color: #aaa;
+    margin-bottom: 10px;
+    padding: 10px 0;
+    font-size: 18px;
+}
+
+.content h3.line {
+    border-bottom: 1px solid #ccc;
 }
 
 .shadowed {

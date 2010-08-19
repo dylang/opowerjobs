@@ -1,7 +1,7 @@
 .navigation {
     font-size: 16px;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .navigation a:hover {
@@ -26,10 +26,16 @@
     background: rgba(27,140,176,0.8);
 }
 
-.nav-main a:active {
+.nav-main a:active, .nav-main a.active {
     background: rgba(27,140,176,1);
     color: #79bdd2;
 }
+
+.nav-main a.active {
+    color: #ffffff;
+}
+
+/* Sub navigation */
 
 .nav-sub a {
     color: rgba(0,0,0,0.5);

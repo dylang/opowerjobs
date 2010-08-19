@@ -19,12 +19,9 @@
                 <div class="navigation">
                     
                     <ul class="nav-main rounded">
-                        <li><a href="#" title="Link one" class="rounded-tl rounded-tr">All Openings</a></li>
-
-                        <li ><a href="#">Our Story</a></li>
-                        <li ><a href="#">Working Here</a></li>
-                        <li ><a href="#">Developers</a></li>    
-                        <li><a href="#" title="Link one" class="rounded-bl rounded-br">How to Apply</a></li>
+                    
+                        <%- partial("navigation/nav", { collection: pages, as: "page", locals: { currentPageID: currentPageID }} ) %>
+                        
                     </ul>
                     
                 </div>
@@ -32,13 +29,6 @@
                 <% if (!locals.page || (locals.page && page.url != 'search')) { %>
                     <%- partial('jobs/search', { locals: locals } ) %>
                 <% } %>
-
-<br /><br />                
-
-                <div class="navigation">
-                    <%- partial("navigation/nav", { collection: pages, as: "page", locals: { currentPageID: currentPageID }} ) %>
-                </div>
-
                 
             </div>
         </div>

@@ -4,15 +4,16 @@
 */ %>
 
 <% if (!page.noMenu) { %>
-<li class="nav">
-    <a href="/<%= page.url %>" class="<%= page.id == currentPageID ? "active" : "" %>"><%= page.label %></a>
-    <% if (page.children) { %>
-    <ul class="subnavigation">
-        <%- partial("navigation/subnav", { collection: page.children, as: "page", locals: { currentPageID: currentPageID }} ) %>
-    </ul>
+<li>
+    <a href="/<%= page.url %>"
+       class="<%= page.id == currentPageID ? "active " : "" %><%= firstInCollection ? "rounded-tl rounded-tr" : "" %><%= lastInCollection ? "rounded-bl rounded-br" : "" %>">
+           <%= page.label %>
+    </a>
+
+    <% if (page.children && page.children.length) { %>
+        <ul class="subnavigation">
+            <%- partial("navigation/subnav", { collection: page.children, as: "page", locals: { currentPageID: currentPageID }} ) %>
+        </ul>
     <% } %>
 </li>
 <% } %>
-
-
-<br /><br /><br />
