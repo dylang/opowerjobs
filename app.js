@@ -22,7 +22,7 @@ var log = require('./lib/util/log').from(__filename),
 
 function common() {
     Server.set('views', viewsDir);
-    Server.use(Connect.gzip());
+    //Server.use(Connect.gzip());
     //Server.use(Connect.favicon(__dirname + '/public/favicon.ico'));
     
     Server.use(assetManager(assets.config));
@@ -68,9 +68,7 @@ Server.use(Jobs.createServer( { views: viewsDir, jobvite_company_id: 'qgY9Vfw2',
 // Required for 404's to return something
 Server.get('/*', function(req, res){
     log('404: ' + req.url);
-    res.send('wtf...');
-    res.end();
-    //res.render('generic.ejs', { locals: { message: "404 man, 404." } });
+    res.render('generic.ejs', { locals: { message: "404 man, 404." } });
 });
 
 
