@@ -3,9 +3,9 @@
     background-image: url(theme/icons.png);
     background-repeat: no-repeat;
     display: block;
-    height: 100px;
-    width: 100px;
+    height: 140px;
+    width: 180px;
 }
 
-.icon-computer  { background-position:   0px 0px; }
-.icon-mouse     { background-position:   -100px 0px; }
+.icon-lightbulb     { background-position:   0px 0px; }
+.icon-people        { background-position:   0px -140px; }
