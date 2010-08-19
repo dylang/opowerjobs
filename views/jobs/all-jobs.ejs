@@ -14,7 +14,7 @@
         <% if (jobs.locations) { %>
             <% if (jobs.locations['dc-northern-virgina']) { %>
             <div class="span-4 first">
-                <h3>Northern Virgina</h3>
+                <h3>Northern Virginia</h3>
             </div>
             <div class="span-15 last job-section">
                 <%- partial(locals.departments ? 'jobs/department' : 'jobs/jobs', { collection: jobs.locations['dc-northern-virgina'], as: "jobs", locals: { location: 'dc-northern-virgina' }} ) %>

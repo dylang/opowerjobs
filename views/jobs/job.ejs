@@ -21,7 +21,36 @@
         <div class="span-17 first last">
 
             <div class="description">
-                <%- job.description %>
+
+                <% if (desc[0]) { %>
+                <div class="flag">
+                    <%- desc[0].title %>
+                </div>
+
+                <p>
+                    <%- desc[0].p %>
+                </p>
+                <% } %>
+
+                <% if (desc[1]) { %>
+                <div class="flag">
+                    <%- desc[1].title %>
+                </div>
+                <p>
+                    <%- desc[1].p %>
+                </p>
+                <% } %>
+
+
+                <% if (desc[2]) { %>
+                <div class="flag">
+                    <%- desc[2].title %>
+                </div>
+                <p>
+                    <%- desc[2].p %>
+                </p>
+                <% } %>
+
 
                 <div class="flag">
                     <div class="span-10">
