@@ -12,12 +12,12 @@
 
     <div class="span-19 first last">
         <% if (jobs.locations) { %>
-            <% if (jobs.locations['dc-northern-virgina']) { %>
+            <% if (jobs.locations['dc-northern-virginia']) { %>
             <div class="span-4 first">
                 <h3>Northern Virginia</h3>
             </div>
             <div class="span-15 last job-section">
-                <%- partial(locals.departments ? 'jobs/department' : 'jobs/jobs', { collection: jobs.locations['dc-northern-virgina'], as: "jobs", locals: { location: 'dc-northern-virgina' }} ) %>
+                <%- partial(locals.departments ? 'jobs/department' : 'jobs/jobs', { collection: jobs.locations['dc-northern-virginia'], as: "jobs", locals: { location: 'dc-northern-virgina' }} ) %>
             </div>
             <% } %>
 

@@ -23,6 +23,7 @@ var log = require('./lib/util/log').from(__filename),
 function common() {
     Server.set('views', viewsDir);
     Server.use(Connect.gzip());
+    //Server.use(Connect.favicon(__dirname + '/public/favicon.ico'));
     
     Server.use(assetManager(assets.config));
     Server.use(Connect.staticProvider(__dirname + '/public'));
