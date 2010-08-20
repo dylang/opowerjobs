@@ -61,9 +61,14 @@ H2 {
     padding: 5px;
 }
 
+.content p {
+    margin-bottom: 15px;
+}
+
 .large-text p {
     font-size: 16px;
     line-height: 26px;
+    margin-bottom: 10px;
 }
 
 .shadowed {
