@@ -10,6 +10,11 @@ var sys = require('sys'),
   dir = args.dir,
   test = args.test;
 
+function say(message) {
+  sys.puts('\x1B[1;36m' + 'DJs: ' + message + '\x1B[0m');
+}
+
+
 // Run the tests in parallel
 if(test) {
   if(test === true) {
@@ -58,7 +63,7 @@ playlist(intro, function(err, list) {
   });
 
   function play(intro) {
-    var playing = spawn(process.execPath, [intro]); 
+    var playing = spawn(process.execPath, [intro]);
     playing.stdout.addListener('data', function(data) {
         sys.print(data);
     });
@@ -83,7 +88,6 @@ function playlist(file, callback) {
       if(file) say('"Can\'t get my hands on '+ file +'"');
       return callback.apply(global, [null, []]);
     }
-
     // We are using hashs to collect lists of _unique_ files
     var list = {}, deps = {},
       depsNb, i, read = 0;
@@ -92,7 +96,9 @@ function playlist(file, callback) {
     list[file] = true;
 
     // Search dependencies of that file
-    while(match = /(?:^|[^\w-])require *\(\s*['"](\.\/|\.\.|\/)(.*?)['"]\s*\)/g.exec(data)) {
+var re = /(?:^|[^\w-])require *\(\s*['"](\.\/|\.\.|\/)(.*?)['"]\s*\)/g;
+    var match;
+    while ((match = re.exec(data)) != null){
       deps[path.join(match[1] == '/'? '' : directory , (match[1] != "./"? match[1] : '') + match[2] + '.js')] = true;
     }
     deps = Object.keys(deps);
@@ -164,9 +170,6 @@ function startTest(test) {
   }
 }
 
-say = function(message) {
-  sys.puts('\x1B[1;36m' + 'DJs: ' + message + '\x1B[0m');
-}
 
 exports.playlist = playlist;
 
