@@ -1,0 +1,23 @@
+<% /*
+    A single location. 
+    http://localhost:3000/san-francisco
+*/ %>
+
+<div class="content">
+    <div class="span-19 first last">
+        <div class="span-7 first">
+            <%- partial('jobs/icons/san-francisco') %>
+        </div>
+        <div class="span-9 last job-section">
+            <h3>San Francisco</h3>
+            <a href="/dc-northern-virginia">We also have openings in the DC area.</a>
+        </div>
+    </div>
+
+    <div class="span-19 first last">
+        <%- partial('jobs/jobs', { collection: jobs, as: "jobs", locals: { }} ) %>
+    </div>
+
+
+</div>
+
