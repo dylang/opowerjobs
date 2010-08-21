@@ -65,6 +65,7 @@ if (port != 3000) {
 Server.use(Content.createServer( {views: viewsDir, assets: assets }) );
 Server.use(Jobs.createServer( { views: viewsDir, jobvite_company_id: 'qgY9Vfw2', assets: assets }) );
 
+
 // Required for 404's to return something
 Server.get('/*', function(req, res){
     log('404: ' + req.url);
