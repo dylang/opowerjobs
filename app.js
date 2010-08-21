@@ -61,6 +61,22 @@ if (port != 3000) {
 } else {
     Server.configure('production', production);
 }
+// Required for 404's to return something
+
+/*
+Server.get('/*', function(req, res, next){
+
+    var host = req.headers.host;
+    if (host != 'localhost' && host != 'www.opowerjobs.com') {
+        res.redirect('http://www.opowerjobs.com' + req.originalUrl);
+    }
+    next();
+});
+*/
+
+
+
+
 
 Server.use(Content.createServer( {views: viewsDir, assets: assets }) );
 Server.use(Jobs.createServer( { views: viewsDir, jobvite_company_id: 'qgY9Vfw2', assets: assets }) );
