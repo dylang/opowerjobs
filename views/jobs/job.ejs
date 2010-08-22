@@ -30,6 +30,17 @@
 
                 <%- job.description[0].p %>
 
+
+                <div class="flag">
+                    <div class="span-10">
+                        <a class="apply-now button" href="/">See all jobs</a>
+                    </div>
+                    <div class="span-7 last align-right">
+                        <a class="apply-now button orange-button" href="<%= job.url.apply %>">Apply now</a>
+                    </div>
+                </div>
+                
+
                 <% if (job.description[1]) { %>
                 <h4>
                     <span class="highlight">
@@ -51,15 +62,18 @@
                 <% } %>
 
 
-                <div class="flag">
-                    <div class="span-10">
-                        <a class="apply-now button" href="/">See all jobs</a>
-                    </div>
-                    <div class="span-7 last align-right">
-                        <a class="apply-now button orange-button" href="<%= job.url.apply %>">Apply now</a>
-                    </div>
+                <% if (job.similar.length) { %>
+                <div class="rounded similar">
+                <h3>Related Openings in <%= job.location %></h3>
+                    <ul class="no-bullet">
+                        <%- partial('jobs/job', { collection: job.similar, as: "job", locals: { } } ) %>
+                    </ul>
+                    <a href="/job/<%=job.url.location%>" style="font-size:smaller; margin-top:4px;">All openings in <%= job.location %>.</a>
                 </div>
+                <% } %>
                 
+
+
                 <div class="company">
                     <strong>About the Company</strong>
                     <p>Founded in June 2007, OPOWER creates innovative software products that promote energy efficiency by empowering residential consumers to make better decisions on their energy usage. Through a combination of home energy reports, carbon calculators, web applications, data analytics, and customer service tools, OPOWER is reshaping the outlook on home energy demand and achieving unprecedented energy savings across hundreds of thousands of households. &nbsp;The company is well funded and making big headlines as they stay on track to reach two million households by the end of 2010 and save enough energy to power a city of 150,000 residents!</p>    
@@ -71,16 +85,7 @@
 
         <div class="span-17 first last">
 
-            <% if (job.similar.length) { %>
-            <div class="rounded similar">
-            <h3>Related Openings in <%= job.location %></h3>
-                <ul class="no-bullet">
-                    <%- partial('jobs/job', { collection: job.similar, as: "job", locals: { } } ) %>
-                </ul>
-                <a href="/job/<%=job.url.location%>" style="font-size:smaller; margin-top:4px;">All openings in <%= job.location %>.</a>
-            </div>
-            <% } %>
-            
+
             <div class="disclaimer">
                 <p>VISAS/TRANSFER SPONSORSHIP AVAILABLE WHEN APPLICABLE.</p>
                 <p>NO PHONE CALLS, PLEASE. THE FASTEST WAY TO GET A RESPONSE IS BY APPLYING ONLINE. (IF YOU CALL THEN WE ARE JUST GOING TO SEND YOU TO THIS SITE).</p>
