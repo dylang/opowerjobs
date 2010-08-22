@@ -3,6 +3,8 @@
 <head>
     <title>OPOWER Jobs <%= locals.title ? ' - ' + locals.title : '' %><%= locals.job ? ' - ' + locals.job.title : '' %><%= locals.location && locals.all_locations[locals.location]  ? ' - ' + locals.all_locations[locals.location] : '' %><%= locals.department && locals.all_departments[locals.department]  ? ' - ' +  locals.all_departments[locals.department] : '' %></title>
 
+<%- partial('comment.ejs') %>    
+
     <%- assets.styles() %>
 </head>
 <body class="page-<%- currentPageID %>">
