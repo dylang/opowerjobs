@@ -92,32 +92,12 @@ small, .small {
 
 /* General
 ------------------------------ */
-.full-page {
-    min-height: 400px;
-}
-
-.alert-icon {
-    background: url(../../images/form-icons.png) 0 0 no-repeat;
-    float: left;
-    height: 30px;
-    margin: -2px 10px 0 0;
-    width: 30px;
-}
-
 .align-left {
     text-align: left;
 }
 
 .align-right {
     text-align: right;
-}
-
-.bg-gradient-eee-ccc {
-    background: url(../../images/bgGradient-eee-ccc.png) 0 0 no-repeat;
-}
-
-.bg-gradient-fff-eee {
-    background: url(../../images/bgGradient-fff-eee.png) 0 0 no-repeat;
 }
 
 .capitalize {
@@ -132,33 +112,6 @@ small, .small {
     clear: both;
 }
 
-.box {
-    padding: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-.box.error {
-    padding-top: 20px;
-}
-
-.callout-container {
-    background: transparent url(../../images/Triangle-left.png) 0 center no-repeat;
-    padding-left: 10px;
-}
-.callout {
-    border: 4px solid #ccc;
-    min-height: 202px;
-    margin-top: 20px;
-    padding: 16px;
-}
-.callout h3 {
-    margin-bottom: 5px;
-}
-.callout li,
-.callout p {
-    line-height: 15px;
-    margin-bottom: 5px;
-}
 
 .display-none {
     display: none;
@@ -179,12 +132,6 @@ small, .small {
 
 .dyna-hide { position:absolute; left:-99999px; width: 1px; height:1px; overflow: hidden; }
 
-.loading {
-    background: url(../../images/Loading.gif) center center no-repeat;
-    width: 32px;
-    height: 32px;
-}
-
 .no-space {
     /* For over-riding unwanted margins in some global classes */
     margin: 0 !important;
@@ -194,20 +141,6 @@ small, .small {
     padding: 20px;
 }
 
-
-
-
-.box,
-.rounded,
-form input.text,
-form fieldset,
-.button,
-.dyna-hide TABLE,
-TABLE.dyna-hide  {
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
-}
 
 .rounded-tl { -moz-border-radius-topleft: 4px; -webkit-border-top-left-radius: 4px; border-top-left-radius: 4px; }
 .rounded-tr { -moz-border-radius-topright: 4px; -webkit-border-top-right-radius: 4px; border-top-right-radius: 4px; }
@@ -253,85 +186,8 @@ TABLE.dyna-hide  {
 
 /* Global Colors
 -------------------------------------------------------------- */
-
-/*- TODO - what are these even for? */
-.bg-white {
-    background-color: #ffffff;
-}
-.color-white {
-    color: #ffffff;
-}
-
-.highlight {
-    background-color: #E3F0F7;
-}
-
-.alert {
-    background-color: #FFFFDD;
-}
-
-/* Client Filler Colors */
-/* Brand: Background */
-.bg-brand,
-#header #nav-main ul li.active a { background: #33bbcc; /* replace with ei.styles.siteWide.main */ }
-
 /* Brand: Color*/
 a { color: #3bc; /* replace with ei.styles.siteWide.link */ }
-
-.color-brand,
-.submit-link,
-#footer a:hover,
-#nav-secondary ul li a.active { color: #3bc; /* replace with ei.styles.siteWide.link */}
-
-/* Error/Alert Orange */
-.error { color: #ee5500; /* replace with ei.styles.error */ }
-
-
-/* Global Sections
-
-   Reserved for only primary boxes that require specific groups
-   of styles
--------------------------------------------------------------- */
-
-/* Content
------------------------------- */
-
-
-.page-content p, .page-content h2, .page-content h3, .page-content h4, .page-content h5, .page-content h6,
-.page-content ul, .page-content ol, .page-content dd {
-    margin-bottom: 10px;
-}
-.page-content ul,
-ul.bullet {
-    padding-left: 1em;
-    text-indent: -1em;
-}
-.page-content ul li,
-ul.bullet li {
-    margin-bottom: 5px;
-}
-.page-content ul li:before,
-ul.bullet li:before {
-    content: "\2022 \0020";
-}
-
-.sidebar {
-    padding-top: 20px;
-}
-
-/* Font override
- -------------------------*/
-input,
-.ui-widget,
-.ui-widget input,
-.ui-widget select,
-.ui-widget textarea,
-.ui-widget button
-button,
-.button {
-    font-family: ProximaNovaRegular, Arial, sans-serif;
-    font-size: 14px;
-}
 
 
 /* Lists
@@ -368,34 +224,3 @@ DL.inline DD {
     display: inline;
 }
 
-
-/*
-    This makes normally hidden tables that become visible when javascript is disabled readable.
-*/
-.dyna-hide TABLE,
-TABLE.dyna-hide{
-    border-collapse: separate;
-    border-spacing: 0;
-    border: 4px solid #CCC;
-    padding: 2px;
-    margin-bottom: 10px;
-}
-.dyna-hide TH,
-.dyna-hide TD {
-    padding: 0 10px;
-    font-size: 11px;
-}
-
-.dyna-hide TH {
-    font-family: ProximaNovaBold, Arial, sans-serif;
-    background-color: #eee;
-    border-bottom: 1px solid #888;
-}
-
-.dyna-hide TD {
-    border-bottom: 1px solid #ccc;
-}
-
-.dyna-hide TR:last-child TD {
-    border: none;
-}

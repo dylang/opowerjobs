@@ -1,5 +1,9 @@
 var fs = require('fs');
-var base64_encode = function(str) { return  (new Buffer(str || "", "ascii")).toString("base64"); };
+
+function base64_encode(str) {
+    return  (new Buffer(str || "", "ascii")).toString("base64");
+}
+
 var exec = require('child_process').exec;
 module.exports = new handlers();
 
