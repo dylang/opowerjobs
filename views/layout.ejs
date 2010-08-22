@@ -6,7 +6,9 @@
 <%- partial('comment.ejs') %>    
 
     <link href="/css/jqueryui/flick/jquery-ui-1.8.2.custom.css" rel="stylesheet"  type="text/css" />
-<%- assets.styles() %>
+    <link href="/css/fonts.css" rel="stylesheet"  type="text/css" />
+
+    <%- assets.styles(this.req.query) %>
 </head>
 <body class="page-<%- currentPageID %>">
     <div class="clouds"></div>
@@ -48,7 +50,7 @@
     <div class="powerlines"></div>
 
    
-     <%- assets.scripts() %>
+     <%- assets.scripts(this.req.query) %>
     <script type="text/javascript">
 
       var _gaq = _gaq || [];
