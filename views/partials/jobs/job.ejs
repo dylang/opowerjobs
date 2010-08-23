@@ -8,5 +8,5 @@
 */ %>
 
 <li>
-    <a href="<%= job.url.long_url %>"><%= job.title %></a>
+    <a href="<%= job.url.long_url %>"><%= job.title %></a><% if (locals.show_location) { %> <span class="location"><%= job.location %></span> <% } %>
 </li>

@@ -11,5 +11,10 @@
 </div>
 
 <div class="content">
-    Results...
+
+    <div class="span-19 first last">
+        <ul>
+            <%- partial('jobs/job', { collection: jobs, as: "job", locals: {show_location: true } } ) %>
+        </ul>
+    </div>
 </div>
