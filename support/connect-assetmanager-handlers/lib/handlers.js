@@ -1,10 +1,9 @@
+var sys = require('sys');
+var events = require('events');
 var fs = require('fs');
-
-function base64_encode(str) {
-    return  (new Buffer(str || "", "ascii")).toString("base64");
-}
-
 var exec = require('child_process').exec;
+var request = require('request');
+var step = require('step');
 module.exports = new handlers();
 
 function handlers()
@@ -18,13 +17,13 @@ function handlers()
 			} else {
 				exec('java -jar ../deps/yuicompressor-2.4.2.jar --type '+options.type+' '+tmpName, { cwd: __dirname }, function (err, stdout, stderr) {
 					if (err) {
-						console.log(err);
+						throw err;
 					} else {
 						callback(stdout);
 
 						fs.unlink(tmpName, function (err) {
 							if (err) {
-								console.log(err);
+								throw err;
 							}
 						});
 					}
@@ -90,7 +89,59 @@ function handlers()
 	this.stripDataUrlsPrefix = function (file, path, index, isLast, callback) {
 		callback(file.replace(/data-url/ig,'url'));
 	};
-	this.replaceImageRefToBase64 = function (root) {
+	this.replaceImageRefToBase64 = function (root, verbose) {
+		function injectBase64Data(base64string, filePath, callback) {
+			var regex = new RegExp(filePath.replace(/([.?\/])/ig,'\\$1'), 'g');
+
+			if (!base64string || base64string.length > 32768) {
+				base64string = filePath;
+			} else {
+				if (filePath.match(/\.gif/i)) {
+					base64string = 'data:image/gif;base64,'+base64string;
+				} else if (filePath.match(/\.jpe?g/i)) {
+					base64string = 'data:image/jpg;base64,'+base64string;
+				} else {
+					base64string = 'data:image/png;base64,'+base64string;
+				}
+			}
+
+			callback({
+				'regex': regex
+				, 'data': base64string
+			});
+		}
+		function getFileData(filePath, stepCallback) {
+			filePath = filePath.replace(/(data-url\(|\))/g,'').replace(/'/g,'');
+			if (filePath.match(/^ *http:\/\//i)) {
+				var RequestProxy = fs.RequestProxy = function () {
+					events.EventEmitter.call(this);
+					var body = '';
+					this.end = function() {
+						fetchCallback(null, body);
+					};
+					this.write = function(data) {
+						body += data.toString('base64');
+					};
+				};
+				sys.inherits(RequestProxy, events.EventEmitter);
+
+				var responseBodyStream = new RequestProxy();
+				request({'uri': filePath, 'responseBodyStream': responseBodyStream}, function(){});
+			} else {
+				fs.readFile(root+filePath, fetchCallback);
+			}
+
+			function fetchCallback(err, data) {
+				if (err) {
+					throw new Error('Failed: '+root+filePath);
+					data = null;
+				}
+
+				injectBase64Data(data.toString('base64'), filePath, function(content) {
+					stepCallback(null, content);
+				});
+			}
+		}
 		return function(file, path, index, isLast, callback) {
 			var files = file.match(/data-url\(([^)]+)\)/g);
 
@@ -100,36 +151,25 @@ function handlers()
 			}
 
 			file = file.replace(/data-url/g,'url');
-			var callIndex = 0;
 
-			var getFiles = function(content) {
-				if (callIndex < files.length) {
-					var filePath = files[callIndex].replace(/(data-url\(|\))/g,'').replace(/'/g,'');
+			step(function () {
+				var group = this.group();
 
-					fs.readFile(root+filePath, function (err, data) {
-						if (err) {
-							console.log('Failed: '+root+filePath);
-						} else {
-							var fileData = data;
-							fs.stat(root+filePath, function(err, data) {
-								// Keep files under 32KB since IE doesn't like it bigger then that.
-								if (data.size < 32768) {
-									content = content.replace(
-										new RegExp(filePath), 
-										'data:image/png;base64,'+base64_encode(fileData)
-									);
-								}
-								getFiles(content);
-							});
-						}
-					});
-
-					callIndex++;
-				} else {
-					callback(content);
+				files.forEach(function (filePath) {
+					getFileData(filePath, group());
+				});
+			}, function (err, contents) {
+				if (err) {
+					throw err;
 				}
-			};
-			getFiles(file);
+				contents.forEach(function (imageData) {
+					file = file.replace(imageData.regex, imageData.data);
+				});
+				if (verbose) {
+					console.log('Finished generating: '+path);
+				}
+				callback(file);
+			});
 		};
 	};
 	this.fixFloatDoubleMargin = function (file, path, index, isLast, callback) {

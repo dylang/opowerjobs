@@ -1,15 +1,16 @@
 {
   "name" : "connect-assetmanager-handlers",
   "description" : "Post and pre hooks for connect-assetmanager.",
-  "version" : "0.0.4",
+  "version" : "0.0.6",
   "author" : "Mathias Pettersson <mape@mape.me>",
   "engines" : ["node"],
   "directories" : { "lib" : "./lib" },
   "main" : "./lib/handlers",
-  "repositories" : [
+  "repository" : [
     { "type":"git", "url":"http://github.com/mape/connect-assetmanager-handlers" }
   ],
   "dependencies" : {
-    "base64" : ">1.0.0"
+    "request" : ">=0.9.5",
+    "step" : ">=0.0.3"
   }
 }
