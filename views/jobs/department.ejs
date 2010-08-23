@@ -7,15 +7,7 @@
 
     <% /* department header */ %>
     <div class="span-18 first last">
-        <h2>Engineering</h2>
-        <div class="span-10 first">
-            Developers.  QA.  Etc.
-            <div class=""><a href="/departments">Have you seen our other departments?</a></div>
-        </div>
-        <div class="span-7 last">
-            <div class="department-placeholder"></div>
-            <div class="caption">Developers are cool.</div>
-        </div>
+        <%- partial('departments/' + header + '.ejs', { locals: { department: department, department_name: all_departments[department] } }) %>
     </div>
 
     <div class="clear" style="padding-top:40px;"></div>
