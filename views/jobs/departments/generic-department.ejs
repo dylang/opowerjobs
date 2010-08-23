@@ -1,0 +1,26 @@
+<% /*
+    For individual department pages
+    http://localhost:3000/engineering
+*/ %>
+
+<div class="content page-department">
+
+    <% /* department header */ %>
+    <div class="span-18 first last">
+        <h2><%= all_departments[department] %></h2>
+        <div class="span-10 first">
+            This is what we do.  Type type type.
+            <div class=""><a href="/departments">Have you seen our other departments?</a></div>
+        </div>
+        <div class="span-7 last">
+            <div class="department-placeholder"></div>
+            <div class="caption">The <%= all_departments[department] %> department doing something unproductive.</div>
+        </div>
+    </div>
+
+    <div class="clear" style="padding-top:40px;"></div>
+
+    <%- partial('jobs/jobs-grouped-by-location.ejs', {  locals: {jobs_dc: jobs_dc, jobs_sf: jobs_sf }} ) %>
+
+</div>
+

@@ -81,8 +81,8 @@ Server.get(/.*/, function(req, res, next){
 });
 
 
-Content.createServer( {Server: Server });
-Jobs.createServer( { Server: Server});
+Content.addHandlers( {Server: Server });
+Jobs.addHandlers( { Server: Server});
 
 
 // Required for 404's to return something

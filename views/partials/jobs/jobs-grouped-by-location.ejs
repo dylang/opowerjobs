@@ -1,0 +1,30 @@
+    <div class="span-18 first last">
+    <% if (locals.jobs_dc && jobs_dc.length) { %>
+
+        <div class="span-7 first">
+            <a href="/dc-northern-virgina"><%- partial('jobs/icons/dc-northern-virginia') %></a>
+        </div>
+
+        <div class="span-10 last">
+                <ul>
+                    <%- partial('jobs/job', { collection: jobs_dc, as: "job", locals: { }} ) %>
+                </ul>
+        </div>
+    <% } %>
+
+
+    <div class="clear" style="padding-top:40px;"></div>
+
+    <% if (locals.jobs_sf && jobs_sf.length) { %>
+       <div class="span-7 first">
+            <a href="/san-francisco"><%- partial('jobs/icons/san-francisco') %></a>
+       </div>
+
+        <div class="span-10 last">
+
+            <ul>
+                <%- partial('jobs/job', { collection: jobs_sf, as: "job", locals: {  }} ) %>
+            </ul>
+        </div>
+        <% }  %>
+    </div>
