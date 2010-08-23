@@ -64,9 +64,9 @@ if (port != 3000 || __dirname.indexOf('slug') !== -1) {
 }
 
 Server.error(function(err, req, res, next){
-        res.render('generic.ejs', { locals: { title: 'Error', message: jsonToHTML(err) } });
         log('ERROR');
         log(err);
+        res.render('error.ejs', { locals: { title: 'Error', message: objToHTML(err) } });
 });
 
 
@@ -90,7 +90,7 @@ Server.get('/*', function(req, res){
     log('404: ' + req.url);
     var host = req.headers.host.split(':')[0];
     if (host == 'localhost') {
-        res.render('generic.ejs', { locals: { message: "404, man, 404. <br /> When in production the server will autmoatically redirect to an appropriate page." } });
+        res.render('error.ejs', { locals: { message: "404, man, 404. <br /> When in production the server will autmoatically redirect to an appropriate page." } });
     } else {
         var array = req.url.split('/');
         array.pop();
