@@ -16,7 +16,7 @@ var log = require('./lib/util/log').from(__filename),
     viewsDir = __dirname + '/views',
     publicDir = __dirname + '/public',
     port = parseInt(process.env.PORT || 3000),
-    public_host = 'opowerjobs.heroku.com',
+    public_host = 'www.opowerjobs.com',
     Server = Express.createServer();
 
 
@@ -45,6 +45,7 @@ function production(){
     Server.use(Connect.conditionalGet());
     Server.use(Connect.errorHandler());
     Assets.compress(true);
+    Jobs.autoUpdate();
 }
 
 function development() {

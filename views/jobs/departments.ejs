@@ -2,12 +2,19 @@
     For listing all departments
     http://localhost:3000/departments
 
-    Idea for layout: http://www.facebook.com/careers/index.php
+    Idea for layout: http://www.facebook.com/careers/
 */ %>
 
 <div class="content">
     <h2>All Departments</h2>
+    <h3>There something for everyone.</h3>
     <ul class="departments">
         <%- partial('jobs/department', { collection: all_departments, as: "department", locals: {} } ) %>
+    </ul>
+
+    <ul>
+        <li>
+            <a href="/all">See all openings</a>
+        </li>
     </ul>
 </div>
