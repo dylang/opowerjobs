@@ -22,15 +22,15 @@
 
     <% /* department jobs */ %>
     <div class="span-18 first last">
-    <% if (jobs.locations['dc-northern-virgina']) { %>
+    <% if (jobs.locations['dc-northern-virginia']) { %>
 
         <div class="span-7 first">
-            <a href="/dc-northern-virgina"><%- partial('jobs/icons/dc-northern-virgina') %></a>
+            <a href="/dc-northern-virgina"><%- partial('jobs/icons/dc-northern-virginia') %></a>
         </div>
 
         <div class="span-10 last">
                 <ul>
-                    <%- partial('jobs/job', { collection: jobs.locations['dc-northern-virgina'][department], as: "job", locals: { }} ) %>
+                    <%- partial('jobs/job', { collection: jobs.locations['dc-northern-virginia'][department], as: "job", locals: { }} ) %>
                 </ul>
         </div>
     <% } %>

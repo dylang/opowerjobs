@@ -81,20 +81,18 @@ Server.get(/.*/, function(req, res, next){
 });
 
 
-
 Content.createServer( {Server: Server });
 Jobs.createServer( { Server: Server});
-
 
 
 // Required for 404's to return something
 Server.get('/*', function(req, res){
     log('404: ' + req.url);
     var host = req.headers.host.split(':')[0];
-    if (host == public_host) {
-        res.redirect('http://' + public_host);
-    } else {
+    if (host == 'localhost') {
         res.render('generic.ejs', { locals: { message: "404, man, 404." } });
+    } else {
+        res.redirect('http://' + public_host);
     }
 });
 
