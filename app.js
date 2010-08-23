@@ -85,6 +85,11 @@ Server.get(/.*/, function(req, res, next){
 Content.addHandlers( {Server: Server });
 Jobs.addHandlers( { Server: Server});
 
+//For Google Web Master
+Server.get('/google97924ebf42be7c40.html', function(req, res) {
+    res.send('google-site-verification: google97924ebf42be7c40.html');
+    res.end();
+});
 
 // Required for 404's to return something
 Server.get('/*', function(req, res){
