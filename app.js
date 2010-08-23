@@ -90,9 +90,11 @@ Server.get('/*', function(req, res){
     log('404: ' + req.url);
     var host = req.headers.host.split(':')[0];
     if (host == 'localhost') {
-        res.render('generic.ejs', { locals: { message: "404, man, 404." } });
+        res.render('generic.ejs', { locals: { message: "404, man, 404. <br /> When in production the server will autmoatically redirect to an appropriate page." } });
     } else {
-        res.redirect('http://' + public_host);
+        var array = req.url.split('/');
+        array.pop();
+        res.redirect(array.join('/'));
     }
 });
 
