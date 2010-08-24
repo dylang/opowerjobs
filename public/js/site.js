@@ -2,9 +2,14 @@
 
 
 $(document).ready(function(){
-    $(".scrollable").scrollable({circular: true});
 
-    $("ul.tabs").tabs("div.panes > div", {effect: 'fade'});
+
+    $('.fancybox').fancybox({
+        onStart: function() { $('body').addClass('fancybox-visible');},
+        onClosed: function() { $('body').removeClass('fancybox-visible');}
+
+    });
+
 
     function fix_query(query) {
         return (query || '').replace(/[^a-zA-Z]/g, ' ').trim().replace(/\s+/g, '-')
@@ -69,6 +74,10 @@ $(document).ready(function(){
                 .appendTo( ul );
             };
     }
+
+
+
+
 
   if (!('placeholder' in document.createElement('input'))) {
     $this = $q;

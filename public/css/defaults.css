@@ -3,6 +3,12 @@ BODY {
     margin-top: 10px;
 }
 
+BODY.fancybox-visible {
+    height:100%;
+    overflow:hidden;
+    margin-right: 15px;
+}
+
 A, .link {
     color: #0099DD;
 }
