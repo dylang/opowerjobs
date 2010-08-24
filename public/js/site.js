@@ -6,8 +6,8 @@ $(document).ready(function(){
 
     $('.fancybox').fancybox({
         onStart: function() { $('body').addClass('fancybox-visible');},
-        onClosed: function() { $('body').removeClass('fancybox-visible');}
-
+        onClosed: function() { $('body').removeClass('fancybox-visible');},
+        cyclic: true
     });
 
 
