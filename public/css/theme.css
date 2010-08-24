@@ -58,7 +58,30 @@ BODY {
     z-index: -1;
 }
 
-.grass:hover {
-    background: -moz-linear-gradient(rgb(49, 196, 50) 30%, rgb(42, 122, 46) 99%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, rgb(49, 196, 50)), color-stop(99%, rgb(42, 122, 46)));
+/* Alternate styles */
+.alternate-0,
+.alternate-1 {
+    margin-left: -20px;
+    padding: 10px 20px;
+    width: 660px;
+}
+.alternate-0 {    background-color: #eee; }
+.alternate-1 { }
+
+/* Gallery */
+
+.gallery a {
+    display: block;
+    float: left;
+    margin-right: 32px;
+    width: 100px;
+}
+
+.gallery img {
+    border: 4px solid #fff;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    
+    width: 100%;
 }

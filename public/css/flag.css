@@ -1,7 +1,7 @@
 
 
 .flag {
-    background: transparent url(theme/background-flag.png) 0 0 no-repeat;
+    background: transparent url(theme/background-flag.png) bottom center no-repeat;
     display: block;
     height: 60px;
     margin-left: -30px;
