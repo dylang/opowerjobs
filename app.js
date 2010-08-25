@@ -63,7 +63,6 @@ function development() {
 
 Server.configure(common);
 
-
 //hack for testing poduction settings
 if (port != 3000 || __dirname.indexOf('slug') !== -1) {
     Server.configure(production);
@@ -91,7 +90,6 @@ Server.get(/.*/, function(req, res, next){
         next();
     }
 });
-
 
 Content.addHandlers( {Server: Server });
 Jobs.addHandlers( { Server: Server});
