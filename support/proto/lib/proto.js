@@ -57,7 +57,7 @@ if (typeof proto.extend !== 'function') {
     return obj;
   }});
 }
-
+/*
 // Implement new for easy self-initializing objects
 if (typeof proto['new'] !== 'function') {
   Object.defineProperty(proto, "new", {value: function () {
@@ -67,3 +67,4 @@ if (typeof proto['new'] !== 'function') {
   }});
 }
 
+*/

@@ -1,0 +1,40 @@
+ <div style="margin-bottom: 20px">
+    <ul class="menu rounded">
+        <li><a href="/<%= job.url.department %>"><%= job.department %></a>
+            <ul class="rounded-bl rounded-br">
+                <%- partial('jobs/job', { collection: jobs[job.url.location][job.url.department], as: "job", locals: {  }} ) %>
+            </ul>
+        </li>
+        <li><a href="/<%= job.url.department %>">Related Positions</a>
+            <ul class="rounded-bl rounded-br">
+                <%- partial('jobs/job', { collection: job.similar, as: "job", locals: { } } ) %>
+            </ul>
+        </li>
+
+        <li><a href="/new">New Openings</a>
+            <ul class="rounded-bl rounded-br">
+                <%- partial('jobs/jobid', { collection: by_date.splice(0, 5), as: "jobId", locals: { show_location: true } } ) %>
+            </ul>
+        </li>
+
+        <li><a href="/hot">Hot Positions</a>
+            <ul class="rounded-bl rounded-br">
+                <%- partial('jobs/jobid', { collection: all_critical, as: "jobId", locals: { show_location: true } } ) %>
+            </ul>
+        </li>
+        <li class="addthis_toolbox"><a href="#">Email/Share</a>
+            <ul class="rounded-bl rounded-br vertical">
+                <li><div class="shorturl"><input spellcheck="false" value="http://opower.jobs/<%- job.id %>" style="width: 180px;"/></div></li>
+                <li><a class="addthis_button_email" addthis:url="http://opower.jobs/<%- job.id %>" addthis:title="OPOWER Job: <%- job.title %>">Email</a></li>
+                <li><a class="addthis_button_print">Print</a></li>
+                <li><a class="addthis_button_twitter" addthis:url="http://opower.jobs/<%- job.id %>" addthis:title="OPOWER Job: <%- job.title %>">Twitter</a></li>
+                <li><a class="addthis_button_facebook">Facebook</a></li>
+                <li><a class="addthis_button_linkedin" addthis:url="http://opower.jobs/<%- job.id %>" addthis:title="OPOWER Job: <%- job.title %>">LinkedIn</a></li>
+                <li><a class="addthis_button_reddit" addthis:title="OPOWER Job: <%- job.title %>">Reddit</a></li>
+                <li><a href="http://www.addthis.com/bookmark.php?v=250&amp;username=opower" class="addthis_button_expanded" addthis:url="http://opower.jobs/<%- job.id %>" addthis:title="OPOWER Job: <%- job.title %>">More</a></li>
+            </ul>
+        </li>
+
+    </ul>
+</div>
+

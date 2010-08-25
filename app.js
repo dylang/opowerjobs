@@ -4,7 +4,6 @@ require.paths.unshift('./support/connect/lib');
 require('proto');
 
 var log = require('./lib/util/log').from(__filename),
-    Connect = require('connect'),
     Express = require('express'),
     Assets = require('./lib/assets'),
 
@@ -17,7 +16,17 @@ var log = require('./lib/util/log').from(__filename),
     publicDir = __dirname + '/public',
     port = parseInt(process.env.PORT || 3000),
     public_host = 'www.opowerjobs.com',
-    Server = Express.createServer();
+    Server = module.exports = Express.createServer();
+
+
+process.title = 'opowerjobs.com';
+process.addListener('uncaughtException', function (err, stack) {
+    log('*************************************');
+    log('************EXCEPTION****************');
+    log('*************************************');
+    log(err);
+    log('*************************************');
+});
 
 
 function common() {
@@ -29,28 +38,27 @@ function common() {
         debug: objToHTML,
         log: log
     });
-
-    Server.use(Connect.gzip());
-    Server.use(Connect.favicon(publicDir + '/favicon.ico'));
-    
+    Server.use(Express.conditionalGet());
+    //Server.use(Express.gzip());
+    Server.use(Express.cache(1000));
+    Server.use(Express.bodyDecoder());
+    Server.use(Express.favicon(publicDir + '/favicon.ico'));
     Server.use(Assets.handler(publicDir));
-    Server.use(Connect.staticProvider(publicDir));
-    Server.helpers({assets: Assets, currentPageID: false, pages: []});
+    Server.use(Express.staticProvider(publicDir));
     Server.use(Server.router);
+
+    Server.helpers({assets: Assets, currentPageID: false, pages: []});
 }
 
 function production(){
     log('starting in production mode');
-    //app.use(Connect.logger());
-    Server.use(Connect.conditionalGet());
-    Server.use(Connect.errorHandler());
     Assets.compress(true);
     Jobs.autoUpdate();
 }
 
 function development() {
     log('starting in development mode');
-    Server.use(Connect.errorHandler({ dumpExceptions: true, showStack: true }));
+    //Server.use(Express.errorHandler({ dumpExceptions: true, showStack: true }));
 }
 
 Server.configure(common);
@@ -65,8 +73,11 @@ if (port != 3000 || __dirname.indexOf('slug') !== -1) {
 }
 
 Server.error(function(err, req, res, next){
-        log('ERROR');
+        log('*************************************');
+        log('****************ERROR****************');
+        log('*************************************');
         log(err);
+        log('*************************************');
         res.render('error.ejs', { locals: { title: 'Error', message: objToHTML(err) } });
 });
 
@@ -103,10 +114,6 @@ Server.get('/*', function(req, res){
         res.redirect(array.join('/'));
     }
 });
-
-
-// For spark, an app launcher
-module.exports.server = Server;
 
 Server.listen(port, null);
 log('Starting OPOWER JOBS on ' + port + '...');

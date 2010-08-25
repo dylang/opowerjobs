@@ -11,6 +11,19 @@ $(document).ready(function(){
     });
 
 
+    window.addthis_config = {
+        username: 'opower',
+        data_ga_tracker: 'UA-17897272-1'
+    };
+
+    $('.shorturl input').mouseenter(function(){
+        this.select();
+    }).mouseleave(function(){
+        this.value = this.value;
+        this.blur();
+    });
+
+
     function fix_query(query) {
         return (query || '').replace(/[^a-zA-Z]/g, ' ').trim().replace(/\s+/g, '-')
     }
