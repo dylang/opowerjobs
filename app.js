@@ -39,8 +39,8 @@ function common() {
         log: log
     });
     Server.use(Express.conditionalGet());
-    //Server.use(Express.gzip());
-    Server.use(Express.cache(1000));
+    Server.use(Express.gzip());
+    //Server.use(Express.cache(1000));
     Server.use(Express.bodyDecoder());
     Server.use(Express.favicon(publicDir + '/favicon.ico'));
     Server.use(Assets.handler(publicDir));
