@@ -72,12 +72,13 @@ The following are the major contributors of Express (in no specific order).
   * [JavaScript Sass](http://github.com/visionmedia/sass.js)
   * [JavaScript Haml](http://github.com/visionmedia/haml.js)
   * [JavaScript Jade](http://github.com/visionmedia/jade) Haml successor
+  * [Boilerplate](http://github.com/robrighter/node-boilerplate) boilerplate app supplying Express, Connect, Socket-IO, Jade and more.
 
 ## Node Compatibility
     
 The latest release of Express is compatible with node --version:
 
-    v0.1.104
+    v0.2.0
 
 and connect --version:
 

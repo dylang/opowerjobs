@@ -75,11 +75,9 @@ exports.merge = function(a, b){
  */
 
 exports.uid = function() {
-    var uid = '';
-    for (var n = 4; n; --n) {
-        uid += (Math.abs((Math.random() * 0xFFFFFFF) | 0)).toString(16);
-    }
-    return uid;
+    // First three digits are from the current timestamp, the rest is the full
+    // 32-bit precision of Math.random()
+    return (Date.now() & 0x7fff).toString(32) + (0x100000000 * Math.random()).toString(32);
 };
 
 /**
@@ -393,35 +391,6 @@ exports.find = function find(root, pattern, callback) {
             file.path = file.path.substr(root.length);
             return file;
         }));
-    });
-};
-
-// Works like find on unix.  Does a recursive readdir and filters by pattern.
-// Sync version.  Puts directorys last.
-exports.findSync = function findSync(root, pattern) {
-    function rfind(root) {
-        var files = [];
-        var dirs = [];
-        fs.readdirSync(root).forEach(function (file) {
-            var file = Path.join(root, file);
-            var stat = fs.statSync(file);
-            if (stat.isDirectory()) {
-                dirs.push(rfind(file));
-                return;
-            }
-            if (pattern.test(file)) {
-                stat.path = file;
-                files.push(stat);
-            }
-        });
-        dirs.forEach(function (dir) {
-            files.push.apply(files, dir);
-        })
-        return files;
-    }
-    return rfind(root).map(function (file) {
-        file.path = file.path.substr(root.length);
-        return file;
     });
 };
 

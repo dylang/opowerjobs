@@ -19,6 +19,12 @@ var log = require('./lib/util/log').from(__filename),
     Server = module.exports = Express.createServer();
 
 
+//hack for testing poduction settings.  slug == heroku.
+if (port != 3000 || __dirname.indexOf('slug') !== -1) {
+    app.set('env', 'production');
+}
+
+//in case of crash. I've never seen this used, got it from somebody else's code.
 process.title = 'opowerjobs.com';
 process.addListener('uncaughtException', function (err, stack) {
     log('*************************************');
@@ -28,19 +34,34 @@ process.addListener('uncaughtException', function (err, stack) {
     log('*************************************');
 });
 
+function production(){
+    Server.use(Express.conditionalGet());
+    Server.use(Express.cache(1000 * 60 * 60));
+    Server.use(Express.gzip());
+
+    log('running in production mode');
+    Assets.compress(true);
+    Jobs.autoUpdate();
+}
+
+function development() {
+    Server.use(Express.conditionalGet());
+    Server.use(Express.cache(1000 * 2));
+    Server.use(Express.gzip());
+
+
+    log('running in development mode');
+    //Server.use(Express.errorHandler({ dumpExceptions: true, showStack: true }));
+}
+
 
 function common() {
-    log('common');
-
     Server.set('views', viewsDir);
 
     Server.helpers({
         debug: objToHTML,
         log: log
     });
-    Server.use(Express.conditionalGet());
-    Server.use(Express.gzip());
-    //Server.use(Express.cache(1000));
     Server.use(Express.bodyDecoder());
     Server.use(Express.favicon(publicDir + '/favicon.ico'));
     Server.use(Assets.handler(publicDir));
@@ -50,26 +71,10 @@ function common() {
     Server.helpers({assets: Assets, currentPageID: false, pages: []});
 }
 
-function production(){
-    log('starting in production mode');
-    Assets.compress(true);
-    Jobs.autoUpdate();
-}
 
-function development() {
-    log('starting in development mode');
-    //Server.use(Express.errorHandler({ dumpExceptions: true, showStack: true }));
-}
-
+Server.configure('development', development);
+Server.configure('production', production);
 Server.configure(common);
-
-//hack for testing poduction settings
-if (port != 3000 || __dirname.indexOf('slug') !== -1) {
-    Server.configure(production);
-} else {
-    Server.configure('development', development);
-    Server.configure('production', production);
-}
 
 Server.error(function(err, req, res, next){
         log('*************************************');

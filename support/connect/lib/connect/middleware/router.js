@@ -17,8 +17,8 @@ var parse = require('url').parse;
  * Examples:
  *
  *     connect.router(function(app){
- *         app.get('/user/:id', function(req, res, params){
- *             // populates params.id
+ *         app.get('/user/:id', function(req, res, next){
+ *             // populates req.params.id
  *         });
  *     })
  *
@@ -110,7 +110,7 @@ function normalizePath(path, keys) {
                 + (format || '') + '([^/.]+))'
                 + (optional || '');
         })
-        .replace(/([\/.-])/g, '\\$1')
+        .replace(/([\/.])/g, '\\$1')
         .replace(/\*/g, '(.+)');
     return new RegExp('^' + path + '$', 'i');
 }

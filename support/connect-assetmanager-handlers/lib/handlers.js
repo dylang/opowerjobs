@@ -4,6 +4,8 @@ var fs = require('fs');
 var exec = require('child_process').exec;
 var request = require('request');
 var step = require('step');
+var jsp = require("../deps/UglifyJS/lib/parse-js");
+var pro = require("../deps/UglifyJS/lib/process");
 module.exports = new handlers();
 
 function handlers()
@@ -51,6 +53,12 @@ function handlers()
 			-o-$1: $2;\
 			-ms-$1: $2;\
 		'));
+	};
+	this.uglifyJsOptimize = function (file, path, index, isLast, callback) {
+		var ast = jsp.parse(file);
+		ast = pro.ast_mangle(ast);
+		ast = pro.ast_squeeze(ast);
+		callback(pro.gen_code(ast));
 	};
 	this.fixGradients = function (file, path, index, isLast, callback) {
 		callback(file.replace(/gradient: *([^_]+)_([^;]+);/g, function(str, c1, c2) {

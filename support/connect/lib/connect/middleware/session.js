@@ -59,8 +59,15 @@ module.exports = function sessionSetup(options){
 
             // Send an updated cookie to the browser
             store.cookie.expires = new Date(Date.now() + store.maxAge);
+
+            // Multiple Set-Cookie headers
             headers = headers || {};
-            headers['Set-Cookie'] = utils.serializeCookie(key, req.sessionID, store.cookie);
+            var cookie = utils.serializeCookie(key, req.sessionID, store.cookie);
+            if (headers['Set-Cookie']) {
+                headers['Set-Cookie'] += '\r\nSet-Cookie: ' + cookie;
+            } else {
+                headers['Set-Cookie'] = cookie;
+            }
 
             // Pass through the writeHead call
             res.writeHead = writeHead;
@@ -70,7 +77,7 @@ module.exports = function sessionSetup(options){
         // Calculates the security hash to prevent session hijacking
         // Uses information on the user-agent that created the session as it's fingerprint
         function hash(base) {
-            return utils.md5(base + fingerprint(req) + secret);
+          return utils.md5(base + fingerprint(req) + secret, 'base64').replace(/=*$/, '');
         }
 
         // Generates the new session

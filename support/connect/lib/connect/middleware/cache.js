@@ -44,6 +44,7 @@ module.exports = function cache(cacheDuration){
             var resp = cache[key];
             var headers = resp.headers;
             headers["Content-Length"] = resp.body.length;
+            if (!resp.body.length) resp.body = undefined;
 
             if (localQueue) {
                 // Send everyone in the wait queue the response.
@@ -63,7 +64,9 @@ module.exports = function cache(cacheDuration){
 
         // If there is a cache-hit, serve it right away!
         if (cache[key]) {
+            
             serve();
+
             return;
         }
 
@@ -97,7 +100,7 @@ module.exports = function cache(cacheDuration){
         };
 
         res.end = function (chunk, encoding) {
-            if (chunk) {
+            if (chunk && chunk.length) {
                 res.write(chunk, encoding);
             }
 
