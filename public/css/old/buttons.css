@@ -7,7 +7,7 @@
     cursor: pointer;
     font-size: 14px;
     padding: 5px 20px; /* CR: Can we kill this? It only works when buttons are display: block, but it makes buttons too big. */
-    text-align: center;
+    text-align: center !important;
 }
 
 .button:hover {

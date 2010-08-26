@@ -1,19 +1,15 @@
 .menu {
     list-style-type: none;
-    height: 40px;
-    padding: 0;
     margin: 0;
-    background: rgba(27, 140, 176, 1);
+    padding: 0;
 }
 
 .menu  li {
-    float: left;
-    position: relative;
-    padding: 0;
-    line-height: 40px;
-    margin: 0;
-    white-space: nowrap;
     border-bottom: none;
+    margin: 0;
+    padding: 0;
+    position:relative;
+    white-space: nowrap;
 }
 
 .menu  li:hover {
@@ -23,8 +19,6 @@
 .menu  li a,
 .menu  li .shorturl {
     display: block;
-    padding: 0 15px;
-    color: #fff;
     text-decoration: none;
 }
 
@@ -69,7 +63,7 @@
 }
 
 .menu  li ul li a:hover {
-    background: #FF8400;
+    background: rgba(255,255,255,0.2);
     color: white;
 }
 

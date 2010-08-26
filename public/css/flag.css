@@ -1,68 +1,35 @@
-
-
 .flag {
     background: transparent url(theme/background-flag.png) bottom center no-repeat;
+    color: #fff;
     display: block;
-    height: 60px;
     margin-left: -30px;
-    padding: 17px 30px 0;
+    padding: 20px 30px 30px;
     width: 660px;
 }
 
-
-/*.flag {
-  position: absolute;
-
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #3D1F12;
-  font-size: 1.4em;
-  border: solid 1px #fff;
-  top: 14px;
-  left: -3px;
-  width: 380px;
-  margin: 0;
-
-  text-shadow: rgba(255,255,255,0.5) 0 1px 0;
-
-  -webkit-box-shadow: rgba(0,0,0,0.3) 1px 1px 3px;
-  -moz-box-shadow: rgba(0,0,0,0.3) 1px 1px 3px;
-  box-shadow: rgba(0,0,0,0.3) 1px 1px 3px;
-
-  -webkit-transform: skew(-10deg,0deg);
-  -moz-transform: skew(-10deg,0deg);
-  transform: skew(-10deg,0deg);
-  padding:0;
+.flag-gray {
+    background: transparent url(theme/background-flag-gray.png) bottom center no-repeat;
 }
 
-.flag,
-.flag em {
+.flag a {
 }
 
-.flag em {
-  text-indent: 47px;
-  padding: 4px 0 4px 0;
-  margin: -1px 5px -1px -6px;
-  border: solid 1px #fff;
-  border-right: 0;
-  display: block;
-  -webkit-transform: skew(10deg,0deg);
-  -moz-transform: skew(10deg,0deg);
-  transform: skew(10deg,0deg);
-  font-style: normal;
+
+.flag ul {
+    margin: 0;
+    padding: 0;
 }
 
-.flag:after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 0;
-  border: solid 3px #fff;
-  border-color: transparent #FFC32C #FFC32C transparent;
-  position: absolute;
-  top: -7px;
-  left: -7px;
+.flag ul li {
+    border: none;
+    margin: 0;
+    padding: 0;    
+}
 
-  -webkit-transform: skew(10deg,0deg) translate(-1px,0);
-  transform: skew(10deg,0deg);
-}*/
+.flag h5 {
+    margin-bottom: 10px;
+}
+
+.flag a {
+    color: #fff;
+}

@@ -71,15 +71,40 @@
         </div>
 
 
-        <div class="span-17 first last">
-               <%- partial('jobs/menu.ejs', { locals: { job: job } }) %>
+        <div class="span-17 last flag clearfix">
+            
+            <div class="span-13">
+                <h5>Find other jobs in &hellip;</h5>
+                <a href="#" class="button blue-button button-small button-left">DC/Northern Virginia</a><a href="#" class="button blue-button button-small button-right">User Experience</a>
+            </div>
+            
+            <div class="span-4 last">
+                <ul class="menu rounded">
+                    <li class="addthis_toolbox hide"><a href="#" class="">Email/Share</a>
+                        <ul class="rounded-bl rounded-br vertical">
+                            <li><div class="shorturl"><input spellcheck="false" value="http://opower.jobs/<%- job.id %>" style="width: 180px;"/></div></li>
+                            <li><a class="addthis_button_email" addthis:url="http://opower.jobs/<%- job.id %>" addthis:title="OPOWER Job: <%- job.title %>">Email</a></li>
+                            <li><a class="addthis_button_print">Print</a></li>
+                            <li><a class="addthis_button_twitter" addthis:url="http://opower.jobs/<%- job.id %>" addthis:title="OPOWER Job: <%- job.title %>">Twitter</a></li>
+                            <li><a class="addthis_button_facebook">Facebook</a></li>
+                            <li><a class="addthis_button_linkedin" addthis:url="http://opower.jobs/<%- job.id %>" addthis:title="OPOWER Job: <%- job.title %>">LinkedIn</a></li>
+                            <li><a class="addthis_button_reddit" addthis:title="OPOWER Job: <%- job.title %>">Reddit</a></li>
+                            <li><a href="http://www.addthis.com/bookmark.php?v=250&amp;username=opower" class="addthis_button_expanded" addthis:url="http://opower.jobs/<%- job.id %>" addthis:title="OPOWER Job: <%- job.title %>">More</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" title="New openings">New openings</a></li>
+                    <li><a href="#" title="Hot positions">Hot positions</a></li>
+                </ul>
+                
+            </div>
+            
         </div>
 
 
         <div class="span-17 first last">
-
             
             <div class="disclaimer">
+                <p>OPOWER is an Equal Opportunity Employer</p>
                 <p>VISAS/TRANSFER SPONSORSHIP AVAILABLE WHEN APPLICABLE.</p>
                 <p>NO PHONE CALLS, PLEASE. THE FASTEST WAY TO GET A RESPONSE IS BY APPLYING ONLINE. (IF YOU CALL THEN WE ARE JUST GOING TO SEND YOU TO THIS SITE).</p>
                 <p>NO EXTERNAL RECRUITERS.</p>
