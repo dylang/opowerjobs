@@ -1,6 +1,8 @@
 BODY {
     line-height: 1.5em;
     margin-top: 10px;
+
+-webkit-font-smoothing: subpixel-antialiased;
 }
 
 BODY.fancybox-visible {

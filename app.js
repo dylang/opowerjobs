@@ -86,11 +86,7 @@ Server.error(function(err, req, res, next){
 });
 
 
-//For Google Web Master
-Server.get('/google97924ebf42be7c40.html', function(req, res) {
-    res.send('google-site-verification: google97924ebf42be7c40.html');
-    res.end();
-});
+
 
 // Redirect other servers to the main one
 Server.get(/.*/, function(req, res, next){
@@ -117,7 +113,11 @@ Server.get('/*', function(req, res){
     } else {
         var array = req.url.split('/');
         array.pop();
-        res.redirect(array.join('/'));
+        var new_url = array.join('/');
+        log('redirect from ' + req.url + ' to ' + new_url);
+        if (req.url != new_url) {
+            res.redirect(new_url);
+        }
     }
 });
 
