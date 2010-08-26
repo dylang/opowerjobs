@@ -10,14 +10,14 @@
 
 <div class="content">
 
-    <div class="span-19 first last">
+    <div class="span-17 first last">
         <h2>All Openings</h2>
         <h3>There's something for everyone.</h3>
         <% if (jobs['dc-northern-virginia']) { %>
             <div class="span-4 first">
                 <h4>Northern Virginia</h4>
             </div>
-            <div class="span-15 last job-section">
+            <div class="span-13 last job-section">
                 <%- partial(locals.departments ? 'jobs/department' : 'jobs/jobs', { collection: jobs['dc-northern-virginia'], as: "jobs", locals: { location: 'dc-northern-virgina' }} ) %>
             </div>
         <% } %>
@@ -26,7 +26,7 @@
             <div class="span-4 first">
                 <h4>San Francisco</h4>
             </div>
-            <div class="span-15 last job-section">
+            <div class="span-13 last job-section">
                 <%- partial(locals.departments ? 'jobs/department' : 'jobs/jobs', { collection: jobs['san-francisco'], as: "jobs", locals: { location: 'san-francisco' }} ) %>
             </div>
         <% }  %>
