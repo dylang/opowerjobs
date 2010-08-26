@@ -12,7 +12,7 @@
 
     <div class="span-19 first last">
         <ul>
-            <%- partial('jobs/jobid', { collection: all_new.splice(0, 20), as: "jobId", locals: {show_location: true } } ) %>
+            <%- partial('jobs/jobid', { collection: all_new.slice(0, 10), as: "jobId", locals: {show_location: true } } ) %>
         </ul>
     </div>
 </div>
