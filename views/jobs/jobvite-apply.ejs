@@ -14,24 +14,31 @@ function resizeFrame(height, scrollToTop) {
 </script>
 
 <div class="content">
-    <div class="span-18">
+    <div class="span-17">
 
 
-        <div style="position:relative;"><iframe
-        scrolling="no"
-        height="1805px"
-        frameborder="0"
-        width="100%"
-        id="jobviteframe"
-        src="http://hire.jobvite.com/CompanyJobs/Careers.aspx?j=<%- job.id %>,Apply&k=Apply&jvresize=http://www.opowerjobs.com/jobvite_resize.html"
-        >
-        c=????&
-        c=q8X9VfwT
-        &cs=9Pf9VfwS
-        &jvresize=http://twitter.com/jobvite_frame_resize.html
-        &j=ofZmVfwf,Job
-        &k=Job
-        Sorry, iframes are not supported.
-    </iframe><div class="overiframe">Back to <a href="<%= job.url.long_url %>"><%= job.title %></a></div></div>
+        <div style="position:relative;">
+            <iframe
+            scrolling="no"
+            height="1805px"
+            frameborder="0"
+            width="100%"
+            id="jobviteframe"
+            src="http://hire.jobvite.com/CompanyJobs/Careers.aspx?j=<%- job.id %>,Apply&k=Apply&jvresize=http://www.opowerjobs.com/jobvite_resize.html"
+            >
+            c=????&
+            c=q8X9VfwT
+            &cs=9Pf9VfwS
+            &jvresize=http://twitter.com/jobvite_frame_resize.html
+            &j=ofZmVfwf,Job
+            &k=Job
+            Sorry, iframes are not supported.
+        </iframe>
+
+        <div class="overiframe">
+            <a href="<%= job.url.long_url %>">Cancel Application</a>
+        </div>
+    </div>
+
     </div>
 </div>

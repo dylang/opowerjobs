@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>OPOWER Jobs</title>
+  <subtitle>Latest Positions</subtitle>
+  <link href="http://www.opowerjobs.com"/>
+  <link rel="self" href="<%= url %>/atom.xml"/>
+  <updated><%= update %></updated>
+  <author>
+    <name>OPOWER Recruting</name>
+    <uri><%= url %></uri>
+    <email>recruiting@opowerjobs.com</email>
+  </author>
+  <rights>Copyright (c) 2010, OPOWER</rights>
+  <id>tag:opower.com,2010:jobs</id>
+  <% all_new.forEach(function(jobId) { var job = all_ids[jobId]; %>
+  <entry>
+    <title><%= job.title %></title>
+    <link href="<%= url %><%= job.url.long_url %>"/>
+    <id>tag:opowerjobs.com,2010:job_<%= job.id %></id>
+    <updated><%= ISODateString(job.date) %></updated>
+    <content type="xhtml" xml:lang="en">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <% job.description.forEach(function(d) { %>
+                <h2><%- d.title %></h2>
+                <%- (d.p || '').replace(/&.?.?quo;/g, "'") %>
+            <% }); %>
+
+            <h2>Important Links</h2>
+            <ul>
+                <li><a href="<%= url %><%= job.url.long_url %>">More Information.</a></li>
+                <li><a href="<%= url %><%= job.url.apply %>">Apply for this position.</a></li>
+                <li><a href="<%= url %>">About OPOWER</a></li>
+                <li><a href="<%= url %>/san-francisco">OPOWER Openings in San Francisco</a></li>
+                <li><a href="<%= url %>/northern-va-dc">OPOWER Openings in Washington, DC</a></li>
+                <li><a href="<%= url %>/new">All new OPOWER Openings</a></li>
+            </ul>
+        </div>
+    </content>
+    <category term="<%= job.url.location %>" label="<%= job.location %>" scheme="<%= url %>"/>
+    <category term="<%= job.url.department %>" label="<%= job.department %>" scheme="<%= url %>"/>
+  </entry>
+    <% }); %>
+</feed>
