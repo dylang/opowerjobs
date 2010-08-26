@@ -21,7 +21,7 @@ var log = require('./lib/util/log').from(__filename),
 
 //hack for testing poduction settings.  slug == heroku.
 if (port != 3000 || __dirname.indexOf('slug') !== -1) {
-    app.set('env', 'production');
+    Server.set('env', 'production');
 }
 
 //in case of crash. I've never seen this used, got it from somebody else's code.
