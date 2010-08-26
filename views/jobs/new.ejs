@@ -5,13 +5,14 @@
 
 <div class="content">
     <h2>New Positions</h2>
+    <h3>Cutting edge</h3>
 </div>
 
 <div class="content">
 
     <div class="span-19 first last">
         <ul>
-            <%- partial('jobs/jobid', { collection: all_new, as: "job", locals: {show_location: true } } ) %>
+            <%- partial('jobs/jobid', { collection: all_new.splice(0, 20), as: "jobId", locals: {show_location: true } } ) %>
         </ul>
     </div>
 </div>
