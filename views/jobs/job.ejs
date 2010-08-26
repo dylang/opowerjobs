@@ -18,18 +18,13 @@
         </div>
 
         <div class="span-17 first last">
-               <%- partial('jobs/menu.ejs', { locals: { job: job } }) %>
-        </div>
-
-
-        <div class="span-17 first last">
 
             <div class="description">
 
 
-                <div class="span-6 last rounded" style="  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2); -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2); box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2); float: right; margin-left: 10px; background-color: #F9EBA5; padding: 10px; line-height: 1.3em; font-size: smaller;">
-                    Is your resume ready?
-                    <a class="apply-now button orange-button" href="<%= job.url.apply %>" style="display:block; text-align: center; margin: 4px -4px;">Apply now</a>
+                <div class="inline span-6 last rounded">
+                    <strong>Is your resume ready?</strong>
+                    <a class="apply-now button orange-button" href="<%= job.url.apply %>">Apply now</a>
                     This is the best way to start a conversation with us.
                 </div>
                 
@@ -74,6 +69,12 @@
             </div>
 
         </div>
+
+
+        <div class="span-17 first last">
+               <%- partial('jobs/menu.ejs', { locals: { job: job } }) %>
+        </div>
+
 
         <div class="span-17 first last">
 

@@ -14,7 +14,9 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-
+.job .banner {
+    margin-bottom: 23px;
+}
 
 .job .banner .title {
     font-size: 35px;
@@ -56,4 +58,17 @@
 .job .disclaimer {
     color: #bbb;
     margin: 20px 0 0;
+}
+
+.job .inline {
+    background-color: #F9EBA5;
+    float: right;
+    margin: 10px 0 20px 20px;
+    padding: 20px;
+}
+
+.job .inline .button {
+    display: block;
+    margin: 10px 0;
+    text-align: center;
 }

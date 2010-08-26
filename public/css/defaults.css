@@ -45,6 +45,11 @@ H2 {
     text-rendering: optimizeLegibility;
 }
 
+.content h2.quote {
+    font-size: 28px;
+    line-height: 1em;
+}
+
 .content h3 {
     color: #aaa;
     margin-bottom: 20px;
