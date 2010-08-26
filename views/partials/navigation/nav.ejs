@@ -5,8 +5,7 @@
 
 <% if (!page.noMenu) { %>
 <li>
-    <a href="/<%= page.url %>"
-       class="<%= page.id == currentPageID ? "active " : "" %><%= firstInCollection ? "rounded-tl rounded-tr" : "" %><%= lastInCollection ? "rounded-bl rounded-br" : "" %>">
+    <a href="/<%= page.url %>" class="<%= page.id == currentPageID ? "active " : "" %><%= firstInCollection ? "rounded-tl rounded-tr" : "" %><%= lastInCollection ? "rounded-bl rounded-br" : "" %>">
            <%= page.label %>
     </a>
 
