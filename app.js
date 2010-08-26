@@ -86,6 +86,12 @@ Server.error(function(err, req, res, next){
 });
 
 
+//For Google Web Master
+Server.get('/google97924ebf42be7c40.html', function(req, res) {
+    res.send('google-site-verification: google97924ebf42be7c40.html');
+    res.end();
+});
+
 // Redirect other servers to the main one
 Server.get(/.*/, function(req, res, next){
     var host = req.headers.host.split(':')[0];
@@ -99,16 +105,6 @@ Server.get(/.*/, function(req, res, next){
 Content.addHandlers( {Server: Server });
 Jobs.addHandlers( { Server: Server});
 
-//For Google Web Master
-Server.get('/google97924ebf42be7c40.html', function(req, res) {
-    res.send('google-site-verification: google97924ebf42be7c40.html');
-    res.end();
-});
-
-Server.get('/google97924ebf42be7c40.html', function(req, res) {
-    res.send('google-site-verification: google97924ebf42be7c40.html');
-    res.end();
-});
 
 
 

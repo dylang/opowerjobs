@@ -13,7 +13,7 @@
 
         <li><a href="/new">New Openings</a>
             <ul class="rounded-bl rounded-br">
-                <%- partial('jobs/jobid', { collection: by_date.splice(0, 5), as: "jobId", locals: { show_location: true } } ) %>
+                <%- partial('jobs/jobid', { collection: all_new.splice(0, 5), as: "jobId", locals: { show_location: true } } ) %>
             </ul>
         </li>
 
