@@ -114,13 +114,12 @@ Server.get('/*', function(req, res){
     if (host == 'localhost') {
         res.render('error.ejs', { locals: { message: "404, man, 404. <br /> When in production the server will autmoatically redirect to an appropriate page." } });
     } else {
-        var array = req.url.split('/');
-        array.pop();
-        var new_url = array.join('/');
+        var url = req.url;
+        var array = url.split('/');
+        if (array.pop() == '') { array.pop(); }
+        var new_url = array.join('/') + '/';
         log('redirect from ' + req.url + ' to ' + new_url);
-        if (req.url != new_url) {
-            res.redirect(new_url);
-        }
+        res.redirect(new_url);
     }
 });
 
