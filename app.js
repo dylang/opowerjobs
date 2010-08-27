@@ -42,6 +42,12 @@ function production(){
     log('running in production mode');
     Assets.compress(true);
     Jobs.autoUpdate();
+
+    Server.helpers({
+        href: function(url) { return 'http://' + public_host + (url[0] == '/' ? '' : '/') + url; }
+    });
+
+
 }
 
 function development() {
@@ -49,6 +55,9 @@ function development() {
     Server.use(Express.cache(1000 * 2));
     Server.use(Express.gzip());
 
+    Server.helpers({
+        href: function(url) { return 'http://localhost:' + port + (url[0] == '/' ? '' : '/') + url; }
+    });
 
     log('running in development mode');
     //Server.use(Express.errorHandler({ dumpExceptions: true, showStack: true }));

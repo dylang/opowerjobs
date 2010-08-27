@@ -8,7 +8,7 @@
 */ %>
 
 <li>
-    <a href="<%= job.url.long_url %>">
+    <a href="<%= href(job.url.long_url) %>">
     <% if (locals.show_location) { %>
         <% if (job.url.location == 'san-francisco') { %>
         <img style="width:16px; height: 16px;" src="/css/icons/sf.png" alt="" />
