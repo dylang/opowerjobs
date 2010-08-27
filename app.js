@@ -93,8 +93,7 @@ Server.get(/.*/, function(req, res, next){
     var host = req.headers.host.split(':')[0];
     if (host != 'localhost' && host != public_host) {
         var new_url = 'http://' + public_host + req.originalUrl;
-        log('host is not ' + public_host + ': "' + host + '"');
-        log('redirecting to ' + new_url);
+        log('traffic from: ' + req.originalUrl);
         res.redirect(new_url);
     } else {
         next();
@@ -110,15 +109,16 @@ Jobs.addHandlers( { Server: Server});
 // Required for 404's to return something
 Server.get('/*', function(req, res){
     log('404: ' + req.url);
-    var host = req.headers.host.split(':')[0];
+    var host = req.headers.host.split(':')[0],
+        new_url;
+
     if (host == 'localhost') {
         res.render('error.ejs', { locals: { message: "404, man, 404. <br /> When in production the server will autmoatically redirect to an appropriate page." } });
     } else {
-        var url = req.url;
-        var array = url.split('/');
+        var array = req.url.split('/');
         if (array.pop() == '') { array.pop(); }
-        var new_url = array.join('/') + '/';
-        log('redirect from ' + req.url + ' to ' + new_url);
+
+        new_url = array.join('/') + '/';
         res.redirect(new_url);
     }
 });
