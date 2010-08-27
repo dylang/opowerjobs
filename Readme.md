@@ -40,9 +40,9 @@
 
 ## Contributors
 
-  * Dylan Greene ([dylang](http://github.com/dylang))
-  * Garrett Miller (design, art, most photos)
-  * OPOWER marketing and hr teams (text and direction)
+  * Dylan Greene (code) [dylang](http://github.com/dylang)
+  * Garrett Miller (design, art, photos) [heyitsgarrett](http://github.com/heyitsgarrett)
+  * OPOWER Marketing and HR team members (text and direction)
 
 ## Dependencies
 
