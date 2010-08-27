@@ -95,10 +95,9 @@ Server.error(function(err, req, res, next){
 });
 
 
-
-
 // Redirect other servers to the main one
-Server.get(/.*/, function(req, res, next){
+/*
+Server.get(|.*|, function(req, res, next){
     var host = req.headers.host.split(':')[0];
     if (host != 'localhost' && host != public_host) {
         var new_url = 'http://' + public_host + req.originalUrl;
@@ -108,7 +107,8 @@ Server.get(/.*/, function(req, res, next){
         next();
     }
 });
-
+*/
+    
 Content.addHandlers( {Server: Server });
 Jobs.addHandlers( { Server: Server});
 
