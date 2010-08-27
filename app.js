@@ -1,3 +1,9 @@
+/*!
+ * OPOWER Jobs
+ * Copyright(c) 2010 Dylan Greene <dylang@gmail.com>
+ * MIT Licensed
+ */
+
 require.paths.unshift('./support');
 require.paths.unshift('./support/connect/lib');
 
@@ -123,8 +129,6 @@ Server.get('/*', function(req, res, next){
     
 Content.addHandlers( {Server: Server });
 Jobs.addHandlers( { Server: Server});
-
-
 
 
 // Required for 404's to return something
