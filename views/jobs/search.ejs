@@ -12,7 +12,10 @@
 
 <div class="content">
 
-    <div class="span-19 first last">
+    <div class="span-17 first last">
+
+        <%- query == 'log' ? debug(search_log) : '' %>
+
         <ul>
             <%- partial('jobs/job', { collection: jobs, as: "job", locals: {show_location: true } } ) %>
         </ul>

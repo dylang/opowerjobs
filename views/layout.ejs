@@ -35,7 +35,7 @@
                     
                 </div>
 
-                <% if (!locals.page || (locals.page && page.url != 'search')) { %>
+                <% if (this.req.url.indexOf('search') === -1) { %>
                     <%- partial('jobs/search', { locals: locals } ) %>
                 <% } %>
                 
