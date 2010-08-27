@@ -92,7 +92,10 @@ Server.error(function(err, req, res, next){
 Server.get(/.*/, function(req, res, next){
     var host = req.headers.host.split(':')[0];
     if (host != 'localhost' && host != public_host) {
-        res.redirect('http://' + public_host + req.originalUrl);
+        var new_url = 'http://' + public_host + req.originalUrl;
+        log('host is not ' + public_host + ': "' + host + '"');
+        log('redirecting to ' + new_url);
+        res.redirect(new_url);
     } else {
         next();
     }
