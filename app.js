@@ -108,6 +108,18 @@ Server.get(|.*|, function(req, res, next){
     }
 });
 */
+
+// Get rid of urls that end in /
+// Required for 404's to return something
+Server.get('/*', function(req, res, next){
+    if (req.url.length > 1 && req.url[req.url.length - 1] == '/') {
+        log('lose the slash: ' + req.url);
+        res.redirect(req.url.substr(0, req.url.length - 1));
+    } else {
+        next();
+    }
+});
+
     
 Content.addHandlers( {Server: Server });
 Jobs.addHandlers( { Server: Server});
@@ -127,7 +139,7 @@ Server.get('/*', function(req, res){
         var array = req.url.split('/');
         if (array.pop() == '') { array.pop(); }
 
-        new_url = array.join('/') + '/';
+        new_url = array.join('/') || '/';
         res.redirect(new_url);
     }
 });
