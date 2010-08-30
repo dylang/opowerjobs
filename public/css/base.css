@@ -24,6 +24,7 @@ body {
     line-height: 20px;
     margin: 10px 0; /* replace with ei.styles.siteWide.body.margin */
    font-family: 'ProximaNovaRegular',Arial,sans-serif;
+    height:100%;
 }
 
 
