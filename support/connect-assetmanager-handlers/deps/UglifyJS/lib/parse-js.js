@@ -56,6 +56,7 @@ var KEYWORDS = array_to_hash([
         "break",
         "case",
         "catch",
+        "const",
         "continue",
         "default",
         "delete",
@@ -86,7 +87,6 @@ var RESERVED_WORDS = array_to_hash([
         "byte",
         "char",
         "class",
-        "const",
         "debugger",
         "double",
         "enum",
@@ -292,7 +292,7 @@ function tokenizer($TEXT, skip_comments) {
         };
 
         function token(type, value) {
-                S.regex_allowed = (type == "operator" ||
+                S.regex_allowed = ((type == "operator" && !HOP(UNARY_POSTFIX, value)) ||
                                    (type == "keyword" && HOP(KEYWORDS_BEFORE_EXPRESSION, value)) ||
                                    (type == "punc" && HOP(PUNC_BEFORE_EXPRESSION, value)));
                 var ret = {
@@ -326,9 +326,13 @@ function tokenizer($TEXT, skip_comments) {
         };
 
         function read_num(prefix) {
-                var has_e = false, after_e = false;
+                var has_e = false, after_e = false, has_x = false;
                 var num = read_while(function(ch, i){
-                        if (ch == "E" || ch == "e") {
+                        if (ch == "x" || ch == "X") {
+                                if (has_x) return false;
+                                return has_x = true;
+                        }
+                        if (!has_x && (ch == "E" || ch == "e")) {
                                 if (has_e) return false;
                                 return has_e = after_e = true;
                         }
@@ -770,6 +774,9 @@ function parse($TEXT, strict_semicolons, embed_tokens) {
                             case "var":
                                 return prog1(var_, semicolon);
 
+                            case "const":
+                                return prog1(const_, semicolon);
+
                             case "while":
                                 return as("while", parenthesised(), in_loop(statement));
 
@@ -926,6 +933,10 @@ function parse($TEXT, strict_semicolons, embed_tokens) {
 
         function var_() {
                 return as("var", vardefs());
+        };
+
+        function const_() {
+                return as("const", vardefs());
         };
 
         function new_() {

@@ -60,6 +60,14 @@ var jsp = require("./parse-js"),
 /* -----[ helper for AST traversal ]----- */
 
 function ast_walker(ast) {
+        function _vardefs(defs) {
+                return defs.map(function(def){
+                        var a = [ def[0] ];
+                        if (def.length > 1)
+                                a[1] = walk(def[1]);
+                        return a;
+                });
+        };
         var walkers = {
                 "string": function(str) {
                         return [ "string", str ];
@@ -80,12 +88,10 @@ function ast_walker(ast) {
                         return out;
                 },
                 "var": function(defs) {
-                        return [ "var", defs.map(function(def){
-                                var a = [ def[0] ];
-                                if (def.length > 1)
-                                        a[1] = walk(def[1]);
-                                return a;
-                        })];
+                        return [ "var", _vardefs(defs) ];
+                },
+                "const": function(defs) {
+                        return [ "const", _vardefs(defs) ];
                 },
                 "try": function(t, c, f) {
                         return [
@@ -193,18 +199,24 @@ function ast_walker(ast) {
         };
 
         var user = {};
+        var stack = [];
         function walk(ast) {
                 if (ast == null)
                         return null;
-                var type = ast[0];
-                var gen = user[type];
-                if (gen) {
-                        var ret = gen.apply(ast, ast.slice(1));
-                        if (ret != null)
-                                return ret;
+                try {
+                        stack.push(ast);
+                        var type = ast[0];
+                        var gen = user[type];
+                        if (gen) {
+                                var ret = gen.apply(ast, ast.slice(1));
+                                if (ret != null)
+                                        return ret;
+                        }
+                        gen = walkers[type];
+                        return gen.apply(ast, ast.slice(1));
+                } finally {
+                        stack.pop();
                 }
-                gen = walkers[type];
-                return gen.apply(ast, ast.slice(1));
         };
 
         function with_walkers(walkers, cont){
@@ -224,7 +236,13 @@ function ast_walker(ast) {
 
         return {
                 walk: walk,
-                with_walkers: with_walkers
+                with_walkers: with_walkers,
+                parent: function() {
+                        return stack[stack.length - 2]; // last one is current node
+                },
+                stack: function() {
+                        return stack;
+                }
         };
 };
 
@@ -381,6 +399,9 @@ function ast_add_scope(ast) {
                         "var": function(defs) {
                                 defs.map(function(d){ define(d[0]) });
                         },
+                        "const": function(defs) {
+                                defs.map(function(d){ define(d[0]) });
+                        },
                         "try": function(t, c, f) {
                                 if (c != null) return [
                                         "try",
@@ -467,13 +488,20 @@ function ast_mangle(ast, do_toplevel) {
                 finally { scope = _scope; };
         };
 
+        function _vardefs(defs) {
+                return defs.map(function(d){
+                        return [ get_mangled(d[0]), walk(d[1]) ];
+                });
+        };
+
         return w.with_walkers({
                 "function": _lambda,
                 "defun": _lambda,
                 "var": function(defs) {
-                        return [ "var", defs.map(function(d){
-                                return [ get_mangled(d[0]), walk(d[1]) ];
-                        })];
+                        return [ "var", _vardefs(defs) ];
+                },
+                "const": function(defs) {
+                        return [ "const", _vardefs(defs) ];
                 },
                 "name": function(name) {
                         return [ "name", get_mangled(name) ];
@@ -510,6 +538,7 @@ function ast_mangle(ast, do_toplevel) {
 //                         "assign": _found,
 //                         "defun": _found,
 //                         "var": _found,
+//                         "const": _found,
 //                         "throw": _found,
 //                         "return": _found,
 //                         "break": _found,
@@ -543,7 +572,7 @@ function ast_mangle(ast, do_toplevel) {
 
 function ast_squeeze(ast, options) {
         options = defaults(options, {
-                make_seqs: false
+                make_seqs: true
         });
 
         var w = ast_walker(), walk = w.walk;
@@ -581,7 +610,8 @@ function ast_squeeze(ast, options) {
                 prev = null;
                 for (var i = 0, ret2 = []; i < ret1.length; ++i) {
                         cur = ret1[i];
-                        if (prev && cur[0] == "var" && prev[0] == "var") {
+                        if (prev && ((cur[0] == "var" && prev[0] == "var") ||
+                                     (cur[0] == "const" && prev[0] == "const"))) {
                                 prev[1] = prev[1].concat(cur[1]);
                         } else {
                                 ret2.push(cur);
@@ -609,7 +639,7 @@ function ast_squeeze(ast, options) {
                                 ret3.push(cur);
                         }
                 }
-                return ret3;
+                return ret3.map(walk);
         };
 
         function best_of(ast1, ast2) {
@@ -723,6 +753,10 @@ function ast_squeeze(ast, options) {
                 "conditional": function(c, t, e) {
                         if (c[0] == "unary-prefix" && c[1] == "!")
                                 return [ "conditional", walk(c[2]), walk(e), walk(t) ];
+                },
+                "seq": function() {
+                        if (arguments.length == 1)
+                                return walk(arguments[0]);
                 }
         }, function() {
                 return walk(ast);
@@ -790,9 +824,12 @@ function gen_code(ast, beautify) {
 
         function parenthesize(expr) {
                 var gen = make(expr);
-                return member(expr[0], slice(arguments, 1))
-                        ? gen = "(" + gen + ")"
-                        : gen;
+                for (var i = 1; i < arguments.length; ++i) {
+                        var el = arguments[i];
+                        if ((el instanceof Function && el(expr)) || expr[0] == el)
+                                return "(" + gen + ")";
+                }
+                return gen;
         };
 
         var generators = {
@@ -809,6 +846,9 @@ function gen_code(ast, beautify) {
                 "var": function(defs) {
                         return "var " + add_commas(defs.map(make_1vardef)) + ";";
                 },
+                "const": function(defs) {
+                        return "const " + add_commas(defs.map(make_1vardef)) + ";";
+                },
                 "try": function(tr, ca, fi) {
                         var out = [ "try", make_block(tr) ];
                         if (ca) out.push("catch", "(" + ca[0] + ")", make_block(ca[1]));
@@ -820,7 +860,7 @@ function gen_code(ast, beautify) {
                 },
                 "new": function(ctor, args) {
                         args = args.length > 0 ? "(" + add_commas(args.map(make)) + ")" : "";
-                        return add_spaces([ "new", parenthesize(ctor, "seq", "binary", "conditional", "assign") + args ]);
+                        return add_spaces([ "new", parenthesize(ctor, "seq", "binary", "conditional", "assign", "dot") + args ]);
                 },
                 "switch": function(expr, body) {
                         return add_spaces([ "switch", "(" + make(expr) + ")", make_block(body) ]);
@@ -952,7 +992,7 @@ function gen_code(ast, beautify) {
                         }) + newline + indent("}");
                 },
                 "regexp": function(rx, mods) {
-                        return "/" + rx.replace(/\x2f/g, "\\x2f") + "/" + mods;
+                        return "/" + rx + "/" + mods;
                 },
                 "array": function(elements) {
                         if (elements.length == 0) return "[]";
@@ -1015,14 +1055,22 @@ function gen_code(ast, beautify) {
         };
 
         function make_string(str) {
-                return '"' +
-                        str.replace(/\x5c/g, "\\\\")
-                        .replace(/\r?\n/g, "\\n")
-                        .replace(/\t/g, "\\t")
-                        .replace(/[\b]/g, "\\b")
-                        .replace(/\x22/g, "\\\"")
-                        + '"';
-                //return JSON.stringify(str); // still cheating.
+                // return '"' +
+                //         str.replace(/\x5c/g, "\\\\")
+                //         .replace(/\r?\n/g, "\\n")
+                //         .replace(/\t/g, "\\t")
+                //         .replace(/\r/g, "\\r")
+                //         .replace(/\f/g, "\\f")
+                //         .replace(/[\b]/g, "\\b")
+                //         .replace(/\x22/g, "\\\"")
+                //         .replace(/[\x00-\x1f]|[\x80-\xff]/g, function(c){
+                //                 var hex = c.charCodeAt(0).toString(16);
+                //                 if (hex.length < 2)
+                //                         hex = "0" + hex;
+                //                 return "\\x" + hex;
+                //         })
+                //         + '"';
+                return JSON.stringify(str); // STILL cheating.
         };
 
         function make_name(name) {
@@ -1115,3 +1163,4 @@ exports.ast_walker = ast_walker;
 exports.ast_mangle = ast_mangle;
 exports.ast_squeeze = ast_squeeze;
 exports.gen_code = gen_code;
+exports.ast_add_scope = ast_add_scope;

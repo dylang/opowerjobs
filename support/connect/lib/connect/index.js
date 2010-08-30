@@ -24,6 +24,7 @@ var sys = require('sys'),
  *
  * @type Object
  */
+
 process.connectEnv = process.sparkEnv || {
     name: process.env.CONNECT_ENV || 'development',
     port: 3000,
@@ -206,6 +207,7 @@ Server.prototype.handle = function(req, res, outerNext) {
         }
 
         var pathname = Url.parse(req.url).pathname;
+        if (pathname === undefined) pathname = '/';
 
         // Skip this layer if the route doesn't match.
         if (pathname.indexOf(layer.route) !== 0) {
@@ -292,3 +294,10 @@ fs.readdirSync(__dirname + '/middleware').forEach(function(filename){
  */
 
 exports.__proto__ = exports.middleware;
+
+/**
+ * Expose utils.
+ */
+
+exports.utils = require('./utils');
+

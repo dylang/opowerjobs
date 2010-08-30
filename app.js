@@ -97,7 +97,8 @@ Server.error(function(err, req, res, next){
         log('*************************************');
         log(err);
         log('*************************************');
-        res.render('error.ejs', { locals: { title: 'Error', message: objToHTML(err) } });
+        res.redirect('/');
+        //res.render('error.ejs', { locals: { title: 'Error', message: objToHTML(err) } });
 });
 
 

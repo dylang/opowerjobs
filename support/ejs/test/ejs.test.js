@@ -124,6 +124,24 @@ module.exports = {
             close: '?>'
         }));
     },
+
+    'test custom tags over 2 chars': function(assert){
+        var html = '<p>foo</p>',
+            str = '<p>{{{{= "foo" }>>}</p>';
+
+        assert.equal(html, ejs.render(str, {
+            open: '{{{{',
+            close: '}>>}'
+        }));
+
+        var html = '<p>foo</p>',
+            str = '<p><??= "foo" ??></p>';
+
+        assert.equal(html, ejs.render(str, {
+            open: '<??',
+            close: '??>'
+        }));
+    },
     
     'test global custom tags': function(assert){
         var html = '<p>foo</p>',
@@ -153,6 +171,60 @@ module.exports = {
         assert.equal(html, ejs.render(str, {
             locals: {
                 items: ['foo']
+            }
+        }));
+    },
+    
+    'test filter support': function(assert){
+        var html = 'Zab',
+            str = '<%=: items | reverse | first | reverse | capitalize %>';
+        assert.equal(html, ejs.render(str, {
+            locals: {
+                items: ['foo', 'bar', 'baz']
+            }
+        }));
+    },
+    
+    'test filter argument support': function(assert){
+        var html = 'tj, guillermo',
+            str = '<%=: users | map:"name" | join:", " %>';
+        assert.equal(html, ejs.render(str, {
+            locals: {
+                users: [
+                    { name: 'tj' },
+                    { name: 'guillermo' }
+                ]
+            }
+        }));
+    },
+    
+    'test sort_by filter': function(assert){
+        var html = 'tj',
+            str = '<%=: users | sort_by:"name" | last | get:"name" %>';
+        assert.equal(html, ejs.render(str, {
+            locals: {
+                users: [
+                    { name: 'guillermo' },
+                    { name: 'tj' },
+                    { name: 'mape' }
+                ]
+            }
+        }));
+    },
+    
+    'test custom filters': function(assert){
+        var html = 'Welcome Tj Holowaychuk',
+            str = '<%=: users | first | greeting %>';
+
+        ejs.filters.greeting = function(user){
+            return 'Welcome ' + user.first + ' ' + user.last + '';
+        };
+
+        assert.equal(html, ejs.render(str, {
+            locals: {
+                users: [
+                    { first: 'Tj', last: 'Holowaychuk' }
+                ]
             }
         }));
     }
