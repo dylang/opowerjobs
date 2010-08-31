@@ -37,13 +37,12 @@
 
 /* Sub navigation */
 
-.nav-sub a {
-    color: rgba(0,0,0,0.5);
-    display: block;
-    font-size: 14px;
-    line-height: 18px;
-    padding: 5px 10px;
-    text-transform: uppercase;
+.subnav a {
+    background: rgba(27,140,176,0.5);
+    color: #ffffff;
+    margin: 0;
+    
+    -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0;
 }
 
 .nav-sub a:hover {
