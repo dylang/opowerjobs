@@ -4,17 +4,11 @@
 */ %>
 
 <div class="content">
-    <div class="span-19 first last">
-        <div class="span-7 first">
-            <%- partial('jobs/icons/dc-northern-virginia') %>
-        </div>
-        <div class="span-9 last job-section">
-            <h3>Washington, DC</h3>
-            <a href="/san-francisco">We also have openings in downtown SF.</a>
-        </div>
+    <div class="span-17 last">
+        <h3>Washington, DC <a href="/san-francisco">(Interested in San Francisco?)</a></h3>
     </div>
 
-    <div class="span-19 first last">
+    <div class="span-17 last">
         <%- partial('jobs/jobs', { collection: jobs, as: "jobs", locals: { }} ) %>
     </div>
 
