@@ -4,5 +4,7 @@
 */ %>
         
 <li class="subnav">
-    <a href="/<%= page.url %>" class="rounded <%= (page.id == currentPageID) ? "active" : "" %>"><%= page.label %></a>
+    <a href="<%= href(page.url) %>" class="<%= page.id == currentPageID ? "active " : "" %><%= firstInCollection ? "rounded-tl rounded-tr" : "" %><%= lastInCollection ? "rounded-bl rounded-br" : "" %>">
+        <%= page.label %>
+    </a>
 </li>

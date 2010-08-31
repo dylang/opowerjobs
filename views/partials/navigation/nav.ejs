@@ -4,15 +4,22 @@
 */ %>
 
 <% if (!page.noMenu) { %>
-<li>
-    <a href="<%= href(page.url) %>" class="<%= page.id == currentPageID ? "active " : "" %><%= firstInCollection ? "rounded-tl rounded-tr" : "" %><%= lastInCollection ? "rounded-bl rounded-br" : "" %>">
-           <%= page.label %>
-    </a>
-
+<li class="parent">
+    
     <% if (page.children && page.children.length) { %>
+
+        <div class="section-header"><%= page.label %></div>
+
         <ul class="subnavigation">
             <%- partial("navigation/subnav", { collection: page.children, as: "page", locals: { currentPageID: currentPageID }} ) %>
         </ul>
-    <% } %>
+
+    <% } else { %>
+        
+        <a href="<%= href(page.url) %>" class="rounded <%= page.id == currentPageID ? "active " : "" %>">
+           <%= page.label %>
+        </a>
+        
+    <% }%>
 </li>
 <% } %>

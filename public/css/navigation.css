@@ -13,6 +13,10 @@
     text-transform: uppercase;
 }
 
+.nav-main li.parent {
+    margin-bottom: 10px;
+}
+
 .nav-main a {
     background: rgba(27,140,176,0.3);
     border-bottom: 1px solid #3299bb;
@@ -35,21 +39,9 @@
     color: #ffffff;
 }
 
-/* Sub navigation */
-
-.subnav a {
-    background: rgba(27,140,176,0.5);
+.navigation .section-header {
     color: #ffffff;
-    margin: 0;
-    
-    -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0;
-}
-
-.nav-sub a:hover {
-    color: #1b8cb0;
-}
-
-.nav-sub a.active {
-    background: rgba(0,0,0,0.2);
-    color: #ffffff !important;
+    font-size: 18px;
+    padding: 10px 0 5px;
+    text-shadow: rgba(0,0,0, 0.2) 1px 2px 0px;
 }
