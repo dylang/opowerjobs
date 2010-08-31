@@ -70,3 +70,14 @@
     margin: 10px 0;
     text-align: center;
 }
+
+.job .shorturl input {    
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    border: none;
+    font-size: 10px;
+    outline: none;
+    padding: 4px 7px;
+    width: 120px;
+}

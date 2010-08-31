@@ -67,11 +67,14 @@
 
         <div class="span-17 first last flag clearfix">
             
-            <div class="span-4 first">
+            <div class="span-13 first">
                 <h5>Find other jobs in:</h5>
-            </div>
-            <div class="span-13 last">
                 <a href="<%- href(job.url.location) %>" class="button blue-button button-small button-left"><%- job.location %></a><a href="<%- href(job.url.department) %>" class="button blue-button button-small button-right"><%- job.department %></a>
+            </div>
+            
+            <div class="span-4 last">
+                <h5>Share the job:</h5>
+                 <div class="shorturl"><input spellcheck="false" value="http://opower.jobs/<%- job.id %>" /></div>
             </div>
             
         </div>
