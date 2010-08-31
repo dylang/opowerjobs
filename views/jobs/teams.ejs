@@ -1,15 +1,15 @@
 <% /*
-    For listing all departments
+    For listing all teams
     http://localhost:3000/teams
 
     Idea for layout: http://www.facebook.com/careers/
 */ %>
 
 <div class="content">
-    <h2>All Departments</h2>
+    <h2>All Teams</h2>
     <h3>There something for everyone.</h3>
-    <ul class="departments">
-        <%- partial('jobs/department', { collection: all_departments, as: "department", locals: {} } ) %>
+    <ul class="teams">
+        <%- partial('jobs/team', { collection: all_teams, as: "department", locals: {} } ) %>
     </ul>
 
     <ul>

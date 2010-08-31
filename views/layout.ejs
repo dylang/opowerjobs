@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>OPOWER Jobs <%= locals.title ? ' - ' + locals.title : '' %><%= locals.job ? ' - ' + locals.job.title : '' %><%= locals.location && locals.all_locations[locals.location]  ? ' - ' + locals.all_locations[locals.location] : '' %><%= locals.department && locals.all_departments[locals.department]  ? ' - ' +  locals.all_departments[locals.department] : '' %></title>
+    <title>OPOWER Jobs <%= locals.title ? ' - ' + locals.title : '' %><%= locals.job ? ' - ' + locals.job.title : '' %><%= locals.location && locals.all_locations[locals.location]  ? ' - ' + locals.all_locations[locals.location] : '' %><%= locals.department && locals.all_teams[locals.department]  ? ' - ' +  locals.all_teams[locals.department] : '' %></title>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <%- partial('comment.ejs') %>    

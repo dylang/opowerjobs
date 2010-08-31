@@ -18,7 +18,7 @@
                 <h4>Northern Virginia</h4>
             </div>
             <div class="span-13 last job-section">
-                <%- partial(locals.departments ? 'jobs/department' : 'jobs/jobs', { collection: jobs['dc-northern-virginia'], as: "jobs", locals: { location: 'dc-northern-virgina' }} ) %>
+                <%- partial(locals.teams ? 'jobs/team' : 'jobs/jobs', { collection: jobs['dc-northern-virginia'], as: "jobs", locals: { location: 'dc-northern-virgina' }} ) %>
             </div>
         <% } %>
 
@@ -27,7 +27,7 @@
                 <h4>San Francisco</h4>
             </div>
             <div class="span-13 last job-section">
-                <%- partial(locals.departments ? 'jobs/department' : 'jobs/jobs', { collection: jobs['san-francisco'], as: "jobs", locals: { location: 'san-francisco' }} ) %>
+                <%- partial(locals.teams ? 'jobs/team' : 'jobs/jobs', { collection: jobs['san-francisco'], as: "jobs", locals: { location: 'san-francisco' }} ) %>
             </div>
         <% }  %>
     </div>
