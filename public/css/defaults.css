@@ -106,7 +106,7 @@ H2 {
 .job UL {
     list-style-type: disc;
 }
-.job LI {
+.job LI, ul.list LI {
     margin: 0 0 0 40px;
     padding: 5px 0 10px 0px;
     line-height: 120%;

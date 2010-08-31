@@ -199,19 +199,6 @@ small, .small {
     box-shadow: 0px 2px 1px #ccc;
 }
 
-/* Global Colors
--------------------------------------------------------------- */
-/* Brand: Color*/
-a { color: #3bc; /* replace with ei.styles.siteWide.link */ }
-
-
-/* Lists
- -------------------------*/
-ul.list li:before {
-    content: "\2022 \0020";
-}
-
-
 /* Grid Overlay
 ------------------------------ */
 #grid-overlay {
