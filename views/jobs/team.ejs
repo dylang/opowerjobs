@@ -1,12 +1,12 @@
 <% /*
-    For individual department pages
+    For individual team pages
     http://localhost:3000/engineering
 */ %>
 
-<div class="content page-department">
-    <% /* department header */ %>
+<div class="content page-team">
+    <% /* team header */ %>
     <div class="span-17 first last">
-        <%- partial('teams/' + header + '.ejs', { locals: { department: department, department_name: all_teams[department] } }) %>
+        <%- partial('teams/' + header + '.ejs', { locals: { team: team, team_name: all_teams[team] } }) %>
     </div>
 
     <div class="clear" style="padding-top:40px;"></div>

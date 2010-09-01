@@ -1,11 +1,11 @@
  <div style="margin-bottom: 20px">
     <ul class="menu rounded">
-        <li><a href="/<%= job.url.department %>"><%= job.department %></a>
+        <li><a href="/<%= job.url.team %>"><%= job.team %></a>
             <ul class="rounded-bl rounded-br">
-                <%- partial('jobs/job', { collection: jobs[job.url.location][job.url.department], as: "job", locals: {  }} ) %>
+                <%- partial('jobs/job', { collection: jobs[job.url.location][job.url.team], as: "job", locals: {  }} ) %>
             </ul>
         </li>
-        <li><a href="/<%= job.url.department %>">Related Positions</a>
+        <li><a href="/<%= job.url.team %>">Related Positions</a>
             <ul class="rounded-bl rounded-br">
                 <%- partial('jobs/job', { collection: job.similar, as: "job", locals: { } } ) %>
             </ul>
