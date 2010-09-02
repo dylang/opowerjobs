@@ -7,13 +7,16 @@
     I do not think we should ever touch this.
 */ %>
 
-<li>
-    <a href="<%= href(job.url.long_url) %>">
+<option value="job.url.long_url">
+
     <% if (locals.show_location) { %>
         <% if (job.url.location == 'san-francisco') { %>
-        <img style="width:16px; height: 16px;" src="/css/icons/sf.png" alt="" />
+            SF
         <% } else { %>
-        <img  style="width:16px; height: 16px;"  src="/css/icons/dc.gif" alt="" />
-        <% } } %>        
-        <%= job.title %></a>
-</li>
+            DC
+        <% } %>
+    <% } %>        
+
+    <%= job.title %>
+    
+</option>

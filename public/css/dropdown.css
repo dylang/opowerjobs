@@ -1,0 +1,100 @@
+/*
+ * @author garrett.miller
+ */
+
+.dropdown-container {
+    float: left;
+    font-size: 14px;
+}
+.dropdown dd, .dropdown dt, .dropdown ul {
+    margin: 0px;
+    padding: 0px;
+    z-index: 1000;
+}
+.dropdown dd { position:relative; }
+.dropdown a, .dropdown a:visited {
+    color: #000;
+    text-decoration: none;
+    outline: none;
+}
+/* The unselected box */
+.dropdown dt a {
+    background: #eee url(/css/theme/bgGradient-fff-eee.png) repeat-x bottom center;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+}
+.dropdown dt a:hover, .dropdown dt a.active {
+    border: 2px solid #888;
+    height: 28px;
+    line-height: 28px;
+    padding: 0 9px;
+}
+.dropdown dt a.active {
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+    /* TODO: Once LESS is installed, clean this rounded nonsense up (using rounded-tl, rounded-tr)*/
+    -moz-border-radius: 0px; -webkit-border-radius: 0px; border-radius: 0px;
+    -moz-border-radius-topleft: 4px; -webkit-border-top-left-radius: 4px; border-top-left-radius: 4px;
+    -moz-border-radius-topright: 4px; -webkit-border-top-right-radius: 4px; border-top-right-radius: 4px;
+}
+.dropdown dt a span {
+    cursor: pointer;
+    padding: 7px 0 8px;
+}
+.dropdown dt a:hover span,
+.dropdown dt a.active span {
+    padding: 5px 0 6px;
+}
+.dropdown dt a .text {
+    float: left;
+    height: 30px;
+    padding: 0 0 0 0px !important;
+}
+.dropdown dt a .arrow {
+    border-left: 1px solid #ccc;
+    float: right;
+    height: 25px;
+    padding:  5px 0 0 5px !important;
+    width: 15px;
+}
+.dropdown dt a:hover .icon-arrow,
+.dropdown dt a.active .icon-arrow {
+    margin-top: -1px;
+}
+.dropdown dd ul {
+    background: #fff url(/css/theme/bgGradient-fff-eee.png) repeat-x bottom center;
+    border: 2px solid #888;
+    border-top: 0px;
+    display: none;
+    left: 0px;
+    list-style: none;
+    padding: 10px 0;
+    position: absolute;
+    top: 0px;
+    width: auto;
+    z-index: 1000;
+}
+.dropdown span.value {
+    display: none;
+}
+.dropdown dd ul li a {
+    display: block;
+    line-height: 25px;
+    padding: 0 0 0 10px;
+}
+.dropdown dd ul li a:hover, .dropdown dd ul li a.hover, .dropdown dd ul li.active a.hover {
+    background-color: #ccc;
+}
+.dropdown dd ul li.active a {
+    background-color: #888;
+    color: #fff;
+}
+.dropdown img.flag {
+    border: none;
+    vertical-align: middle;
+    margin-left: 10px;
+}

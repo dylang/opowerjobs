@@ -23,7 +23,15 @@
     
     <div class="span-7 last">
         <h3>Critical Hires:</h3>
-            <%- partial('jobs/jobid', { collection: all_critical, as: "jobId", locals: {show_location: false, number: 10 } } ) %>        
+
+            
+            
+            <form class="dyna-hide" method="GET" id="fuelSelector-form" name="myEnergyUse-fuelSelector-form" action="<ei:href>${url}</ei:href>">
+                <select name="meterType" id="fuelSelector" size="1">
+                    <%- partial('jobs/jobid', { collection: all_critical, as: "jobId", locals: {show_location: false, in_select: true } } ) %>
+                </select>
+                <input type="submit" />
+            </form>
     </div>
 
     <div class="clearfix">
@@ -37,3 +45,14 @@
 
 
 </div>
+
+
+<script type="text/javascript">
+    window.onload = function() {
+        $('#fuelSelector')
+                .dropdown({ name: 'fuelSelector' })
+                .change(function() {
+                    document.location = addMeterType($('#fuelSelector-form').attr('action'));
+                });
+    };
+</script>

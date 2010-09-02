@@ -4,4 +4,12 @@
     locals.job = all_ids[jobId];
 %>
 
- <%- partial('jobs/job', { locals: locals} ) %>
+<% if(locals.in_select) { %>
+
+    <%- partial('jobs/job-select', { locals: locals} ) %>
+
+<% } else { %>
+    
+    <%- partial('jobs/job', { locals: locals} ) %>
+    
+<% } %>
