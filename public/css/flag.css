@@ -33,3 +33,8 @@
 .flag a {
     color: #fff;
 }
+
+.flag iframe {
+    border: 5px solid #076786;
+    margin-left: -5px
+}

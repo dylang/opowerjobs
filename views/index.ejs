@@ -7,17 +7,20 @@
 <div class="content">
 
 
-    <h2>"This looks like a fun place to work."</h2>
-    <h3><a href="/working-here#obama" title="President Obama" style="float:none;">President Obama</a>, Spring 2010</h3>
+    <h2 class="single">Our vision is to make the world more energy efficient. And we have some pretty good ideas on how to make that happen.</h2>
 
-    <div class="large-text">
+    <div class="span-10">
         
-        <p>Our vision is to make the world more energy efficient. And we have some pretty good ideas on how to make that happen.</p>
 
         <p>But what separates a great idea from a product that has the potential to change the world is the people who make it happen. At OPOWER, ideas are brought to life by a group of relentlessly committed and impressively talented individuals. It is our team of software engineers, marketers, social scientists, statisticians, program managers, sales people, recruiters and lobbyists who are responsible for what we have been able to achieve to date - by the end of this year, we will be providing the equivalent of one-third of the entire US solar industry in energy savings. That is 1,000 homes off the grid for every employee who works at OPOWER.</p>
 
         <p>Interested? We would like you to <a href="/all" title="join us">join us</a>. You will be challenged. You will develop new skills. You will work very hard, but also <a href="/working-here" title="have a lot of fun">have a lot of fun</a>. But best of all, you may be able to tell your friends and family that you’ve helped change the world.</p>
 
+    </div>
+    
+    <div class="span-7 last">
+        <h3>Critical Hires:</h3>
+            <%- partial('jobs/jobid', { collection: all_critical, as: "jobId", locals: {show_location: false, number: 10 } } ) %>        
     </div>
 
     <div class="clearfix">
@@ -25,41 +28,9 @@
             ENGINEER<br /><br /><br /><br /><br /><br /><br /><br /><br />
         </div>
         <div class="span-9 last">
-            Right side
+
         </div>
     </div>
-
-<!--     <div class="first span-17 last space-bottom">
-        <iframe src="http://player.vimeo.com/video/14306186?portrait=0" width="660" height="371" frameborder="0"></iframe>
-    </div> -->
-
-
-
-
-<!--
-    <div class="span-17 first last">
-            <div class="strong">Arlington, Virgina</div>
-            <a href="/dc-northern-virginia">All DC Openings</a>
-            <ul>
-                <li>Corporate Headquarters.  This is where the action is at.</li>
-                <li>One block from the Court House Metro on the Orange line.</li>
-                <li>Most employees live in DC, including both founders.</li>
-                <li>Plenty of parking for cars and bikes.</li>
-            </ul>
-    </div>
-
-
-    <div class="span-17 first last">
-            <div class="strong">San Francisco, California</div>
-            <a href="/san-francisco">All SF Openings</a>
-            <ul>
-                <li>One block from the ???.</li>
-                <li>Trendy office.</li>
-                <li>Lots of conference rooms.</li>
-                <li>Those things that people in SF like.</li>
-            </ul>
-    </div>
--->
 
 
 </div>

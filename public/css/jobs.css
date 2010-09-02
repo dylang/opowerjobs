@@ -47,7 +47,6 @@
     background-color: white;
 }
 
-.tabs LI A,
 .sub_nav A  {
     width: 100%;
     display: inline-block;
@@ -56,7 +55,7 @@
     -webkit-border-radius: 10px;
 
 }
-.tabs LI A:hover,
+
 .sub_nav A:hover {
     text-decoration: none;
     background: #5EB7DF;
@@ -64,7 +63,6 @@
     -moz-border-radius: 10px;
 }
 
-.tabs LI A.current,
 .sub_nav A.current {
     background: #0099DD;
     color: white;
