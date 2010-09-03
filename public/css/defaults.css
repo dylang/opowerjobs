@@ -113,6 +113,19 @@ H2 {
     line-height: 120%;
 }
 
+/* Teams page */
+.page-teams ul.teams li {
+    border: none;
+    float: left;
+    width: 330px;
+}
+
+.page-teams ul.teams li a {
+    border: 1px solid red;
+    display: block;
+    padding: 20px 0;
+}
+
 /* Tabs */
 
 .ui-tabs .ui-tabs-hide {
