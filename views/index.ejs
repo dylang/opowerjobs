@@ -13,8 +13,7 @@
 
     <h2 class="single">Our vision is to make the world more energy efficient. And we have some pretty good ideas on how to make that happen.</h2>
 
-    <div class="span-10">
-
+    <div class="span-10 large-text">
         <p>But what separates a great idea from a product that has the potential to change the world is the people who make it happen. At OPOWER, ideas are brought to life by a group of relentlessly committed and impressively talented individuals. It is our team of software engineers, marketers, social scientists, statisticians, program managers, sales people, recruiters and lobbyists who are responsible for what we have been able to achieve to date - by the end of this year, we will be providing the equivalent of one-third of the entire US solar industry in energy savings. That is 1,000 homes off the grid for every employee who works at OPOWER.</p>
 
         <p>Interested? We would like you to <a href="/all" title="join us">join us</a>. You will be challenged. You will develop new skills. You will work very hard, but also <a href="/working-here" title="have a lot of fun">have a lot of fun</a>. But best of all, you may be able to tell your friends and family that you’ve helped change the world.</p>
@@ -22,37 +21,33 @@
     </div>
     
     <div class="span-7 last">
-        <h3>Critical Hires:</h3>
 
-            
-            
-            <form class="dyna-hide" method="GET" id="fuelSelector-form" name="myEnergyUse-fuelSelector-form" action="<ei:href>${url}</ei:href>">
-                <select name="meterType" id="fuelSelector" size="1">
-                    <%- partial('jobs/jobid', { collection: all_critical, as: "jobId", locals: {show_location: false, in_select: true } } ) %>
-                </select>
-                <input type="submit" />
-            </form>
+        <ul id="dropdown-critical" class="dropdown droplink">
+            <li class="target">Critical Hires</li>
+            <li>
+                <ul class="subnav">
+                    <%- partial('jobs/jobid', { collection: all_critical, as: "jobId", locals: {show_location: false } } ) %>                    
+                </ul>
+            </li>
+        </ul>
+        
+        <ul id="dropdown-critical" class="dropdown droplink">
+            <li class="target">Our Teams</li>
+            <li>
+                <ul class="subnav">
+                    <%- partial('jobs/team') %>
+                </ul>
+            </li>
+        </ul>
+        
     </div>
-
-    <div class="clearfix">
-        <div class="span-8">
-            ENGINEER<br /><br /><br /><br /><br /><br /><br /><br /><br />
-        </div>
-        <div class="span-9 last">
-
-        </div>
-    </div>
-
 
 </div>
 
 
 <script type="text/javascript">
     window.onload = function() {
-        $('#fuelSelector')
-                .dropdown({ name: 'fuelSelector' })
-                .change(function() {
-                    document.location = addMeterType($('#fuelSelector-form').attr('action'));
-                });
+        $('#dropdown-critical')
+            .dropdown({ name: 'fuelSelector' });
     };
 </script>

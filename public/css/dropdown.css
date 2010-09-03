@@ -1,100 +1,87 @@
-/*
- * @author garrett.miller
- */
-
-.dropdown-container {
-    float: left;
-    font-size: 14px;
-}
-.dropdown dd, .dropdown dt, .dropdown ul {
-    margin: 0px;
-    padding: 0px;
-    z-index: 1000;
-}
-.dropdown dd { position:relative; }
-.dropdown a, .dropdown a:visited {
-    color: #000;
-    text-decoration: none;
-    outline: none;
-}
-/* The unselected box */
-.dropdown dt a {
-    background: #eee url(/css/theme/bgGradient-fff-eee.png) repeat-x bottom center;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    display: block;
-    height: 30px;
-    line-height: 30px;
-    padding: 0 10px;
-}
-.dropdown dt a:hover, .dropdown dt a.active {
-    border: 2px solid #888;
-    height: 28px;
-    line-height: 28px;
-    padding: 0 9px;
-}
-.dropdown dt a.active {
-    background: #fff;
-    border-bottom: 1px solid #ccc;
-    /* TODO: Once LESS is installed, clean this rounded nonsense up (using rounded-tl, rounded-tr)*/
-    -moz-border-radius: 0px; -webkit-border-radius: 0px; border-radius: 0px;
-    -moz-border-radius-topleft: 4px; -webkit-border-top-left-radius: 4px; border-top-left-radius: 4px;
-    -moz-border-radius-topright: 4px; -webkit-border-top-right-radius: 4px; border-top-right-radius: 4px;
-}
-.dropdown dt a span {
-    cursor: pointer;
-    padding: 7px 0 8px;
-}
-.dropdown dt a:hover span,
-.dropdown dt a.active span {
-    padding: 5px 0 6px;
-}
-.dropdown dt a .text {
-    float: left;
-    height: 30px;
-    padding: 0 0 0 0px !important;
-}
-.dropdown dt a .arrow {
-    border-left: 1px solid #ccc;
-    float: right;
-    height: 25px;
-    padding:  5px 0 0 5px !important;
-    width: 15px;
-}
-.dropdown dt a:hover .icon-arrow,
-.dropdown dt a.active .icon-arrow {
-    margin-top: -1px;
-}
-.dropdown dd ul {
-    background: #fff url(/css/theme/bgGradient-fff-eee.png) repeat-x bottom center;
-    border: 2px solid #888;
-    border-top: 0px;
-    display: none;
-    left: 0px;
-    list-style: none;
-    padding: 10px 0;
-    position: absolute;
-    top: 0px;
-    width: auto;
-    z-index: 1000;
-}
-.dropdown span.value {
-    display: none;
-}
-.dropdown dd ul li a {
-    display: block;
-    line-height: 25px;
-    padding: 0 0 0 10px;
-}
-.dropdown dd ul li a:hover, .dropdown dd ul li a.hover, .dropdown dd ul li.active a.hover {
-    background-color: #ccc;
-}
-.dropdown dd ul li.active a {
-    background-color: #888;
-    color: #fff;
-}
-.dropdown img.flag {
+ul.dropdown li {
     border: none;
-    vertical-align: middle;
-    margin-left: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+ul.dropdown li.target {
+    background: #fff url(/css/theme/bgGradient-fff-eee.png) repeat-x bottom center;    
+    border: 2px solid #ccc;
+    cursor: pointer;
+    display: block;
+    font-size: 18px;
+    height: 18px;
+    padding: 8px 10px;
+    position: relative;
+    width: 220px;
+    
+    -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+}
+
+ul.dropdown li.target:hover {
+    border-color: #aaa;
+}
+
+ul.dropdown li.active {   
+    border: 2px solid #aaa;
+    border-bottom: none;
+    -moz-border-radius-bottomleft: 0px; -webkit-border-bottom-left-radius: 0px; border-bottom-left-radius: 0px;
+    -moz-border-radius-bottomright: 0px; -webkit-border-bottom-right-radius: 0px; border-bottom-right-radius: 0px;
+}
+
+ul.dropdown .arrow {
+    border-left: 1px solid #ccc;
+    
+    display: block;
+    float: right;
+    height: 34px;
+    margin: -8px -10px 0 0;
+    width: 30px;    
+}
+
+ul.droplink {
+	list-style: none;
+	margin: 0;
+	width: 230px;
+}
+ul.droplink li {
+    display: block;
+	margin: 0;
+	padding: 0 15px 0 0;
+	position: relative; /*--Declare X and Y axis base for sub navigation--*/
+}
+ul.droplink li a {
+	display: block;
+	text-decoration: none;
+}
+
+ul.droplink li ul.subnav {
+    background: #fff url(/css/theme/bgGradient-fff-eee.png) repeat-x bottom center;     
+    border: 2px solid #aaa;
+    border-top: 1px dotted #aaa;
+	display: none;
+	float: left;
+	left: 0; 
+	position: absolute; /*--Important - Keeps subnav from affecting main navigation flow--*/
+	margin: 0; padding: 0;
+	top: 0px;
+	width: 240px;
+	z-index: 1000;
+
+    -moz-border-radius-bottomleft: 4px; -webkit-border-bottom-left-radius: 4px; border-bottom-left-radius: 4px;
+    -moz-border-radius-bottomright: 4px; -webkit-border-bottom-right-radius: 4px; border-bottom-right-radius: 4px;
+}
+ul.droplink li ul.subnav li{
+	margin: 0; 
+	padding: 0;
+	clear: both;
+}
+html ul.droplink li ul.subnav li a {
+	display: block;
+	border-bottom: 1px solid #ccc;
+    padding: 10px 10px;
+}
+html ul.droplink li ul.subnav li a:hover { /*--Hover effect for subnav links--*/
+	background: #eee;
+	color: #333;
 }
