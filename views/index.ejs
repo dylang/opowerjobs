@@ -26,7 +26,7 @@
             <li class="target">Critical Hires</li>
             <li>
                 <ul class="subnav">
-                    <%- partial('jobs/jobid', { collection: all_critical, as: "jobId", locals: {show_location: false } } ) %>                    
+                    <%- partial('jobs/jobid', { collection: all_critical, as: "jobId", locals: {show_location: true } } ) %>                    
                 </ul>
             </li>
         </ul>
@@ -35,7 +35,7 @@
             <li class="target">Our Teams</li>
             <li>
                 <ul class="subnav">
-                    <%- partial('jobs/team') %>
+                    <%- partial('jobs/team', { collection: all_teams, as: "department", locals: {} } ) %>
                 </ul>
             </li>
         </ul>

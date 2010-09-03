@@ -10,15 +10,53 @@
     <h3>There something for everyone.</h3>
     <p>At OPOWER, we understand that our success is a result of our diverse and talented workforce, and we take pride in maintaining the high quality of our workplace. You will find challenging projects and smart people here, and we encourage you to apply and join our team.</p>
     <p>The process begins with searching for a job opening that interests you by job team.</p>
+
+    <ul class="teams clearfix">
         
-    <ul class="teams">
-        <%- partial('jobs/team') %>
+        <li>
+            <div class="icon icon-small icon-dept-small icon-dept-clientServices"> </div>
+            <a href="/client-services-operations">Client Services & Operations</a>
+        </li>
+        <li>
+            <div class="icon icon-small icon-dept-small icon-dept-consumerMarketing"> </div>
+            <a href="/consumer-marketing-analysis">Consumer Marketing & Analytics</a>
+        </li>
+        <li>
+            <div class="icon icon-small icon-dept-small icon-dept-corpMarketing"> </div>
+            <a href="/corporate-marketing-and-strategy">Corporate Marketing and Strategy</a>
+        </li>
+        <li>
+            <div class="icon icon-small icon-dept-small icon-dept-engineering"> </div>
+            <a href="/engineering">Engineering</a>
+        </li>
+        <li>
+            <div class="icon icon-small icon-dept-small icon-dept-generalAdmin"> </div>
+            <a href="/general-administrative">General & Administrative</a>
+        </li>
+        <li>
+            <div class="icon icon-small icon-dept-small icon-dept-govAffairs"> </div>
+            <a href="/government-affairs">Government Affairs & Legal</a>
+        </li>
+        <li>
+            <div class="icon icon-small icon-dept-small icon-dept-prodManagement"> </div>
+            <a href="/product-management">Product Management & User Experience</a>
+        </li>
+        <li>
+            <div class="icon icon-small icon-dept-small icon-dept-salesBusiness"> </div>
+            <a href="/sales-business-development">Sales & Business Development</a>
+        </li>
+
     </ul>
     
+    <div class="clearfix">
+        <br /><br /><br /><br /><br />
+    
+        <h3>AUTOMATIC TEAMS - NEEDS TO BE FIXED IN JOBVITE</h3>
+    
+        <ul>
+            <%- partial('jobs/team', { collection: all_teams, as: "department", locals: {} } ) %>
+        </ul>
 
-    <ul>
-        <li>
-            <a href="/all">All openings</a>
-        </li>
-    </ul>
+    </div>
+    
 </div>

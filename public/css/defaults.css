@@ -121,9 +121,12 @@ H2 {
 }
 
 .page-teams ul.teams li a {
-    border: 1px solid red;
     display: block;
+    float: left;
     padding: 20px 0;
+    width: 240px;
+    border: 1px solid red;
+    
 }
 
 /* Tabs */

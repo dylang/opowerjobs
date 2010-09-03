@@ -1,15 +1,29 @@
-.icon {
+.icon, .icon-small {
     background-color: transparent;
     background-image: url(theme/icons.png);
     background-repeat: no-repeat;
     display: block;
-    height: 140px;
-    width: 180px;
+    height: 100px;
+    width: 100px;
 }
 
-.icon-lightbulb     { background-position:   0px 0px; }
-.icon-people        { background-position:   0px -140px; }
-.icon-box           { background-position:   0px -280px; }
+.icon-small {
+    float: left;
+    height: 50px;
+    width: 50px;    
+}
+
+.icon-dept          {  background-image: url(theme/icons-department.png); }
+.icon-dept-small    {  background-image: url(theme/icons-department-small.png); }
+
+.icon-dept-clientServices {     background-position: 0 0; }
+.icon-dept-consumerMarketing {  background-position: -50px 0; }
+.icon-dept-corpMarketing {      background-position: -100px 0; }
+.icon-dept-engineering {        background-position: -150px 0; }
+.icon-dept-generalAdmin {       background-position: -200px 0; }
+.icon-dept-govAffairs {         background-position: -250px 0; }
+.icon-dept-prodManagement {     background-position: -300px 0; }
+.icon-dept-salesBusiness {      background-position: -350px 0; }
 
 
 /*  Arrow Icon Sprite */

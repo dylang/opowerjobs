@@ -1,24 +1,10 @@
+<% /*
+    A department - only used on:
+    http://localhost:3000/teams
+
+    There currently are not descriptions stored for each department.
+*/ %>
+
 <li>
-    <a href="/client-services-operations">Client Services & Operations</a>
-</li>
-<li>
-    <a href="/consumer-marketing-analysis">Consumer Marketing & Analytics</a>
-</li>
-<li>
-    <a href="/corporate-marketing-and-strategy">Corporate Marketing and Strategy</a>
-</li>
-<li>
-    <a href="/engineering">Engineering</a>
-</li>
-<li>
-    <a href="/general-administrative">General & Administrative</a>
-</li>
-<li>
-    <a href="/government-affairs">Government Affairs & Legal</a>
-</li>
-<li>
-    <a href="/product-management">Product Management & User Experience</a>
-</li>
-<li>
-    <a href="/sales-business-development">Sales & Business Development</a>
+    <a href="<%= href(indexInCollection) %>"><%= department %></a>
 </li>

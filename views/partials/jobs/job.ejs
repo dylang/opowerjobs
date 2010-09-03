@@ -9,11 +9,12 @@
 
 <li>
     <a href="<%= href(job.url.long_url) %>">
-    <% if (locals.show_location) { %>
-        <% if (job.url.location == 'san-francisco') { %>
-        <img style="width:16px; height: 16px;" src="/css/icons/sf.png" alt="" />
-        <% } else { %>
-        <img  style="width:16px; height: 16px;"  src="/css/icons/dc.gif" alt="" />
-        <% } } %>        
-        <%= job.title %></a>
+        <%= job.title %>
+    
+        <% if (locals.show_location) { %>
+            <% if (job.url.location == 'san-francisco') { %>
+                (SF)
+            <% } else {} %>
+        <% } %>
+    </a>
 </li>
