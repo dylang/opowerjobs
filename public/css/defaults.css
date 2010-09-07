@@ -115,7 +115,7 @@ H2 {
 
 /* Teams page */
 .page-teams ul.teams li {
-    border: none;
+
     float: left;
     width: 330px;
 }
@@ -123,10 +123,17 @@ H2 {
 .page-teams ul.teams li a {
     display: block;
     float: left;
-    padding: 20px 0;
-    width: 240px;
-    border: 1px solid red;
-    
+    font-size: 16px;
+    height: 50px;
+    padding: 10px 0;
+    width: 300px;
+}
+
+.page-teams ul.teams li a span {
+    display: block;
+    float: left;
+    margin: 10px 0 0 20px;
+    width: 220px;
 }
 
 /* Tabs */
