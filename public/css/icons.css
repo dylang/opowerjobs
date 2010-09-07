@@ -38,7 +38,7 @@
 
 /*  Arrow Icon Sprite */
 .icon-arrow {
-    background: transparent url(/css/theme/sprite-simpleArrow.png) no-repeat;
+    background: transparent url(theme/sprite-simpleArrow.png) no-repeat;
     margin: 0 auto;
 }
 
