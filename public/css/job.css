@@ -20,7 +20,7 @@
 
 .job .banner .title {
     font-size: 35px;
-    line-height: 0.8em;
+    line-height: 1em;
     text-rendering: optimizeLegibility;
 }
 
@@ -28,8 +28,9 @@
     border-bottom: 1px solid #ccc;
     color: #aaa;
     margin-bottom: 10px;
-    padding: 10px 0;
+    padding: 20px 0 0;
     font-size: 18px;
+    line-height: 33px;
 }
 
 .job .description {

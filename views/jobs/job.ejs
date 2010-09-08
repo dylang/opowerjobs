@@ -12,8 +12,18 @@
     <div class="content">
         <div class="span-17 first last">
             <div class="banner">
-                <div class="title strong"><%= job.title %></div>
-                <div class="location"><%= job.location %></div>
+                <div class="title strong span-17 last">
+                    <%= job.title %>
+
+                    <% if (job.url.location == 'san-francisco') { %>
+                        (SF)
+                    <% } else { %> 
+                        (DC)
+                    <% } %>
+                </div>
+                <div class="location">
+                    <a href="<%- href(job.url.team) %>">&laquo; Back to <%- job.team %> jobs</a>
+                </div>
             </div>
         </div>
 
