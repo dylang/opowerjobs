@@ -92,5 +92,7 @@ BODY {
 }
 
 .gallery-horizontal a {
-    margin: 0 10px;
+    display: inline;
+    float: none;
+    width: inherit;
 }
