@@ -116,6 +116,18 @@ ul.list LI {
     margin: 0;
 }
 
+/* Footer */
+
+.footer {
+    color: #0079a5;
+    font-size: 16px;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer a {
+    color: #00516e;
+}
 
 /* Teams page */
 .page-teams ul.teams li {

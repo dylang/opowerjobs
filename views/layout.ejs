@@ -15,6 +15,20 @@
     <link href="/js/fancybox/jquery.fancybox-1.3.1.css" rel="stylesheet"  type="text/css" />
 
     <%- assets.styles(this.req.query) %>
+    
+    <script type="text/javascript">
+ 
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-10866276-1']);
+      _gaq.push(['_trackPageview']);
+ 
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+ 
+    </script>
 </head>
 
 <% locals.team && locals.all_teams[locals.team]  ? currentPageID = locals.team : '' %>
@@ -35,6 +49,14 @@
                     
                         <%- partial("navigation/nav", { collection: pages, as: "page", locals: { currentPageID: currentPageID }} ) %>
                         
+                        <!--
+                        <li class="parent">
+                            <ul class="subnav">
+                                <li><a href="http://www.opower.com" title="Go to the OPOWER corporate website" class="rounded">OPOWER.COM</a></li>
+                            </ul>
+                        </li>
+                        -->
+                        
                     </ul>
                     
                 </div>
@@ -43,6 +65,7 @@
                     <%- partial('jobs/search', { locals: locals } ) %>
                 <% } %>
                 
+                
             </div>
         </div>
 
@@ -50,6 +73,9 @@
             <div class="page">
                 <%- body %>
                 <div class="clear"></div>
+            </div>
+            <div class="footer">
+                Looking for the corporate site? Check us out at <a href="http://www.opower.com" title="OPOWER.com">OPOWER.com!</a>
             </div>
         </div>
 
