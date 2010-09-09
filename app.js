@@ -61,6 +61,9 @@ function development() {
     Server.use(Express.cache(1000 * 2));
     Server.use(Express.gzip());
 
+    Assets.compress(true);
+    Jobs.autoUpdate(); // Putting this in for now because something is wonky with the website operating in dev mode when it's online (GM)
+
     Server.helpers({
         href: function(url) { return 'http://localhost:' + port + (url[0] == '/' ? '' : '/') + url; }
     });
