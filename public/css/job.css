@@ -25,7 +25,6 @@
 }
 
 .job .banner .location {
-    border-bottom: 1px solid #ccc;
     color: #aaa;
     margin-bottom: 10px;
     padding: 20px 0 0;
@@ -47,6 +46,7 @@
     padding: 10px;
     margin-top: 20px;
 }
+
 .job .similar A {
 }
 
@@ -61,14 +61,16 @@
 
 .job .inline {
     background-color: #F9EBA5;
-    float: right;
-    margin: 10px 0 20px 20px;
-    padding: 20px;
+    margin: 0 0 20px;
+    padding: 20px 20px 0;
+}
+
+.job .inline STRONG {
+    text-transform: uppercase;
 }
 
 .job .inline .button {
     display: block;
-    margin: 10px 0;
     text-align: center;
 }
 

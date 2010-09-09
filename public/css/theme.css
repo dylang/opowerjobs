@@ -89,6 +89,11 @@ BODY {
 
 .gallery-horizontal {
     text-align: center;
+    margin-bottom: 20px;
+}
+
+.gallery-horizontal img {
+    width: 150px;
 }
 
 .gallery-horizontal a {
