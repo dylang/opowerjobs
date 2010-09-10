@@ -201,3 +201,10 @@ ul.list LI {
     color: #fff;
     text-shadow: rgba(0,0,0, 0.2) 1px 2px 0px;
 }
+
+
+/* Autocomplete
+----------------------------------*/
+.ui-autocomplete {
+    background: #fff;
+}
