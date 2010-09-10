@@ -152,6 +152,12 @@ ul.list LI {
     width: 220px;
 }
 
+/* All Jobs page*/
+
+.page-all h4 {
+    line-height: 20px !important;
+}
+
 /* Tabs */
 
 .ui-tabs .ui-tabs-hide {
