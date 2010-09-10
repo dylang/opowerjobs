@@ -35,6 +35,14 @@
 .job .description {
 }
 
+.job .description BR {
+    clear: both;
+   line-height: 20px;
+   height: 20px;
+   display: block;
+   outline: 1px solid red;
+}
+
 .job .description STRONG {
     font-size: 14px;
     display: block;

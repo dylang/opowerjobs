@@ -60,7 +60,10 @@ function development() {
     Server.use(Express.conditionalGet());
     Server.use(Express.cache(1000 * 2));
     Server.use(Express.gzip());
-
+    
+    Assets.compress(true);
+    Jobs.autoUpdate(); // TODO: This should be taken out. Site seems to always operate in dev mode rather than production. (GM)
+    
     Server.helpers({
         href: function(url) { return 'http://localhost:' + port + (url[0] == '/' ? '' : '/') + url; }
     });
