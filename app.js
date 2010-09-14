@@ -144,9 +144,17 @@ Server.get('/log', function(req, res) {
 
 // Required for 404's to return something
 Server.get('/*', function(req, res){
-    log('404', req.url);
     var host = req.headers.host.split(':')[0],
         new_url;
+
+    if (host == 'localhost' || host == public_host) {
+        if (req.headers.referer) {
+            log('404', req.url, 'referer', req.headers.referer);
+        }
+        else {
+            log('404', req.url);
+        }
+    }
 
     if (host == 'localhost') {
         res.render('error.ejs', { locals: { message: "404, man, 404. <br /> When in production the server will automatically redirect to an appropriate page." } });
