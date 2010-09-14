@@ -43,7 +43,7 @@ process.addListener('uncaughtException', function (err, stack) {
 
 function production(){
     Server.use(Express.conditionalGet());
-    Server.use(Express.cache(1000 * 60 * 60));
+    Server.use(Express.cache(1000 * 60));
     Server.use(Express.gzip());
 
     log('running in production mode');
