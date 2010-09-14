@@ -1,0 +1,15 @@
+/* for debugging */
+
+.log {
+    font-size: smaller;
+}
+.log .time {
+    font-size: smaller;
+}
+.log .number {
+    color: orange;
+}
+
+.log .string {
+    color: green;
+}

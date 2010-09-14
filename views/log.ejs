@@ -1,0 +1,43 @@
+<div class="content log">
+<div class="span-17">
+    <% log.history().forEach(function(item) { %>
+    <div class="span-1 first"><span class="time"><%= log.ago(item.date) %></span></div>
+    <div class="span-16 last">
+    <span class="file"><%= item.file %></span>
+    <%
+        item.messages.forEach(function(msg) {
+
+
+            switch (typeof msg) {
+                case 'string':
+            %>
+                    <span class="string"><%= msg.replace(/\n/, '<br/>') %></span>
+            <%
+                    break;
+                case 'number':
+            %>
+                    <span class="number"><%= msg %></span>
+            <%
+                    break;
+                case 'function':
+            %>
+                    <span class="function">[Function]</span>
+            <%
+                    break;
+            default:
+                %>
+                <%- debug(msg) %>
+                <%
+                break;
+            }
+
+
+
+        });
+
+        %></div>
+    <div class="clear"></div>
+    <% }); %>
+</div>
+
+</div>
