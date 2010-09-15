@@ -7,25 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <%- partial('comment.ejs') %>    
 
-
     <link rel="alternate" type="application/atom+xml" title="ATOM Feed for opowerjobs.com"   href="atom.xml" />
 
-
     <%- assets.styles(this.req.query) %>
-    
-    <script type="text/javascript">
- 
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-18439002-1']);
-      _gaq.push(['_trackPageview']);
- 
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
- 
-    </script>
 </head>
 
 <% locals.team && locals.all_teams[locals.team]  ? currentPageID = locals.team : '' %>
@@ -84,6 +68,8 @@
 
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-17897272-1']);
+      _gaq.push(['_trackPageview']);
+      _gaq.push(['_setAccount', 'UA-18439002-1']);
       _gaq.push(['_trackPageview']);
 
       (function() {
