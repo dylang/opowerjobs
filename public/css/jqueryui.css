@@ -53,11 +53,11 @@
 
 /* Interaction states
 ----------------------------------*/
-.ui-autocomplete .ui-state-default, .ui-autocomplete .ui-widget-content .ui-state-default, .ui-autocomplete .ui-widget-header .ui-state-default { border: 1px solid #dddddd; background: #f6f6f6 url(images/ui-bg_highlight-soft_100_f6f6f6_1x100.png) 50% 50% repeat-x; font-weight: bold; color: #0073ea; }
+.ui-autocomplete .ui-state-default, .ui-autocomplete .ui-widget-content .ui-state-default, .ui-autocomplete .ui-widget-header .ui-state-default { border: 1px solid #dddddd; background: #f6f6f6 url(jqueryui/ui-bg_highlight-soft_100_f6f6f6_1x100.png) 50% 50% repeat-x; font-weight: bold; color: #0073ea; }
 .ui-autocomplete .ui-state-default a, .ui-autocomplete .ui-state-default a:link, .ui-autocomplete .ui-state-default a:visited { color: #0073ea; text-decoration: none; }
-.ui-autocomplete .ui-state-hover, .ui-autocomplete .ui-widget-content .ui-state-hover, .ui-autocomplete .ui-widget-header .ui-state-hover, .ui-autocomplete .ui-state-focus, .ui-autocomplete .ui-widget-content .ui-state-focus, .ui-autocomplete .ui-widget-header .ui-state-focus { border: 1px solid #0073ea; background: #0073ea url(images/ui-bg_highlight-soft_25_0073ea_1x100.png) 50% 50% repeat-x; font-weight: bold; color: #ffffff; }
+.ui-autocomplete .ui-state-hover, .ui-autocomplete .ui-widget-content .ui-state-hover, .ui-autocomplete .ui-widget-header .ui-state-hover, .ui-autocomplete .ui-state-focus, .ui-autocomplete .ui-widget-content .ui-state-focus, .ui-autocomplete .ui-widget-header .ui-state-focus { border: 1px solid #0073ea; background: #0073ea url(jqueryui/ui-bg_highlight-soft_25_0073ea_1x100.png) 50% 50% repeat-x; font-weight: bold; color: #ffffff; }
 .ui-autocomplete .ui-state-hover a, .ui-autocomplete .ui-state-hover a:hover { color: #ffffff; text-decoration: none; }
-.ui-autocomplete .ui-state-active, .ui-autocomplete .ui-widget-content .ui-state-active, .ui-autocomplete .ui-widget-header .ui-state-active { border: 1px solid #dddddd; background: #ffffff url(images/ui-bg_glass_65_ffffff_1x400.png) 50% 50% repeat-x; font-weight: bold; color: #ff0084; }
+.ui-autocomplete .ui-state-active, .ui-autocomplete .ui-widget-content .ui-state-active, .ui-autocomplete .ui-widget-header .ui-state-active { border: 1px solid #dddddd; background: #ffffff url(jqueryui/ui-bg_glass_65_ffffff_1x400.png) 50% 50% repeat-x; font-weight: bold; color: #ff0084; }
 .ui-autocomplete .ui-state-active a, .ui-autocomplete .ui-state-active a:link, .ui-autocomplete .ui-state-active a:visited { color: #ff0084; text-decoration: none; }
 .ui-autocomplete .ui-widget :active { outline: none; }
 
@@ -67,7 +67,7 @@
 
 
 .ui-autocomplete { position: absolute; cursor: default; }	
-.ui-autocomplete-loading { background: white url('images/ui-anim_basic_16x16.gif') right center no-repeat; }
+.ui-autocomplete-loading { background: white url(jqueryui/ui-anim_basic_16x16.gif) right center no-repeat; }
 
 /* workarounds */
 * html .ui-autocomplete { width:1px; } /* without this, the menu expands to 100% in IE6 */
