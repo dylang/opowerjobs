@@ -14,7 +14,7 @@
   <id>tag:opower.com,2010:jobs</id>
   <% all_new.forEach(function(jobId) { var job = all_ids[jobId]; %>
   <entry>
-    <title><%= job.title %></title>
+    <title><%= job.title %> <%- job.url.location == 'san-francisco' ? '(SF)' : '' %></title>
     <link href="<%= url %><%= job.url.long_url %>"/>
     <id>tag:opowerjobs.com,2010:job_<%= job.id %></id>
     <updated><%= ISODateString(job.date) %></updated>
@@ -26,14 +26,14 @@
                 <%- (d.p || '').replace(/&.?.?quo;/g, "'").replace(/&bull;/g, "*") %>
             <% }); %>
 
-            <h2>Important Links</h2>
+            <h2>Helpful Links</h2>
             <ul>
                 <li><a href="<%= url %><%= job.url.long_url %>">More Information.</a></li>
                 <li><a href="<%= url %><%= job.url.apply %>">Apply for this position.</a></li>
                 <li><a href="<%= url %>">About OPOWER</a></li>
                 <li><a href="<%= url %>/san-francisco">OPOWER Openings in San Francisco</a></li>
                 <li><a href="<%= url %>/northern-va-dc">OPOWER Openings in Washington, DC</a></li>
-                <li><a href="<%= url %>/new">All new OPOWER Openings</a></li>
+                <li><a href="<%= url %>/all">All OPOWER Openings</a></li>
             </ul>
         </div>
     </content>
