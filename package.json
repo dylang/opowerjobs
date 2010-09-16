@@ -1,8 +1,36 @@
-{ "name": "opowerjobs",
-  "version": "0.1",
-  "description": "OPOWER job site",
-  "author": "Dylan Greene <dylang@gmail.com>",
-  "bin": {  },
-  "scripts": { },
-  "dependents": {  }
+{
+    "name": "opowerjobs",
+    "version": "1.0",
+    "description": "OPOWERjobs.com - a powerful job site and great example of real-world site using Node.JS, Express, Connect, EJS, AssetManager, and other Node modules.",
+    "homepage": "http://www.opowerjobs.com",
+    "author": "Dylan Greene <dylang@gmail.com>",
+    "contributors": [
+        "Dylan Greene <dylang@gmail.com>",
+        "Garrett Miller <heyitsgarrett@gmail.com>"
+    ],
+    "repository":
+    {
+        "type": "git",
+        "url": "http://github.com/dylang/opowerjobs"
+    },
+    "bugs":
+    {
+        "mail": "dylang@gmail.com",
+        "web": "http://github.com/dylang/opowerjobs/issues"
+    },
+    "dependencies":
+    {
+        "express": ">= 1.0.0rc2",
+        "ejs": ">= 0.2.0",
+        "connect-assetmanager": ">= 0.0.5",
+        "connect-assetmanager-handlers": ">= 0.0.10",
+        "node-xml2js": ">= 0.1.5"
+    },
+    "main": "server",
+    "engines": { "node": ">=0.2.0" },
+    "scripts": { },
+    "licenses" :
+    [
+        { "type" : "MIT", "url" : "http://github.com/isaacs/npm/raw/master/LICENSE" }
+    ]
 }
