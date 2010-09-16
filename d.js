@@ -135,7 +135,7 @@ function parse(argv) {
   intro = (dIndex == 2 || tIndex == 2)? false : argv[2];
 
   // Add potentially missing extension
-  intro = intro? intro + (intro.match(/\.js$/)? '' : '.js') : 'app.js';
+  intro = intro? intro + (intro.match(/\.js$/)? '' : '.js') : 'server.js';
 
   return {
     intro: intro,
