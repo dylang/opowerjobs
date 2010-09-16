@@ -152,7 +152,7 @@ Server.get('/*', function(req, res){
             log('404', req.url, 'referer', req.headers.referer);
         }
         else {
-            log('404', req.url);
+            log('404', req.url, req.headers['user-agent']);
         }
     }
 
