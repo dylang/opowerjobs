@@ -21,8 +21,9 @@
     <content type="xhtml" xml:lang="en">
         <div xmlns="http://www.w3.org/1999/xhtml">
             <% job.description.forEach(function(d) { %>
-                <h2><%- d.title %></h2>
-                <%- (d.p || '').replace(/&.?.?quo;/g, "'") %>
+                <h2><%-  (d.title || '').replace(/&.?.?quo;/g, "'").replace(/&bull;/g, "*") %></h2>
+                <% /* remove bad xml like &rsquo; */ %>
+                <%- (d.p || '').replace(/&.?.?quo;/g, "'").replace(/&bull;/g, "*") %>
             <% }); %>
 
             <h2>Important Links</h2>
@@ -40,4 +41,10 @@
     <category term="<%= job.url.team %>" label="<%= job.team %>" scheme="<%= url %>"/>
   </entry>
     <% }); %>
+
 </feed>
+
+
+
+
+        
