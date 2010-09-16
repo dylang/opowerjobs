@@ -96,13 +96,15 @@ Server.configure('production', production);
 Server.configure(common);
 
 Server.error(function(err, req, res, next){
-        log('*************************************');
-        log('****************ERROR****************');
-        log('*************************************');
-        log(err.message);
-        log(err.arguments);
-        log(err.stack);
-        log('*************************************');
+        if (err.message != 'EISDIR, Is a directory') {
+            log('*************************************');
+            log('****************ERROR****************');
+            log('*************************************');
+            err.message && log(err.message);
+            err.arguments && log(err.arguments);
+            err.stack && log(err.stack);
+            log('*************************************');
+        }
         res.redirect('/');
         //res.render('error.ejs', { locals: { title: 'Error', message: objToHTML(err) } });
 });
