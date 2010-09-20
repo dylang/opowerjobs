@@ -3,6 +3,14 @@
 .log {
     font-size: smaller;
 }
+
+.log .file {
+    background-color: #cefec3;
+    -webkit-border-radius: 4px;
+    padding: 2px;
+    color: green;
+}
+
 .log .time {
     font-size: smaller;
 }
@@ -11,5 +19,4 @@
 }
 
 .log .string {
-    color: green;
 }

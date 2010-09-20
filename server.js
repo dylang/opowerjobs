@@ -125,14 +125,13 @@ Server.get(|.*|, function(req, res, next){
 */
 
 // Get rid of urls that end in /
-// Required for 404's to return something
-Server.get('/*', function(req, res, next){
-    if (req.url.length > 1 && req.url[req.url.length - 1] == '/') {
+Server.get(/.+\/$/, function(req, res){
+    var host = req.headers.host.split(':')[0];
+
+    if (host == 'localhost' || host == public_host) {
         log('lose the slash:', req.url);
-        res.redirect(req.url.substr(0, req.url.length - 1));
-    } else {
-        next();
     }
+    res.redirect(req.url.substr(0, req.url.length - 1));
 });
 
 
@@ -159,7 +158,7 @@ Server.get('/*', function(req, res){
     }
 
     if (host == 'localhost') {
-        res.render('error.ejs', { locals: { message: req.format + "404, man, 404. <br /> When in production the server will automatically redirect to an appropriate page." } });
+        res.render('error.ejs', { locals: { message: "404, man, 404. <br /> When in production the server will automatically redirect to an appropriate page." } });
     } else {
         var array = req.url.split('/');
         if (array.pop() == '') { array.pop(); }
