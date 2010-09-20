@@ -14,14 +14,12 @@
 
     <div class="span-17 first last">
 
-        <%- query == 'log' ? debug(search_log) : '' %>
-
         <% if (jobs.length) { %>
         <ul>
             <%- partial('jobs/job', { collection: jobs, as: "job", locals: {show_location: true } } ) %>
         </ul>
         <% } else { %>
-            No matches.  You could just look at <a href="/all">all current openings</a>.
+            No matches.  This only searches job titles.  Maybe you should just check out <a href="/all">all current openings</a>.
         <% } %>
     </div>
 </div>
