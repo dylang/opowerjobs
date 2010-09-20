@@ -4,7 +4,7 @@
         <div class="span-8">
             <h4>DC/Northern VA</h4>
             <ul>
-                <%- partial('jobs/job', { collection: jobs_dc, as: "job", locals: { }} ) %>
+                <%- partial('jobs/jobid', { collection: jobs_dc, as: "jobId", locals: { }} ) %>
             </ul>
         </div>    
 
@@ -14,7 +14,7 @@
         <div class="span-8 push-1 last">
             <h4>San Francisco, CA</h4>
             <ul>
-                <%- partial('jobs/job', { collection: jobs_sf, as: "job", locals: { }} ) %>
+                <%- partial('jobs/jobid', { collection: jobs_sf, as: "jobId", locals: { }} ) %>
             </ul>
         </div>
     <% }  %>
