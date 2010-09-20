@@ -2,6 +2,6 @@
 <h2><%- locals.title ? locals.title : 'Hmm...' %></h2>
 <%- locals.message ? locals.message : 'oh....' %>
 <div>
-    <%- object ? debug(object) : '' %>
+    <%- locals.object ? debug(object) : '' %>
 </div>
 </div>

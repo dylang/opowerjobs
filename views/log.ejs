@@ -10,7 +10,7 @@
                 switch (typeof msg) {
                     case 'string':
                 %>
-                        <span class="string"><%= msg.replace(/\n/, '<br/>') %></span>
+                        <span class="string"><%= msg.replace(/\n/g, '<br/>') %></span>
                 <%
                         break;
                     case 'number':
