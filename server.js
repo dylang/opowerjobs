@@ -149,7 +149,7 @@ Server.get('/*', function(req, res){
         new_url;
 
     if (host == 'localhost' || host == public_host) {
-        if (req.headers.referer) {
+        if (req.headers.referer && req.header.referer.indexOf('msnbot') === -1) {
             log('404', req.url, 'referer', req.headers.referer);
         }
         else {
