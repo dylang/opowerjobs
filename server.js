@@ -33,11 +33,11 @@ if (port != 3000 || __dirname.indexOf('slug') !== -1) {
 //in case of crash. I've never seen this used, got it from somebody else's code.
 process.title = 'opowerjobs.com';
 process.addListener('uncaughtException', function (err, stack) {
-    console.log(err);
     log('*************************************');
     log('************EXCEPTION****************');
     log('*************************************');
-    log(err);
+    err.message && log(err.message);
+    err.stack && log(err.stack);
     log('*************************************');
 });
 
@@ -159,7 +159,7 @@ Server.get('/*', function(req, res){
     }
 
     if (host == 'localhost') {
-        res.render('error.ejs', { locals: { message: "404, man, 404. <br /> When in production the server will automatically redirect to an appropriate page." } });
+        res.render('error.ejs', { locals: { message: req.format + "404, man, 404. <br /> When in production the server will automatically redirect to an appropriate page." } });
     } else {
         var array = req.url.split('/');
         if (array.pop() == '') { array.pop(); }
