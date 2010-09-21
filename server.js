@@ -63,7 +63,7 @@ function development() {
     Server.use(Express.gzip());
 
     Assets.compress(true);
-    //JobHandler.autoUpdate(); // TODO: This should be taken out. Site seems to always operate in dev mode rather than production. (GM)
+    //JobHandler.autoUpdate(); // TODO: Make it update for testing changelog?
 
     Server.helpers({
         href: function(url) { return 'http://localhost:' + port + (url[0] == '/' ? '' : '/') + url; }
