@@ -1,20 +1,10 @@
 <% /*
-    A job, used almost anywhere we have a list of jobs
-    http://localhost:3000/
-    http://localhost:3000/engineering
-    http://localhost:3000/search/agile
-
-    I do not think we should ever touch this.
 */ %>
 
 <option value="job.url.long_url">
 
     <% if (locals.show_location) { %>
-        <% if (job.url.location == 'san-francisco') { %>
-            SF
-        <% } else { %>
-            DC
-        <% } %>
+        <%- Constants.short(job.location) %>
     <% } %>        
 
     <%= job.title %>

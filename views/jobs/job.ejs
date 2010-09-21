@@ -14,11 +14,7 @@
                 <div class="title strong span-17 last">
                     <%= job.title %>
 
-                    <% if (job.url.location == 'san-francisco') { %>
-                        (SF)
-                    <% } else { %> 
-                        (DC)
-                    <% } %>
+                    <%- '(' + Constants.short(job.location) + ')' %>
                 </div>
                 <div class="location">
                     <a href="<%- href(job.url.team) %>">&laquo; Back to <%- job.team %> jobs</a>
@@ -83,7 +79,7 @@
             
             <div class="span-13 first">
                 <h5>Find other jobs in:</h5>
-                <a href="<%- href(job.url.location) %>" class="button blue-button button-small button-left"><%- job.location %></a><a href="<%- href(job.url.team) %>" class="button blue-button button-small button-right"><%- job.team %></a>
+                <a href="<%- href(Constants.url(job.location)) %>" class="button blue-button button-small button-left"><%- Constants.short(job.location) %></a><a href="<%- href(job.url.team) %>" class="button blue-button button-small button-right"><%= Constants.short(job.team) || job.team %></a>
             </div>
             
             <div class="span-4 last">

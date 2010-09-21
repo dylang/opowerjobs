@@ -13,21 +13,21 @@
     <div class="span-17 first last">
         <h2>All Openings</h2>
         <h3><br /></h3>
-        <% if (jobs['dc-northern-virginia']) { %>
+        <% if (jobs.va) { %>
             <div class="span-4 first">
                 <h4>Arlington, VA</h4>
             </div>
             <div class="span-13 last job-section">
-                <%- partial(locals.teams ? 'jobs/team' : 'jobs/jobs', { collection: jobs['dc-northern-virginia'], as: "jobs", locals: { location: 'dc-northern-virgina' }} ) %>
+                <%- partial(locals.teams ? 'jobs/team' : 'jobs/jobs', { collection: jobs.va, as: "jobs", locals: { location: 'va' }} ) %>
             </div>
         <% } %>
 
-        <% if (jobs['san-francisco']) { %>
+        <% if (jobs.sf) { %>
             <div class="span-4 first">
                 <h4>San Francisco, CA</h4>
             </div>
             <div class="span-13 last job-section">
-                <%- partial(locals.teams ? 'jobs/team' : 'jobs/jobs', { collection: jobs['san-francisco'], as: "jobs", locals: { location: 'san-francisco' }} ) %>
+                <%- partial(locals.teams ? 'jobs/team' : 'jobs/jobs', { collection: jobs.sf, as: "jobs", locals: { location: 'sf' }} ) %>
             </div>
         <% }  %>
     </div>
