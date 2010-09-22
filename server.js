@@ -115,11 +115,11 @@ Server.get('/google97924ebf42be7c40.html', function(req, res){
     res.end();
 });
 
-// Handle Jobvite Querystirng
+// Handle Jobvite Querystring
 Server.get(/^/, function(req, res, next) {
     if (req.query && req.query.jvi) {
+        log('Redirect from Jobvite', req.headers.referrer || req.headers.referer || 'No referral');
         var request = req.query.jvi.split(',');
-        log('http://' + public_host + '/' + (request[1] == 'Apply' ? 'apply/' : '') + request[0]);
         res.redirect('http://' + public_host + '/' + (request[1] == 'Apply' ? 'apply/' : '') + request[0]);
     }
     next();
