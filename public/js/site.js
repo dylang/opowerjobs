@@ -13,14 +13,6 @@ $(document).ready(function(){
         data_ga_tracker: 'UA-17897272-1'
     };
 
-    $('.shorturl input').mouseenter(function(){
-        this.select();
-    }).mouseleave(function(){
-        this.value = this.value;
-        this.blur();
-    });
-
-
     function fix_query(query) {
         return (query || '').replace(/[^a-zA-Z]/g, ' ').trim().replace(/\s+/g, '-')
     }
@@ -80,7 +72,7 @@ $(document).ready(function(){
 
             return $( "<li></li>" )
                 .data( 'item.autocomplete', item )
-                .append( '<a>' + item.title + '<br><span class="sub">' + item.location + '</span></a>' )
+                .append( '<a>' + item.title + ' (' + item.location + ')</a>' )
                 .appendTo( ul );
             };
     }
@@ -90,7 +82,7 @@ $(document).ready(function(){
 
 
   if (!('placeholder' in document.createElement('input'))) {
-    $this = $q;
+    var $this = $q;
     var placeholder = $this.attr('placeholder');
 
     var insert_placeholder = function() {
