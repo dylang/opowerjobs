@@ -134,6 +134,12 @@ Server.get(/.+\/$/, function(req, res){
     res.redirect(req.url.substr(0, req.url.length - 1));
 });
 
+// Reload CSS - sometimes it fails on Heroku
+Server.get('/reload', function(req, res, next) {
+    Assets.reload();
+    next();
+});
+
 
 ContentHandler.addHandlers( {Server: Server });
 JobHandler.addHandlers( { Server: Server});
@@ -142,6 +148,7 @@ JobHandler.addHandlers( { Server: Server});
 Server.get('/log', function(req, res) {
     res.render('log.ejs');
 });
+
 
 // Required for 404's to return something
 Server.get('/*', function(req, res){
