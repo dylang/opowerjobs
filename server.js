@@ -115,6 +115,16 @@ Server.get('/google97924ebf42be7c40.html', function(req, res){
     res.end();
 });
 
+// Handle Jobvite Querystirng
+Server.get(/^/, function(req, res, next) {
+    if (req.query && req.query.jvi) {
+        var request = req.query.jvi.split(',');
+        log('http://' + public_host + '/' + (request[1] == 'Apply' ? 'apply/' : '') + request[0]);
+        res.redirect('http://' + public_host + '/' + (request[1] == 'Apply' ? 'apply/' : '') + request[0]);
+    }
+    next();
+});
+
 
 // Get rid of urls that end in / - makes Google Analytics easier to read
 Server.get(/.+\/$/, function(req, res){
