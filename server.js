@@ -121,6 +121,7 @@ Server.get(/.+\/$/, function(req, res){
     res.redirect(req.url.substr(0, req.url.length - 1));
 });
 
+/*
 // Redirect other servers to the main one
 Server.get(/^/, function(req, res, next){
     var host = req.headers.host.split(':')[0];
@@ -132,7 +133,7 @@ Server.get(/^/, function(req, res, next){
         next();
     }
 });
-
+*/
 
 // Reload CSS - sometimes it fails on Heroku
 Server.get('/reload', function(req, res, next) {
