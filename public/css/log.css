@@ -2,7 +2,20 @@
 
 .log {
     font-size: smaller;
+    border-collapse: collapse;
+    border-spacing: none;
+     
 }
+
+
+
+.log TD {
+    padding-bottom: 10px;
+    line-height: 1em;
+    vertical-align: top;
+}
+
+
 
 .log .file {
     background-color: #cefec3;
