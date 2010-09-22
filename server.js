@@ -109,6 +109,11 @@ Server.error(function(err, req, res, next){
         //res.render('error.ejs', { locals: { title: 'Error', message: objToHTML(err) } });
 });
 
+// For Google Webmaster
+Server.get('/google97924ebf42be7c40.html', function(req, res){
+    res.send('google-site-verification: google97924ebf42be7c40.html');
+    res.end();
+});
 
 // Redirect other servers to the main one
 /*
