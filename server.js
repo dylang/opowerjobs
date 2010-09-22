@@ -159,9 +159,13 @@ Server.get('/*', function(req, res){
         if (req.headers.referer) {
             log('404', req.url, 'referer', req.headers.referer);
         }
-        else if (req.headers['user-agent'].match(/msnbot|slurp/i) === null) {
+        else if (req.headers['user-agent'] && req.headers['user-agent'].match(/msnbot|slurp/i) === null) {
             log('404', req.url, req.headers['user-agent']);
+        } else {
+            log('404', req.url);
         }
+
+
     }
 
     if (host == 'localhost') {
@@ -176,6 +180,6 @@ Server.get('/*', function(req, res){
 });
 
 Server.listen(port, null);
-log('Starting OPOWER JOBS on ', port, '...');
+log('Starting OPOWER JOBS on', port);
 
 
