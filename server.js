@@ -115,9 +115,14 @@ Server.get('/google97924ebf42be7c40.html', function(req, res){
     res.end();
 });
 
+
+// Get rid of urls that end in / - makes Google Analytics easier to read
+Server.get(/.+\/$/, function(req, res){
+    res.redirect(req.url.substr(0, req.url.length - 1));
+});
+
 // Redirect other servers to the main one
-/*
-Server.get(|.*|, function(req, res, next){
+Server.get(/^/, function(req, res, next){
     var host = req.headers.host.split(':')[0];
     if (host != 'localhost' && host != public_host) {
         var new_url = 'http://' + public_host + req.originalUrl;
@@ -127,17 +132,7 @@ Server.get(|.*|, function(req, res, next){
         next();
     }
 });
-*/
 
-// Get rid of urls that end in /
-Server.get(/.+\/$/, function(req, res){
-    var host = req.headers.host.split(':')[0];
-
-    if (host == 'localhost' || host == public_host) {
-        log('lose the slash:', req.url);
-    }
-    res.redirect(req.url.substr(0, req.url.length - 1));
-});
 
 // Reload CSS - sometimes it fails on Heroku
 Server.get('/reload', function(req, res, next) {
@@ -161,16 +156,9 @@ Server.get('/*', function(req, res){
         new_url;
 
     if (host == 'localhost' || host == public_host) {
-        if (req.headers.referer) {
-            log('404', req.url, 'referer', req.headers.referer);
+        if (req.headers['user-agent'] && req.headers['user-agent'].match(/msnbot|slurp/i) === null) {
+            log('404', req.url, req.headers.referrer || req.headers.referer || req.headers['user-agent']);
         }
-        else if (req.headers['user-agent'] && req.headers['user-agent'].match(/msnbot|slurp/i) === null) {
-            log('404', req.url, req.headers['user-agent']);
-        } else {
-            log('404', req.url);
-        }
-
-
     }
 
     if (host == 'localhost') {
