@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+    if (typeof window.parent.parent.resizeFrame == 'function') {
+        var l = location.href, p = l.indexOf('?height=');
+        if (p == -1) {
+            p = l.indexOf('&height=');
+        }
+        if (p != -1) {
+            p += 8;
+            var p2 = l.indexOf('&', p);
+            if (p2 == -1) {
+                p2 = l.length;
+            }
+            window.parent.parent.resizeFrame((l.substring(p, p2) - 0) + 'px', l.indexOf('scroll=0') == -1);
+        }
+    }
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,8 +1,8 @@
 {
     "name": "opowerjobs",
-    "version": "1.0.1",
-    "description": "OPOWERjobs.com - a powerful job site and great example of real-world site using Node.JS, Express, Connect, EJS, AssetManager, and other Node modules.",
-    "homepage": "http://www.opowerjobs.com",
+    "version": "1.1.0",
+    "description": "OPOWERjobs.com - a powerful job site that is a great example of a live site using Node.JS, Express, Connect, EJS, AssetManager, and other Node modules.",
+    "homepage": "http://opowerjobs.com",
     "author": "Dylan Greene <dylang@gmail.com>",
     "contributors": [
         "Dylan Greene <dylang@gmail.com>",

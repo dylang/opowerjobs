@@ -3,42 +3,71 @@
     http://localhost:3000/apply/dc-northern-virgina/corporate-marketing-and-strategy/director-corporate-communications
 */ %>
 
-
-
-<script type="text/javascript">
-function resizeFrame(height, scrollToTop) {
-   if (scrollToTop) window.scrollTo(0, 0);
-   var oFrame = document.getElementById('jobviteframe');
-   if (oFrame) oFrame.height = height;
-}
-</script>
-
 <div class="content">
-    <div class="span-17">
+    <div class="span-17 first last">
 
-
+        <% if (locals.job) { %>
         <div style="position:relative;">
-            <iframe
-            scrolling="no"
-            height="1805px"
-            frameborder="0"
-            width="100%"
-            id="jobviteframe"
-            src="http://hire.jobvite.com/CompanyJobs/Careers.aspx?j=<%- job.id %>,Apply&k=Apply&jvresize=http://opowerjobs.com/jobvite_resize.html"
-            >
-            c=????&
-            c=q8X9VfwT
-            &cs=9Pf9VfwS
-            &jvresize=http://twitter.com/jobvite_frame_resize.html
-            &j=ofZmVfwf,Job
-            &k=Job
-            Sorry, iframes are not supported.
-        </iframe>
-
-        <div class="overiframe">
-            <a href="<%= job.url.long_url %>">Back to job description.</a>
+            <iframe scrolling="no" height="1805px" frameborder="0" width="100%" id="jobviteframe" src="http://hire.jobvite.com/CompanyJobs/Careers.aspx?j=<%- job.id %>,Apply&k=Apply&jvresize=http://<%- this.req.headers.host %>/resize-iframe.html">
+                Sorry, iframes are not supported.
+            </iframe>
+            <div class="overiframe">
+                <a href="<%= job.url.long_url %>">Back to job description.</a>
+            </div>
         </div>
-    </div>
 
+        <% } else { %>
+
+        <!-- BEGIN JOBVITE CODE -->
+        <iframe id="jobviteframe" src="http://www.jobvite.com/CompanyJobs/Careers.aspx?c=qgY9Vfw2&jvresize=http://<%- this.req.headers.host %>/resize-iframe.html"
+        width="100%" height="500px" scrolling="no" frameborder="0">Sorry, iframes are not supported.</iframe>
+
+        <script type="text/javascript">
+        var l = location.href, args = '', k = '', iStart = l.indexOf('?jvk='), iEnd;
+        if (iStart == -1) { iStart = l.indexOf('&jvk='); }
+        if (iStart != -1) {
+            iStart += 5;
+            iEnd = l.indexOf('&', iStart);
+            if (iEnd == -1) { iEnd = l.length; }
+            k = l.substring(iStart, iEnd);
+        }
+
+        iStart = l.indexOf('?jvi=');
+        if (iStart == -1) { iStart = l.indexOf('&jvi='); }
+        if (iStart != -1) {
+            iStart += 5;
+            iEnd = l.indexOf('&', iStart);
+
+            if (iEnd == -1) { iEnd = l.length; }
+            args += '&j=' + l.substring(iStart, iEnd);
+
+            if (!k.length) { args += '&k=Job'; }
+
+            iStart = l.indexOf('?jvs=');
+
+            if (iStart == -1) { iStart = l.indexOf('&jvs='); }
+            if (iStart != -1) {
+                iStart += 5;
+                iEnd = l.indexOf('&', iStart);
+                if (iEnd == -1) iEnd = l.length;
+                args += '&s=' + l.substring(iStart, iEnd);
+            }
+        }
+
+        if (k.length) args += '&k=' + k;
+        if (args.length) { document.getElementById('jobviteframe').src += args; }
+        </script>
+
+
+        <!--END JOBVITE CODE -->
+                <% } %>
+        <script type="text/javascript ">
+        function resizeFrame(height, scrollToTop) {
+            if (scrollToTop) window.scrollTo(0, 0);
+            var oFrame = document.getElementById('jobviteframe');
+            if (oFrame) oFrame.height = height;
+        }
+        </script>
+        <div class="clear"></div>
     </div>
 </div>

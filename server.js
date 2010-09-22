@@ -120,7 +120,7 @@ Server.get(/^/, function(req, res, next) {
     if (req.query && req.query.jvi) {
         log('Redirect from Jobvite', req.headers.referrer || req.headers.referer || 'No referral');
         var request = req.query.jvi.split(',');
-        res.redirect('http://' + public_host + '/' + (request[1] == 'Apply' ? 'apply/' : '') + request[0]);
+        res.redirect('/' + (request[1] == 'Apply' ? 'apply/' : '') + request[0]);
     }
     next();
 });
