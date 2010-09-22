@@ -21,7 +21,7 @@ var log = require('./lib/util/log').from(__filename),
     viewsDir = __dirname + '/views',
     publicDir = __dirname + '/public',
     port = parseInt(process.env.PORT || 3000),
-    public_host = 'www.opowerjobs.com',
+    public_host = 'opowerjobs.com',
     Server = module.exports = Express.createServer();
 
 
