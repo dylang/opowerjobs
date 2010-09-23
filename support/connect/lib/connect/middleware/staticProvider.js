@@ -4,7 +4,6 @@
  * Copyright(c) 2010 Sencha Inc.
  * MIT Licensed
  */
-
 /**
  * Module dependencies.
  */
@@ -71,7 +70,7 @@ module.exports = function staticProvider(options){
 
             // Fall through for missing files, thow error for other problems
             if (err) {
-                if (err.errno === process.ENOENT) {
+                if (err.errno == (process.ENOENT || 2)) {
                     pause.resume();
                     next();
                     return;

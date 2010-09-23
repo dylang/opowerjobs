@@ -6,7 +6,6 @@
 
 require.paths.unshift('./support');
 require.paths.unshift('./support/connect/lib');
-
 require('proto');
 
 var log = require('./lib/util/log').from(__filename),
@@ -24,8 +23,7 @@ var log = require('./lib/util/log').from(__filename),
     public_host = 'opowerjobs.com',
     Server = module.exports = Express.createServer();
 
-
-//hack for testing poduction settings.  slug == heroku.
+//hack for testing production settings.  slug == heroku.
 if (port != 3000 || __dirname.indexOf('slug') !== -1) {
     Server.set('env', 'production');
 }
