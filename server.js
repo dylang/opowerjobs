@@ -23,7 +23,7 @@ var log = require('./lib/util/log').from(__filename),
 
 var VIEWS = __dirname + '/views',
     PUBLIC = __dirname + '/public',
-    PORT = parseInt(process.env.port || 3000),
+    PORT = parseInt(process.env.PORT || 3000),
     HOSTNAME = 'opowerjobs.com';
 
 //hack for testing production settings.  slug == heroku.
