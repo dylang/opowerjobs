@@ -32,8 +32,10 @@ if (PORT != 3000 || __dirname.indexOf('slug') !== -1) {
 }
 
 //in case of crash. I've never seen this used, got it from somebody else's code.
-process.title = 'opowerjobs.com';
+process.title = 'opowerjobs';
 process.addListener('uncaughtException', function (err, stack) {
+    console.log(err);
+    console.log(stack);
     log('*************************************');
     log('************EXCEPTION****************');
     log('*************************************');
