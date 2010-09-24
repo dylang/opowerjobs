@@ -84,8 +84,8 @@ function common() {
         debug: objToHTML,
         log: log
     });
-    //Server.use(Express.cookieDecoder());
-    //Server.use(Express.session({ store: new MemoryStore({ reapInterval: 60000 * 10 }) }));
+    Server.use(Express.cookieDecoder());
+    Server.use(Express.session({ store: new MemoryStore({ reapInterval: 60000 * 10 }) }));
     Server.use(Express.bodyDecoder());
     Server.use(Express.favicon(PUBLIC + '/favicon.ico'));
     Server.use(Assets.handler(PUBLIC));
@@ -127,7 +127,6 @@ Server.get(/^.+\/$/, function(req, res){
     res.redirect(req.url.substr(0, req.url.length - 1));
 });
 
-/*
 // Redirect other servers to the main one
 Server.get(/^/, function(req, res, next){
     var host = req.headers.host.split(':')[0];
@@ -140,7 +139,6 @@ Server.get(/^/, function(req, res, next){
         next();
     }
 });
-*/
 
 // Reload CSS - sometimes it fails on Heroku
 Server.get('/reload', function(req, res, next) {
