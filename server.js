@@ -6,9 +6,10 @@
 
 require.paths.unshift('./support');
 require.paths.unshift('./support/connect/lib');
-require('proto');
+require('./support/proto');
 
 var log = require('./lib/util/log').from(__filename),
+    MemoryStore = require('connect/middleware/session/memory'),
     Express = require('express'),
     Assets = require('./lib/assets'),
 
@@ -17,14 +18,15 @@ var log = require('./lib/util/log').from(__filename),
     ContentHandler = require('./lib/contentHandler'),
     JobHandler = require('./lib/jobHandler'),
 
-    viewsDir = __dirname + '/views',
-    publicDir = __dirname + '/public',
-    port = parseInt(process.env.PORT || 3000),
-    public_host = 'opowerjobs.com',
     Server = module.exports = Express.createServer();
 
+var VIEWS = __dirname + '/views',
+    PUBLIC = __dirname + '/public',
+    PORT = parseInt(process.env.port || 3000),
+    HOSTNAME = 'opowerjobs.com';
+
 //hack for testing production settings.  slug == heroku.
-if (port != 3000 || __dirname.indexOf('slug') !== -1) {
+if (PORT != 3000 || __dirname.indexOf('slug') !== -1) {
     Server.set('env', 'production');
 }
 
@@ -41,7 +43,6 @@ process.addListener('uncaughtException', function (err, stack) {
 
 function production(){
     Server.use(Express.conditionalGet());
-    Server.use(Express.cache(1000 * 60));
     Server.use(Express.gzip());
 
     log('running in production mode');
@@ -57,14 +58,13 @@ function production(){
 
 function development() {
     Server.use(Express.conditionalGet());
-    Server.use(Express.cache(1000 * 2));
     Server.use(Express.gzip());
 
     Assets.compress(true);
     //JobHandler.autoUpdate(); // TODO: Make it update for testing changelog?
 
     Server.helpers({
-        href: function(url) { return 'http://localhost:' + port + (url[0] == '/' ? '' : '/') + url; }
+        href: function(url) { return 'http://localhost:' + PORT + (url[0] == '/' ? '' : '/') + url; }
     });
 
     log('running in development mode');
@@ -73,16 +73,18 @@ function development() {
 
 
 function common() {
-    Server.set('views', viewsDir);
+    Server.set('views', VIEWS);
 
     Server.helpers({
         debug: objToHTML,
         log: log
     });
+    Server.use(Express.cookieDecoder());
+    Server.use(Express.session({ store: new MemoryStore({ reapInterval: 60000 * 10 }) }));
     Server.use(Express.bodyDecoder());
-    Server.use(Express.favicon(publicDir + '/favicon.ico'));
-    Server.use(Assets.handler(publicDir));
-    Server.use(Express.staticProvider(publicDir));
+    Server.use(Express.favicon(PUBLIC + '/favicon.ico'));
+    Server.use(Assets.handler(PUBLIC));
+    Server.use(Express.staticProvider(PUBLIC));
     Server.use(Server.router);
 
     Server.helpers({assets: Assets, currentPageID: false, pages: []});
@@ -125,23 +127,23 @@ Server.get(/^/, function(req, res, next) {
 
 
 // Get rid of urls that end in / - makes Google Analytics easier to read
-Server.get(/.+\/$/, function(req, res){
+Server.get(/^.+\/$/, function(req, res){
     res.redirect(req.url.substr(0, req.url.length - 1));
 });
 
-/*
+public_host = 'localhost';
 // Redirect other servers to the main one
 Server.get(/^/, function(req, res, next){
     var host = req.headers.host.split(':')[0];
     if (host != 'localhost' && host != public_host) {
-        var new_url = 'http://' + public_host + req.originalUrl;
-        log('traffic from: ' + req.originalUrl);
+        log('old url', host)
+        var new_url = 'http://' + public_host + ':3000' + req.originalUrl;
+        log('redirect from:', req.headers.host + req.originalUrl, 'to', new_url);
         res.redirect(new_url);
     } else {
         next();
     }
 });
-*/
 
 // Reload CSS - sometimes it fails on Heroku
 Server.get('/reload', function(req, res, next) {
@@ -181,7 +183,7 @@ Server.get('/*', function(req, res){
     }
 });
 
-Server.listen(port, null);
-log('Starting OPOWER JOBS on', port);
+Server.listen(PORT, null);
+log('Starting OPOWER JOBS on', PORT);
 
 
