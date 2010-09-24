@@ -130,7 +130,8 @@ Server.get(/^.+\/$/, function(req, res){
 // Redirect other servers to the main one
 Server.get(/^/, function(req, res, next){
     var host = req.headers.host.split(':')[0];
-    if (host != 'localhost' && host != HOSTNAME) {
+    var TEMP_HOSTS = { 'dylan95.com': 1, 'dylangreene.com': 1, 'coursereviews.com': 1, 'teacherreviews.com': 1 };
+    if (host != 'localhost' && host != HOSTNAME && !TEMP_HOSTS[host] && !TEMP_HOSTS['www.' + host]) {
         var new_url = 'http://' + HOSTNAME + req.originalUrl;
         log('redirect from:', req.headers.host + req.originalUrl, 'to', new_url);
         res.redirect(new_url);
