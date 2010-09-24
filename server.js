@@ -26,7 +26,7 @@ var VIEWS = __dirname + '/views',
     PORT = parseInt(process.env.PORT || 3000),
     HOSTNAME = 'opowerjobs.com';
 
-var TEMP_HOSTS = { 'dylan95.com': 1, 'dylangreene.com': 1, 'coursereviews.com': 1, 'teacherreviews.com': 1 };
+var TEMP_HOSTS = { 'dylan95.com': 1, 'www.dylan95.com': 1, 'dylangreene.com': 1, 'www.dylangreene.com': 1, 'coursereviews.com': 1, 'www.coursereviews.com': 1, 'teacherreviews.com': 1, 'www.teacherreviews.com': 1 };
 
 
 //hack for testing production settings.  slug == heroku.
@@ -133,7 +133,7 @@ Server.get(/^.+\/$/, function(req, res){
 // Redirect other servers to the main one
 Server.get(/^/, function(req, res, next){
     var host = req.headers.host.split(':')[0];
-    if (host != 'localhost' && host != HOSTNAME && !TEMP_HOSTS[host] && !TEMP_HOSTS['www.' + host]) {
+    if (host != 'localhost' && host != HOSTNAME && !TEMP_HOSTS[host]) {
         var new_url = 'http://' + HOSTNAME + req.originalUrl;
         //log('redirect from:', req.headers.host + req.originalUrl, 'to', new_url);
         res.redirect(new_url);
@@ -163,7 +163,7 @@ Server.get('/*', function(req, res){
     var host = req.headers.host.split(':')[0],
         new_url;
 
-    if (TEMP_HOSTS[host] || TEMP_HOSTS['www.' + host]) {
+    if (TEMP_HOSTS[host]) {
         res.redirect('http://' + HOSTNAME);
     }
     else {
