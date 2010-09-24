@@ -15,6 +15,7 @@ var log = require('./lib/util/log').from(__filename),
 
     objToHTML = require('./lib/util/prettyJSON'),
 
+    ReferralHandler = require('./lib/referralHandler'),
     ContentHandler = require('./lib/contentHandler'),
     JobHandler = require('./lib/jobHandler'),
 
@@ -115,15 +116,6 @@ Server.get('/google97924ebf42be7c40.html', function(req, res){
     res.end();
 });
 
-// Handle Jobvite Querystring
-Server.get(/^/, function(req, res, next) {
-    if (req.query && req.query.jvi) {
-        log('Redirect from Jobvite', req.headers.referrer || req.headers.referer || 'No referral');
-        var request = req.query.jvi.split(',');
-        res.redirect('/' + (request[1] == 'Apply' ? 'apply/' : '') + request[0]);
-    }
-    next();
-});
 
 
 // Get rid of urls that end in / - makes Google Analytics easier to read
@@ -131,7 +123,6 @@ Server.get(/^.+\/$/, function(req, res){
     res.redirect(req.url.substr(0, req.url.length - 1));
 });
 
-public_host = 'localhost';
 // Redirect other servers to the main one
 Server.get(/^/, function(req, res, next){
     var host = req.headers.host.split(':')[0];
@@ -151,9 +142,9 @@ Server.get('/reload', function(req, res, next) {
     next();
 });
 
-
-ContentHandler.addHandlers( {Server: Server });
-JobHandler.addHandlers( { Server: Server});
+ReferralHandler.addHandlers( {Server: Server } );
+ContentHandler.addHandlers( {Server: Server } );
+JobHandler.addHandlers( {Server: Server } );
 
 
 Server.get('/log', function(req, res) {
@@ -172,15 +163,11 @@ Server.get('/*', function(req, res){
         }
     }
 
-    if (host == 'localhost') {
-        res.render('error.ejs', { locals: { message: "404, man, 404. <br /> When in production the server will automatically redirect to an appropriate page." } });
-    } else {
-        var array = req.url.split('/');
-        if (array.pop() == '') { array.pop(); }
+    var array = req.url.split('/');
+    if (array.pop() == '') { array.pop(); }
 
-        new_url = array.join('/') || '/';
-        res.redirect(new_url);
-    }
+    new_url = array.join('/') || '/';
+    res.redirect(new_url);
 });
 
 Server.listen(PORT, null);
