@@ -51,7 +51,7 @@ function production(){
     JobHandler.autoUpdate();
 
     Server.helpers({
-        href: function(url) { return 'http://' + public_host + (url[0] == '/' ? '' : '/') + url; }
+        href: function(url) { return 'http://' + HOSTNAME + (url[0] == '/' ? '' : '/') + url; }
     });
 
 
@@ -126,9 +126,9 @@ Server.get(/^.+\/$/, function(req, res){
 // Redirect other servers to the main one
 Server.get(/^/, function(req, res, next){
     var host = req.headers.host.split(':')[0];
-    if (host != 'localhost' && host != public_host) {
+    if (host != 'localhost' && host != HOSTNAME) {
         log('old url', host)
-        var new_url = 'http://' + public_host + ':3000' + req.originalUrl;
+        var new_url = 'http://' + HOSTNAME + ':3000' + req.originalUrl;
         log('redirect from:', req.headers.host + req.originalUrl, 'to', new_url);
         res.redirect(new_url);
     } else {
@@ -157,7 +157,7 @@ Server.get('/*', function(req, res){
     var host = req.headers.host.split(':')[0],
         new_url;
 
-    if (host == 'localhost' || host == public_host) {
+    if (host == 'localhost' || host == HOSTNAME) {
         if (req.headers['user-agent'] && req.headers['user-agent'].match(/msnbot|slurp/i) === null) {
             log('404', req.url, req.headers.referrer || req.headers.referer || req.headers['user-agent']);
         }
