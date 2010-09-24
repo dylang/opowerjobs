@@ -131,7 +131,7 @@ Server.get(/^.+\/$/, function(req, res){
 Server.get(/^/, function(req, res, next){
     var host = req.headers.host.split(':')[0];
     if (host != 'localhost' && host != HOSTNAME) {
-        var new_url = 'http://' + HOSTNAME + ':3000' + req.originalUrl;
+        var new_url = 'http://' + HOSTNAME + req.originalUrl;
         log('redirect from:', req.headers.host + req.originalUrl, 'to', new_url);
         res.redirect(new_url);
     } else {
