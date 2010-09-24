@@ -166,7 +166,7 @@ Server.get('/*', function(req, res){
         }
     }
 
-    var array = req.url.split('/');
+    var array = req.url.replace(/\/\//g, '/').split('/');
     if (array.pop() == '') { array.pop(); }
 
     new_url = array.join('/') || '/';
