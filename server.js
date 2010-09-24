@@ -26,6 +26,9 @@ var VIEWS = __dirname + '/views',
     PORT = parseInt(process.env.PORT || 3000),
     HOSTNAME = 'opowerjobs.com';
 
+var TEMP_HOSTS = { 'dylan95.com': 1, 'dylangreene.com': 1, 'coursereviews.com': 1, 'teacherreviews.com': 1 };
+
+
 //hack for testing production settings.  slug == heroku.
 if (PORT != 3000 || __dirname.indexOf('slug') !== -1) {
     Server.set('env', 'production');
@@ -130,10 +133,9 @@ Server.get(/^.+\/$/, function(req, res){
 // Redirect other servers to the main one
 Server.get(/^/, function(req, res, next){
     var host = req.headers.host.split(':')[0];
-    var TEMP_HOSTS = { 'dylan95.com': 1, 'dylangreene.com': 1, 'coursereviews.com': 1, 'teacherreviews.com': 1 };
     if (host != 'localhost' && host != HOSTNAME && !TEMP_HOSTS[host] && !TEMP_HOSTS['www.' + host]) {
         var new_url = 'http://' + HOSTNAME + req.originalUrl;
-        log('redirect from:', req.headers.host + req.originalUrl, 'to', new_url);
+        //log('redirect from:', req.headers.host + req.originalUrl, 'to', new_url);
         res.redirect(new_url);
     } else {
         next();
@@ -161,17 +163,22 @@ Server.get('/*', function(req, res){
     var host = req.headers.host.split(':')[0],
         new_url;
 
-    if (host == 'localhost' || host == HOSTNAME) {
-        if (req.headers['user-agent'] && req.headers['user-agent'].match(/msnbot|slurp/i) === null) {
-            log('404', req.url, req.headers.referrer || req.headers.referer || req.headers['user-agent']);
-        }
+    if (TEMP_HOSTS[host] || TEMP_HOSTS['www.' + host]) {
+        res.redirect('http://' + HOSTNAME);
     }
+    else {
+        if (host == 'localhost' || host == HOSTNAME) {
+            if (req.headers['user-agent'] && req.headers['user-agent'].match(/msnbot|slurp/i) === null) {
+                log('404', req.url, req.headers.referrer || req.headers.referer || req.headers['user-agent']);
+            }
+        }
 
-    var array = req.url.replace(/\/\//g, '/').split('/');
-    if (array.pop() == '') { array.pop(); }
+        var array = req.url.replace(/\/\//g, '/').split('/');
+        if (array.pop() == '') { array.pop(); }
 
-    new_url = array.join('/') || '/';
-    res.redirect(new_url);
+        new_url = array.join('/') || '/';
+        res.redirect(new_url);
+    }
 });
 
 Server.listen(PORT, null);
