@@ -9,7 +9,7 @@ require.paths.unshift('./support/connect/lib');
 require('./support/proto');
 
 var log = require('./lib/util/log').from(__filename),
-    MemoryStore = require('connect/middleware/session/memory'),
+    MemoryStore = require('./support/connect/lib/connect/middleware/session/memory'),
     Express = require('express'),
     Assets = require('./lib/assets'),
 
@@ -44,6 +44,7 @@ process.addListener('uncaughtException', function (err, stack) {
 
 function production(){
     Server.use(Express.conditionalGet());
+    Server.use(Express.cache());
     Server.use(Express.gzip());
 
     log('running in production mode');
@@ -59,6 +60,7 @@ function production(){
 
 function development() {
     Server.use(Express.conditionalGet());
+    Server.use(Express.cache());
     Server.use(Express.gzip());
 
     Assets.compress(true);
