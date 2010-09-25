@@ -113,8 +113,11 @@ Server.error(function(err, req, res, next){
             err.stack && log(err.stack);
             log('*************************************');
         }
-        res.redirect('/');
-        //res.render('error.ejs', { locals: { title: 'Error', message: objToHTML(err) } });
+        if (Server.get('env') == 'production') {
+            res.redirect('/');
+        } else {
+            res.render('error.ejs', { locals: { title: 'Error', message: err.message, object: false } });
+        }
 });
 
 // For Google Webmaster
@@ -157,6 +160,10 @@ Server.get('/log', function(req, res) {
     res.render('log.ejs');
 });
 
+Server.get('/dump', function(req, res) {
+    res.render('dump.ejs');
+});
+
 
 // Required for 404's to return something
 Server.get('/*', function(req, res){
@@ -169,7 +176,7 @@ Server.get('/*', function(req, res){
     else {
         if (host == 'localhost' || host == HOSTNAME) {
             if (req.headers['user-agent'] && req.headers['user-agent'].match(/msnbot|slurp/i) === null) {
-                log('404', req.url, req.headers.referrer || req.headers.referer || req.headers['user-agent']);
+                log('404', req.url, req.headers.referrer || req.headers.referer);
             }
         }
 
@@ -183,5 +190,3 @@ Server.get('/*', function(req, res){
 
 Server.listen(PORT, null);
 log('Starting OPOWER JOBS on', PORT);
-
-
