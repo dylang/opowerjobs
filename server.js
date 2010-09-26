@@ -4,8 +4,8 @@
  * MIT Licensed
  */
 
-//require.paths.unshift('./support');
-//require.paths.unshift('./support/connect/lib');
+require.paths.unshift('./support');
+require.paths.unshift('./support/connect/lib');
 require('./support/proto');
 
 var log = require('./lib/util/log').from(__filename),
