@@ -110,6 +110,7 @@ Server.error(function(err, req, res, next){
             log('*************************************');
             log('****************ERROR****************');
             log('*************************************');
+            log('http://' + req.headers.host + req.url);
             err.message && log(err.message);
             err.arguments && log(err.arguments);
             err.stack && log(err.stack);
