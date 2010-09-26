@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE service_bundle SYSTEM "/usr/share/lib/xml/dtd/service_bundle.dtd.1">
-<service_bundle type="manifest" name="node-hello-world-service">
-  <service name="site/node-hello-world-service" type="service" version="1">
+<service_bundle type="manifest" name="opowerjobs">
+  <service name="site/opowerjobs" type="service" version="1">
 
     <create_default_instance enabled="true"/>
 
@@ -15,7 +15,7 @@
       <service_fmri value="svc:/system/filesystem/local"/>
     </dependency>
 
-    <method_context working_directory="/home/admin/hello-world">
+    <method_context working_directory="/home/admin/opowerjobs">
       <method_credential user="admin" group="staff" privileges='basic,net_privaddr'  />
       <method_environment>
         <envvar name="PATH" value="/home/admin/local/bin:/usr/local/bin:/usr/bin:/usr/sbin:/bin"/>
@@ -28,7 +28,7 @@
     <exec_method
       type="method"
       name="start"
-      exec="/home/admin/local/bin/node /home/admin/opower-jobs/server.js"
+      exec="/home/admin/local/bin/node /home/admin/opowerjobs/server.js"
       timeout_seconds="60"/>
 
     <exec_method
