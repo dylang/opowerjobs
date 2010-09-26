@@ -1,2 +1,2 @@
 #!/bin/bash
-svcadm reload opowerjobs
+svcadm restart opowerjobs
