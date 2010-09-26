@@ -57,7 +57,8 @@ function production(){
     JobHandler.autoUpdate();
 
     Server.helpers({
-        href: function(url) { return 'http://' + HOSTNAME + (url[0] == '/' ? '' : '/') + url; }
+        href: function(url) { return 'http://' + HOSTNAME + (url[0] == '/' ? '' : '/') + url; },
+        production: true
     });
 
 
@@ -72,7 +73,8 @@ function development() {
     //JobHandler.autoUpdate(); // TODO: Make it update for testing changelog?
 
     Server.helpers({
-        href: function(url) { return (url[0] == '/' ? '' : '/') + url; }
+        href: function(url) { return (url[0] == '/' ? '' : '/') + url; },
+        development: true
     });
 
     log('running in development mode');
