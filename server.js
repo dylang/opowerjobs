@@ -173,7 +173,7 @@ Server.get('/*', function(req, res){
     else {
         if (host == 'localhost' || host == HOSTNAME) {
             if (req.headers['user-agent'] && req.headers['user-agent'].match(/msnbot|slurp/i) === null) {
-                log('404', req.url, req.headers.referrer || req.headers.referer);
+                log('404', req.url, req.headers.referrer || req.headers.referer || req.session.jobboard || '');
             }
         }
 
