@@ -29,14 +29,9 @@ var VIEWS = __dirname + '/views',
 var TEMP_HOSTS = { '8.17.80.250': 1, 'dylan95.com': 1, 'www.dylan95.com': 1, 'dylangreene.com': 1, 'www.dylangreene.com': 1, 'coursereviews.com': 1, 'www.coursereviews.com': 1, 'teacherreviews.com': 1, 'www.teacherreviews.com': 1 };
 
 
-// hack for testing production settings.  admin == joyent, slug == heroku.
-if (PORT != 3000 ||  __dirname.indexOf('slug') !== -1) {
+// hack for testing production settings.  slug == heroku.
+if (!process.env.JOYENT && (PORT != 3000 ||  __dirname.indexOf('slug') !== -1)) {
     Server.set('env', 'production');
-}
-
-// hack for testing joyent
-if (__dirname.indexOf('admin') !== -1) {
-    PORT = 80;
 }
 
 //in case of crash. I've never seen this used, got it from somebody else's code.
