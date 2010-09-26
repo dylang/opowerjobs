@@ -1,6 +1,6 @@
 {
     "name": "opower-jobs",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "A powerful job site that is a great example of a live site using Node, Express, Connect, EJS, AssetManager, XML2JS, and other Node modules.  See it in action at http://opowerjobs.com.",
     "homepage": "http://opowerjobs.com",
     "author": "Dylan Greene <dylang@gmail.com>",
@@ -20,9 +20,9 @@
     },
     "dependencies":
     {
-        "express": ">= 1.0.0rc2",
+        "express": ">= 1.0.0rc3",
         "ejs": ">= 0.2.0",
-        "connect-assetmanager": ">= 0.0.5",
+        "connect-assetmanager": ">= 0.0.7",
         "connect-assetmanager-handlers": ">= 0.0.10",
         "xml2js": ">= 0.1.5"
     },
