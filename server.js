@@ -29,8 +29,8 @@ var VIEWS = __dirname + '/views',
 var TEMP_HOSTS = { '8.17.80.250': 1, '72.2.126.71': 1, 'opower.no.de': 1, 'dylan95.com': 1, 'www.dylan95.com': 1, 'dylangreene.com': 1, 'www.dylangreene.com': 1, 'coursereviews.com': 1, 'www.coursereviews.com': 1, 'teacherreviews.com': 1, 'www.teacherreviews.com': 1 };
 
 
-// hack for testing production settings.  slug == heroku.
-if (!process.env.JOYENT && (PORT != 3000 ||  __dirname.indexOf('slug') !== -1)) {
+// hack for testing production settings.
+if (PORT != 3000 || process.env.JOYENT) {
     Server.set('env', 'production');
 }
 
