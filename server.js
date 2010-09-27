@@ -176,8 +176,7 @@ Server.get('/*', function(req, res){
         res.writeHead(404, { 'Content-Type': 'text/plain' });
         res.end('Cannot ' + req.method + ' ' + req.url);
     }
-
-    if (TEMP_HOSTS[host]) {
+    else if (TEMP_HOSTS[host]) {
         res.redirect('http://' + HOSTNAME);
     }
     else {
