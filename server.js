@@ -26,7 +26,7 @@ var VIEWS = __dirname + '/views',
     PORT = parseInt(process.env.PORT || 3000),
     HOSTNAME = 'opowerjobs.com';
 
-var TEMP_HOSTS = { '8.17.80.250': 1, 'dylan95.com': 1, 'www.dylan95.com': 1, 'dylangreene.com': 1, 'www.dylangreene.com': 1, 'coursereviews.com': 1, 'www.coursereviews.com': 1, 'teacherreviews.com': 1, 'www.teacherreviews.com': 1 };
+var TEMP_HOSTS = { '8.17.80.250': 1, 'opower.no.de': 1, 'dylan95.com': 1, 'www.dylan95.com': 1, 'dylangreene.com': 1, 'www.dylangreene.com': 1, 'coursereviews.com': 1, 'www.coursereviews.com': 1, 'teacherreviews.com': 1, 'www.teacherreviews.com': 1 };
 
 
 // hack for testing production settings.  slug == heroku.
