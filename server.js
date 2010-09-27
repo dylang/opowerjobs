@@ -169,9 +169,13 @@ Server.get('/log', function(req, res) {
 // Required for 404's to return something
 Server.get('/*', function(req, res){
     var host = req.headers.host.split(':')[0],
-        new_url;
+        new_url,
+        extension = req.url.match(/\....$/);
 
-    //TODO: check file type, don't redirect binary requests to home page
+    if (extension) {
+        res.writeHead(404, { 'Content-Type': 'text/plain' });
+        res.end('Cannot ' + req.method + ' ' + req.url);
+    }
 
     if (TEMP_HOSTS[host]) {
         res.redirect('http://' + HOSTNAME);
