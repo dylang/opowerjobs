@@ -139,6 +139,9 @@ Server.get(/^.+\/$/, function(req, res){
 // Redirect other servers to the main one
 Server.get(/^/, function(req, res, next){
     var host = req.headers.host.split(':')[0];
+    if (TEMP_HOSTS[host]) {
+        req.session.tempHost = host;
+    }
     if (host != 'localhost' && host != HOSTNAME && !TEMP_HOSTS[host]) {
         var new_url = 'http://' + HOSTNAME + req.originalUrl;
         //log('redirect from:', req.headers.host + req.originalUrl, 'to', new_url);
@@ -168,11 +171,13 @@ Server.get('/*', function(req, res){
     var host = req.headers.host.split(':')[0],
         new_url;
 
+    //TODO: check file type, don't redirect binary requests to home page
+
     if (TEMP_HOSTS[host]) {
         res.redirect('http://' + HOSTNAME);
     }
     else {
-        if (host == 'localhost' || host == HOSTNAME) {
+        if (!req.session.tempHost || host == 'localhost') {
             if (req.headers['user-agent'] && req.headers['user-agent'].match(/msnbot|slurp/i) === null) {
                 log('404', req.url, req.headers.referrer || req.headers.referer || req.session.jobboard || '');
             }
@@ -188,4 +193,3 @@ Server.get('/*', function(req, res){
 
 Server.listen(PORT, null);
 log('Starting OPOWER JOBS on', PORT);
-log(__filename, process.ENV);
