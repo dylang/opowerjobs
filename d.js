@@ -11,7 +11,7 @@ var sys = require('sys'),
   test = args.test;
 
 function say(message) {
-  sys.puts('\x1B[1;36m' + 'DJs: ' + message + '\x1B[0m');
+  sys.puts('\x1B[1;35m' + 'DJs: ' + message + '\x1B[0m');
 }
 
 
