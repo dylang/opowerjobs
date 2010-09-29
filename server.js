@@ -158,7 +158,7 @@ ContentHandler.addHandlers( {Server: Server } );
 JobHandler.addHandlers( {Server: Server } );
 
 Server.get('/log', function(req, res) {
-    res.render('log.ejs');
+    res.render('log.ejs',  { locals: { history: log.history() } });
 });
 
 

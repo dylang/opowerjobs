@@ -1,7 +1,7 @@
 <div class="content">
 <div class="span-17">
     <table class="log">
-    <% log.history().forEach(function(item) { %>
+    <% for(var i = 0, total = Math.min(history.length, 400), start = history.length - total; i < total; i++) { var item = history[i + start]; %>
     <tr>
         <td class="time"><%= log.ago(item.date) %></td>
         <td><span class="file"><%= item.file %></span></td>
@@ -42,7 +42,7 @@
         %>
         </td>
     </tr>
-    <% }); %>
+    <% } %>
 </table>
 </div>
 </div>
