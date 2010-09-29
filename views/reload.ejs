@@ -2,7 +2,7 @@
 <h2><%- locals.title ? locals.title : 'Hmm...' %></h2>
 <%- locals.message ? locals.message : 'oh....' %>
 <div>
-    <% if (locals.changes) { %>
+    <% if (locals.changes && locals.changes.length) { %>
         <ol>
         <% changes.forEach(function(change) { %>
             <li>
@@ -16,7 +16,7 @@
         <% }) %>
         </ol>
     <% } else { %>
-    No changes
+    <strong>No changes</strong>
     <% } %>
 </div>
 </div>
