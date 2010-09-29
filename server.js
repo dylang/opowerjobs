@@ -5,7 +5,7 @@
  */
 
 var log = require('./lib/util/log').from(__filename),
-    MemoryStore = require('./support/connect/lib/connect/middleware/session/memory'),
+    MemoryStore = require('connect/middleware/session/memory'),
     Express = require('express'),
     Assets = require('./lib/assets'),
 
