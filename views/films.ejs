@@ -3,40 +3,34 @@
     <h2>OPOWER on Film</h2>
     <h3>Learn a bit more about us through the miracle of moving pictures</h3>
 
+        <ul class="tabs clearfix">
+            <li class="<%= data.video == 'life' ? 'active': '' %>"><a href="/films">Life at OPOWER</a></li>
+            <li class="<%= data.video == 'printing' ? 'active': data.video %>"><a href="/films/printing-process">Inside the Printing Process</a></li>
+            <li class="<%= data.video == 'obama' ? 'active': '' %>"><a href="/films/obama">Obama Visits OPOWER</a>
+            <li class="<%= data.video == 'hula' ? 'active': '' %>"><a href="/films/hula">Chief Hula Officer</a></li>
+        </ul>
 
-    <div id="tabs">
-	<ul class="clearfix">
-		<li><a href="#tabs-1">Life at OPOWER</a></li>
-		<li><a href="#tabs-2">Inside the Printing Process</a></li>
-		<li><a href="#tabs-3">Obama Visits OPOWER</a>
-		<li><a href="#tabs-4">Chief Hula Officer</a></li>
-	</ul>
+        <div class="flag clearfix" style="margin-top: -5px">
+            <% switch(data.video) {
+                case 'printing': %>
+                    <iframe src="http://player.vimeo.com/video/14673890?byline=0&amp;portrait=0" width="660" height="371" frameborder="0"></iframe>
+                    Take a closer look at how our reports are printed and shipped out to millions of customers
+                <% break;
+                case 'obama': %>
+                    <iframe src="http://player.vimeo.com/video/14776453?byline=0&amp;portrait=0" width="679" height="382" frameborder="0"></iframe>
+                    On March 5, 2010, President Obama visited the OPOWER offices to talk about job growth in the United States.
+                <% break;
+                case 'hula': %>
+                    <iframe src="http://player.vimeo.com/video/14507524?byline=0&amp;portrait=0" width="660" height="371" frameborder="0"></iframe>
+                    CEO of OPOWER Dan Yates – and his mustache – gets groovy.
+                <% break;
+                default: %>
+                    <iframe src="http://player.vimeo.com/video/14836485?byline=0&amp;portrait=0" width="660" height="371" frameborder="0"></iframe>
+                <%
+            }
+            %>
+        </div>
 
-    <div class="flag clearfix" style="margin-top: -5px">
-    
-    	<div id="tabs-1">
-    	    <iframe src="http://player.vimeo.com/video/14836485?byline=0&amp;portrait=0" width="660" height="371" frameborder="0"></iframe>
-    	</div>
-    	<div id="tabs-2">
-    		<iframe src="http://player.vimeo.com/video/14673890?byline=0&amp;portrait=0" width="660" height="371" frameborder="0"></iframe>
-    		Take a closer look at how our reports are printed and shipped out to millions of customers
-    	</div>
-    	<div id="tabs-3">
-            <iframe src="http://player.vimeo.com/video/14776453?byline=0&amp;portrait=0" width="679" height="382" frameborder="0"></iframe>
-            On March 5, 2010, President Obama visited the OPOWER offices to talk about job growth in the United States.
-    	</div>
-    	<div id="tabs-4">
-            <iframe src="http://player.vimeo.com/video/14507524?byline=0&amp;portrait=0" width="660" height="371" frameborder="0"></iframe>
-            CEO of OPOWER Dan Yates – and his mustache – gets groovy.
-    	</div>
-    
-    </div>		
-</div>
 
-<script type="text/javascript">
-    window.onload = function() {
-        $("#tabs").tabs();
-    };
-</script>
 
 </div>
