@@ -77,14 +77,14 @@
 
         <div class="span-17 first last flag clearfix">
             
-            <div class="span-13 first">
+            <div class="span-11 first">
                 <h5>Find other jobs in:</h5>
                 <a href="<%- href(Constants.url(job.location)) %>" class="button blue-button button-small button-left"><%- Constants.short(job.location) %></a><a href="<%- href(job.url.team) %>" class="button blue-button button-small button-right"><%= Constants.short(job.team) || job.team %></a>
             </div>
             
-            <div class="span-4 last">
-                <h5>Share the job:</h5>
-                 <div class="shorturl"><input spellcheck="false" value="http://opower.jobs/<%- job.id %>" /></div>
+            <div class="span-6 last">
+                <h5>Share this job:</h5>
+                http://opowerjobs.com/<%- job.id %>
             </div>
             
         </div>
