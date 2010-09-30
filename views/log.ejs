@@ -11,7 +11,7 @@
 
                 switch (typeof msg) {
                     case 'string':
-                        if (msg.indexOf('http://') === 0) {
+                        if (msg.indexOf('http://') === 0 || msg.indexOf('/') === 0) {
                 %>
                         <a href="<%- msg %>"><%= msg %></a>
                 <%
