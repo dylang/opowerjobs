@@ -192,4 +192,3 @@ Server.get('/*', function(req, res){
 
 Server.listen(PORT, null);
 log('Starting OPOWER JOBS on', PORT);
-
