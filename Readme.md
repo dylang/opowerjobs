@@ -10,9 +10,11 @@
 
     $ node d.js
 
-    d.js will automatically restart the server if any js code is changed.
+  d.js will automatically restart the server if any js code is changed.
 
 ## Running on Joyent and [no.de](http://no.de).
+
+  Use NPM to install the required modules.
 
     $ git push joyent master
 
