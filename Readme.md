@@ -6,7 +6,11 @@
 
   [http://www.opowerjobs.com](http://www.opowerjobs.com)
 
-## Running locally or on your own server:
+## Install dependencies
+
+    $ npm install express ejs connect-assetmanager connect-assetmanager-handlers xml2js proto
+
+## Running locally or on your own server
 
     $ node d.js
 
@@ -14,7 +18,7 @@
 
 ## Running on Joyent and [no.de](http://no.de).
 
-  Use NPM to install the required modules.
+  Install dependencies
 
     $ git push joyent master
 
