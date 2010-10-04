@@ -1,4 +1,3 @@
-
 # OPOWER Jobs
 
   Complex web site example built on [node](http://nodejs.org) using [Express](http://github.com/visionmedia/express) and  [Connect](http://github.com/extjs/Connect).
@@ -7,31 +6,28 @@
 
   [http://www.opowerjobs.com](http://www.opowerjobs.com)
 
-## Running locally
+## Running locally or on your own server:
 
     $ node d.js
 
     d.js will automatically restart the server if any js code is changed.
 
-## Running on Heroku
+## Running on Joyent and [no.de](http://no.de).
 
-    Follow their instructions, it should work as is.
+    $ git push joyent master
 
 ## Features
 
   * Job listing data provided by xml feed from Jobvite.
   * Simple live search engine.
   * Real-world example of many features from Express/Connect.
-  * Lots of hacky/wonky/messy/undocumented code (my bad).
 
 ## Purpose
 
   * Learn Node.js
   * Prepare for [Node Knockout](http://http://nodeknockout.com/).
-  * Replace our [underwhelming ASP.NET-based job site](http://www.opower.com/Careers/CurrentOpportunities.aspx) with something much cooler and standards-based.
+  * Replace our underwhelming ASP.NET-based job site with something much cooler and standards-based.
   * Attract the best developers to this amazing cash-flow positive company.
-  * To let you know that if *you* recommend somebody that we hire, OPOWER will pay *you* $3000, so you should tell your friends about us too.
-
 
 ## Node Knockout
 
@@ -53,7 +49,7 @@
 
   * Dan Yates, CEO/co-founder of OPOWER, and who got this whole thing started.
   * Our coworkers at OPOWER for helping out and getting things done so we could spend time on this side project.
-  * The guys on #node.js for providing support and fixing bugs with amazing speed and gusto, especially [Creationix](http://github.com/creationix), [Mape](http://github.com/mape), [Eyepulp](http://github.com/eyepulp), [TJ Holowaychuk](http://github.com/visionmedia), and [Isaacs](http://github.com/isaacs).
+  * The guys on #node.js for providing support and fixing bugs with amazing speed and gusto, especially [Creationix](http://github.com/creationix), [Mape](http://github.com/mape), [TJ Holowaychuk](http://github.com/visionmedia), and [Isaacs](http://github.com/isaacs).
 
 ## License
 
