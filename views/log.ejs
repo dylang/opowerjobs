@@ -3,9 +3,10 @@
     <table class="log">
     <% for(var i = 0, total = Math.min(history.length, 400), start = history.length - total; i < total; i++) { var item = history[i + start]; %>
     <tr>
-        <td class="time"><%= log.ago(item.date) %></td>
-        <td><span class="file"><%= item.file %></span></td>
+        <td class="time"><%= item.niceTime %></td>
+        <td><span class="file"><%= item.file %><% if (item.func) { %><span class="func">.<%= item.func %></span><% } %></span></td>
         <td>
+
         <%
             item.messages.forEach(function(msg) {
 

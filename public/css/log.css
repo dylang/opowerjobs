@@ -24,8 +24,18 @@
     color: green;
 }
 
+.log .func {
+    background-color: #fefac3;
+    -webkit-border-radius: 4px;
+    padding: 0;
+    color: green;
+    font-size: smaller;
+}
+
+
 .log .time {
     font-size: smaller;
+    white-space: nowrap;
 }
 .log .number {
     color: orange;

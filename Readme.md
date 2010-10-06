@@ -8,7 +8,7 @@
 
 ## Install dependencies
 
-    $ npm install express ejs connect-assetmanager connect-assetmanager-handlers xml2js proto
+    $ npm install express ejs logging connect-assetmanager connect-assetmanager-handlers xml2js proto
 
 ## Running locally or on your own server
 

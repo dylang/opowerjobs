@@ -4,7 +4,7 @@
  * MIT Licensed
  */
 
-var log = require('./lib/util/log').from(__filename),
+var log = require('logging').from(__filename),
     MemoryStore = require('connect/middleware/session/memory'),
     Express = require('express'),
     Assets = require('./lib/assets'),
