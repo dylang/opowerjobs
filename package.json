@@ -20,6 +20,7 @@
     },
     "dependencies":
     {
+        "logging": ">= 2.0.0",
         "express": ">= 1.0.0rc3",
         "ejs": ">= 0.2.0",
         "connect-assetmanager": ">= 0.0.7",
