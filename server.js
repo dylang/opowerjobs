@@ -125,6 +125,10 @@ Server.get('/google97924ebf42be7c40.html', function(req, res){
     res.end();
 });
 
+Server.get('/nagios', function(req, res) {
+    res.send('I am working fine.');
+    res.end();
+});
 
 
 // Get rid of urls that end in / - makes Google Analytics easier to read
