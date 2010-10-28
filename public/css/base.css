@@ -23,13 +23,12 @@ body {
     font-size: 14px;
     line-height: 20px;
     margin: 10px 0; /* replace with ei.styles.siteWide.body.margin */
-   font-family: 'ProximaNovaRegular',Arial,sans-serif;
     height:100%;
 }
 
 
 h1 {
-    font-family: ProximaNovaBold, Arial, sans-serif;
+    font-weight: bold;
 }
 
 h1 {
@@ -75,8 +74,7 @@ a:active {
 }
 
 strong, .strong {
-    font-weight: normal;
-    font-family: ProximaNovaBold, Arial, sans-serif;
+    font-weight: bold;
 }
 
 small, .small {
@@ -219,7 +217,6 @@ DL.inline {
 }
 DL.inline DT {
     display: inline;
-    font-family: ProximaNovaBold, Arial, sans-serif;
 }
 
 DL.inline DD {

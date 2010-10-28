@@ -343,7 +343,7 @@
 #fancybox-loading.fancybox-ie div	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/css/fancybox/fancy_loading.png', sizingMethod='scale'); }
 .fancybox-ie #fancybox-close		{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/css/fancybox/fancy_close.png', sizingMethod='scale'); }
 
-.fancybox-ie #fancybox-title-over	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/css/fancybox/fancy_title_over.png', sizingMethod='scale'); zoom: 1; }
+.fancybox-ie #fancybox-title-over	{ background: transparent; zoom: 1; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/css/fancybox/fancy_title_over.png', sizingMethod='scale');  }
 .fancybox-ie #fancybox-title-left	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/css/fancybox/fancy_title_left.png', sizingMethod='scale'); }
 .fancybox-ie #fancybox-title-main	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/css/fancybox/fancy_title_main.png', sizingMethod='scale'); }
 .fancybox-ie #fancybox-title-right	{ background: transparent; filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/css/fancybox/fancy_title_right.png', sizingMethod='scale'); }
