@@ -46,11 +46,6 @@
   * Garrett Miller (design, art, photos) [heyitsgarrett](http://github.com/heyitsgarrett)
   * OPOWER Marketing and HR team members (text and direction)
 
-## Dependencies
-
-  * Latest Node: v0.2.0
-  * Express, Connect, and other dependencies are included.  This was to make it easier to deploy to Heroku.  Also because this is my first time using Git.
-
 ## Thanks
 
   * Dan Yates, CEO/co-founder of OPOWER, and who got this whole thing started.

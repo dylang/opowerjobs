@@ -9,7 +9,7 @@
 
     <link rel="alternate" type="application/atom+xml" title="OPOWER New Jobs Feed" href="http://opowerjobs.com/atom.xml" />
 
-    <%- assets.styles(this.req.query) %>
+    <%- assets.styles(this.query) %>
 </head>
 
 <% locals.team && locals.all_teams[locals.team]  ? currentPageID = locals.team : '' %>
@@ -42,7 +42,7 @@
                     
                 </div>
 
-                <% if (this.req.url.indexOf('search') === -1) { %>
+                <% if (this.url.indexOf('search') === -1) { %>
                     <%- partial('jobs/search', { locals: locals } ) %>
                 <% } %>
                 
@@ -63,8 +63,8 @@
     </div>
 
    
-    <%- assets.scripts(this.req.query) %>
-    <% var gaq_events = sessionHandler(this.req) %>
+    <%- assets.scripts(this.query) %>
+    <% var gaq_events = sessionHandler(this) %>
     <script type="text/javascript">
     <%- locals.production ? '' : '/' + '**' %>
     var _gaq = _gaq || [];
@@ -79,5 +79,9 @@
     })();
     <%- locals.production ? '' : '**' + '/' %> 
     </script>
+    <% if (locals.production) { %>
+    <script src="http://munchkin.marketo.net/munchkin.js" type="text/javascript"></script>
+    <script type="text/javascript">mktoMunchkin("856-UCR-364");</script>
+    <% } %>
 </body>
 </html>

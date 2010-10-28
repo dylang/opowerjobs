@@ -21,11 +21,11 @@
     "dependencies":
     {
         "logging": ">= 2.0.0",
+        "jobvite": ">= 0.0.1",
         "express": ">= 1.0.0rc3",
         "ejs": ">= 0.2.0",
         "connect-assetmanager": ">= 0.0.7",
         "connect-assetmanager-handlers": ">= 0.0.10",
-        "xml2js": ">= 0.1.5",
         "proto": ">=0.1.0"
     },
     "main": "server",
