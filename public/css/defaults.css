@@ -129,28 +129,7 @@ ul.list LI {
     color: #00516e;
 }
 
-/* Teams page */
-.page-teams ul.teams li {
 
-    float: left;
-    width: 330px;
-}
-
-.page-teams ul.teams li a {
-    display: block;
-    float: left;
-    font-size: 16px;
-    height: 50px;
-    padding: 10px 0;
-    width: 300px;
-}
-
-.page-teams ul.teams li a span {
-    display: block;
-    float: left;
-    margin: 10px 0 0 20px;
-    width: 220px;
-}
 
 /* All Jobs page*/
 

@@ -1,3 +1,26 @@
+/* Teams page */
+.page-teams ul.teams li {
+    float: left;
+    width: 330px;
+}
+
+.page-teams ul.teams li a {
+    display: block;
+    float: left;
+    font-size: 16px;
+    height: 50px;
+    padding: 10px 0;
+    width: 300px;
+}
+
+.page-teams ul.teams li a span {
+    display: block;
+    float: left;
+    margin: 10px 0 0 20px;
+    width: 220px;
+}
+
+
 .team-placeholder {
     background: #ccc;
     border: 1px solid #333;
@@ -5,3 +28,26 @@
     height: 150px;
 }
 
+
+
+/* Location page */
+.page-locations ul.locations li {
+    float: left;
+    width: 330px;
+}
+
+.page-locations ul.locations li a {
+    display: block;
+    float: left;
+    font-size: 16px;
+    height: 50px;
+    padding: 10px 0;
+    width: 300px;
+}
+
+.page-locations ul.locations li a span {
+    display: block;
+    float: left;
+    margin: 10px 0 0 20px;
+    width: 220px;
+}

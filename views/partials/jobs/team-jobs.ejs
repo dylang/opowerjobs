@@ -4,7 +4,7 @@
     http://localhost:3000/dc-northern-virgina
 */ %>
 
-<div class="span-3 first">
+<div class="span-<%= locals.wide ? 7 : 3 %> first">
     <div class="strong" style="line-height: 1.3em; padding-bottom: 20px;"><%= all_teams[team.team] %></div>
 </div>
 

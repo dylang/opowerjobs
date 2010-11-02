@@ -75,7 +75,7 @@ BODY {
     margin-right: 32px;
     width: 100%;
 }
-
+.gallery iframe,
 .gallery img,
 .gallery-horizontal img {
     cursor: pointer;
