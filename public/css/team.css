@@ -4,7 +4,7 @@
     width: 330px;
 }
 
-.page-teams ul.teams li a {
+.page-teams ul.teams li  {
     display: block;
     float: left;
     font-size: 16px;
@@ -13,13 +13,18 @@
     width: 300px;
 }
 
-.page-teams ul.teams li a span {
+.page-teams ul.teams li span {
     display: block;
     float: left;
     margin: 10px 0 0 20px;
     width: 220px;
 }
 
+.page-teams ul.teams li .nojobs {
+    font-size: 11px;
+    margin-top: 0;
+    
+}
 
 .team-placeholder {
     background: #ccc;

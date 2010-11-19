@@ -83,7 +83,12 @@ function common() {
 
     Server.helpers({
         debug: objToHTML,
-        log: log
+        log: log,
+        array: function(obj) {
+            return obj.map(function(value, id) {
+                return { id: id, value: value };
+            });
+        }
     });
     Server.use(Express.cookieDecoder());
     Server.use(Express.session({ store: new MemoryStore({ reapInterval: 60000 * 10 }) }));

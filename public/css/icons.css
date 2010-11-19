@@ -15,23 +15,23 @@
 .icon-dept          {  background-image: url(theme/icons-department.png); }
 .icon-dept-small    {  background-image: url(theme/icons-department-small.png); }
 
-.icon-dept-small-clientServices {     background-position: 0 0; }
-.icon-dept-small-consumerMarketing {  background-position: -50px 0; }
-.icon-dept-small-corpMarketing {      background-position: -100px 0; }
+.icon-dept-small-client-services-operations {     background-position: 0 0; }
+.icon-dept-small-consumer-marketing-analytics {  background-position: -50px 0; }
+.icon-dept-small-corporate-marketing-strategy {      background-position: -100px 0; }
 .icon-dept-small-engineering {        background-position: -150px 0; }
-.icon-dept-small-generalAdmin {       background-position: -200px 0; }
-.icon-dept-small-govAffairs {         background-position: -250px 0; }
-.icon-dept-small-prodManagement {     background-position: -300px 0; }
-.icon-dept-small-salesBusiness {      background-position: -350px 0; }
+.icon-dept-small-general-administrative {       background-position: -200px 0; }
+.icon-dept-small-government-affairs-legal {         background-position: -250px 0; }
+.icon-dept-small-product-management-user-experience {     background-position: -300px 0; }
+.icon-dept-small-sales-business-development {      background-position: -350px 0; }
 
-.icon-dept-clientServices {     background-position: 0 0; }
-.icon-dept-consumerMarketing {  background-position: -100px 0; }
-.icon-dept-corpMarketing {      background-position: -200px 0; }
+.icon-dept-client-services-operations {     background-position: 0 0; }
+.icon-dept-consumer-marketing-analytics {  background-position: -100px 0; }
+.icon-dept-corporate-marketing-strategy {      background-position: -200px 0; }
 .icon-dept-engineering {        background-position: -300px 0; }
-.icon-dept-generalAdmin {       background-position: -400px 0; }
-.icon-dept-govAffairs {         background-position: -500px 0; }
-.icon-dept-prodManagement {     background-position: -600px 0; }
-.icon-dept-salesBusiness {      background-position: -700px 0; }
+.icon-dept-general-administrative {       background-position: -400px 0; }
+.icon-dept-government-affairs-legal {         background-position: -500px 0; }
+.icon-dept-product-management-user-experience {     background-position: -600px 0; }
+.icon-dept-sales-business-development {      background-position: -700px 0; }
 
 
 

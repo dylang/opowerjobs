@@ -10,58 +10,8 @@
     <h3><br /></h3>
     <p>At OPOWER, we understand that our success is a result of our diverse and talented workforce, and we take pride in maintaining the high quality of our workplace. You will find challenging projects and smart people here, and we encourage you to apply and join our team.</p>
     <p>The process begins with searching for a job opening that interests you by job team.</p>
-
     <ul class="teams clearfix">
-        
-        <li>
-            <a href="/client-services-operations">
-                <div class="icon icon-small icon-dept-small icon-dept-small-clientServices float-left"> </div>
-                <span>Client Services & Operations</span>
-            </a>
-        </li>
-        <li>
-            <a href="/consumer-marketing-analytics">
-                <div class="icon icon-small icon-dept-small icon-dept-small-consumerMarketing float-left"> </div>
-                <span>Consumer Marketing & Analytics</span>
-            </a>
-        </li>
-        <li>
-            <a href="/corporate-marketing-strategy">
-                <div class="icon icon-small icon-dept-small icon-dept-small-corpMarketing float-left"> </div>
-                <span>Corporate Marketing & Strategy</span>
-            </a>
-        </li>
-        <li>
-            <a href="/engineering">
-                <div class="icon icon-small icon-dept-small icon-dept-small-engineering float-left"> </div>
-                <span>Engineering</span>
-            </a>
-        </li>
-        <li>
-            <a href="/general-administrative">
-                <div class="icon icon-small icon-dept-small icon-dept-small-generalAdmin float-left"> </div>
-                <span>General & Administrative</span>
-            </a>
-        </li>
-        <li>
-            <a href="/government-affairs-legal">
-                <div class="icon icon-small icon-dept-small icon-dept-small-govAffairs float-left"> </div>
-                <span>Government Affairs & Legal</span>
-            </a>
-        </li>
-        <li>
-            <a href="/product-management-user-experience">
-                <div class="icon icon-small icon-dept-small icon-dept-small-prodManagement float-left"> </div>
-                <span>Product Management & User Experience</span>
-            </a>
-        </li>
-        <li>
-            <a href="/sales-business-development">
-                <div class="icon icon-small icon-dept-small icon-dept-small-salesBusiness float-left"> </div>
-                <span>Sales & Business Development</span>
-            </a>
-        </li>
-
+        <%- partial('jobs/teamSmall.ejs', { collection: array(Constants.teams), as: 'team' } ) %>
     </ul>
     
 </div>
