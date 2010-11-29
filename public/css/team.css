@@ -33,26 +33,16 @@
     height: 150px;
 }
 
+/* Locations Page */
 
-
-/* Location page */
-.page-locations ul.locations li {
-    float: left;
-    width: 330px;
+.page-locations .locations {
+    background: url(images/skyline.png) top center no-repeat;
+    height: 350px;
 }
 
-.page-locations ul.locations li a {
-    display: block;
-    float: left;
-    font-size: 16px;
-    height: 50px;
-    padding: 10px 0;
-    width: 300px;
+.page-locations .locations div {
+   margin-top: 280px;
 }
 
-.page-locations ul.locations li a span {
-    display: block;
-    float: left;
-    margin: 10px 0 0 20px;
-    width: 220px;
+.page-locations .locations .button-dc {
 }
