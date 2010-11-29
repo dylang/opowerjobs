@@ -44,5 +44,10 @@
    margin-top: 280px;
 }
 
+.page-locations .locations .button-sf {
+    margin-left: 20px;
+}
+
 .page-locations .locations .button-dc {
+    margin-right: 20px;
 }
