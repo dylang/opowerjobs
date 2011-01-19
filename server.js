@@ -91,7 +91,7 @@ function common() {
         }
     });
     Server.use(Express.cookieDecoder());
-    Server.use(Express.session({ store: new MemoryStore({ reapInterval: 60000 * 10 }) }));
+    Server.use(Express.session({ store: new MemoryStore({ reapInterval: 60000 * 10 }), secret: 'OPOWER!' }));
     Server.use(Express.bodyDecoder());
     Server.use(Express.favicon(PUBLIC + '/favicon.ico'));
     Server.use(Assets.handler(PUBLIC));
