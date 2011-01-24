@@ -23,7 +23,8 @@
             <% job.description.forEach(function(d) { %>
                 <h2><%-  (d.title || '').replace(/&.?.?quo;/g, "'").replace(/&bull;/g, "*") %></h2>
                 <% /* remove bad xml like &rsquo; */ %>
-                <%- (d.p || '').replace(/&.?.?quo;/g, "'").replace(/&hellip;/g, '"').replace(/&bull;/g, "*").replace(/&shy;/g, "-") %>
+                <%- (d.p || '')
+                 %>
             <% }); %>
 
             <h2>Helpful Links</h2>
