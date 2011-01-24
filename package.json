@@ -1,7 +1,7 @@
 {
     "name": "opower-jobs",
-    "version": "1.2.4",
-    "description": "An example of a full live site using Node, Express, Connect, EJS, AssetManager, XML2JS, and other Node modules.  Demo: http://opowerjobs.com",
+    "version": "1.2.5",
+    "description": "An example of a full live site using Node, Express, Connect, EJS, AssetManager, Jobvite, Logging, and other Node modules.  Demo: http://opowerjobs.com",
     "homepage": "http://opowerjobs.com",
     "author": "Dylan Greene <dylang@gmail.com>",
     "contributors": [
