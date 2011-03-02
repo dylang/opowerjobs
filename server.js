@@ -4,8 +4,10 @@
  * MIT Licensed
  */
 
+require('proto');
+
 var log = require('logging').from(__filename),
-    MemoryStore = require('connect/middleware/session/memory'),
+    MemoryStore = require('connect').session.MemoryStore,
     Express = require('express'),
     Assets = require('./lib/assets'),
 
