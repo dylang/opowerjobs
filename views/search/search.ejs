@@ -7,7 +7,7 @@
     <h2>Search</h2>
 </div>
 <div class="search" style="background: #67d134; padding: 40px; margin-bottom: 20px;">
-<%- partial('jobs/search', { locals: locals } ) %>
+<%- partial('form') %>
 </div>
 
 <div class="content">
@@ -16,7 +16,7 @@
 
         <% if (jobs.length) { %>
         <ul>
-            <%- partial('jobs/job', { collection: jobs, as: "job", locals: {show_location: true } } ) %>
+            <%- partial('../jobs/job', { collection: jobs, as: "job", show_location: true }) %>
         </ul>
         <% } else { %>
             No matches.  This only searches job titles.  Maybe you should just check out <a href="/all">all current openings</a>.

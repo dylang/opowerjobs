@@ -7,11 +7,8 @@
 require('proto');
 
 var log = require('logging').from(__filename),
-    MemoryStore = require('connect').session.MemoryStore,
     Express = require('express'),
     Assets = require('./lib/assets'),
-
-    objToHTML = require('./lib/util/prettyJSON'),
 
     ReferralHandler = require('./lib/referralHandler'),
     ContentHandler = require('./lib/contentHandler'),
@@ -35,8 +32,6 @@ if (PORT != 3000 || process.env.JOYENT) {
 //in case of crash. I've never seen this used, got it from somebody else's code.
 process.title = 'opowerjobs';
 process.addListener('uncaughtException', function (err, stack) {
-    console.log(err);
-    console.log(stack);
     log('*************************************');
     log('************EXCEPTION****************');
     log('*************************************');
@@ -46,15 +41,15 @@ process.addListener('uncaughtException', function (err, stack) {
 });
 
 function production(){
-    Server.use(Express.conditionalGet());
-    Server.use(Express.cache());
-    Server.use(Express.gzip());
+    //Server.use(Express.conditionalGet());
+    //Server.use(Express.cache());
+    //Server.use(Express.gzip());
 
     log('running in production mode');
     Assets.compress(true);
     JobHandler.autoUpdate();
 
-    Server.helpers({
+    Server.locals({
         href: function(url) { return 'http://' + HOSTNAME + (url[0] == '/' ? '' : '/') + url; },
         production: true
     });
@@ -63,14 +58,13 @@ function production(){
 }
 
 function development() {
-    Server.use(Express.conditionalGet());
-    Server.use(Express.cache());
-    Server.use(Express.gzip());
+    //Server.use(Express.conditionalGet());
+    //Server.use(Express.cache());
+    //Server.use(Express.gzip());
 
     Assets.compress(true);
-    //JobHandler.autoUpdate(); // TODO: Make it update for testing changelog?
 
-    Server.helpers({
+    Server.locals({
         href: function(url) { return (url[0] == '/' ? '' : '/') + url; },
         development: true
     });
@@ -83,8 +77,7 @@ function development() {
 function common() {
     Server.set('views', VIEWS);
 
-    Server.helpers({
-        debug: objToHTML,
+    Server.locals({
         log: log,
         array: function(obj) {
             return obj.map(function(value, id) {
@@ -92,15 +85,28 @@ function common() {
             });
         }
     });
-    Server.use(Express.cookieDecoder());
-    Server.use(Express.session({ store: new MemoryStore({ reapInterval: 60000 * 10 }), secret: 'OPOWER!' }));
-    Server.use(Express.bodyDecoder());
+
+    Server.dynamicHelpers({
+        session: function(req){
+            return req.session;
+        },
+        current_url: function(res, req, next) {
+            return res.url;
+        },
+        current_host: function(res, req, next) {
+            return res.headers.host;
+        }
+    });
+
+    Server.use(Express.cookieParser());
+    Server.use(Express.session({ secret: 'OPOWER!' }));
+    Server.use(Express.bodyParser());
     Server.use(Express.favicon(PUBLIC + '/favicon.ico'));
     Server.use(Assets.handler(PUBLIC));
-    Server.use(Express.staticProvider(PUBLIC));
+    Server.use(Express.static(PUBLIC));
     Server.use(Server.router);
 
-    Server.helpers({assets: Assets, currentPageID: false, pages: []});
+    Server.locals({assets: Assets, currentPageID: false, pages: []});
 }
 
 

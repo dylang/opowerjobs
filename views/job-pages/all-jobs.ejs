@@ -1,7 +1,5 @@
 <% /*
     All Jobs
-    http://localhost:3000
-
     Currently also used for search results.
 
     This file must be the list of all jobs.
@@ -18,7 +16,7 @@
                 <h4>Arlington, VA</h4>
             </div>
             <div class="span-13 last job-section">
-                <%- partial('jobs/team-jobs', { collection: jobs.va, as: 'team'} ) %>
+                <%- partial('../jobs/team-jobs', { collection: jobs.va, as: 'team'} ) %>
             </div>
         <% } %>
 
@@ -27,7 +25,7 @@
                 <h4>San Francisco, CA</h4>
             </div>
             <div class="span-13 last job-section">
-                <%- partial('jobs/team-jobs', { collection: jobs.sf, as: 'team'} ) %>
+                <%- partial('../jobs/team-jobs', { collection: jobs.sf, as: 'team'} ) %>
             </div>
         <% }  %>
     </div>

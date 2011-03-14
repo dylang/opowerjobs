@@ -22,7 +22,7 @@
                 <%- partial('jobs/jobid', { collection: all_critical, as: "jobId", locals: { show_location: true } } ) %>
             </ul>
         </li>
-        <li class="addthis_toolbox"><a href="#">Email/Share</a>
+        <li class="addthis_toolbox"><a href="menu.ejs#">Email/Share</a>
             <ul class="rounded-bl rounded-br vertical">
                 <li><div class="shorturl"><input spellcheck="false" value="http://opower.jobs/<%- job.id %>" style="width: 180px;"/></div></li>
                 <li><a class="addthis_button_email" addthis:url="http://opower.jobs/<%- job.id %>" addthis:title="OPOWER Job: <%- job.title %>">Email</a></li>

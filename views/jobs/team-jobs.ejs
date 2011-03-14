@@ -1,6 +1,5 @@
 <% /*
     List of Jobs grouped by team.
-    http://localhost:3000/
     http://localhost:3000/dc-northern-virgina
 */ %>
 
@@ -10,7 +9,7 @@
 
 <div class="span-10 last">
     <ul>
-       <%- partial('jobs/jobid', { collection: team.jobs, as: 'jobId'} ) %>
+       <%- partial('jobid', { collection: team.jobs, as: 'jobId'} ) %>
     </ul>
 </div>
 

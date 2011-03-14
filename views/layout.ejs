@@ -9,6 +9,7 @@
 
     <link rel="alternate" type="application/atom+xml" title="OPOWER New Jobs Feed" href="http://opowerjobs.com/atom.xml" />
 
+    <link href="/css/fonts.css" rel="stylesheet"  type="text/css"/>
     <%- assets.styles(this.query) %>
 </head>
 
@@ -28,7 +29,7 @@
                     
                     <ul class="nav-main rounded">
                     
-                        <%- partial("navigation/nav", { collection: pages, as: "page", locals: { currentPageID: currentPageID }} ) %>
+                        <%- partial("navigation/nav", { collection: pages, as: "page"} ) %>
                         
                         <!--
                         <li class="parent">
@@ -42,8 +43,8 @@
                     
                 </div>
 
-                <% if (this.url.indexOf('search') === -1) { %>
-                    <%- partial('jobs/search', { locals: locals } ) %>
+                <% if (current_url.indexOf('search') === -1) { %>
+                    <%- partial('search/form') %>
                 <% } %>
                 
                 

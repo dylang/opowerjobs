@@ -1,19 +1,10 @@
 <% /*
-    For individual team pages
-    http://localhost:3000/engineering
+    A department - only used on:
+    http://localhost:3000/teams
+
+    There currently are not descriptions stored for each department.
 */ %>
 
-<div class="content page-team">
-    <% /* team header */ %>
-    <div class="span-17 first last">
-        <%- partial('teams/' + team_page + '.ejs') %>
-    </div>
-
-    <div class="clear" style="padding-top:40px;"></div>
-    <% if (all_teams[team]) { %>
-        <%- partial('jobs/jobs-grouped-by-location.ejs', {  locals: {jobs_dc: jobs_dc, jobs_sf: jobs_sf }} ) %>
-    <% } else { %>
-        New opportunities for this team will be posted here.  Check back soon.
-    <% } %>
-</div>
-
+<li>
+    <a href="<%= href(indexInCollection) %>"><%= department %></a>
+</li>

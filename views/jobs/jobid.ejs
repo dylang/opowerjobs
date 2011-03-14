@@ -7,5 +7,5 @@
     locals.job = all_ids[jobId];
     if (job) {
 %>
-<%- partial('jobs/job', { locals: locals} ) %>
+<%- partial('job') %>
 <% } else { log('MISSING JOB: ' + jobId); } %>

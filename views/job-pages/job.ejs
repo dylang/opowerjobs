@@ -1,0 +1,119 @@
+<% /*
+    A single full job listing
+    http://localhost:3000/dc-northern-virgina/business-development/proposal-writer
+    http://localhost:3000/proposal-writer <- shortcut
+    http://localhost:3000/jobviteID <- even shorter
+*/ %>
+
+<div class="job">
+
+
+    <div class="content">
+        <div class="span-17 first last">
+            <div class="banner">
+                <div class="title strong span-17 last">
+                    <%= job.title %>
+
+                    <%- '(' + Constants.short(job.location) + ')' %>
+                </div>
+                <div class="location">
+                    <a href="<%- href(job.url.team) %>">&laquo; Back to <%- job.team %> jobs</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="span-17 last">            
+            <div class="inline rounded clearfix">
+                <div class="span-9">
+                    <strong>Is your resume ready?</strong><br />
+                    This is the best way to start a conversation with us.
+                </div>
+                <div class="span-6 push-1 last">
+                    <a class="apply-now button orange-button" href="<%= job.url.apply %>">Apply now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="span-17 first last">
+
+            <div class="description">
+                
+                <h4>
+                    <span class="highlight">
+                    <%- job.description[0].title %>
+                    </span>
+                </h4>
+
+                <%- job.description[0].p %>
+
+
+
+                
+
+                <% if (job.description[1]) { %>
+                <h4>
+                    <span class="highlight">
+                    <%- job.description[1].title %>
+                    </span>
+                </h4>
+
+                <%- job.description[1].p %>
+                <% } %>
+
+
+                <% if (job.description[2]) { %>
+                <h4>
+                    <span class="highlight">
+                    <%- job.description[2].title %>
+                    </span>
+                </h4>
+                <%- job.description[2].p %>
+                <% } %>
+
+            </div>
+
+        </div>
+
+
+        <div class="span-17 first last flag clearfix">
+            
+            <div class="span-11 first">
+                <h5>Find other jobs in:</h5>
+                <a href="<%- href(Constants.url(job.location)) %>" class="button blue-button button-small button-left"><%- Constants.short(job.location) %></a><a href="<%- href(job.url.team) %>" class="button blue-button button-small button-right"><%= Constants.short(job.team) || job.team %></a>
+            </div>
+            
+            <div class="span-6 last">
+                <h5>Share this job:</h5>
+                http://opowerjobs.com/<%- job.id %>
+            </div>
+            
+        </div>
+        
+        <div class="span-17 last">
+            <div class="company">
+                <strong>About the Company</strong>
+                <p>OPOWER is an energy efficiency and smart-grid software company. Our products encourage energy efficiency by empowering people to make better decisions about the ways they use energy every day. With industry-leading data analytics and a unique approach to customer engagement, we're changing the way the world understands personal energy consumption, and helping more than 40 utilities---including 8 of the US’s 10 largest—achieve unprecedented, sustainable energy savings in tens of millions of households.</p>
+                <p>Founded in 2007, OPOWER has offices in Arlington, Virginia, and San Francisco, California. Our rapidly expanding team includes software engineers, product specialists, behavioral scientists, statisticians, marketing experts, infographic designers, and efficiency advocates.</p>
+                <p>In April 2010, President Obama gave his national policy speech on green job creation from our office in the Washington, DC area. In September of 2010, we were named a Technology Pioneer by the World Economic Forum in Davos, Switzerland, for creating "innovations that will have a critical impact on the future of business and society.” By the end of 2011, the energy we save will equal a third of the power produced by the entire US solar industry, and have the impact of effectively removing 50,000 homes from the grid.</p>
+            </div>
+        </div>
+
+
+        <div class="span-17 first last">
+            
+            <div class="disclaimer">
+                <p>OPOWER is an Equal Opportunity Employer</p>
+                <p>VISAS/TRANSFER SPONSORSHIP AVAILABLE WHEN APPLICABLE.</p>
+                <p>NO PHONE CALLS, PLEASE. THE FASTEST WAY TO GET A RESPONSE IS BY APPLYING ONLINE. (IF YOU CALL THEN WE ARE JUST GOING TO SEND YOU TO THIS SITE).</p>
+                <p>NO EXTERNAL RECRUITERS.</p>
+            </div>
+            
+        </div>
+
+
+    </div>
+
+</div>
+<% /*
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=opower"></script>
+*/ %>        
