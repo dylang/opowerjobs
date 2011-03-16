@@ -12,15 +12,7 @@
 
 ## Running locally or on your own server
 
-    $ node d.js
-
-  d.js will automatically restart the server if any js code is changed.
-
-## Running on Joyent and [no.de](http://no.de).
-
-  Install dependencies
-
-    $ git push joyent master
+    $ node server.js
 
 ## Features
 
@@ -32,19 +24,18 @@
 
   * Learn Node.js
   * Prepare for [Node Knockout](http://http://nodeknockout.com/).
-  * Replace our underwhelming ASP.NET-based job site with something much cooler and standards-based.
-  * Attract the best developers to this amazing cash-flow positive company.
-
-## Node Knockout
-
-  Feel free to use any part of this for your [Node Knockout](http://http://nodeknockout.com/) project.  We'll be particpating as well, but with a whole new project.
-
+  * Replace our underwhelming job site with something much cooler and standards-based.
+  * Attract the best developers to OPOWER, an amazing company helping everyone use less energy.
 
 ## Contributors
 
   * Dylan Greene (code) [dylang](http://github.com/dylang)
   * Garrett Miller (design, art, photos) [heyitsgarrett](http://github.com/heyitsgarrett)
   * OPOWER Marketing and HR team members (text and direction)
+
+## Third Party Javascript
+
+  * jQuery, jQueryUI, Fancybox.net.
 
 ## Thanks
 

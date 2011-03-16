@@ -66,7 +66,7 @@
 ----------------------------------*/
 
 
-.ui-autocomplete { position: absolute; cursor: default; }	
+.ui-autocomplete { position: absolute; cursor: default; }
 .ui-autocomplete-loading { background: white url(jqueryui/ui-anim_basic_16x16.gif) right center no-repeat; }
 
 /* workarounds */

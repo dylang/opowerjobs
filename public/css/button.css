@@ -10,7 +10,7 @@ a.button, a:hover.button {
     -moz-border-radius: 12px;
     -webkit-border-radius: 12px;
     border-radius: 12px;
-    
+
     color: #555;
     cursor: pointer;
     display: inline-block;
@@ -22,14 +22,14 @@ a.button, a:hover.button {
     position: relative;
     text-shadow: rgba(255, 255, 255, 1) 1px 1px 0px;
     text-transform: uppercase;
-    width: auto;    
+    width: auto;
 }
 
 a:hover.button {
     color: #555;
     background-color: #999;
 }
-a:active.button {    
+a:active.button {
     -webkit-box-shadow: none;
     background-color: #666;
     color: rgba(0,0,0,0.4);

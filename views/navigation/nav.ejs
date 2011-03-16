@@ -11,7 +11,7 @@
         <div class="section-header"><%= page.label %></div>
 
         <ul class="subnavigation">
-            <%- partial("navigation/subnav", { collection: page.children, as: "page", locals: { currentPageID: currentPageID }} ) %>
+            <%- partial('subnav', { collection: page.children, as: 'page'} ) %>
         </ul>
 
     <% } else { %>

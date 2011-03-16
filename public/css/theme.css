@@ -4,8 +4,6 @@ BODY {
     padding-top: 10px;
 }
 
-.body {
-}
 
 .logo {
     margin-top: 20px;
@@ -25,8 +23,6 @@ BODY {
 }
 
 
-
-
 .clouds {
     background: transparent url(theme/background-clouds.png) top left no-repeat;
     position: absolute;
@@ -34,26 +30,6 @@ BODY {
     left: 0;
     width: 881px;
     height: 583px;
-    z-index: -1;
-}
-
-.powerlines {
-    background: transparent url(theme/background-powerlines.png) top repeat-x;
-    position: absolute;
-    bottom: 50px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    z-index: -1;
-}
-
-.grass {
-    background: #67d134;
-    position: absolute;
-    bottom: -20px;
-    left: 0;
-    width: 100%;
-    height: 100px;
     z-index: -1;
 }
 
@@ -75,7 +51,7 @@ BODY {
     margin-right: 32px;
     width: 100%;
     cursor: pointer;
-    
+
 }
 .gallery iframe,
 .gallery img,
@@ -86,7 +62,7 @@ BODY {
     -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
-.gallery img {    
+.gallery img {
     width: 100%;
 }
 

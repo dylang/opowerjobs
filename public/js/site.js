@@ -14,7 +14,7 @@ $(document).ready(function(){
     };
 
     function fix_query(query) {
-        return (query || '').replace(/[^a-zA-Z]/g, ' ').trim().replace(/\s+/g, '-')
+        return (query || '').replace(/[^a-zA-Z]/g, ' ').trim().replace(/\s+/g, '-');
     }
 
     var $q = $('#q');

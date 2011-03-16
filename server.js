@@ -41,12 +41,7 @@ process.addListener('uncaughtException', function (err, stack) {
 });
 
 function production(){
-    //Server.use(Express.conditionalGet());
-    //Server.use(Express.cache());
-    //Server.use(Express.gzip());
-
     log('running in production mode');
-    Assets.compress(true);
     JobHandler.autoUpdate();
 
     Server.locals({
@@ -58,12 +53,6 @@ function production(){
 }
 
 function development() {
-    //Server.use(Express.conditionalGet());
-    //Server.use(Express.cache());
-    //Server.use(Express.gzip());
-
-    Assets.compress(true);
-
     Server.locals({
         href: function(url) { return (url[0] == '/' ? '' : '/') + url; },
         development: true
@@ -102,11 +91,12 @@ function common() {
     Server.use(Express.session({ secret: 'OPOWER!' }));
     Server.use(Express.bodyParser());
     Server.use(Express.favicon(PUBLIC + '/favicon.ico'));
-    Server.use(Assets.handler(PUBLIC));
     Server.use(Express.static(PUBLIC));
     Server.use(Server.router);
 
-    Server.locals({assets: Assets, currentPageID: false, pages: []});
+    Server.locals({
+        currentPageID: false,
+        pages: []});
 }
 
 
@@ -164,12 +154,7 @@ Server.get(/^/, function(req, res, next){
     }
 });
 
-// Reload CSS - sometimes it fails on Heroku
-Server.get('/reload', function(req, res, next) {
-    Assets.reload();
-    next();
-});
-
+Assets.addHandler({Server: Server });
 ReferralHandler.addHandlers( {Server: Server } );
 ContentHandler.addHandlers( {Server: Server } );
 JobHandler.addHandlers( {Server: Server } );
