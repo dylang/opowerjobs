@@ -1,0 +1,3 @@
+# don't store these files, they're built at runtime.
+*.css
+*.js
