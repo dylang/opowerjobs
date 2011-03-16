@@ -1,0 +1,8 @@
+/.idea/*
+/.git/*
+/bin/*
+/public/*
+/data/*
+/views/*
+*.txt
+*.svn
