@@ -1,4 +1,5 @@
 Put ideas for future versions here.
 
+* Move images to static server or CDN
 * Parse job descriptions better
 * Change /insider to someting like /in, leave the url there or put in UI so it's more clear?
