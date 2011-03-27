@@ -91,7 +91,7 @@ function common() {
     Server.use(Express.session({ secret: 'OPOWER!' }));
     Server.use(Express.bodyParser());
     Server.use(Express.favicon(PUBLIC + '/favicon.ico'));
-    Server.use(Express.static(PUBLIC));
+    Server.use(Express.static(PUBLIC, { maxAge: 31557600000 })); //oneYear
     Server.use(Server.router);
 
     Server.locals({
