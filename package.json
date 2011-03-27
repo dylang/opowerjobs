@@ -1,6 +1,6 @@
 {
     "name": "opower-jobs",
-    "version": "1.3",
+    "version": "2.0",
     "description": "An example of a full live site using Node, Express, Connect, EJS, AssetManager, Jobvite, Logging, and other Node modules.  Demo: http://opowerjobs.com",
     "homepage": "http://opowerjobs.com",
     "author": "Dylan Greene <dylang@gmail.com>",
@@ -11,26 +11,26 @@
     "repository":
     {
         "type": "git",
-        "url": "http://github.com/dylang/opowerjobs"
+        "url": "http://github.com/opower/node-opowerjobs"
     },
     "bugs":
     {
         "mail": "dylang@gmail.com",
-        "web": "http://github.com/dylang/opowerjobs/issues"
+        "web": "http://github.com/opower/node-opowerjobs/issues"
     },
     "dependencies":
     {
-        "logging": ">= 2.0.0",
-        "jobvite": ">= 0.0.1",
-        "express": ">= 1.0.0rc3",
-        "ejs": ">= 0.2.0",
-        "connect-assetmanager": ">= 0.0.7",
-        "connect-assetmanager-handlers": ">= 0.0.10",
+        "logging": ">= 2.0.6",
+        "jobvite": ">= 0.1.17",
+        "express": ">= 2.1.0",
+        "connect": ">= 1.1.4",
+        "ejs": ">= 0.3.1",
+        "connect-assetmanager": ">= 0.0.18",
+        "connect-assetmanager-handlers": ">= 0.0.17",
         "proto": ">=0.1.0"
     },
     "main": "server",
-    "engines": { "node": ">=0.2.0" },
-    "scripts": { },
+    "engines": { "node": ">=0.4.1" },
     "licenses" :
     [
         { "type" : "MIT", "url" : "http://github.com/isaacs/npm/raw/master/LICENSE" }
