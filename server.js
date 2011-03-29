@@ -106,9 +106,7 @@ Server.configure(common);
 
 Server.error(function(err, req, res, next){
         if (err.message != 'EISDIR, Is a directory') {
-            log('*************************************');
             log('****************ERROR****************');
-            log('*************************************');
             log('http://' + req.headers.host + req.url);
             err.message && log(err.message);
             err.arguments && log(err.arguments);
@@ -117,9 +115,7 @@ Server.error(function(err, req, res, next){
         }
         if (Server.get('env') == 'production') {
             res.redirect('/');
-        } else {
-            res.render('error.ejs', { locals: { title: 'Error', message: err.message, object: false } });
-        }
+        } 
 });
 
 // For Google Webmaster
