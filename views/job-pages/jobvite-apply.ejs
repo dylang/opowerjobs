@@ -11,7 +11,7 @@
             <iframe scrolling="no" height="1805px" frameborder="0" width="100%" id="jobviteframe" src="<%-
                 'http://hire.jobvite.com/CompanyJobs/Careers.aspx?'
                     + 'c=qgY9Vfw2' //company id!
-                    + '&j=' + job.id
+                    + '&j=' + job.id.replace(/-.*$/, '')
                     + '&page=Apply'
                     + (locals.referral ? '&s=' + encodeURIComponent(referral) : '')
                     + '&jvresize=' + encodeURIComponent('http://' + current_host + '/resize-iframe.html')
