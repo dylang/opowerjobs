@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>OPOWER Jobs <%= locals.title ? '- ' + locals.title : '' %><%= locals.job ? '- ' + locals.job.title + ' (' + Constants.short(locals.job.location) + ')' : '' %><%= locals.location ? Constants.long(locals.location) : '' %><%= locals.team && locals.all_teams[locals.team]  ? '- ' +  locals.all_teams[locals.team] : '' %></title>
+    <title>OPOWER Jobs <%= locals.title ? '- ' + locals.title : '' %></title>
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
 <%- partial('comment.ejs') %>    
     <link rel="alternate" type="application/atom+xml" title="OPOWER New Jobs Feed" href="http://opowerjobs.com/atom.xml" />

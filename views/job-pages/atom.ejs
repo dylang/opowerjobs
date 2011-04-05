@@ -4,7 +4,7 @@
   <subtitle>Latest Positions</subtitle>
   <link href="<%= url %>"/>
   <link rel="self" href="<%= url %>/atom.xml"/>
-  <updated><%= all_ids[all_new[0]].isoDate %></updated>
+  <updated><%= jobs[0].date.toISOString() %></updated>
   <author>
     <name>OPOWER Recruting</name>
     <uri><%= url %></uri>
@@ -12,34 +12,27 @@
   </author>
   <rights>Copyright (c) 2010, OPOWER</rights>
   <id>tag:opower.com,2010:jobs</id>
-  <% all_new.forEach(function(jobId) { var job = all_ids[jobId]; %>
+  <% jobs.forEach(function(job) { %>
   <entry>
-    <title><%= job.title %> <%- job.location == 'sf' ? '(SF)' : '' %></title>
-    <link href="<%= url %><%= job.url.long_url %>"/>
+    <title><%= job.title %><%- job.location_id == Constants.LOCATIONS.sf.id ? ' (SF)' : '' %></title>
+    <link href="<%= url %><%= job.urls.full_url %>"/>
     <id>tag:opowerjobs.com,2010:job_<%= job.id %></id>
-    <updated><%= job.isoDate %></updated>
-    <content type="xhtml" xml:lang="en">
+    <updated><%= job.date.toISOString() %></updated>
+    <content type="xhtml" xml:lang="en"><![CDATA[
         <div xmlns="http://www.w3.org/1999/xhtml">
-            <% job.description.forEach(function(d) { %>
-                <h2><%-  (d.title || '').replace(/&.?.?quo;/g, "'").replace(/&bull;/g, "*") %></h2>
-                <% /* remove bad xml like &rsquo; */ %>
-                <%- (d.p || '')
-                 %>
-            <% }); %>
-
+            <%- job.description.replace(/&.?.?quo;/g, "'").replace(/&bull;/g, "*") %>
             <h2>Helpful Links</h2>
             <ul>
-                <li><a href="<%= url %><%= job.url.long_url %>">More Information.</a></li>
-                <li><a href="<%= url %><%= job.url.apply %>">Apply for this position.</a></li>
+                <li><a href="<%= url %><%= job.urls.full_url %>">More Information.</a></li>
+                <li><a href="<%= url %><%= job.urls.apply %>">Apply for this position.</a></li>
                 <li><a href="<%= url %>">About OPOWER</a></li>
                 <li><a href="<%= url %>/san-francisco">OPOWER Openings in San Francisco</a></li>
                 <li><a href="<%= url %>/northern-va-dc">OPOWER Openings in Washington, DC</a></li>
-                <li><a href="<%= url %>/all">All OPOWER Openings</a></li>
             </ul>
-        </div>
+        </div>]]>
     </content>
     <category term="<%= job.location %>" label="<%= job.location %>" scheme="<%= url %>"/>
-    <category term="<%= job.url.team %>" label="<%= job.team %>" scheme="<%= url %>"/>
+    <category term="<%= job.urls.team %>" label="<%= job.team %>" scheme="<%= url %>"/>
   </entry>
     <% }); %>
 

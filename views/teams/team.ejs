@@ -10,8 +10,8 @@
     </div>
 
     <div class="clear" style="padding-top:40px;"></div>
-    <% if (all_teams[team]) { %>
-        <%- partial('../jobs/jobs-grouped-by-location.ejs', {  jobs_dc: jobs_dc, jobs_sf: jobs_sf }) %>
+    <% if (collection) { %>
+        <%- partial('../jobs/jobs-grouped-by-location.ejs', {  collection: [collection] }) %>
     <% } else { %>
         New opportunities for this team will be posted here.  Check back soon.
     <% } %>

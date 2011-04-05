@@ -1,20 +1,20 @@
 <div class="span-17 first last">
-    <% if (locals.jobs_dc && jobs_dc.length) { %>
+    <% if (jobsGroupedByLocation.jobs_dc && jobsGroupedByLocation.jobs_dc.length) { %>
 
         <div class="span-8">
             <h4>DC/Northern VA</h4>
             <ul>
-                <%- partial('jobid', { collection: jobs_dc, as: "jobId" } ) %>
+                <%- partial('job', { collection: jobsGroupedByLocation.jobs_dc, as: 'job' } ) %>
             </ul>
         </div>
 
     <% } %>
 
-    <% if (locals.jobs_sf && jobs_sf.length) { %>
+    <% if (jobsGroupedByLocation.jobs_sf && jobsGroupedByLocation.jobs_sf.length) { %>
         <div class="span-8 push-1 last">
             <h4>San Francisco, CA</h4>
             <ul>
-                <%- partial('jobid', { collection: jobs_sf, as: "jobId" } ) %>
+                <%- partial('job', { collection: jobsGroupedByLocation.jobs_sf, as: 'job' } ) %>
             </ul>
         </div>
     <% }  %>

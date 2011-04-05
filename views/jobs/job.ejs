@@ -2,11 +2,11 @@
     A job, used almost anywhere we have a list of jobs
 */ %>
 <li>
-    <a href="<%= href(job.url.long_url) %>">
+    <a href="<%= href(job.urls.full_url) %>">
         <%= job.title %>
 
         <% if (locals.show_location) { %>
-            <% if (job.location == 'sf') { %>
+            <% if (job.location_id == Constants.LOCATIONS.sf.id) { %>
                 (SF)
             <% } else {} %>
         <% } %>

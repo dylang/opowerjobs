@@ -14,10 +14,10 @@
                 <div class="title strong span-17 last">
                     <%= job.title %>
 
-                    <%- '(' + Constants.short(job.location) + ')' %>
+                    <%- '(' + Constants.LOCATIONS[job.location_id].short_name + ')' %>
                 </div>
                 <div class="location">
-                    <a href="<%- href(job.url.team) %>">&laquo; Back to <%- job.team %> jobs</a>
+                    <a href="<%- href(job.urls.team) %>">&laquo; Back to <%- job.team %> jobs</a>
                 </div>
             </div>
         </div>
@@ -29,7 +29,7 @@
                     This is the best way to start a conversation with us.
                 </div>
                 <div class="span-6 push-1 last">
-                    <a class="apply-now button orange-button" href="<%= job.url.apply %>">Apply now</a>
+                    <a class="apply-now button orange-button" href="<%= job.urls.apply %>">Apply now</a>
                 </div>
             </div>
         </div>
@@ -37,39 +37,7 @@
         <div class="span-17 first last">
 
             <div class="description">
-                
-                <h4>
-                    <span class="highlight">
-                    <%- job.description[0].title %>
-                    </span>
-                </h4>
-
-                <%- job.description[0].p %>
-
-
-
-                
-
-                <% if (job.description[1]) { %>
-                <h4>
-                    <span class="highlight">
-                    <%- job.description[1].title %>
-                    </span>
-                </h4>
-
-                <%- job.description[1].p %>
-                <% } %>
-
-
-                <% if (job.description[2]) { %>
-                <h4>
-                    <span class="highlight">
-                    <%- job.description[2].title %>
-                    </span>
-                </h4>
-                <%- job.description[2].p %>
-                <% } %>
-
+                <%- job.description %>
             </div>
 
         </div>
@@ -79,7 +47,7 @@
             
             <div class="span-11 first">
                 <h5>Find other jobs in:</h5>
-                <a href="<%- href(Constants.url(job.location)) %>" class="button blue-button button-small button-left"><%- Constants.short(job.location) %></a><a href="<%- href(job.url.team) %>" class="button blue-button button-small button-right"><%= Constants.short(job.team) || job.team %></a>
+                <a href="<%- href(Constants.LOCATIONS[job.location_id].url) %>" class="button blue-button button-small button-left"><%- Constants.LOCATIONS[job.location_id].short_name %></a><a href="<%- href(job.urls.team) %>" class="button blue-button button-small button-right"><%= job.team_id %></a>
             </div>
             
             <div class="span-6 last">

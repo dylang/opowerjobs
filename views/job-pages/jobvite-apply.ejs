@@ -8,7 +8,7 @@
 
         <% if (locals.job) { %>
         <div style="position:relative;">
-            <iframe scrolling="no" height="1805px" frameborder="0" width="100%" id="jobviteframe" src="<%-
+            <iframe scrolling="no" height="1805" frameborder="0" width="100%" id="jobviteframe" src="<%-
                 'http://hire.jobvite.com/CompanyJobs/Careers.aspx?'
                     + 'c=qgY9Vfw2' //company id!
                     + '&j=' + job.id.replace(/-.*$/, '')
@@ -20,7 +20,7 @@
                 Sorry, iframes are not supported.
             </iframe>
             <div class="overiframe">
-                <a href="<%= job.url.long_url %>">Back to job description.</a>
+                <a href="<%= job.urls.full_url %>">Back to job description.</a>
             </div>
         </div>
 
@@ -28,7 +28,7 @@
 
         <!-- BEGIN JOBVITE CODE -->
         <iframe id="jobviteframe" src="http://www.jobvite.com/CompanyJobs/Careers.aspx?c=qgY9Vfw2&<% if (locals.referral) { %>s=<%- encodeURIComponent(referral) %>&<% } %>jvresize=http://<%- current_host %>/resize-iframe.html"
-        width="100%" height="500px" scrolling="no" frameborder="0">Sorry, iframes are not supported.</iframe>
+        width="100%" height="500" scrolling="no" frameborder="0">Sorry, iframes are not supported.</iframe>
 
         <script type="text/javascript">
         var l = location.href, args = '', k = '', iStart = l.indexOf('?jvk='), iEnd;

@@ -4,12 +4,12 @@
 */ %>
 
 <div class="span-<%= locals.wide ? 7 : 3 %> first">
-    <div class="strong" style="line-height: 1.3em; padding-bottom: 20px;"><%= all_teams[team.team] %></div>
+    <div class="strong" style="line-height: 1.3em; padding-bottom: 20px;"><%= team.name %></div>
 </div>
 
 <div class="span-10 last">
     <ul>
-       <%- partial('jobid', { collection: team.jobs, as: 'jobId'} ) %>
+       <%- partial('job', { collection: team.jobs, as: 'job'} ) %>
     </ul>
 </div>
 

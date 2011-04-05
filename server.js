@@ -42,7 +42,6 @@ process.addListener('uncaughtException', function (err, stack) {
 
 function production(){
     log('running in production mode');
-    JobHandler.autoUpdate();
 
     Server.locals({
         href: function(url) { return 'http://' + HOSTNAME + (url[0] == '/' ? '' : '/') + url; },
@@ -59,7 +58,8 @@ function development() {
     });
 
     log('running in development mode');
-    //Server.use(Express.errorHandler({ dumpExceptions: true, showStack: true }));
+    Server.use(Express.errorHandler({ dumpExceptions: true, showStack: true }));
+    
 }
 
 
@@ -104,7 +104,7 @@ Server.configure('development', development);
 Server.configure('production', production);
 Server.configure(common);
 
-Server.error(function(err, req, res, next){
+false && Server.error(function(err, req, res, next){
         if (err.message != 'EISDIR, Is a directory') {
             log('****************ERROR****************');
             log('http://' + req.headers.host + req.url);
@@ -112,6 +112,7 @@ Server.error(function(err, req, res, next){
             err.arguments && log(err.arguments);
             err.stack && log(err.stack);
             log('*************************************');
+            next();
         }
         if (Server.get('env') == 'production') {
             res.redirect('/');
