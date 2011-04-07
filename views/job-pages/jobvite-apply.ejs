@@ -13,7 +13,7 @@
                     + 'c=qgY9Vfw2' //company id!
                     + '&j=' + job.id.replace(/-.*$/, '')
                     + '&page=Apply'
-                    + (locals.referral ? '&s=' + encodeURIComponent(referral) : '')
+                    + (locals.referral ? '&s=' + encodeURIComponent(encodeURIComponent(referral)) : '')
                     + '&jvresize=' + encodeURIComponent('http://' + current_host + '/resize-iframe.html')
                     + '&jvprefix=' + encodeURIComponent('http://' + current_host)
                 %>">
