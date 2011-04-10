@@ -160,9 +160,14 @@ Server.get('/log', function(req, res) {
 });
 
 
+/* Special URLs for ads */
+Server.get('/hiring', function(req, res, next) {
+   res.redirect('/insider/DC.Metro.Ad');
+});
+
 // Required for 404's to return something
 Server.get('/*', function(req, res){
-    var host = req.headers.host.split(':')[0],
+    var host = (req.headers.host || '').split(':')[0],
         new_url,
         extension = req.url.match(/\....$/);
 
