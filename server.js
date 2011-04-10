@@ -175,8 +175,8 @@ Server.get('/*', function(req, res){
     }
     else {
         if (!req.session.tempHost || host == 'localhost') {
-            if (req.headers('user-agent', '').match(/msnbot|slurp/i) === null) {
-                log('404', req.url, req.header('referer') || req.session.jobboard || req.headers('user-agent', ''));
+            if (req.header('user-agent', '').match(/msnbot|slurp/i) === null) {
+                log('404', req.url, req.header('referer') || req.session.jobboard || req.header('user-agent', ''));
             }
         }
 
