@@ -55,7 +55,7 @@ function production(){
 function development() {
     Server.locals({
         href: function(url) { return (url[0] == '/' ? '' : '/') + url; },
-        development: true
+        production: false
     });
 
     log('running in development mode');
