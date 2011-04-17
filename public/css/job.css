@@ -67,14 +67,14 @@
     margin: 20px 0 0;
 }
 
+.job .disclaimer P {
+    padding: 0;
+}
+
 .job .inline {
     background-color: #F9EBA5;
     margin: 0 0 20px;
     padding: 20px 20px 0;
-}
-
-.job .inline STRONG {
-    text-transform: uppercase;
 }
 
 .job .inline .button {

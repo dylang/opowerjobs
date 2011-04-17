@@ -76,7 +76,7 @@ H2 {
 }
 
 .content p {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .large-text p {
@@ -93,12 +93,12 @@ H2 {
 
 .page UL, .no-bullet {
     list-style-type: none !important;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 .page LI, UL.no-bullet LI {
     border-bottom: 1px solid #ccc;
     margin: 0;
-    padding: 5px 0 5px 0px;
+    padding: 5px 0 5px 0;
     line-height: 120%;
 }
 
