@@ -37,15 +37,16 @@
 
 .job .description BR {
    clear: both;
-   margin-bottom: 10px;
-   line-height: 30px;
+   margin-bottom: 15px;
+   line-height: 35px;
    display: block;
 }
 
-.job .description STRONG {
-    font-size: 14px;
-    display: block;
-    text-transform: uppercase;
+.job .description LI BR {
+   clear: both;
+   margin-bottom: 0;
+   line-height: 0;
+   display: block;
 }
 
 .job .similar {
