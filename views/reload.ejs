@@ -1,22 +1,24 @@
 <div class="content">
-<h2><%- locals.title ? locals.title : 'Hmm...' %></h2>
-<%- locals.message ? locals.message : 'oh....' %>
-<div>
-    <% if (locals.changes && locals.changes.length) { %>
-        <ol>
-        <% changes.forEach(function(change) { %>
-            <li>
-                <strong><%= change.shift() %></strong>
-                    <a href="<%- change.pop() %>">
-                        <%- change.shift() %>
-                    </a>
-                    <%- change.shift() %>
-                    <%- change.shift() %>
-            </li>
-        <% }) %>
-        </ol>
-    <% } else { %>
-    <strong>Data reloaded.</strong>
-    <% } %>
-</div>
+    <h2><%- locals.title ? locals.title : 'Hmm...' %></h2>
+    <%- locals.message ? locals.message : 'oh....' %>
+    <div>
+        <% if (locals.changes) { %>
+            <ol>
+            <% changes.forEach(function(changeGroup) { %>
+                <% changeGroup.forEach(function(change) { %>
+                    <li>
+                        <strong><%= change.shift() %></strong>
+                            <a href="<%- change.pop() %>">
+                                <%- change.shift() %>
+                            </a>
+                            <%- change.shift() %>
+                            <%- change.shift() %>
+                    </li>
+                <% }) %>
+            <% }) %>
+            </ol>
+        <% } else { %>
+        <strong>Data reloaded.</strong>
+        <% } %>
+    </div>
 </div>

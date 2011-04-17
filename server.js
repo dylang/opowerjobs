@@ -31,6 +31,7 @@ if (PORT != 3000 || process.env.JOYENT) {
 
 //in case of crash. I've never seen this used, got it from somebody else's code.
 process.title = 'opowerjobs';
+/*
 process.addListener('uncaughtException', function (err, stack) {
     log('*************************************');
     log('************EXCEPTION****************');
@@ -39,6 +40,7 @@ process.addListener('uncaughtException', function (err, stack) {
     err.stack && log(err.stack);
     log('*************************************');
 });
+*/
 
 function production(){
     log('running in production mode');
@@ -104,7 +106,7 @@ Server.configure('development', development);
 Server.configure('production', production);
 Server.configure(common);
 
-false && Server.error(function(err, req, res, next){
+Server.error(function(err, req, res, next){
         if (err.message != 'EISDIR, Is a directory') {
             log('****************ERROR****************');
             log('http://' + req.headers.host + req.url);
