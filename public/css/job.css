@@ -37,7 +37,8 @@
 
 .job .description BR {
    clear: both;
-   margin-bottom: 5px;
+   margin-bottom: 10px;
+   line-height: 30px;
    display: block;
 }
 
