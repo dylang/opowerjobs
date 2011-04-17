@@ -54,7 +54,7 @@ function production(){
 function development() {
     Server.locals({
         href: function(url) { return (url[0] == '/' ? '' : '/') + url; },
-        development: true
+        production: false
     });
 
     log('running in development mode');
@@ -163,7 +163,7 @@ Server.get('/log', function(req, res) {
 
 // Required for 404's to return something
 Server.get('/*', function(req, res){
-    var host = req.headers.host.split(':')[0],
+    var host = (req.headers.host || '').split(':')[0],
         new_url,
         extension = req.url.match(/\....$/);
 
@@ -176,8 +176,8 @@ Server.get('/*', function(req, res){
     }
     else {
         if (!req.session.tempHost || host == 'localhost') {
-            if (req.headers['user-agent'] && req.headers['user-agent'].match(/msnbot|slurp/i) === null) {
-                log('404', req.url, req.headers.referrer || req.headers.referer || req.session.jobboard || '');
+            if (req.header('user-agent', '').match(/msnbot|slurp/i) === null) {
+                log('404', req.url, req.header('referer') || req.session.jobboard || req.header('user-agent', ''));
             }
         }
 

@@ -45,22 +45,22 @@
     <script>!window.jQuery && document.write('<script src="/js/jquery.js"><\/script>');</script>
     <script type="text/javascript" src="/js/jquery-ui.js"></script>
     <%- scripts %>
-    <% var gaq_events = sessionHandler(this) %>
+    <% var gaq_events = tracking_events %>
     <script type="text/javascript">
-    <%- locals.production ? '' : '/' + '*!' %>
+    <%- production ? '' : ('/' + '*!') %>
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-18439002-1']); //ogi
     _gaq.push(['_trackPageview']);<%- gaq_events %>
-    _gaq.push(['_setAccount', 'UA-17897272-1']); //dylan
-    _gaq.push(['_trackPageview']);<%- gaq_events %>
+    _gaq.push(['dylan._setAccount', 'UA-17897272-1']); //dylan
+    _gaq.push(['dylan._trackPageview']);<%- gaq_events.replace(/'_/, "'dylan._") %>
     (function() {
     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
     })();
-    <%- locals.production ? '' : '*' + '/' %>
+    <%- production ? '' : ('*' + '/') %>
     </script>
-    <% if (locals.production) { %>
+    <% if (production) { %>
     <script src="http://munchkin.marketo.net/munchkin.js" type="text/javascript"></script>
     <script type="text/javascript">mktoMunchkin("856-UCR-364");</script>
     <% } %>
