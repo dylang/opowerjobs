@@ -36,11 +36,9 @@
 }
 
 .job .description BR {
-    clear: both;
-   line-height: 20px;
-   height: 20px;
+   clear: both;
+   line-height: 30px;
    display: block;
-   outline: 1px solid red;
 }
 
 .job .description STRONG {

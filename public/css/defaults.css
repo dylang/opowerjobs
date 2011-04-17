@@ -66,9 +66,10 @@ H2 {
 }
 
 .content h4 {
-    font-size: 20px;
-    line-height: 30px;
+    font-size: 15px;
+    line-height: 15px;
     margin: 10px 0 5px 0;
+    font-weight: bold;
 }
 
 .content .highlight {
