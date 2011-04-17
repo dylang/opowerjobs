@@ -38,6 +38,7 @@
 .job .description BR {
    clear: both;
    line-height: 30px;
+   margin-bottom: 10px;
    display: block;
 }
 
