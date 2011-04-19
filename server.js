@@ -4,8 +4,6 @@
  * MIT Licensed
  */
 
-require('proto');
-
 var log = require('logging').from(__filename),
     Express = require('express'),
     Assets = require('./lib/assets'),

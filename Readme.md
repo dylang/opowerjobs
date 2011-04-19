@@ -8,7 +8,7 @@
 
 ## Install dependencies
 
-    $ npm install jobvite express ejs logging connect-assetmanager connect-assetmanager-handlers xml2js proto
+    $ npm install jobvite express ejs logging connect-assetmanager connect-assetmanager-handlers xml2js
 
 ## Running locally or on your own server
 

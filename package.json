@@ -28,8 +28,7 @@
         "connect": ">= 1.1.4",
         "ejs": ">= 0.3.1",
         "connect-assetmanager": ">= 0.0.18",
-        "connect-assetmanager-handlers": ">= 0.0.17",
-        "proto": ">=0.1.0"
+        "connect-assetmanager-handlers": ">= 0.0.17"
     },
     "main": "server",
     "engines": { "node": ">=0.4.1" },
