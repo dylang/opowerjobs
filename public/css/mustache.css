@@ -1,0 +1,20 @@
+/* Custom styles for mustache page */
+.mustache-gallery .person {
+    float: left;
+    height: 220px;
+    width: 220px;
+}
+
+.mustache-gallery .person:hover {
+    background-position: 0 -221px;
+}
+
+.mustache-gallery .mustache-yoni    { background: url(/photos/mustache-grid-yoni.jpg) 0 0 no-repeat; }
+.mustache-gallery .mustache-deena   { background: url(/photos/mustache-grid-deena.jpg) 0 0 no-repeat; }
+.mustache-gallery .mustache-dave    { background: url(/photos/mustache-grid-dave.jpg) 0 0 no-repeat; }
+.mustache-gallery .mustache-karen   { background: url(/photos/mustache-grid-karen.jpg) 0 0 no-repeat; }
+.mustache-gallery .mustache-dylan   { background: url(/photos/mustache-grid-dylan.jpg) 0 0 no-repeat; }
+.mustache-gallery .mustache-puja    { background: url(/photos/mustache-grid-puja.jpg) 0 0 no-repeat; }
+.mustache-gallery .mustache-shyam   { background: url(/photos/mustache-grid-shyam.jpg) 0 0 no-repeat; }
+.mustache-gallery .mustache-annelies{ background: url(/photos/mustache-grid-annelies.jpg) 0 0 no-repeat; }
+.mustache-gallery .mustache-garrett { background: url(/photos/mustache-grid-garrett.jpg) 0 0 no-repeat; }
