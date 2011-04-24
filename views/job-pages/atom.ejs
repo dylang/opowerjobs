@@ -18,18 +18,12 @@
     <link href="<%= url %><%= job.urls.full_url %>"/>
     <id>tag:opowerjobs.com,2010:job_<%= job.id %></id>
     <updated><%= job.date.toISOString() %></updated>
-    <content type="xhtml" xml:lang="en"><![CDATA[
-        <div xmlns="http://www.w3.org/1999/xhtml">
-            <%- job.description.replace(/&.?.?quo;/g, "'").replace(/&bull;/g, "*") %>
-            <h2>Helpful Links</h2>
-            <ul>
-                <li><a href="<%= url %><%= job.urls.full_url %>">More Information.</a></li>
-                <li><a href="<%= url %><%= job.urls.apply %>">Apply for this position.</a></li>
-                <li><a href="<%= url %>">About OPOWER</a></li>
-                <li><a href="<%= url %>/san-francisco">OPOWER Openings in San Francisco</a></li>
-                <li><a href="<%= url %>/northern-va-dc">OPOWER Openings in Washington, DC</a></li>
-            </ul>
-        </div>]]>
+    <content type="html">
+        <%- partial('atom-content', { collection: [job], as: 'job'})
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+        %>
     </content>
     <category term="<%= job.location %>" label="<%= job.location %>" scheme="<%= url %>"/>
     <category term="<%= job.urls.team %>" label="<%= job.team %>" scheme="<%= url %>"/>

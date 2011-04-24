@@ -1,0 +1,15 @@
+<div>
+    <div>
+        <%- job.description.replace(/&/g, '&amp;') %>
+    </div>
+    <div>
+        <h3>Helpful Links</h3>
+        <ul>
+            <li><a href="<%= url %><%= job.urls.full_url %>">More about this position.</a></li>
+            <li><a href="<%= url %><%= job.urls.apply %>">Apply for this position.</a></li>
+            <li><a href="<%= url %>">About OPOWER.</a></li>
+            <li><a href="<%= url %>/san-francisco">OPOWER Openings in San Francisco.</a></li>
+            <li><a href="<%= url %>/northern-va-dc">OPOWER Openings in Washington, DC.</a></li>
+        </ul>
+    </div>
+</div>
