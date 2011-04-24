@@ -2,8 +2,8 @@
     A job, used almost anywhere we have a list of jobs
 */ %>
 <li>
-    <a href="<%= href(job.urls.full_url) %>">
-        <%= job.title %>
+    <a href="<%= job.urls ? href(job.urls.full_url) : '' %>">
+        <%= job.title + (job.urls ? '' : "!!!!!!!!!") %>
 
         <% if (locals.show_location) { %>
             <% if (job.location_id == Constants.LOCATIONS.sf.id) { %>

@@ -7,9 +7,10 @@
         <td><span class="file"><%= item.file %><% if (item.func) { %><span class="func">.<%= item.func %></span><% } %></span></td>
         <td>
 
-        <%
-            item.messages.forEach(function(msg) {
-
+        <%  
+            var keys = Object.keys(item.messages);
+                keys.forEach(function(key) {
+                msg = item.messages[key];
                 switch (typeof msg) {
                     case 'string':
                         if (msg.indexOf('http://') === 0 || msg.indexOf('/') === 0) {
