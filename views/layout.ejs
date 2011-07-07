@@ -4,17 +4,398 @@
     <meta charset="utf-8" />
     <title>OPOWER Jobs <%= locals.title ? '- ' + locals.title : '' %></title>
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-<%- partial('comment.ejs') %>    
+<%- partial('comment.ejs') %>
     <link rel="alternate" type="application/atom+xml" title="OPOWER New Jobs Feed" href="http://opowerjobs.com/atom.xml" />
     <%- styles %>
-    <link href="/css/fonts.css" rel="stylesheet"  type="text/css"/>
 
 </head>
 <% locals.team && locals.all_teams[locals.team]  ? currentPageID = locals.team : '' %>
 <body class="page-<%- currentPageID %>">
-    <div class="clouds"></div>
-    <div class="container">
-        <div class="span-6 first">
+
+
+        <header class="block header-block ">
+            <div class="blockinner">
+                <h1 class="logo">
+                    <a href="http://opower.com/">
+            <span class="logoeye logoeye-left"></span>
+            <span class="logoeye logoeye-right"></span>
+                        <img alt="Opower" class="printonly" height="42" src="http://opower.com/images/structure/logo-print.png?1306871577" width="250">
+                    </a>
+                </h1>
+                <nav>
+                    <ul class="primarynav">
+                        <li class="primarynav-listitem what-primarynav-listitem ">
+                            <a href="http://opower.com/what-is-opower">What Is Opower?</a>
+                        </li>
+                        <li class="primarynav-listitem utilities-primarynav-listitem ">
+                            <a href="http://opower.com/utilities">Utilities</a>
+                        </li>
+                        <li class="primarynav-listitem results-primarynav-listitem ">
+                            <a href="http://opower.com/utilities/results">Results</a>
+                        </li>
+                        <li class="primarynav-listitem careers-primarynav-listitem here-primarynav-listitem ">
+                            <a href="http://opower.com/careers">Careers</a>
+                        </li>
+                        <li class="primarynav-listitem ometer-primarynav-listitem ">
+                            <a href="http://opower.com/impact">Ometer</a>
+                        </li>
+                    </ul>
+                    <ul class="utilitynav">
+                        <li><a href="http://opower.com/company">Company</a></li>
+                        <li><a href="http://opower.com/company/news-press">News &amp; Press</a></li>
+                        <li><a href="http://opower.com/company/research">Research</a></li>
+                        <li><a href="http://opower.com/contact" class="last-utilitynav-link">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="page">
+            <section class="block nav-block">
+    <div class="blockinner nav-blockinner">
+        <article class="width12-column column navarticle-column">
+            <div class="article-columninner columninner">
+                <%- body %>
+<!--
+<ol class="tabs page-tabs">
+    <li>
+        <a href="http://opower.com/company/news-press/press?year=2011" class="tab here-tab">
+                <span class="tabshadow right-tabshadow"></span>
+            <span class="nubwrapper bottom-nubwrapper">
+                <span class="nub tab-nub"></span>
+            </span>
+            <span class="tabtext">2011</span>
+</a>    </li>
+    <li>
+        <a href="http://opower.com/company/news-press/press?year=2010" class="tab">
+                <span class="tabshadow left-tabshadow"></span>
+            <span class="nubwrapper bottom-nubwrapper">
+                <span class="nub tab-nub"></span>
+            </span>
+            <span class="tabtext">2010</span>
+</a>    </li>
+</ol>
+-->
+                <!--
+                    <div class="buttons">
+        <a href="http://opower.com/company/news-press/press?year=2010" class="button right">2010 Press</a>
+    </div>
+    -->
+                        </div>
+        </article>
+        <nav class="width4pad1-column column">
+            <ul class="secondary-nav">
+                <%- partial("navigation/nav", { collection: pages, as: "page"} ) %>
+            </ul>
+        </nav>
+    </div>
+
+</section>
+        </div>
+        <footer class="block footer-block">
+            <div class="footer-blockinner blockinner">
+                <section class="columnwrapper">
+                    <section class="width2pad2-column subtle-divided-column divided-column footer-column column">
+                        <div class="openleft-columninner columninner">
+                            <h3 class="footer-heading heading">About Us</h3>
+                            <ul class="list">
+                                <li>
+                                    <a href="http://opower.com/company/" class="tall-listitem listitem footlink">
+                                        Company
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://opower.com/company/news-press/" class="tall-listitem listitem footlink">
+                                        News &amp; Press
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://opower.com/company/research/" class="tall-listitem listitem footlink">
+                                        Research
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://opower.com/contact/" class="tall-listitem listitem footlink">
+                                        Contact
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section class="width5pad1-column locations-footer-column subtle-divided-column divided-column footer-column column vcard">
+                        <div class="columninner">
+                            <h3 class="footer-heading heading"><span class="hidden fn org">Opower</span> Offices</h3>
+                            <ul class="list">
+                                <li class="listitem adr">
+                                    <a href="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=opower+1515+N+Courthouse+Rd,+Arlington,+VA&amp;sll=38.898068,-77.084677&amp;sspn=0.008316,0.014591&amp;gl=us&amp;g=1515+N+Courthouse+Rd,+Arlington,+Virginia+22201&amp;ie=UTF8&amp;hq=opower&amp;hnear=1515+N+Courthouse+Rd,+Arlington,+Virginia+22201&amp;ll=38.89297,-77.085121&amp;spn=0.016217,0.029182&amp;z=16&amp;iwloc=A" class="tall-listitem location-listitem listitem adr">
+                                        <span class="street-address">
+                                            1515 N Courthouse Rd, 8th Floor
+                                        </span>
+                                        <br>
+                                        <span class="locality">
+                                            Arlington</span>,
+                                        <span class="region">
+                                            VA
+                                        </span>
+                                        <span class="button small-button diminished-button">
+                                            Map
+                                        </span>
+                                        <span class="locationpoint"></span>
+                                        <span class="locationshadow"></span>
+                                    </a>
+                                </li>
+                                <li class="listitem adr">
+                                    <a href="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=665+Third+Street,+Suite+320++San+Francisco,+CA+94107+USA+&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=46.630055,79.013672&amp;ie=UTF8&amp;hq=&amp;hnear=665+3rd+St+%23320,+San+Francisco,+California+94107&amp;z=16" class="location-listitem listitem adr">
+                                        <span class="street-address">
+                                            665 Third St, Suite 320
+                                        </span>
+                                        <br>
+                                        <span class="locality">
+                                            San Francisco</span>,
+                                        <span class="region">
+                                            CA
+                                        </span>
+                                        <span class="button small-button diminished-button">
+                                            Map
+                                        </span>
+                                        <span class="locationpoint"></span>
+                                        <span class="locationshadow"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    <section class="width8pad1-column photos-footer-column footer-column column">
+                        <div class="top-columninner openbottom-columninner columninner">
+                            <div class="headinggroup">
+                                <h3 class="short-footer-heading footer-heading heading headinggroupmain">
+                                    Hello, We&rsquo;re Opower
+                                </h3>
+                                <span class="headinggroupsub">(This is a few of us)</span>
+                            </div>
+                        </div>
+                        <div class="openright-columninner columninner">
+                            <ul class="thumbphotos tilted-thumbphotos bordered-thumbphotos raised-thumbphotos">
+                                    <li>
+                                        <a href="http://opower.com/company/people/product-management-user-experience" class="thumbphoto vcard url">
+                                            <span class="thumbcaption fn">
+                                                <span class="nubwrapper">
+                                                    <span class="nub"></span>
+                                                </span>
+                                                Rebecca Glassman
+                                                <span class="thumbcaptionsub">
+                                                    Product Management &amp; User Experience
+                                                </span>
+                                            </span>
+                                            <img alt="Color portrait" class="color-thumbimg photo" src="http://opower.com/uploads/employee/photo_2/516/medium_rebecca_glassman_2.jpg?1306505617">
+                                            <img alt="B&amp;amp;amp;W portrait" class="bw-thumbimg" src="http://opower.com/uploads/employee/photo_1/516/medium_rebecca_glassman.jpg?1306505617">
+</a>                                    </li>
+                                    <li>
+                                        <a href="http://opower.com/company/people/client-services-operations" class="thumbphoto vcard url">
+                                            <span class="thumbcaption fn">
+                                                <span class="nubwrapper">
+                                                    <span class="nub"></span>
+                                                </span>
+                                                Rick Juneja
+                                                <span class="thumbcaptionsub">
+                                                    Client Services &amp; Operations
+                                                </span>
+                                            </span>
+                                            <img alt="Color portrait" class="color-thumbimg photo" src="http://opower.com/uploads/employee/photo_2/536/medium_rick_juneja_2.jpg?1306505642">
+                                            <img alt="B&amp;amp;amp;W portrait" class="bw-thumbimg" src="http://opower.com/uploads/employee/photo_1/536/medium_rick_juneja.jpg?1306505642">
+</a>                                    </li>
+                                    <li>
+                                        <a href="http://opower.com/company/people/engineering" class="thumbphoto vcard url">
+                                            <span class="thumbcaption fn">
+                                                <span class="nubwrapper">
+                                                    <span class="nub"></span>
+                                                </span>
+                                                James Levinson
+                                                <span class="thumbcaptionsub">
+                                                    Engineering
+                                                </span>
+                                            </span>
+                                            <img alt="Color portrait" class="color-thumbimg photo" src="http://opower.com/uploads/employee/photo_2/547/medium_james_levinson_2.jpg?1306505655">
+                                            <img alt="B&amp;amp;amp;W portrait" class="bw-thumbimg" src="http://opower.com/uploads/employee/photo_1/547/medium_james_levinson.jpg?1306505655">
+</a>                                    </li>
+                                    <li>
+                                        <a href="http://opower.com/company/people/engineering" class="thumbphoto vcard url">
+                                            <span class="thumbcaption fn">
+                                                <span class="nubwrapper">
+                                                    <span class="nub"></span>
+                                                </span>
+                                                Sean Owen
+                                                <span class="thumbcaptionsub">
+                                                    Engineering
+                                                </span>
+                                            </span>
+                                            <img alt="Color portrait" class="color-thumbimg photo" src="http://opower.com/uploads/employee/photo_2/610/medium_sean_owen_2.jpg?1307117774">
+                                            <img alt="B&amp;amp;amp;W portrait" class="bw-thumbimg" src="http://opower.com/uploads/employee/photo_1/610/medium_sean_owen.jpg?1307117774">
+</a>                                    </li>
+                                    <li>
+                                        <a href="http://opower.com/company/people/sales-business-development" class="thumbphoto vcard url">
+                                            <span class="thumbcaption fn">
+                                                <span class="nubwrapper">
+                                                    <span class="nub"></span>
+                                                </span>
+                                                Annelies Husmann
+                                                <span class="thumbcaptionsub">
+                                                    Sales &amp; Business Development
+                                                </span>
+                                            </span>
+                                            <img alt="Color portrait" class="color-thumbimg photo" src="http://opower.com/uploads/employee/photo_2/528/medium_annelies_husmann_2.jpg?1306505632">
+                                            <img alt="B&amp;amp;amp;W portrait" class="bw-thumbimg" src="http://opower.com/uploads/employee/photo_1/528/medium_annelies_husmann.jpg?1306505632">
+</a>                                    </li>
+                            </ul>
+                            <ul class="thumbphotos small-thumbphotos">
+                                    <li>
+                                        <a href="http://opower.com/company/people/sales-business-development" class="thumbphoto vcard url">
+                                            <span class="small-thumbcaption thumbcaption fn">
+                                                <span class="nubwrapper">
+                                                    <span class="nub"></span>
+                                                </span>
+                                                James Dunbar
+                                                <span class="thumbcaptionsub">
+                                                    Sales &amp; Business Development
+                                                </span>
+                                            </span>
+                                            <img alt="Color portrait" class="color-thumbimg photo" src="http://opower.com/uploads/employee/photo_2/509/small_james_dunbar_2.jpg?1306505609">
+                                            <img alt="B&amp;amp;amp;W portrait" class="bw-thumbimg" src="http://opower.com/uploads/employee/photo_1/509/small_james_dunbar.jpg?1306505609">
+</a>                                    </li>
+                                    <li>
+                                        <a href="http://opower.com/company/people/office-dogs" class="thumbphoto vcard url">
+                                            <span class="small-thumbcaption thumbcaption fn">
+                                                <span class="nubwrapper">
+                                                    <span class="nub"></span>
+                                                </span>
+                                                Bailey Luthy
+                                                <span class="thumbcaptionsub">
+                                                    Office Dogs
+                                                </span>
+                                            </span>
+                                            <img alt="Color portrait" class="color-thumbimg photo" src="http://opower.com/uploads/employee/photo_2/552/small_bailey_luthy_2.jpg?1306505661">
+                                            <img alt="B&amp;amp;amp;W portrait" class="bw-thumbimg" src="http://opower.com/uploads/employee/photo_1/552/small_bailey_luthy.jpg?1306505661">
+</a>                                    </li>
+                                    <li>
+                                        <a href="http://opower.com/company/people/corporate-marketing-strategy" class="thumbphoto vcard url">
+                                            <span class="small-thumbcaption thumbcaption fn">
+                                                <span class="nubwrapper">
+                                                    <span class="nub"></span>
+                                                </span>
+                                                Mike Brown
+                                                <span class="thumbcaptionsub">
+                                                    Corporate Marketing &amp; Strategy
+                                                </span>
+                                            </span>
+                                            <img alt="Color portrait" class="color-thumbimg photo" src="http://opower.com/uploads/employee/photo_2/488/small_mike_brown_2.jpg?1306505584">
+                                            <img alt="B&amp;amp;amp;W portrait" class="bw-thumbimg" src="http://opower.com/uploads/employee/photo_1/488/small_mike_brown.jpg?1306505584">
+</a>                                    </li>
+                                    <li>
+                                        <a href="http://opower.com/company/people/client-services-operations" class="thumbphoto vcard url">
+                                            <span class="small-thumbcaption thumbcaption fn">
+                                                <span class="nubwrapper">
+                                                    <span class="nub"></span>
+                                                </span>
+                                                Marie Cosgrove-Davies
+                                                <span class="thumbcaptionsub">
+                                                    Client Services &amp; Operations
+                                                </span>
+                                            </span>
+                                            <img alt="Color portrait" class="color-thumbimg photo" src="http://opower.com/uploads/employee/photo_2/495/small_marie_cosgrove-davies_2.jpg?1306505593">
+                                            <img alt="B&amp;amp;amp;W portrait" class="bw-thumbimg" src="http://opower.com/uploads/employee/photo_1/495/small_marie_cosgrove-davies.jpg?1306505593">
+</a>                                    </li>
+                                    <li>
+                                        <a href="http://opower.com/company/people/corporate-marketing-strategy" class="thumbphoto vcard url">
+                                            <span class="small-thumbcaption thumbcaption fn">
+                                                <span class="nubwrapper">
+                                                    <span class="nub"></span>
+                                                </span>
+                                                Alexa Raducanu
+                                                <span class="thumbcaptionsub">
+                                                    Corporate Marketing &amp; Strategy
+                                                </span>
+                                            </span>
+                                            <img alt="Color portrait" class="color-thumbimg photo" src="http://opower.com/uploads/employee/photo_2/570/small_alexa_raducanu_2.jpg?1306505683">
+                                            <img alt="B&amp;amp;amp;W portrait" class="bw-thumbimg" src="http://opower.com/uploads/employee/photo_1/570/small_alexa_raducanu.jpg?1306505683">
+</a>                                    </li>
+                                    <li>
+                                        <a href="http://opower.com/company/people/product-management-user-experience" class="thumbphoto vcard url">
+                                            <span class="small-thumbcaption thumbcaption fn">
+                                                <span class="nubwrapper">
+                                                    <span class="nub"></span>
+                                                </span>
+                                                Wayne Lin
+                                                <span class="thumbcaptionsub">
+                                                    Product Management &amp; User Experience
+                                                </span>
+                                            </span>
+                                            <img alt="Color portrait" class="color-thumbimg photo" src="http://opower.com/uploads/employee/photo_2/550/small_wayne_lin_2.jpg?1306505659">
+                                            <img alt="B&amp;amp;amp;W portrait" class="bw-thumbimg" src="http://opower.com/uploads/employee/photo_1/550/small_wayne_lin.jpg?1306505659">
+</a>                                    </li>
+                                    <li>
+                                        <a href="http://opower.com/company/people/client-services-operations" class="thumbphoto vcard url">
+                                            <span class="small-thumbcaption thumbcaption fn">
+                                                <span class="nubwrapper">
+                                                    <span class="nub"></span>
+                                                </span>
+                                                Emily Bailard
+                                                <span class="thumbcaptionsub">
+                                                    Client Services &amp; Operations
+                                                </span>
+                                            </span>
+                                            <img alt="Color portrait" class="color-thumbimg photo" src="http://opower.com/uploads/employee/photo_2/479/small_emily_bailard_2.jpg?1306505573">
+                                            <img alt="B&amp;amp;amp;W portrait" class="bw-thumbimg" src="http://opower.com/uploads/employee/photo_1/479/small_emily_bailard.jpg?1306505573">
+</a>                                    </li>
+                                <li><a href="http://opower.com/company/people" class="footerthumblink">See more</a></li>
+                            </ul>
+                            <div class="buttons">
+                                <a href="http://opower.com/company/people" class="diminished-button button">Meet The Team</a>
+                                <a href="http://opower.com/careers" class="bright-button button">Join Us</a>
+                            </div>
+                        </div>
+                    </section>
+                </section>
+                <section class="subblockinner footer-subblockinner">
+                    <h3 class="hidden">Opower Elsewhere</h3>
+                    <ul class="sociallinks">
+                        <li>
+                            <a href="http://twitter.com/opower" class="twitter-sociallink sociallink">
+                                Twitter
+                                <span class="sociallogo"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.facebook.com/pages/OPOWER/144803547174" class="sociallink facebook-sociallink">
+                                Facebook
+                                <span class="sociallogo"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.flickr.com/photos/heyitsopower" class="sociallink flickr-sociallink">
+                                Flickr
+                                <span class="sociallogo"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.youtube.com/user/lifeatopower" class="sociallink youtube-sociallink">
+                                YouTube
+                                <span class="sociallogo"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://vimeo.com/user2636911" class="sociallink vimeo-sociallink">
+                                Vimeo
+                                <span class="sociallogo"></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright">
+                        &copy; 2011 Opower
+                    </p>
+                </section>
+            </div>
+        </footer>
+
+<!---
             <div class="sidebar">
                 <a href="/" title="Careers at OPOWER">
                     <img class="logo" src="/css/theme/OPOWER-logo.png" alt="OPOWER" />
@@ -28,22 +409,10 @@
                     <%- partial('search/form') %>
                 <% } %>
             </div>
-        </div>
+-->
 
-        <div class="span-18 last">
-            <div class="page">
-                <%- body %>
-                <div class="clear"></div>
-            </div>
-            <div class="footer">
-                Looking for the corporate site? Check us out at <a href="http://www.opower.com" title="OPOWER.com">OPOWER.com!</a>
-            </div>
-        </div>
-    </div>
-
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
     <script>!window.jQuery && document.write('<script src="/js/jquery.js"><\/script>');</script>
-    <script type="text/javascript" src="/js/jquery-ui.js"></script>
     <%- scripts %>
     <% var gaq_events = tracking_events %>
     <script type="text/javascript">

@@ -4,19 +4,24 @@
 */ %>
 
 <% if (!page.noMenu) { %>
-<li class="parent">
+<li class="here">
     
     <% if (page.children && page.children.length) { %>
 
-        <div class="section-header"><%= page.label %></div>
+        <a class="nav-listitem first-nav-listitem" href="#">
+            <span class="left-bottom-nubwrapper bottom-nubwrapper nubwrapper">
+                <span class="bottom-white-nub nub"></span>
+            </span>
 
-        <ul class="subnavigation">
+            <%= page.label %></a>
+
+        <ul class="tertiary-nav">
             <%- partial('subnav', { collection: page.children, as: 'page'} ) %>
         </ul>
 
     <% } else { %>
         
-        <a href="<%= href(page.url) %>" class="rounded <%= page.id == currentPageID ? "active " : "" %>">
+        <a href="<%= href(page.url) %>" class="nav-listitem first-nav-listitem <%= page.id == currentPageID ? "here " : "" %>">
            <%= page.label %>
         </a>
         

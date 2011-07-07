@@ -3,8 +3,8 @@
     The logic for current/active page needs to be re-written.
 */ %>
         
-<li class="subnav">
-    <a href="<%= href(page.url) %>" class="<%= page.id == currentPageID ? "active " : "" %><%= firstInCollection ? "rounded-tl rounded-tr" : "" %><%= lastInCollection ? "rounded-bl rounded-br" : "" %>">
+<li>
+    <a href="<%= href(page.url) %>" class="<%= page.id == currentPageID ? "here-tertiary-nav-listitem " : "" %><%= firstInCollection ? "first-nav-listitem" : "" %><%= lastInCollection ? "" : "" %>">
         <%= page.label %>
     </a>
 </li>

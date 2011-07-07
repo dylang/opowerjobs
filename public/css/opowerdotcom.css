@@ -1,0 +1,482 @@
+
+
+/** 
+ * 
+ * imported from: 
+ * http://opower.com/stylesheets/core.css?1308168229
+ * 
+ **/
+html {margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+
+body {margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+
+div {margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+
+span {margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+
+h1 {margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+
+h3 {margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+
+p {margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+
+abbr {margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+
+img {margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+
+ol {margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+
+ul {margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+
+li {margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+
+article {margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+
+footer {margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+
+header {margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+
+nav {margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+
+section {margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+
+article {display:block}
+
+footer {display:block}
+
+header {display:block}
+
+nav {display:block}
+
+section {display:block}
+
+ol {list-style:none}
+
+ul {list-style:none}
+
+a {margin:0;padding:0;border:0;font-size:100%;vertical-align:baseline;background:transparent}
+
+html {overflow-y:scroll}
+
+a:link {-webkit-tap-highlight-color:rgba(90, 200, 230, 0.8)}
+
+h1 {font-weight:bold;text-rendering:optimizeLegibility;margin-bottom:.5em}
+
+h3 {font-weight:bold;text-rendering:optimizeLegibility;margin-bottom:.5em}
+
+a {text-decoration:none}
+
+a {cursor:pointer}
+
+a:active {cursor:pointer}
+
+a:visited {cursor:pointer}
+
+a:hover {cursor:pointer}
+
+.hidden {display:none;visibility:hidden}
+
+.printonly {position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}
+
+.right {float:right}
+
+a {color:#464646}
+
+body {color:#464646}
+
+.link {color:#0088ce;text-decoration:underline}
+
+a:hover .link {text-decoration:none}
+
+.link:hover {text-decoration:none}
+
+a:visited .link {color:#005293}
+
+.link:visited {color:#005293}
+
+.clearfix:after {content:".";display:block;height:0;clear:both;visibility:hidden}
+
+.thumbphotos:after {content:".";display:block;height:0;clear:both;visibility:hidden}
+
+.columnwrapper:after {content:".";display:block;height:0;clear:both;visibility:hidden}
+
+.subblockinner:after {content:".";display:block;height:0;clear:both;visibility:hidden}
+
+.blockinner:after {content:".";display:block;height:0;clear:both;visibility:hidden}
+
+/* bad selector
+
+@font-face
+
+*/
+
+/* bad selector
+
+@font-face
+
+*/
+
+body {font-family:Tahoma, Geneva, Verdana, sans-serif;-webkit-font-smoothing:subpixel-antialiased}
+
+.secondary-nav .tertiary-nav {font-family:Tahoma, Geneva, Verdana, sans-serif;-webkit-font-smoothing:subpixel-antialiased}
+
+.heading {font-family:Dagny, Helvetica, Arial, sans-serif;-webkit-font-smoothing:antialiased}
+
+.button {font-family:Dagny, Helvetica, Arial, sans-serif;-webkit-font-smoothing:antialiased}
+
+.subheading {font-family:Dagny, Helvetica, Arial, sans-serif;-webkit-font-smoothing:antialiased}
+
+.primarynav {font-family:Dagny, Helvetica, Arial, sans-serif;-webkit-font-smoothing:antialiased}
+
+.utilitynav {font-family:Dagny, Helvetica, Arial, sans-serif;-webkit-font-smoothing:antialiased}
+
+.tab {font-family:Dagny, Helvetica, Arial, sans-serif;-webkit-font-smoothing:antialiased}
+
+.secondary-nav {font-family:Dagny, Helvetica, Arial, sans-serif;-webkit-font-smoothing:antialiased}
+
+.button {letter-spacing:.06em}
+
+.utilitynav {letter-spacing:.06em}
+
+.tab {letter-spacing:.06em}
+
+body {background:#4e4f51 url('http://opower.com/images/structure/bg-body.png?1306357796') 0 0 repeat-x;font-size:13px;line-height:1.5}
+
+.block {background:#fff;display:block;position:relative;z-index:1}
+
+.nav-block {background:white url('http://opower.com/images/structure/bg-body.png?1306357796') 0 -130px repeat-x;margin-top:-10px}
+
+.blockinner {display:block;margin:0 auto;padding:20px 0;position:relative;width:980px}
+
+.nav-blockinner {padding-top:0}
+
+.column {display:block;float:left;position:relative;z-index:1}
+
+.divided-column {border-right:1px dashed #ddd;margin-right:-1px}
+
+.subtle-divided-column {border-color:#78797b}
+
+.width2pad2-column {width:160px}
+
+.width4pad1-column {width:260px}
+
+.width5pad1-column {width:320px}
+
+.width8pad1-column {width:500px}
+
+.width12-column {width:720px}
+
+.columninner {display:block;padding:10px 30px;position:relative}
+
+.article-columninner {padding:40px 0 40px 40px}
+
+.openbottom-columninner {padding-bottom:0}
+
+.openright-columninner {padding-right:0}
+
+.openleft-columninner {padding-left:0}
+
+.page {background:#fff;position:relative;z-index:1}
+
+.ometer-block {position:absolute;right:0;top:0;width:100%;z-index:3}
+
+.header-block {background:url('http://opower.com/images/structure/bg-header-block.jpg?1306847746') center 35px no-repeat;height:105px;padding:35px 0 0 0}
+
+.logo a {background:url('http://opower.com/images/structure/sprite-layout.png?1306847746') -670px 0 no-repeat;display:block;height:95px;left:0;position:absolute;top:0;width:200px}
+
+.logoeye {background:url('http://opower.com/images/structure/sprite-layout.png?1306847746') -747px -135px no-repeat;display:block;height:9px;position:absolute;top:40px;-webkit-transition:-webkit-transform 0.13s ease-in-out;-moz-transition:-moz-transform 0.13s ease-in-out;-o-transition:-o-transform 0.13s ease-in-out;-ms-transition:-ms-transform 0.13s ease-in-out;transition:transform 0.13s ease-in-out;width:4px}
+
+.logoeye-left {left:77px}
+
+.logoeye-right {left:87px}
+
+.logo a:hover .logoeye-left {background:#fff;width:3px;-moz-transform:translate(1px, 1px) scaleX(2.7) scaleY(0.355);-webkit-transform:translate(1px, 1px) scaleX(2.7) scaleY(0.355);-o-transform:translate(1px, 1px) scaleX(2.7) scaleY(0.355);-ms-transform:translate(1px, 1px) scaleX(2.7) scaleY(0.355);transform:translate(1px, 1px) scaleX(2.7) scaleY(0.355)}
+
+.primarynav {text-align:right}
+
+.utilitynav {text-align:right}
+
+.primarynav {background:url('http://opower.com/images/structure/sprite-layout.png?1306847746') 0 0 no-repeat;line-height:95px;position:absolute;right:0;top:0;width:572px}
+
+.primarynav-listitem {float:left;overflow:hidden}
+
+.primarynav a {background:url('http://opower.com/images/structure/sprite-layout.png?1306847746') 0 0 no-repeat;display:block;color:#fff;font-size:15px;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=1);opacity:0.01;padding:0 0 7px;text-align:left;text-indent:-9999px;text-transform:uppercase;-moz-transition-property:opacity;-webkit-transition-property:opacity;-o-transition-property:opacity;transition-property:opacity;-moz-transition-duration:0.2s;-webkit-transition-duration:0.2s;-o-transition-duration:0.2s;transition-duration:0.2s;-moz-transition-timing-function:ease-in-out;-webkit-transition-timing-function:ease-in-out;-o-transition-timing-function:ease-in-out;transition-timing-function:ease-in-out}
+
+.what-primarynav-listitem a {background-position:0px -95px;width:175px}
+
+.utilities-primarynav-listitem a {background-position:-175px -95px;width:103px}
+
+.results-primarynav-listitem a {background-position:-278px -95px;width:100px}
+
+.careers-primarynav-listitem a {background-position:-378px -95px;width:102px}
+
+.ometer-primarynav-listitem a {background-position:-480px -95px;width:92px}
+
+.what-primarynav-listitem a:active {background-position:0px -190px}
+
+.utilities-primarynav-listitem a:active {background-position:-175px -190px}
+
+.results-primarynav-listitem a:active {background-position:-278px -190px}
+
+.careers-primarynav-listitem a:active {background-position:-378px -190px}
+
+.ometer-primarynav-listitem a:active {background-position:-480px -190px}
+
+.primarynav a:hover {-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);opacity:1}
+
+.here-primarynav-listitem
+{ background:  url('http://opower.com/images/structure/bg-here-primarynav-listitem.png?1306357796') 50% 100% no-repeat }
+
+
+.utilitynav {position:absolute;right:230px;text-align:right;top:-35px}
+
+.utilitynav li {display:inline}
+
+.utilitynav a {background:url('http://opower.com/images/structure/bg-utilitynav-link.png?1306847746') 100% 0 no-repeat;color:#b3d9ed;display:inline-block;font-size:11px;font-weight:bold;line-height:35px;padding:0 15px 0 10px;text-transform:uppercase}
+
+.utilitynav a.last-utilitynav-link {background:none}
+
+.utilitynav a:hover {color:#fff}
+
+.footer-block {background:url('http://opower.com/images/structure/bg-footer-block.png?1306847746') 0 0 repeat-x #4e4f51;-webkit-font-smoothing:antialiased}
+
+.footer-block .listitem {color:#fff}
+
+.footlink:hover {text-decoration:underline}
+
+.copyright {float:left;font-weight:bold;color:#a6a6a7}
+
+.footer-block .footer-heading {color:#fff;font-size:17px;margin:0 0 1em;text-transform:uppercase}
+
+.footer-block .short-footer-heading {margin-bottom:0.5em}
+
+.footerthumblink {background:url('http://opower.com/images/structure/bg-footerthumblink.png?1306357796') 0 0 no-repeat;display:block;height:60px;text-indent:-9999px;width:50px}
+
+.footerthumblink:hover {background-position:0 -60px}
+
+.footer-column {height:260px}
+
+.footer-subblockinner {background:url('http://opower.com/images/structure/bg-footer-subblockinner.png?1306357796') top center no-repeat;margin:30px 0 60px;padding:30px 0}
+
+.footer-blockinner {padding:50px 0}
+
+.location-listitem {padding-left:50px;zoom:1}
+
+.locationpoint {background:url('http://opower.com/images/structure/sprite-interfaceicons.png?1306847746') 0 -38px no-repeat;left:5px;height:40px;position:absolute;top:2px;width:30px;z-index:2}
+
+.locationshadow {background:url('http://opower.com/images/structure/sprite-interfaceicons.png?1306847746') 0 -38px no-repeat;left:5px;height:40px;position:absolute;top:2px;width:30px;z-index:2}
+
+.locationshadow {background-position:0 -80px;height:10px;top:33px;z-index:1}
+
+.sociallinks {float:right}
+
+.sociallinks li {display:inline}
+
+.sociallink {color:#fff;display:inline-block;font-size:11px;margin:0 0 0 -1em;padding:0 0 0 50px;position:relative}
+
+.sociallogo {background:url('http://opower.com/images/structure/sprite-interfaceicons.png?1306847746') 0 0 no-repeat;display:block;height:19px;left:25px;position:absolute;top:0px;-moz-transition-property:top;-webkit-transition-property:top;-o-transition-property:top;transition-property:top;-moz-transition-duration:0.2s;-webkit-transition-duration:0.2s;-o-transition-duration:0.2s;transition-duration:0.2s;-moz-transition-timing-function:ease-in-out;-webkit-transition-timing-function:ease-in-out;-o-transition-timing-function:ease-in-out;transition-timing-function:ease-in-out;width:19px}
+
+.twitter-sociallink .sociallogo {background-position:0px    0px}
+
+.twitter-sociallink:hover .sociallogo {background-position:0px -19px}
+
+.facebook-sociallink .sociallogo {background-position:-19px 0px}
+
+.facebook-sociallink:hover .sociallogo {background-position:-19px -19px}
+
+.flickr-sociallink .sociallogo {background-position:-38px 0px}
+
+.flickr-sociallink:hover .sociallogo {background-position:-38px -19px}
+
+.youtube-sociallink .sociallogo {background-position:-57px 0px}
+
+.youtube-sociallink:hover .sociallogo {background-position:-57px -19px}
+
+.vimeo-sociallink .sociallogo {background-position:-76px 0px}
+
+.vimeo-sociallink:hover .sociallogo {background-position:-76px -19px}
+
+.thumbphotos {list-style-type:none;margin:0;padding:5px 0;position:relative;z-index:1}
+
+.thumbphotos li {float:left}
+
+.raised-thumbphotos {z-index:2}
+
+.thumbphoto {display:block;position:relative}
+
+.thumbphoto:hover {text-decoration:none}
+
+.thumbphotos .thumbphoto {height:90px;width:90px}
+
+.small-thumbphotos .thumbphoto {height:60px;width:60px}
+
+.thumbphotos img {left:0;position:absolute;top:0}
+
+.bordered-thumbphotos img {border:2px solid #fff;-moz-box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.1);-webkit-box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.1);-o-box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.1);box-shadow:0px 0px 5px 0px rgba(0, 0, 0, 0.1)}
+
+.tilted-thumbphotos .color-thumbimg {-webkit-transition:-webkit-transform 0.2s ease-in-out;-moz-transition:-moz-transform 0.2s ease-in-out;-o-transition:-o-transform 0.2s ease-in-out;-ms-transition:-ms-transform 0.2s ease-in-out;transition:transform 0.2s ease-in-out}
+
+.tilted-thumbphotos .color-thumbimg {-moz-transform:rotate(3deg);-ms-transform:rotate(3deg);-o-transform:rotate(3deg);-webkit-transform:rotate3d(0, 0, 0, 3deg);transform:rotate(3deg)}
+
+.thumbphotos img {height:75px;width:75px}
+
+.small-thumbphotos img {border:1px solid #fff;-moz-box-shadow:0px 0px 3px 0px rgba(0, 0, 0, 0.1);-webkit-box-shadow:0px 0px 3px 0px rgba(0, 0, 0, 0.1);-o-box-shadow:0px 0px 3px 0px rgba(0, 0, 0, 0.1);box-shadow:0px 0px 3px 0px rgba(0, 0, 0, 0.1);height:45px;width:45px}
+
+.thumbcaption {background:#0175b0 url('http://opower.com/images/structure/bg-button.png?1306357796') 0 -600px repeat-x;-webkit-background-clip:padding-box;-moz-border-radius:4px;-webkit-border-radius:4px;-o-border-radius:4px;-ms-border-radius:4px;-khtml-border-radius:4px;border-radius:4px;border:1px solid #005293;-moz-box-shadow:0px 5px 7px -5px rgba(0, 0, 0, 0.3);-webkit-box-shadow:0px 5px 7px -5px rgba(0, 0, 0, 0.3);-o-box-shadow:0px 5px 7px -5px rgba(0, 0, 0, 0.3);box-shadow:0px 5px 7px -5px rgba(0, 0, 0, 0.3);color:#fff;display:block;font-size:10px;-webkit-font-smoothing:subpixel-antialiased;font-weight:bold;left:-25px;line-height:15px;padding:6px 15px;position:absolute;-moz-transition-property:all;-webkit-transition-property:all;-o-transition-property:all;transition-property:all;-moz-transition-duration:0.2s;-webkit-transition-duration:0.2s;-o-transition-duration:0.2s;transition-duration:0.2s;-moz-transition-timing-function:ease-in-out;-webkit-transition-timing-function:ease-in-out;-o-transition-timing-function:ease-in-out;transition-timing-function:ease-in-out;width:100px;text-align:center;text-shadow:0 -1px 0 #105e82;top:65px;visibility:hidden;z-index:2}
+
+.modernopacity .thumbcaption {-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);opacity:0}
+
+.thumbcaptionsub {display:block;font-weight:normal;padding:2px 0 0}
+
+.small-thumbcaption {left:-42px;top:35px}
+
+.listitem {display:block;margin:0px;position:relative;z-index:1}
+
+.tall-listitem {padding-bottom:20px}
+
+.icon-listitem {padding:5px 0 8px 30px;-moz-transition-property:all;-webkit-transition-property:all;-o-transition-property:all;transition-property:all;-moz-transition-duration:0.2s;-webkit-transition-duration:0.2s;-o-transition-duration:0.2s;transition-duration:0.2s;-moz-transition-timing-function:ease-in-out;-webkit-transition-timing-function:ease-in-out;-o-transition-timing-function:ease-in-out;transition-timing-function:ease-in-out}
+
+.decorative-icon-listitem {padding:12px 0 10px 50px}
+
+.button {background:#dadada url('http://opower.com/images/structure/bg-button.png?1306357796') 0 0 repeat-x;-webkit-background-clip:padding-box;border:1px solid #c1c1c1;-moz-border-radius:4px;-webkit-border-radius:4px;-o-border-radius:4px;-ms-border-radius:4px;-khtml-border-radius:4px;border-radius:4px;color:#616365;cursor:pointer;display:inline-block;font-size:11px;font-weight:bold;height:25px;line-height:25px;margin:0 5px 0 0;padding:0 15px;position:relative;text-transform:uppercase;text-shadow:0 1px 0 #fff}
+
+.button:hover {text-decoration:none}
+
+a:hover .button {text-decoration:none}
+
+a:hover .button {background-color:#cbcbcb;background-position:0 -100px}
+
+.button:hover {background-color:#cbcbcb;background-position:0 -100px}
+
+a:active .button {background-position:0 -200px;top:1px}
+
+.button:active {background-position:0 -200px;top:1px}
+
+.footer-block a:hover .button {-moz-box-shadow:none;-webkit-box-shadow:none;-o-box-shadow:none;box-shadow:none}
+
+.footer-block .button:hover {-moz-box-shadow:none;-webkit-box-shadow:none;-o-box-shadow:none;box-shadow:none}
+
+.diminished-button {background-color:#4a4b4d;background-position:0 -300px;-webkit-background-clip:padding-box;border-color:#434547;color:#fff !important;text-shadow:0 -1px 0 #424244}
+
+a:hover .diminished-button {background-color:#303031;background-position:0 -400px}
+
+.diminished-button:hover {background-color:#303031;background-position:0 -400px}
+
+a:active .diminished-button {background-position:0 -500px}
+
+.diminished-button:active {background-position:0 -500px}
+
+.bright-button {background-color:#0175b0;background-position:0 -600px;-webkit-background-clip:padding-box;border-color:#c1c1c1;border-color:#005293;color:#fff !important;text-shadow:0 -1px 0 #105e82}
+
+.bright-button:hover {background-color:#016294;background-position:0 -700px}
+
+.bright-button:active {background-position:0 -800px}
+
+.small-button {height:18px;line-height:18px;padding:0 8px}
+
+.buttons {clear:both;min-height:28px;overflow:hidden}
+
+.nub {background:url('http://opower.com/images/structure/sprite-interfaceicons.png?1306847746') -30px -60px no-repeat;display:block;height:8px;left:-6px;position:absolute;top:0;width:15px}
+
+.bottom-white-nub {background-position:-50px -67px}
+
+.nubwrapper {height:0;left:50%;position:absolute;top:-7px;width:0}
+
+.bottom-nubwrapper {bottom:0;top:auto}
+
+.left-bottom-nubwrapper {left:15px}
+
+.headinggroup {overflow:hidden}
+
+.headinggroupmain {float:left}
+
+.headinggroupsub {color:#b6b6b6;float:right}
+/** 
+ * 
+ * imported from: 
+ * http://opower.com/stylesheets/pages.css?1308168229
+ * 
+ **/
+.secondary-nav a {border-top:1px solid #ccc;border-top:1px solid rgba(0, 0, 0, 0.18);-moz-box-shadow:inset 0px 1px 0px 0px rgba(255, 255, 255, 0.5);-webkit-box-shadow:inset 0px 1px 0px 0px rgba(255, 255, 255, 0.5);-o-box-shadow:inset 0px 1px 0px 0px rgba(255, 255, 255, 0.5);box-shadow:inset 0px 1px 0px 0px rgba(255, 255, 255, 0.5);color:#616365;display:block;font-size:15px;padding:10px;position:relative;zoom:1;z-index:2}
+
+.secondary-nav a:hover {color:#0088ce;text-decoration:underline}
+
+.secondary-nav .first-nav-listitem {border-top:none;-moz-box-shadow:none;-webkit-box-shadow:none;-o-box-shadow:none;box-shadow:none}
+
+.tertiary-nav .first-nav-listitem {border-top:none;-moz-box-shadow:none;-webkit-box-shadow:none;-o-box-shadow:none;box-shadow:none}
+
+.last-nav-listitem {border-bottom:none}
+
+.secondary-nav .nubwrapper {display:none}
+
+.secondary-nav .here .nubwrapper {display:block}
+
+.navarticle-column {float:right}
+
+.secondary-nav {background:url('http://opower.com/images/structure/bg-secondary-nav.jpg?1306847746') 0 0 no-repeat;background-size:auto;min-height:750px;padding:42px 0 120px}
+
+.secondary-nav .here .nav-listitem {background:#fff;font-weight:bold;z-index:2}
+
+.tertiary-nav {background:#fff;background-image:-webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #ffffff), color-stop(90%, rgba(255,255,255,0)), color-stop(100%, rgba(155,155,155,0.3))), -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(0%, #ebebeb), color-stop(2%, rgba(235,235,235,0)), color-stop(100%, rgba(235,235,235,0))), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ebebeb), color-stop(2%, rgba(235,235,235,0)), color-stop(100%, rgba(235,235,235,0)));background-image:-webkit-linear-gradient(left, #ffffff,rgba(255,255,255,0) 90%,rgba(155,155,155,0.3)), -webkit-linear-gradient(bottom, #ebebeb,rgba(235,235,235,0) 2%,rgba(235,235,235,0)), -webkit-linear-gradient(top, #ebebeb,rgba(235,235,235,0) 2%,rgba(235,235,235,0));background-image:-moz-linear-gradient(left, #ffffff,rgba(255,255,255,0) 90%,rgba(155,155,155,0.3)), -moz-linear-gradient(bottom, #ebebeb,rgba(235,235,235,0) 2%,rgba(235,235,235,0)), -moz-linear-gradient(top, #ebebeb,rgba(235,235,235,0) 2%,rgba(235,235,235,0));background-image:-o-linear-gradient(left, #ffffff,rgba(255,255,255,0) 90%,rgba(155,155,155,0.3)), -o-linear-gradient(bottom, #ebebeb,rgba(235,235,235,0) 2%,rgba(235,235,235,0)), -o-linear-gradient(top, #ebebeb,rgba(235,235,235,0) 2%,rgba(235,235,235,0));background-image:linear-gradient(left, #ffffff,rgba(255,255,255,0) 90%,rgba(155,155,155,0.3)), linear-gradient(bottom, #ebebeb,rgba(235,235,235,0) 2%,rgba(235,235,235,0)), linear-gradient(top, #ebebeb,rgba(235,235,235,0) 2%,rgba(235,235,235,0));border-right:1px solid #d9d9d9;border-top:1px solid #d9d9d9;display:none;padding:5px 0;position:relative;z-index:1}
+
+.secondary-nav .here .tertiary-nav {display:block}
+
+.tertiary-nav a {border-color:rgba(0, 0, 0, 0.1);-moz-box-shadow:none;-webkit-box-shadow:none;-o-box-shadow:none;box-shadow:none;color:#616365;font-size:12px;padding:8px 30px}
+
+.tertiary-nav .here-tertiary-nav-listitem {background:url('http://opower.com/images/structure/bg-listitem.png?1306357796') -969px 11px no-repeat;color:#0088ce;font-weight:bold;z-index:1}
+
+.heading {line-height:1.3;font-size:22px;font-weight:bold;margin:0 0 .35em;zoom:1}
+
+.divided-heading {border-bottom:1px dashed #ddd;margin-bottom:.8em;overflow:hidden;padding:30px 5px .8em;position:relative}
+
+.page-heading {font-size:29px}
+
+.divided-page-heading {padding-top:0}
+
+.post-heading {font-size:15px;font-weight:normal}
+
+.subheading {color:#888888;font-style:italic;margin:-0.5em 0 0.5em}
+
+.post-subheading {font-style:normal;margin:-0.3em 0 0.25em}
+
+.icon {background:url('http://opower.com/images/structure/sprite-decorativeicons.png?1307971266') 0 0 no-repeat;height:80px;left:0;position:absolute;top:0;width:80px;z-index:-1}
+
+.decorative-icon {left:8px;height:30px;top:11px;width:30px}
+
+.paper-decorative-icon {background-position:-120px -160px}
+
+.spacer {height:20px}
+
+.tabs {background:url('http://opower.com/images/structure/sprite-tabs.png?1306357796') 0 0 no-repeat;zoom:1}
+
+.tab {background:url('http://opower.com/images/structure/sprite-tabs.png?1306357796') 0 0 no-repeat;zoom:1}
+
+.tabshadow {background:url('http://opower.com/images/structure/sprite-tabs.png?1306357796') 0 0 no-repeat;zoom:1}
+
+.tabs {overflow:hidden;padding-left:25px}
+
+.page-tabs {margin:0 0 20px}
+
+.tabs li {float:left}
+
+.tab {background-position:100% -100px;color:#0088ce;display:block;font-size:16px;font-weight:bold;float:left;height:50px;line-height:50px;overflow:hidden;padding:0 25px;position:relative}
+
+.tab:hover {text-decoration:underline}
+
+.tabs li:last-child .tab {background:none}
+
+.tab .nubwrapper {bottom:-10px;-moz-transition-property:all;-webkit-transition-property:all;-o-transition-property:all;transition-property:all;-moz-transition-duration:0.2s;-webkit-transition-duration:0.2s;-o-transition-duration:0.2s;transition-duration:0.2s;-moz-transition-timing-function:ease-in-out;-webkit-transition-timing-function:ease-in-out;-o-transition-timing-function:ease-in-out;transition-timing-function:ease-in-out}
+
+.here-tab {background-position:100% -150px;color:#8cb941}
+
+.tabtext {position:relative;z-index:2}
+
+.tabshadow {background-position:0 -150px;display:block;height:50px;left:0;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);opacity:0;position:absolute;top:0;-moz-transition-property:all;-webkit-transition-property:all;-o-transition-property:all;transition-property:all;-moz-transition-duration:0.5s;-webkit-transition-duration:0.5s;-o-transition-duration:0.5s;transition-duration:0.5s;-moz-transition-timing-function:ease-in-out;-webkit-transition-timing-function:ease-in-out;-o-transition-timing-function:ease-in-out;transition-timing-function:ease-in-out;width:30px;z-index:1}
+
+.right-tabshadow {background-position:-30px -150px;left:auto;right:0}
+
+.here-tab .tabshadow {-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);opacity:1}
+
+.here-tab .nubwrapper {bottom:0}
+
+.tab-nub {background-position:-70px -60px;bottom:0;height:15px;left:-10px;top:auto;width:20px}

@@ -1,32 +1,22 @@
-<div class="span-17 first last">
-    <div class="banner">
-        <div class="title strong span-17 last">
-            <%= job.title %>
+<h1 class="page-heading divided-page-heading divided-heading heading">
+    <%= job.title %>
+    <%- '(' + Constants.LOCATIONS[job.location_id].short_name + ')' %>
+</h1>
+<div class="location">
+    <a href="<%- href(job.urls.team) %>">&laquo; Back to <%- job.team %> jobs</a>
+</div>
 
-            <%- '(' + Constants.LOCATIONS[job.location_id].short_name + ')' %>
-        </div>
-        <div class="location">
-            <a href="<%- href(job.urls.team) %>">&laquo; Back to <%- job.team %> jobs</a>
-        </div>
+<div class="inline rounded clearfix">
+    <div class="span-9">
+        <strong>Is your resume ready?</strong><br />
+        This is the best way to start a conversation with us.
+    </div>
+    <div class="span-6 push-1 last">
+        <a class="apply-now button orange-button" href="<%= job.urls.apply %>">Apply now</a>
     </div>
 </div>
 
-<div class="span-17 last">
-    <div class="inline rounded clearfix">
-        <div class="span-9">
-            <strong>Is your resume ready?</strong><br />
-            This is the best way to start a conversation with us.
-        </div>
-        <div class="span-6 push-1 last">
-            <a class="apply-now button orange-button" href="<%= job.urls.apply %>">Apply now</a>
-        </div>
-    </div>
-</div>
 
-<div class="span-17 first last">
-
-    <div class="description">
-        <%- job.description %>
-    </div>
-
+<div class="description">
+    <%- job.description %>
 </div>
