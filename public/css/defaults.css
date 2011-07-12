@@ -1,8 +1,6 @@
 BODY {
     line-height: 1.5em;
     margin-top: 10px;
-    -webkit-font-smoothing: subpixel-antialiased;
-
 }
 
 
@@ -13,7 +11,7 @@ BODY.fancybox-visible {
 }
 
 A, .link {
-    color: #0099DD;
+    color: #0099dd;
 }
 
 A:hover {
@@ -121,14 +119,14 @@ ul.list LI {
 /* Footer */
 
 .footer {
-    color: #0079a5;
+    color: #62b8eb;
     font-size: 16px;
     padding: 20px 0;
     text-align: center;
 }
 
 .footer a {
-    color: #00516e;
+    color: white;
 }
 
 

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>OPOWER Jobs</title>
+  <title>Opower Jobs</title>
   <subtitle>Latest Positions</subtitle>
   <link href="<%= url %>"/>
   <link rel="self" href="<%= url %>/atom.xml"/>
   <updated><%= jobs[0].date.toISOString() %></updated>
   <author>
-    <name>OPOWER Recruting</name>
+    <name>Opower Recruting</name>
     <uri><%= url %></uri>
     <email>recruiting@opowerjobs.com</email>
   </author>
-  <rights>Copyright (c) 2010, OPOWER</rights>
+  <rights>Copyright (c) 2010, Opower</rights>
   <id>tag:opower.com,2010:jobs</id>
   <% jobs.forEach(function(job) { %>
   <entry>
