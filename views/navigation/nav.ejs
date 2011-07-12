@@ -16,7 +16,7 @@
 
     <% } else { %>
         
-        <a href="<%= href(page.url) %>" class="rounded <%= page.id == currentPageID ? "active " : "" %>">
+        <a href="<%= href(page.url) %>" class="<%= firstInCollection || page.id == currentPageID ? "rounded-tl" : "" %> <%= lastInCollection || page.id == currentPageID ? "rounded-bl" : "" %> <%= page.id == currentPageID ? "active " : "" %>">
            <%= page.label %>
         </a>
         

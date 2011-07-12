@@ -1,8 +1,9 @@
-/.idea/*
-/.git/*
+./.idea/*
+./.git/*
 /bin/*
 /public/*
 /data/*
 /views/*
-*.txt
+*.css
+*.js
 *.svn

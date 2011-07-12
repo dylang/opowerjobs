@@ -1,7 +1,8 @@
 .navigation {
-    font-size: 16px;
+    font-size: 14px;
     margin-top: 20px;
     margin-bottom: 10px;
+    width: 240px;
 }
 
 .navigation a:hover {
@@ -10,24 +11,30 @@
 
 .nav-main {
     margin: 20px 0 10px;
-    text-transform: uppercase;
 }
 
 .nav-main li.parent {
-    margin-bottom: 10px;
+    margin: 0;
 }
 
 .nav-main a {
-    background: rgba(27,140,176,0.3);
-    border-bottom: 1px solid #3299bb;
+    background: #2288c5;
+    border-top: 1px solid #3b97cd;
+    border-bottom: 1px solid #0871b2;
     color: #ffffff;
     display: block;
-    margin-bottom: 1px;
-    padding: 5px 10px;
+    padding: 10px 20px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
 }
 
+.nav-main li.parent a.active {
+    background: white;
+    color: #278bc7;
+}
+
+
 .nav-main a:hover {
-    background: rgba(27,140,176,0.8);
+    background: #0871b2;
 }
 
 .nav-main a:active, .nav-main a.active {

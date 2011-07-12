@@ -223,7 +223,7 @@ div.colborder {
    Based on How To Clear Floats Without Structural Markup by PiE
    [http://www.positioniseverything.net/easyclearing.html] */
 
-.clearfix:after, .container:after {
+.clearfix:after {
     content: ".";
     display: block;
     height: 0;
