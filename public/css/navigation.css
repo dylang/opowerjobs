@@ -3,6 +3,8 @@
     margin-top: 20px;
     margin-bottom: 10px;
     width: 240px;
+    position: absolute;
+    font-family: Dagny, Helvetica, Arial, sans-serif;
 }
 
 .navigation a:hover {
@@ -11,6 +13,9 @@
 
 .nav-main {
     margin: 20px 0 10px;
+    background: #2288c5;
+    box-shadow: -3px 1px 5px rgba(0, 0, 0, 0.2);
+
 }
 
 .nav-main li.parent {
@@ -24,17 +29,18 @@
     color: #ffffff;
     display: block;
     padding: 10px 20px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
 }
 
 .nav-main li.parent a.active {
     background: white;
-    color: #278bc7;
+    color: #FF5800;
 }
 
 
 .nav-main a:hover {
     background: #0871b2;
+    -moz-border-radius-bottomleft: 8px; -webkit-border-bottom-left-radius: 8px; border-bottom-left-radius: 8px;
+    -moz-border-radius-topleft: 8px; -webkit-border-top-left-radius: 8px; border-top-left-radius: 8px;
 }
 
 .nav-main a:active, .nav-main a.active {

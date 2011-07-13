@@ -30,9 +30,10 @@ body {
     height:100%;
 }
 
-
-h1 {
+h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
+    text-rendering: optimizeLegibility;
+    font-family: Dagny, Helvetica, Arial, sans-serif;
 }
 
 h1 {
@@ -227,3 +228,40 @@ DL.inline DD {
     display: inline;
 }
 
+
+
+@font-face {
+    font-weight: normal;
+    font-family: 'Dagny';
+    src: url('fonts/DagnyWebPro.eot');
+    src: url('fonts/DagnyWebPro.woff') format('woff');
+}
+
+@font-face {
+    font-weight: bold;
+    font-family: 'Dagny';
+    src: url('fonts/DagnyWebPro-Bold.eot');
+    src: url('fonts/DagnyWebPro-Bold.woff') format('woff');
+}
+
+body,
+input,
+textarea {
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.heading,
+.button,
+.highlight
+h1,
+h2,
+h3 {
+    font-family: Dagny, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+.button {
+    letter-spacing: .06em;
+}

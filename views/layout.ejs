@@ -16,16 +16,17 @@
         <div class="span-6 first">
             <div class="sidebar">
                 <a href="/" title="Careers at Opower">
-                    <img class="logo" src="/css/theme/OPOWER-logo.png" alt="Opower" />
+                    <img class="logo" src="/css/theme/Careers_Opower_logo.png" alt="Opower" />
                 </a>
                 <div class="navigation">
                     <ul class="nav-main rounded">
                         <%- partial("navigation/nav", { collection: pages, as: "page"} ) %>
                     </ul>
+                    <% if (current_url.indexOf('search') === -1) { %>
+                        <%- partial('search/form') %>
+                    <% } %>
+
                 </div>
-                <% if (current_url.indexOf('search') === -1) { %>
-                    <%- partial('search/form') %>
-                <% } %>
             </div>
         </div>
 

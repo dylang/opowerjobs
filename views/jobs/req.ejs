@@ -1,10 +1,10 @@
 <div class="span-17 first last">
     <div class="banner">
-        <div class="title strong span-17 last">
+        <h2 class="title strong span-17 last">
             <%= job.title %>
 
             <%- '(' + Constants.LOCATIONS[job.location_id].short_name + ')' %>
-        </div>
+        </h2>
         <div class="location">
             <a href="<%- href(job.urls.team) %>">&laquo; Back to <%- job.team %> jobs</a>
         </div>
