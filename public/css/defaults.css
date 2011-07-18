@@ -102,6 +102,11 @@ H2 {
     line-height: 120%;
 }
 
+.page LI:last-child,
+UL.no-bullet LI:last-child {
+    border-bottom:  none;
+}
+
 
 .job UL {
     list-style-type: disc;
