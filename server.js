@@ -23,7 +23,7 @@ var TEMP_HOSTS = { '8.17.80.250': 1, '72.2.126.71': 1, 'opower.no.de': 1, 'dylan
 
 
 // hack for testing production settings.
-if (PORT != 3000 || process.env.JOYENT || true) {
+if (PORT != 3000 || process.env.JOYENT) {
     Server.set('env', 'production');
 }
 
