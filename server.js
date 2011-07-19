@@ -23,7 +23,7 @@ var TEMP_HOSTS = { '8.17.80.250': 1, '72.2.126.71': 1, 'opower.no.de': 1, 'dylan
 
 
 // hack for testing production settings.
-if (PORT != 3000 || process.env.JOYENT) {
+if (PORT != 3000 || process.env.JOYENT || true) {
     Server.set('env', 'production');
 }
 
@@ -151,7 +151,7 @@ Server.get(/^/, function(req, res, next){
     }
 });
 
-Assets.addHandler({Server: Server });
+Assets.addHandler({Server: Server, hostname: HOSTNAME });
 ReferralHandler.addHandlers( {Server: Server } );
 ContentHandler.addHandlers( {Server: Server } );
 JobHandler.addHandlers( {Server: Server } );

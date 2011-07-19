@@ -230,20 +230,6 @@ DL.inline DD {
 
 
 
-@font-face {
-    font-weight: normal;
-    font-family: 'Dagny';
-    src: url('fonts/DagnyWebPro.eot');
-    src: url('fonts/DagnyWebPro.woff') format('woff');
-}
-
-@font-face {
-    font-weight: bold;
-    font-family: 'Dagny';
-    src: url('fonts/DagnyWebPro-Bold.eot');
-    src: url('fonts/DagnyWebPro-Bold.woff') format('woff');
-}
-
 body,
 input,
 textarea {

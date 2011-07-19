@@ -27,22 +27,3 @@
     background-image: url(pages/op/benefits.png);
 }
 
-.page_image.diversity {
-    background-image: url(pages/op/diversity.JPG);
-}
-
-.page_image.college {
-    background-image: url(pages/op/intern.JPG);
-}
-
-.page_image.interview {
-    background-image: url(pages/op/coders.JPG);
-}
-
-.page_image.apply {
-    background-image: url(pages/op/adelia.JPG);
-}
-
-.page_image.dc {
-    background-image: url(pages/op/dudes.JPG);
-}

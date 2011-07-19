@@ -1,7 +1,7 @@
 {
     "name": "opower-jobs",
-    "version": "2.0.0",
-    "description": "An example of a full live site using Node 0.4, Express 2.x, Connect 1.x, EJS, AssetManager, Jobvite, Logging, and other Node modules.  Demo: http://opowerjobs.com",
+    "version": "3.0.0",
+    "description": "An example of a full live site using Node, Express, Connect, EJS, AMS, Jobvite, Logging, and other Node modules.  Demo: http://opowerjobs.com",
     "homepage": "http://opowerjobs.com",
     "author": "Dylan Greene <dylang@gmail.com>",
     "contributors": [
@@ -23,12 +23,12 @@
         "logging": ">= 2.0.6",
         "jobvite": ">= 0.1.17",
         "lean":    ">=0.0.1",
+        "atom":    ">=0.0.1",
         "rss":     ">=0.0.1",
         "express": ">= 2.1.0",
         "connect": ">= 1.1.4",
-        "ejs": ">= 0.3.1",
-        "connect-assetmanager": ">= 0.0.18",
-        "connect-assetmanager-handlers": ">= 0.0.17"
+        "ejs":     ">= 0.3.1",
+        "ams":     ">= 0.0.9"
     },
     "main": "server",
     "engines": { "node": ">=0.4.1" },

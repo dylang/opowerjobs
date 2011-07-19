@@ -6,6 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
 <%- partial('comment.ejs') %>    
     <link rel="alternate" type="application/atom+xml" title="Opower New Jobs Feed" href="http://opowerjobs.com/atom.xml" />
+    <style>
+    @font-face {
+        font-weight: normal;
+        font-family: 'Dagny';
+        src: url('css/fonts/DagnyWebPro.eot');
+        src: url('css/fonts/DagnyWebPro.woff') format('woff');
+    }
+
+    @font-face {
+        font-weight: bold;
+        font-family: 'Dagny';
+        src: url('css/fonts/DagnyWebPro-Bold.eot');
+        src: url('css/fonts/DagnyWebPro-Bold.woff') format('woff');
+    }
+    </style>
     <%- styles %>
 
 </head>
@@ -41,7 +56,7 @@
         </div>
     </div>
 
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
     <script>!window.jQuery && document.write('<script src="/js/jquery.js"><\/script>');</script>
     <script type="text/javascript" src="/js/jquery-ui.js"></script>
     <%- scripts %>
