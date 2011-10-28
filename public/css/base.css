@@ -18,7 +18,7 @@
 -------------------------------------------------------------- */
 
 body {
-    background-color: #ffffff; /* replace with ei.styles.siteWide.body.backgroundColor */
+    background-color: #4fb0e3; /* replace with ei.styles.siteWide.body.backgroundColor */
     background-image: -webkit-gradient(linear, 0 0, 0 950, from(#4fb0e3), color-stop(0.149, #47a8dd), color-stop(0.149, #45a9dd), color-stop(0.265, #3b9ed5), color-stop(0.265, #3d9dd7), color-stop(0.491, #2c8fca));
     /* background-image: -webkit-linear-gradient(#4fb0e3, #47a8dd 14.9%, #45a9dd 14.9%, #3b9ed5 26.5%, #3d9dd7 26.5%, #2c8fca 49.1%); */
     background-image: -moz-linear-gradient(#4fb0e3, #47a8dd 14.9%, #45a9dd 14.9%, #3b9ed5 26.5%, #3d9dd7 26.5%, #2c8fca 49.1%);

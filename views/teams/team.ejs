@@ -9,10 +9,9 @@
         <%- partial(team_page + '.ejs') %>
     </div>
 
-    <div class="clear" style="padding-top:40px;"></div>
     <% if (collection) { %>
 
-            <ul>
+            <ul class="table">
                 <%- partial('../jobs/job', { collection: collection.jobs, as: 'job', show_location: true } ) %>
             </ul>
 

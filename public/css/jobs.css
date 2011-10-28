@@ -76,3 +76,50 @@
     text-align: center;
 }
 
+
+
+.table {
+    clear: both;
+    margin: 1.5em 0;
+}
+
+.table li {
+    border:  none;
+}
+
+.tablerow {
+border-bottom: #D9E2EB 1px solid;
+display: block;
+padding: 6px 0;
+position: relative;
+overflow: hidden;
+zoom: 1;
+}
+
+.table :nth-child(2n+1) .tablerow {
+    background:  #E6F7FC;
+}
+
+.table :nth-child(2n) .tablerow {
+border-bottom: none;
+}
+
+
+.tablecell {
+display: block;
+float: left;
+padding: 6px 15px;
+}
+
+.subject-tablecell {
+color: #0088CE;
+width: 350px;
+}
+
+.data-tablecell {
+border-left: 1px dashed #DDD;
+float: right;
+overflow: hidden;
+width: 200px;
+    color: #464646;
+}

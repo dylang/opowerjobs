@@ -2,12 +2,12 @@
     A job, used almost anywhere we have a list of jobs
 */ %>
 <li>
-    <a href="<%= job.urls ? href(job.urls.full_url) : '' %>">
-        <%= job.title %>
-        <% if (locals.show_location) { %>
-            <span class="location">
-                <%= job.location %>
-            </span>
-        <% } %>
+    <a href="<%= job.urls ? href(job.urls.full_url) : '' %>" class="tablerow">
+        <span class="subject-tablecell tablecell">
+            <%= job.title %>
+        </span>
+        <span class="data-tablecell tablecell">
+            <%= job.location %>
+        </span>
     </a>
 </li>

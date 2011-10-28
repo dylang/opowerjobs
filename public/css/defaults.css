@@ -124,7 +124,7 @@ ul.list LI {
 /* Footer */
 
 .footer {
-    color: #62b8eb;
+    color: #ffff00;
     font-size: 16px;
     padding: 20px 0;
     text-align: center;
@@ -132,6 +132,7 @@ ul.list LI {
 
 .footer a {
     color: white;
+    font-weight: bold;
 }
 
 
