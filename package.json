@@ -16,7 +16,7 @@
     "bugs":
     {
         "mail": "dylang@gmail.com",
-        "web": "http://github.com/opower/node-opowerjobs/issues"
+        "url": "http://github.com/opower/node-opowerjobs/issues"
     },
     "dependencies":
     {
