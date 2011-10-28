@@ -14,7 +14,7 @@
   <id>tag:opower.com,2010:jobs</id>
   <% jobs.forEach(function(job) { %>
   <entry>
-    <title><%= job.title %><%- job.location_id == Constants.LOCATIONS.sf.id ? ' (SF)' : '' %></title>
+    <title><%= job.title + ' ' + job.location %></title>
     <link href="<%= url %><%= job.urls.full_url %>"/>
     <id>tag:opowerjobs.com,2010:job_<%= job.id %></id>
     <updated><%= job.date.toISOString() %></updated>

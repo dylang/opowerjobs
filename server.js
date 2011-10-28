@@ -112,7 +112,7 @@ Server.error(function(err, req, res, next){
             err.arguments && log(err.arguments);
             err.stack && log(err.stack);
             log('*************************************');
-            next();
+            //next();
         }
         if (Server.get('env') == 'production') {
             res.redirect('/');

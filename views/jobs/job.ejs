@@ -3,12 +3,11 @@
 */ %>
 <li>
     <a href="<%= job.urls ? href(job.urls.full_url) : '' %>">
-        <%= job.title + (job.urls ? '' : "!!!!!!!!!") %>
-
+        <%= job.title %>
         <% if (locals.show_location) { %>
-            <% if (job.location_id == Constants.LOCATIONS.sf.id) { %>
-                (SF)
-            <% } else {} %>
+            <span class="location">
+                <%= job.location %>
+            </span>
         <% } %>
     </a>
 </li>
