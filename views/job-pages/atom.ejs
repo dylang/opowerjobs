@@ -10,11 +10,11 @@
     <uri><%= url %></uri>
     <email>recruiting@opowerjobs.com</email>
   </author>
-  <rights>Copyright (c) 2010, Opower</rights>
+  <rights>Copyright (c) 2012, Opower</rights>
   <id>tag:opower.com,2010:jobs</id>
   <% jobs.forEach(function(job) { %>
   <entry>
-    <title><%= job.title + ' ' + job.location %></title>
+    <title><%= job.title %></title>
     <link href="<%= url %><%= job.urls.full_url %>"/>
     <id>tag:opowerjobs.com,2010:job_<%= job.id %></id>
     <updated><%= job.date.toISOString() %></updated>
