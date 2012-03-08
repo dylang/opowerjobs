@@ -23,11 +23,14 @@
 .ui-menu li {
     font-size: 12px;
     line-height: 2.1em;
+    color: #ffffff;
 }
 
 .ui-menu .ui-menu-item a {
     font-size: 12px;
     line-height: 1.1em;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
 }
 
 
@@ -38,3 +41,14 @@
 .ui-menu-item a:hover .sub {
     color: #ffffff !important;
 }
+
+.ui-autocomplete{
+    padding: 8px;	
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    background-color: #050505;
+    border-style: solid;
+    border-width: 2px;
+    box-shadow: -6px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
